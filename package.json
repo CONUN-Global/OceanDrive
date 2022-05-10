@@ -1,0 +1,30 @@
+{
+  "name": "ocean-drive",
+  "version": "1.0.0",
+  "description": "Ocean Drive client side apps",
+  "main": "index.js",
+  "private": true,
+  "author": {
+    "name": "Otabek Nosirov",
+    "email": "otabektuit11@gmail.com"
+  },
+  "license": "ISC",
+  "workspaces": [
+    "apps/*"
+  ],
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
+  },
+  "scripts": {
+    "compile": "tsc -b --incremental",
+    "clean": "yarn workspaces run clean",
+    "web": "yarn workspace @ocean-drive/web dev",
+    "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn workspace @ocean-drive/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @ocean-drive/desktop start\"",
+    "build:web": "yarn workspace @ocean-drive/web build",
+    "test:web": "yarn workspace @ocean-drive/web test"
+  },
+  "devDependencies": {
+    "typescript": "4.1.2"
+  },
+  "dependencies": {}
+}
