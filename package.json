@@ -9,9 +9,11 @@
     "email": "otabektuit11@gmail.com"
   },
   "license": "ISC",
-  "workspaces": [
-    "apps/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ]
+  },
   "resolutions": {
     "react-error-overlay": "6.0.9"
   },
