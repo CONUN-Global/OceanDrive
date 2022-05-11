@@ -20,7 +20,7 @@
   "scripts": {
     "compile": "tsc -b --incremental",
     "clean": "yarn workspaces run clean",
-    "web": "yarn workspace @ocean-drive/web dev",
+    "web": "yarn workspace @ocean-drive/web start",
     "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn workspace @ocean-drive/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @ocean-drive/desktop start\"",
     "build:web": "yarn workspace @ocean-drive/web build",
     "test:web": "yarn workspace @ocean-drive/web test"
