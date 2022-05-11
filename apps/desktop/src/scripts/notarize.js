@@ -21,10 +21,10 @@ exports.default = async function notarizing(context) {
   const appName = context.packager.appInfo.productFilename;
 
   return await notarize({
-    appBundleId: 'conun.io',
+    appBundleId: 'inbox.chatgenie.io',
     appPath: `${appOutDir}/${appName}.app`,
     appleId: process.env.APPLE_ID,
     appleIdPassword: process.env.APPLE_ID_PASSWORD,
-    ascProvider: process.env.APPLE_ASC_PROVIDER
+    ascProvider: process.env.APPLE_ASC_PROVIDER,
   });
 };

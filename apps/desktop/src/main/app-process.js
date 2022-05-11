@@ -7,29 +7,16 @@ const { logger, eventLogger } = require('../utils/logger');
 const { checkForUpdates } = require('../utils/autoUpdater');
 const { isDevelopment, isMasBuild, isWindows } = require('../utils');
 
-const externalUrls = [];
+const externalUrls = [
+];
 
 function createAppWindow(win) {
   logger('App process is launched');
-
   if (isWindows()) {
     // remove window animation to prevent double flash until it is fixed in electron
     // (reference: https://github.com/electron/electron/issues/12130)
     app.commandLine.appendSwitch('wm-window-animations-disabled');
   }
-
-  if (!isMasBuild()) {
-    // FIXME: SingleInstanceLock quits the app on launch with MAS build.
-    // That's why we should ignore this logic in MAS until Electron solves that bug
-    // Github issue: https://github.com/electron/electron/issues/15958
-    const gotTheLock = app.requestSingleInstanceLock();
-
-    if (!gotTheLock) {
-      app.quit();
-      return;
-    }
-  }
-
   if (isDevelopment()) {
     win.openDevTools({ mode: 'detach' });
     // eslint-disable-next-line import/no-extraneous-dependencies
@@ -45,18 +32,14 @@ function createAppWindow(win) {
       .finally(() => {});
   }
 
-  // win.webContents.on('will-navigate', handleRedirect);
-  // win.webContents.on('new-window', handleRedirect);
 
   const htmlFilePath = `file://${path.join(
     __dirname,
     '../../build/web/index.html'
   )}`;
-
   const APP_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
 
   win.loadURL(APP_URL);
-
   app.on('second-instance', (e) => {
     e.preventDefault();
     eventLogger('renderer', 'second-instance');

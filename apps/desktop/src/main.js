@@ -2,18 +2,14 @@ import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron';
 import { join } from 'path';
 import { isDevelopment, isWindows } from './utils/index';
 import { eventLogger, logger } from './utils/logger';
-import { initializeSentry } from './utils/sentry';
 import { getBounds, quitWindow, setBounds } from './utils/state';
 
 require('dotenv').config({
   path: isDevelopment() ? '.env.development.local' : '.env'
 });
 
-if (process.env.DEKSTOP_ENV !== 'local') {
-  initializeSentry();
-}
-
 const { createAppWindow } = require('./main/app-process');
+
 
 let tray;
 let win;
@@ -42,7 +38,7 @@ function enableWindow(browserWin) {
 }
 
 function createTray() {
-  const icon = join(__dirname, '/assets/images/favicon.png'); // required.
+  const icon = join(__dirname, '/../assets/images/favicon.png'); // required.
   const trayicon = nativeImage.createFromPath(icon);
   const initTray = new Tray(trayicon.resize({ width: 18 }));
   initTray.on('click', () => {
@@ -63,7 +59,7 @@ async function showWindow() {
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
-      contextIsolation: false
+      contextIsolation: false,
     }
   });
   const contextMenu = Menu.buildFromTemplate([
@@ -93,15 +89,16 @@ async function showWindow() {
     tray = createTray();
     tray.setContextMenu(contextMenu);
   }
+  
+  
 
-  win.setMenuBarVisibility(false);
-
-  try {
-    createAppWindow(win);
-  } catch (err) {
-    logger(err, 'error');
+  win?.setMenuBarVisibility(false);
+  try{
+    await createAppWindow(win);
+  }catch(err){
+    console.log(err);
   }
-
+ 
   win.on('close', (e) => {
     e.preventDefault();
     eventLogger('app process', 'close');
@@ -128,6 +125,7 @@ async function showWindow() {
 
   return null;
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
