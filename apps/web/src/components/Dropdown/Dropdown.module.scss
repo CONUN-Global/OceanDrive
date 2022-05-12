@@ -1,0 +1,18 @@
+.Dropdown {
+  width: 100%;
+
+  & .SelectedItem {
+    align-items: center;
+    border: 1px solid var(--conun-blue);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    justify-content: space-around;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
