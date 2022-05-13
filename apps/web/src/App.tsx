@@ -6,8 +6,6 @@ import { queryClient } from './config/queryClient';
 import { onboardingRoutes } from './routes/wallet';
 import './styles/globals.scss';
 
-// import { queryClient } from './react-query/config';
-
 function App() {
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
