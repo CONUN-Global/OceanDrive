@@ -6,8 +6,7 @@ import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
 import Main from './pages/Main';
 import './styles/globals.scss';
-
-// import { queryClient } from './react-query/config';
+import Storage from './pages/Storage/Storage';
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/storage" element={<Storage />} />
         </Routes>
       </Layout>
     </QueryClientProvider>
