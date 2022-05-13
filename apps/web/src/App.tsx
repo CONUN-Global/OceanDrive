@@ -9,11 +9,11 @@ import './styles/globals.scss';
 function App() {
   return (
     <Layout>
-      <Routes>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <Routes>
           <Route path="/" element={<Main />} />
-        </QueryClientProvider>
-      </Routes>
+        </Routes>
+      </QueryClientProvider>
     </Layout>
   );
 }

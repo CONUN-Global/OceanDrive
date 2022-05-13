@@ -10,7 +10,6 @@ require('dotenv').config({
 
 const { createAppWindow } = require('./main/app-process');
 
-
 let tray;
 let win;
 
@@ -59,7 +58,7 @@ async function showWindow() {
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
-      contextIsolation: false,
+      contextIsolation: false
     }
   });
   const contextMenu = Menu.buildFromTemplate([
@@ -89,16 +88,14 @@ async function showWindow() {
     tray = createTray();
     tray.setContextMenu(contextMenu);
   }
-  
-  
 
   win?.setMenuBarVisibility(false);
-  try{
+  try {
     await createAppWindow(win);
-  }catch(err){
+  } catch (err) {
     console.log(err);
   }
- 
+
   win.on('close', (e) => {
     e.preventDefault();
     eventLogger('app process', 'close');
@@ -125,7 +122,6 @@ async function showWindow() {
 
   return null;
 }
-
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
