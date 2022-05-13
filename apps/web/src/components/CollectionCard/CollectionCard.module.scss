@@ -1,0 +1,51 @@
+.CardContainer {
+  height: 330px;
+  max-width: 270px;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & .Image {
+    height: 200px;
+    width: 230px;
+    border-radius: 15px;
+    margin: 20px 20px 10px 20px;
+  }
+  & .TextContainer {
+    width: 80%;
+
+    & .Title {
+      font-size: 14px;
+      color: #888888;
+    }
+    & .Owner {
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      color: #c7c7c7;
+    }
+  }
+
+  & .PriceContainer {
+    display: flex;
+    align-self: flex-end;
+    margin-top: 13px;
+    padding-right: 24px;
+
+    & .Icon {
+      height: 17px;
+      width: 17px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background-color: #b4b4b4;
+    }
+
+    & .Price {
+      text-transform: uppercase;
+      color: #48afe8;
+      font-weight: 700;
+      font-size: 12px;
+    }
+  }
+}

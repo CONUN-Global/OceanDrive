@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
 import Main from './pages/Main';
+import MarketPlace from './pages/Marketplace';
 import './styles/globals.scss';
 
 // import { queryClient } from './react-query/config';
@@ -16,6 +17,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/marketplace" element={<MarketPlace />} />
         </Routes>
       </Layout>
     </QueryClientProvider>
