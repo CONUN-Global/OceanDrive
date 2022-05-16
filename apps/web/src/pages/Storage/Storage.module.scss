@@ -1,0 +1,211 @@
+// will be converted to reusable background-layer comp
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  // will be LightBg component
+  .lightbg {
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    top: 1%;
+    bottom: 1%;
+    left: 20%;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 98%;
+    width: 79%;
+    border-radius: 20px;
+
+    .whitebg {
+      position: absolute;
+      display: flex;
+      box-sizing: border-box;
+      top: 0.5%;
+      bottom: 0.5%;
+      left: 0.5%;
+      right: 0.5%;
+      width: 99%;
+      height: 99%;
+      background-color: #ffffff;
+      border-radius: 20px;
+
+      .topbg {
+        box-sizing: border-box;
+        position: absolute;
+        display: flex ;
+        top: 0;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: green;
+        height: 10%;
+        width: 100% ;
+
+        .topBgLeft {
+          box-sizing: border-box;
+          margin-left: 2%;
+          font-family: 'Source Sans 3';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+          // background-color: red;
+
+          /* Greys/Grey 8 A8 */
+
+          color: #A8A8A8;
+        }
+        .topBgRight {
+          box-sizing: border-box;
+          display: flex ;
+          justify-content: space-between;
+          margin-right: 2%;
+          // background-color: green;
+          width: 40%;
+          height: 100%;
+          align-items: center;
+
+          .leftSide {
+            height: 100%;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            // background-color: goldenrod; 
+            justify-content: space-between;
+
+            .searchBox {
+              display: flex;
+              height: 100%;
+              // background-color: green;
+              align-items: center;
+
+              .searchIcon {
+                height: 20px;
+                width: 21.82px;
+              }
+
+              .searchWord {
+                margin-left: 5px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                color: #888888;
+              }
+            }
+
+            .tabNFT {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              background-color: #f8f8f9;
+              width: 59px;
+              border-radius: 0px 0px 50px 50px;
+              border-bottom: 1px solid #cac8c8;
+              border-left: 0.5px solid #dadada;
+              border-right: 0.5px solid #dadada;
+
+              .tabNFTIcon {
+                // width: 35.09px;
+                // height: 31.41px; 
+              }
+            }
+
+            .iHomeIcon {
+              // width: 35px;
+              // height: 35px;
+            }
+
+            .iDriveIcon {
+              width: 35px;
+              height: 35px;
+            }
+          }           
+        }
+      }
+
+      .rectangle918 {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        background-color: #F7F7F7;
+        border-radius: 10px;
+        height: 56%;
+        width: 92%;
+        left: 4%;
+        right: 4%;
+        top: 40%;
+        border: 2px dashed #48afe8;
+
+        .dragAndDrop {
+          position: absolute;
+          top: 20%;
+          box-sizing: border-box;
+          display: flex;
+          gap: 11px;
+          flex-direction: column;
+          align-items: center;
+
+          .dr {
+            font-family: 'Barlow';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 25px;
+            text-align: center;
+
+            /* Main Gradient */
+
+            background: linear-gradient(244.5deg, #48AFE8 12.9%, #317EFF 85.63%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          .Button {
+            border-radius: 5px;
+            height: 45px;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            font-style: normal;
+            font-family: 'Source Sans 3';
+            background: linear-gradient(244.5deg, #317EFF 12.9%, #80A0D5 85.63%);
+            width: 141px;
+          }
+
+          .un {
+            font-family: 'Source Sans 3';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            letter-spacing: 0.02em;
+
+            /* Greys/Grey 8 A8 */
+
+            color: #A8A8A8;
+          }
+
+           
+        }
+      }
+    }
+  }
+}
