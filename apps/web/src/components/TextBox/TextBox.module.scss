@@ -1,0 +1,15 @@
+.TextBox {
+  width: 100%;
+  border: none;
+  overflow: auto;
+  outline: none;
+  padding: 20px 33px;
+  color: var(--teal);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 30px 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}

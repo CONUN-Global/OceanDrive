@@ -2,7 +2,18 @@
   background-color: var(--background);
   padding: 120px;
   border-radius: 10px;
-  font-size: 50px;
-  width: 60%;
-  word-break: break-all;
+  font-size: 1rem;
+  word-break: break-word;
+
+  &.primary {
+    background-color: var(--background);
+  }
+
+  &.secondary {
+    background-color: var(--foreground);
+  }
+
+  &.tertiary {
+    background-color: var(--middle-blue-grey);
+  }
 }
