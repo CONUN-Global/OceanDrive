@@ -1,3 +1,4 @@
+import { executeWeb3Storage } from '@ocean-drive/core';
 import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron';
 import { join } from 'path';
 import { isDevelopment, isWindows } from './utils/index';
@@ -48,6 +49,12 @@ function createTray() {
 }
 
 async function showWindow() {
+  // web3 connection
+  executeWeb3Storage().then((res) => {
+    console.log(res);
+  });
+  // web3 connection
+
   const initPath = join(app.getPath('userData'), 'init.json');
 
   win = new BrowserWindow({

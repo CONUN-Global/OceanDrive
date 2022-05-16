@@ -1,31 +1,17 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "downlevelIteration": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": false,
     "outDir": "dist",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "lib": ["ES2019"],
-    "target": "ES2019",
-    "allowJs": true,
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "importHelpers": true,
-    "skipLibCheck": true
-  },
-  // "typedocOptions": {
-  //   "entryPoints": ["src/aaa.ts"],
-  //   "out": "docs"
-  // },
-  "include": [
-    "src/**/*",
-    "tests/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "src/*"]
+    },
+    "typeRoots": ["@types", "../../node_modules/@types"]
+  }
 }

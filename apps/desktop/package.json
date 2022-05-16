@@ -15,6 +15,7 @@
     "build:mac:staging": "cross-env DESKTOP_ENV=staging npm run build && electron-builder --mac ",
     "build:win:staging": "cross-env DESKTOP_ENV=staging npm run build && electron-builder --win",
     "build": "yarn clean && yarn build:base && cross-env PUBLIC_URL=./ yarn build:web && cross-env PUBLIC_URL=./ yarn build:web:post",
+    "build:old": "parcel build src/index.html --out-dir dist/parcel-build --public-url ./",
     "build:base": "yarn compile",
     "build:electron": "electron-builder",
     "build:web": "pushd \"../web\" && cross-env REACT_APP_ELECTRON=true yarn build && popd",
@@ -28,57 +29,74 @@
     "lint:fix": "eslint \"src/**/*\" --fix"
   },
   "build": {
-    "productName": "Ocena Drive",
-    "extraMetadata": {
-      "name": "Ocena Drive"
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "./out"
     },
-    "appId": "conun.io",
+    "appId": "ocean.drive.app",
     "publish": {
       "provider": "github"
     },
-    "files": [
-      "assets",
-      "build"
-    ],
-    "directories": {
-      "buildResources": "assets"
+    "protocols": {
+      "name": "ocean-drive",
+      "schemes": [
+        "ocean-drive"
+      ]
     },
-    "afterSign": "./src/scripts/notarize.js",
     "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ],
-      "icon": "images/icon.png",
-      "gatekeeperAssess": false,
-      "hardenedRuntime": true,
-      "category": "public.app-category.productivity"
+      "category": "public.app-category.productivity",
+      "extendInfo": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "ocean-drive"
+            ],
+            "CFBundleURLName": "Ocean Drive"
+          }
+        ]
+      }
     },
     "win": {
       "target": [
-        "nsis"
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
       ],
-      "icon": "images/icon.ico",
-      "legalTrademarks": "Conun",
-      "artifactName": "${productName}-Setup-${version}.${ext}",
-      "certificateFile": "build/config/windows_cert.p12",
-      "certificatePassword": "1Superm@n2"
+      "certificateFile": "private/conun.io.certificate.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": "false",
+      "publisherName": "conun.io.certificate"
+    },
+    "linux": {
+      "category": "Utility",
+      "target": "deb",
+      "mimeTypes": [
+        "x-scheme-handler/ocean-drive"
+      ],
+      "desktop": {
+        "exec": "ocean-drive %U"
+      }
     },
     "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
       "deleteAppDataOnUninstall": true
-    },
-    "protocols": [
-      {
-        "name": "Ocean Drive",
-        "schemes": [
-          "ocean-drive"
-        ]
-      }
-    ]
+    }
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
+    "@ocean-drive/core": "*",
+    "@conun-global/web3.storage": "1.1.3",
     "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
     "electron": "12.0.0",
@@ -104,6 +122,7 @@
     "fs": "^0.0.1-security",
     "jwt-decode": "^2.2.0",
     "keytar": "^7.9.0",
+    "parcel-bundler": "^1.12.5",
     "uuid": "^8.3.2"
   }
 }
