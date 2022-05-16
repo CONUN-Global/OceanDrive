@@ -10,6 +10,6 @@
   "author": "CONUN GLOBAL",
   "license": "ISC",
   "dependencies": {
-    "@conun/web3.storage": "git+https://github.com/CONUN-Global/web3.storage.git"
+    "@conun-global/web3.storage": "1.1.3"
   }
 }

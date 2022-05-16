@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var web3_storage_1 = require("@conun/web3.storage");
+var web3_storage_1 = require("@conun-global/web3.storage");
 function executeWeb3Storage() {
     return __awaiter(this, void 0, void 0, function () {
         var storage, _a, error_1;

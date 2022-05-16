@@ -1,4 +1,4 @@
-import {Web3Storage, libp2pBundle} from"@conun/web3.storage"
+import {Web3Storage, libp2pBundle} from"@conun-global/web3.storage"
 
 async function executeWeb3Storage() {
     try {
