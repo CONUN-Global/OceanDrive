@@ -1,0 +1,57 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  padding: 100px 50px;
+
+  & .Title {
+    font-size: 22px;
+    color: #5f93f1;
+    margin-bottom: 50px;
+  }
+
+  & .SelectionContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+
+    .BtnContainer {
+      width: 100%;
+      display: flex;
+
+      & button {
+        font-size: 14px;
+        color: #888888;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid #d7d7d7;
+        border-radius: 5px;
+      }
+      & button:last-of-type {
+        margin-left: 8px;
+      }
+    }
+
+    & .CheckboxContainer {
+      display: flex;
+      align-items: center;
+      color: #888888;
+
+      & input {
+        cursor: pointer;
+      }
+    }
+  }
+
+  & .Subtitle {
+    color: #829ece;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  input {
+    margin-right: 5px;
+  }
+}
