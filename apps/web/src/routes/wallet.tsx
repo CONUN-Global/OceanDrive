@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import CreateWallet from 'src/pages/Onboarding/CreateWallet';
 import Onboarding from '../pages/Onboarding';
 
@@ -19,5 +20,9 @@ export const onboardingRoutes = [
         element: <CreateWallet />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <Navigate to="/wallet" replace />,
   },
 ];

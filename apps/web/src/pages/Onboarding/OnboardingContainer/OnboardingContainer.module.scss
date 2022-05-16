@@ -1,3 +1,5 @@
+@import '../../../styles/fonts';
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -13,9 +15,7 @@
       margin-right: 18px;
     }
     h3 {
-      font-weight: 600;
-      font-size: 32px;
-      line-height: 46px;
+      @include fontTitleXXL;
       display: flex;
       align-items: center;
       color: var(--main-blue);
@@ -25,9 +25,7 @@
       color: var(--sea-blue);
     }
     p {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 150%;
+      @include fontBodyXL;
       color: #585858;
     }
   }
@@ -40,9 +38,7 @@
       display: flex;
       .policy_item a {
         color: white;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 172%;
+        @include fontBodyXXL;
         margin: 0 18px;
       }
     }
