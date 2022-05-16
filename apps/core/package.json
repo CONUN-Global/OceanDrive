@@ -2,10 +2,11 @@
   "name": "@ocean-drive/core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "tsc && node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node ./dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' --timeout 10000"
   },
   "author": "CONUN GLOBAL",
   "license": "ISC",
