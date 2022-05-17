@@ -4,19 +4,6 @@ import { isDevelopment, isWindows } from './utils/index';
 import { eventLogger, logger } from './utils/logger';
 import { getBounds, quitWindow, setBounds } from './utils/state';
 
-
-import { libp2pBundle, Web3Storage } from '@conun-global/web3.storage';
-
-async function executeWeb3Storage() {
-  try {
-    const storage = new Web3Storage(await libp2pBundle());
-    await storage.startUp();
-    return 'storage';
-  } catch (error) {
-    console.log('error: ', error);
-  }
-}
-
 require('dotenv').config({
   path: isDevelopment() ? '.env.development.local' : '.env'
 });
@@ -61,16 +48,6 @@ function createTray() {
 }
 
 async function showWindow() {
-  // web3 connection
-try {
-  executeWeb3Storage().then((res) => {
-    console.log(res);
-  });
-} catch (error) {
-  console.log("error: ", error)
-}
-  // web3 connection
-
   const initPath = join(app.getPath('userData'), 'init.json');
 
   win = new BrowserWindow({

@@ -93,10 +93,10 @@
     }
   },
   "devDependencies": {
+    "@conun-global/web3.storage": "1.1.3",
+    "@ocean-drive/core": "*",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
-    "@ocean-drive/core": "*",
-    "@conun-global/web3.storage": "1.1.3",
     "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
     "electron": "12.0.0",
@@ -112,6 +112,7 @@
     "wait-on": "^5.3.0"
   },
   "dependencies": {
+    "@conun-global/web3.storage": "^1.1.3",
     "@sentry/electron": "^2.5.4",
     "@sentry/integrations": "^6.16.1",
     "axios": "^0.19.2",
