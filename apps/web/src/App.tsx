@@ -1,13 +1,12 @@
 import React from 'react';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClientProvider } from 'react-query';
-import { Route, Routes, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
 import { onboardingRoutes } from './routes/wallet';
+import { authorizedRoutes } from './routes/authorized';
 import './styles/globals.scss';
-import Storage from './pages/Storage/Storage';
-import Main from './pages/Main';
 
 function App() {
   // it will be divided into authorized (user with wallet)
@@ -15,17 +14,16 @@ function App() {
   const filteredRoutes = onboardingRoutes;
 
   const routes = useRoutes(filteredRoutes);
+  const mainRoutes = useRoutes(authorizedRoutes);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/storage" element={<Storage />} />
-        </Routes>
-      </Layout>
-    </QueryClientProvider>
+    <Layout>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        {routes}
+        {mainRoutes}
+      </QueryClientProvider>
+    </Layout>
   );
 }
 
