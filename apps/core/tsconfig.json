@@ -1,17 +1,34 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": true,
+    "downlevelIteration": true,
+    "outDir": "./lib/esm",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": ["ES2019", "esnext", "dom"],
+    "target": "ES2019",
+    "allowJs": true,
+    "strict": true,
     "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "isolatedModules": false,
-    "outDir": "dist",
-    "rootDir": "src",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["*", "src/*"]
-    },
-    "typeRoots": ["@types", "../../node_modules/@types"]
-  }
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "docs",
+    "tests/**/*"
+  ],
+  "typeRoots":[
+    "../../node_modules/@types/index.d.ts"
+  ]
 }

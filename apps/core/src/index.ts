@@ -4,7 +4,7 @@ export async function executeWeb3Storage() {
   try {
     const storage = new Web3Storage(await libp2pBundle());
     await storage.startUp();
-    return storage;
+    return 'storage';
   } catch (error) {
     console.log('error: ', error);
   }
