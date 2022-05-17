@@ -42,7 +42,7 @@ function Filter({ Data, setCurrentData }: IFilter) {
         </label>
       </div>
 
-      {/* Collection */}
+      {/* Fix -- Collection -- This should be made dynamically*/}
       <div className={styles.SelectionContainer}>
         <h3 className={styles.Subtitle}>Collection</h3>
         <label className={styles.CheckboxContainer}>

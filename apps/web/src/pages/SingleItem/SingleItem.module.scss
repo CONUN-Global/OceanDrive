@@ -1,0 +1,47 @@
+.UpperContainer {
+  display: flex;
+  width: 100vw;
+  padding: 20px;
+  max-width: 1200px;
+
+  & .Image {
+    width: 50%;
+    cursor: pointer;
+  }
+
+  & .TextContainer {
+    width: 50%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .CreatorContainer {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+
+      & .Avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 25px;
+        margin-right: 1rem;
+      }
+
+      & .CreatorName {
+        font-weight: 800;
+      }
+    }
+
+    & .DescriptionBox {
+      height: 30%;
+    }
+  }
+}
+
+.Avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  margin-right: 1rem;
+}

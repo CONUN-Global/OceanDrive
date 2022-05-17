@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from 'src/pages/Main';
 import MarketPlace from 'src/pages/Marketplace';
+import SingleItem from 'src/pages/SingleItem';
 
 export const authorizedRoutes = [
   {
@@ -9,6 +10,9 @@ export const authorizedRoutes = [
   },
   {
     path: '/marketplace',
-    element: <MarketPlace />,
+    children: [
+      { index: true, element: <MarketPlace /> },
+      { path: ':collection/:id', element: <SingleItem /> },
+    ],
   },
 ];

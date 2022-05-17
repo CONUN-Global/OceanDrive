@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import styles from './Marketplace.module.scss';
 
-import CollectionGrid from 'src/components/MarketplaceGrid';
-import Filter from './Filter';
+import CollectionGrid from 'src/pages/Marketplace/MarketplaceGrid';
+import Filter from './FilterSidebar';
 
 import Data from './seedData.json';
 import { SeedDataType } from './seedDataType';

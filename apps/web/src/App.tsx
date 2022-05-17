@@ -11,10 +11,8 @@ function App() {
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
   const filteredRoutes = onboardingRoutes;
-  const unfilteredRoutes = authorizedRoutes;
-
   const routes = useRoutes(filteredRoutes);
-  const authRoutes = useRoutes(unfilteredRoutes);
+  const authRoutes = useRoutes(authorizedRoutes);
 
   return (
     <Layout>

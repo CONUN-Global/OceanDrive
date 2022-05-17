@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionCard from '../MarketplaceCard';
+import CollectionCard from './MarketplaceCard';
 import styles from './MarketplaceGrid.module.scss';
 import { SeedDataType } from 'src/pages/Marketplace/seedDataType';
 
