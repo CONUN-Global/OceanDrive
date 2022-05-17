@@ -11,13 +11,14 @@
   "license": "ISC",
   "workspaces": {
     "packages": [
-      "apps/*"
+      "apps/**/*"
     ]
   },
   "resolutions": {
     "react-error-overlay": "6.0.9"
   },
   "scripts": {
+    "update:pkg": "rm -r node_modules && rm -r yarn.lock && yarn", 
     "compile": "tsc -b --incremental",
     "clean": "yarn workspaces run clean",
     "web": "yarn workspace @ocean-drive/web start",

@@ -3,6 +3,9 @@ import { join } from 'path';
 import { isDevelopment, isWindows } from './utils/index';
 import { eventLogger, logger } from './utils/logger';
 import { getBounds, quitWindow, setBounds } from './utils/state';
+import { executeWeb3Storage } from '@ocean-drive/core';
+
+
 
 require('dotenv').config({
   path: isDevelopment() ? '.env.development.local' : '.env'
@@ -48,6 +51,10 @@ function createTray() {
 }
 
 async function showWindow() {
+  executeWeb3Storage().then((res) => {
+    console.log('RES: ', res)
+  })
+
   const initPath = join(app.getPath('userData'), 'init.json');
 
   win = new BrowserWindow({
