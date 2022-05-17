@@ -41,6 +41,3 @@ yarn.lock
 dist
 build
 lib
-
-#external packages
-/packages
