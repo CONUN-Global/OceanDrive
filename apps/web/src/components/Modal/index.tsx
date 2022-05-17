@@ -1,30 +1,32 @@
 import React from 'react';
-import Modal from 'react-modal';
+import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
+import Card from '../../components/Card';
+import Button from '../../components/Button';
 import styles from './Modal.module.scss';
 
-interface IConfirmModal {
-  modalIsOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+interface IModal {
+  isModalOpen: boolean;
+  children: React.ReactNode;
+  title: string;
+  desc: string;
+  buttonText: string;
+  path: string;
 }
-function ConfirmModal({ modalIsOpen, setIsOpen }: IConfirmModal) {
-  let subtitle: any;
-  //   function openModal() {
-  //     setIsOpen(true);
-  //   }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = 'blue';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+function Modal({ isModalOpen, children, title, desc, buttonText, path }: IModal) {
+  const navigate = useNavigate();
   return (
-    <Modal className={styles.ModalContainer} isOpen={modalIsOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal} contentLabel="Example Modal">
-      ssssss
-      <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-    </Modal>
+    <Card className={classNames(styles.Modal, { [styles.closed]: !isModalOpen })}>
+      <div className={styles.Text}>
+        <h6 className={styles.Title}> {title} </h6>
+        {children}
+        <p className={styles.Desc}>{desc}</p>
+      </div>
+
+      <Button round className={styles.ContinueButton} onClick={() => navigate(path)}>
+        {buttonText}
+      </Button>
+    </Card>
   );
 }
-export default ConfirmModal;
+export default Modal;

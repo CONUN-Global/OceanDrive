@@ -1,4 +1,4 @@
-.Backdrop {
+.Open {
   background: rgb(0 0 0 / 30%);
   height: 100%;
   position: fixed;
@@ -6,4 +6,9 @@
   top: 0;
   width: 100%;
   z-index: 100;
+  visibility: visible;
+}
+
+.Closed {
+  visibility: hidden;
 }

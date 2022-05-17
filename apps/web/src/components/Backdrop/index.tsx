@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Backdrop.module.scss';
 interface Props {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-function Backdrop({ setIsOpen }: Props) {
-  return <div onClick={() => setIsOpen(false)} className={styles.Backdrop}></div>;
+function Backdrop({ setIsModalOpen, isModalOpen }: Props) {
+  return <div onClick={() => setIsModalOpen(false)} className={isModalOpen ? styles.Open : styles.Closed}></div>;
 }
 
 export default Backdrop;

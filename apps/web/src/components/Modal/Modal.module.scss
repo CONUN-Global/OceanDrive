@@ -1,4 +1,4 @@
-.ModalContainer {
+.Modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -6,9 +6,35 @@
   bottom: auto;
   margin-right: -50%;
   background-color: white;
-  color: white;
-  width: 500px;
-  height: 500px;
+  visibility: visible;
+  min-width: 400px;
+  max-width: 500px;
+  max-height: 464px;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  padding: 40px 100px;
+  z-index: 200;
+  text-align: center;
+  &.closed {
+    visibility: hidden;
+  }
+
+  & .Text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    & .Title {
+      font-size: 1.6rem;
+      color: var(--main-blue);
+    }
+
+    & .Desc {
+      font-size: 1.2rem;
+      color: var(--gray);
+    }
+  }
+
+  & .ContinueButton {
+    margin-top: 24px;
+    color: var(--foreground);
+  }
 }

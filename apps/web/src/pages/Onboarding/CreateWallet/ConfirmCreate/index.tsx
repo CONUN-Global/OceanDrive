@@ -1,31 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import RandomWord from 'random-words';
+import useStore from '../../../../store/store';
 
 import OnboardingContainer from '../../OnboardingContainer';
 import TextBox from '../../../../components/TextBox';
-import Button from '../../../../components/Button';
-import HStack from '../../../../components/HStack';
-
+import Navigation from '../../../../components/Navigation';
+import Tag from '../../../../components/Tag';
+import suffleItems from '../../../../helpers/suffleItems';
 import styles from './ConfirmCreate.module.scss';
 
 const title = 'Your Secret Backup Phrases';
 const description = 'Copy your unique secret phrase to keep somewhere safe. The phrase cannot be recovered. This phrase will remain as your wallet password until it is changed.';
 function ConfirmCreate() {
-  const [inputPhrase, setInputPhrase] = useState<string>('');
+  const [inputPhrases, setInputPhrases] = useState<string[]>([]);
+  const backupPhrases = useStore(state => state.backupPhrase);
+  const [phraseArr, setPhraseArr] = useState<string[]>([]);
   const navigate = useNavigate();
 
-  return (
-    <OnboardingContainer title={title} description={description}>
-      <TextBox inputText={inputPhrase} setInputText={setInputPhrase}></TextBox>
+  useEffect(() => {
+    if (backupPhrases) {
+      const randomPhrase = RandomWord({ exactly: 8 });
+      const phrases = backupPhrases.split(' ').concat(randomPhrase);
+      const suffledPhrases = suffleItems(phrases);
+      setPhraseArr(suffledPhrases);
+    } else {
+      alert('Get backup phrase first');
+    }
+  }, []);
 
-      <HStack className={styles.HStack}>
-        <Button className={styles.PrevButton} round onClick={() => navigate('./create')}>
-          Previous
-        </Button>
-        <Button className={styles.NextButton} round onClick={() => navigate('./create')}>
-          Next
-        </Button>
-      </HStack>
+  const addItem = (name: string) => {
+    const itemFound = inputPhrases.find(phrase => phrase == name);
+    if (!itemFound && inputPhrases.length < 12) {
+      setInputPhrases([...inputPhrases, name]);
+    } else return;
+  };
+
+  const removeItem = (name: string) => {
+    const selectedItems = inputPhrases.filter(phrase => phrase !== name);
+    setInputPhrases(selectedItems);
+  };
+
+  return (
+    <OnboardingContainer className={styles.Onboarding} title={title} description={description}>
+      <TextBox inputText={inputPhrases.join(' ')} />
+
+      {phraseArr.map((phrase, i) => (
+        <Tag key={`${i}_${phrase}`} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
+      ))}
+
+      <Navigation prev={() => navigate(-1)} next={() => navigate('./create')} />
     </OnboardingContainer>
   );
 }
