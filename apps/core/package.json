@@ -2,10 +2,15 @@
   "name": "@ocean-drive/core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node ./dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' --timeout 10000"
   },
-  "author": "Otabek Nosirov",
-  "license": "ISC"
+  "author": "CONUN GLOBAL",
+  "license": "ISC",
+  "dependencies": {
+    "@conun-global/web3.storage": "1.1.3"
+  }
 }
