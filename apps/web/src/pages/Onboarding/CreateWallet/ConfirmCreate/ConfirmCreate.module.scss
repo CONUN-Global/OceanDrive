@@ -1,0 +1,16 @@
+.Onboarding {
+  & .HStack {
+    margin-top: 85px;
+    & .PrevButton {
+      background-color: var(--foreground);
+      border: 1px solid var(--sea-blue);
+      color: var(--sea-blue);
+      padding: 10px 20px;
+    }
+    & .NextButton {
+      background-color: var(--sea-blue);
+      color: var(--foreground);
+      padding: 10px 20px;
+    }
+  }
+}

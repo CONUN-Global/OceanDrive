@@ -1,25 +1,27 @@
 import React from 'react';
+import classNames from 'classnames';
 import Card from 'src/components/Card';
 import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
-import classes from './OnboardingContainer.module.scss';
+import styles from './OnboardingContainer.module.scss';
 
 interface OnboardingContainerProps {
   children: React.ReactNode;
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
   isInitial: boolean;
+  className?: string;
 }
 
 OnboardingContainer.defaultProps = {
   isInitial: false,
 };
 
-function OnboardingContainer({ children, title, description, isInitial }: OnboardingContainerProps) {
+function OnboardingContainer({ children, title, description, isInitial, className }: OnboardingContainerProps) {
   return (
-    <div className={classes.container}>
-      <Card>
-        <div className={classes.header}>
-          <h3 className={classes[isInitial ? 'initial' : '']}>
+    <div className={classNames(styles.container, className)}>
+      <Card className={styles.Card}>
+        <div className={styles.header}>
+          <h3 className={styles[isInitial ? 'initial' : '']}>
             {isInitial && <OceanIcon />}
             {title}
           </h3>
@@ -27,12 +29,12 @@ function OnboardingContainer({ children, title, description, isInitial }: Onboar
         </div>
         {children}
       </Card>
-      <div className={classes.policy}>
-        <ul className={classes.policy_list}>
-          <li className={classes.policy_item}>
+      <div className={styles.policy}>
+        <ul className={styles.policy_list}>
+          <li className={styles.policy_item}>
             <a href="/">Policy</a>
           </li>
-          <li className={classes.policy_item}>
+          <li className={styles.policy_item}>
             <a href="/">Terms and Conditions</a>
           </li>
         </ul>
