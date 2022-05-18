@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import useToggle from '../../hooks/useToggle';
 import styles from './Tag.module.scss';
@@ -15,10 +15,15 @@ interface ITag {
 function Tag({ name, round, addItem, removeItem, length, className }: ITag) {
   const [toggle, toggleSwitch] = useToggle(false);
 
-  const handleClick = () => {
-    if (!toggle) addItem(name);
-    if (toggle) removeItem(name);
+  useEffect(() => {
+    if (toggle) {
+      addItem(name);
+    } else {
+      removeItem(name);
+    }
+  }, [toggle]);
 
+  const handleClick = () => {
     if (length == 12 && toggle) {
       toggleSwitch();
     }

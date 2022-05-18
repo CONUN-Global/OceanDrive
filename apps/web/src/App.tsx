@@ -1,5 +1,5 @@
 import React from 'react';
-// import { ReactQueryDevtools } from 'react-query/devtools';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { queryClient } from './config/queryClient';
 import { QueryClientProvider } from 'react-query';
 import { useRoutes } from 'react-router-dom';
@@ -18,7 +18,10 @@ function App() {
 
   return (
     <Layout>
-      <QueryClientProvider client={queryClient}>{routes}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        {routes}
+      </QueryClientProvider>
     </Layout>
   );
 }

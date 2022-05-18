@@ -25,7 +25,7 @@ function ConfirmCreate() {
       const suffledPhrases = suffleItems(phrases);
       setPhraseArr(suffledPhrases);
     } else {
-      alert('Get backup phrase first');
+      navigate(-1);
     }
   }, []);
 
