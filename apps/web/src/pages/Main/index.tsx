@@ -1,13 +1,11 @@
-import React from 'react';
-import Card from '../../components/Card';
-import styles from './Main.module.scss';
+import React, { useRef } from 'react';
 
 function Main() {
+  const cardRef = useRef(null);
+
   return (
-    <div className={styles.Main}>
-      <Card>
-        <h4>Header</h4>
-      </Card>
+    <div>
+      <div ref={cardRef}>Card1</div>
     </div>
   );
 }

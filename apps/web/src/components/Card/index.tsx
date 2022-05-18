@@ -1,8 +1,14 @@
 import React from 'react';
+import classNames from 'classnames';
 import styles from './Card.module.scss';
 
-function Card({ children }: { children: React.ReactNode }) {
-  return <div className={styles.Card}>{children}</div>;
+interface ICard {
+  variant?: 'primary' | 'secondary' | ' tertiary' | 'ghost';
+  children: React.ReactNode;
+  className?: string;
+}
+function Card({ variant = 'primary', children, className }: ICard) {
+  return <div className={classNames(styles.Card, styles[variant], className)}>{children}</div>;
 }
 
 export default Card;
