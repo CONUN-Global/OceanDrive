@@ -1,0 +1,19 @@
+.Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  & h1 {
+    box-sizing: border-box;
+    // padding-left: 60px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    color: #a8a8a8;
+  }
+}

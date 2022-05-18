@@ -1,9 +1,10 @@
 .leftSideBar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20%;
-    height: 100%;
-    display: flex;
-    justify-content: center; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20%;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }

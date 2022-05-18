@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
 
-import { TabNftIcon, PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
+import { PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
 
 import { motion } from 'framer-motion';
 
@@ -54,7 +54,7 @@ const Storage = () => {
         </div>
       </LeftSideLayer>
 
-      <RightSideLayer title="My Drive" IconComponent={<TabNftIcon />}>
+      <RightSideLayer title="My Drive">
         <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
           <div>Sort by </div>
           <div>

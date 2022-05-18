@@ -26,37 +26,39 @@
     .TopBg {
       box-sizing: border-box;
       position: absolute;
-      display: flex ;
+      display: flex;
       top: 0;
       align-items: center;
       justify-content: space-between;
       height: 10%;
-      width: 100% ;
+      width: 100%;
 
-      .TopBgLeft {
+      .PageTitle {
         box-sizing: border-box;
-        margin-left: 2%;
-        font-family: 'Source Sans 3';
+        padding-left: 60px;
+        // padding-top: 140px;
+        padding-top: 15%;
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 3rem;
         display: flex;
         align-items: center;
-        color: #A8A8A8;
+        color: #a8a8a8;
       }
       .TopBgRight {
         box-sizing: border-box;
-        display: flex ;
-        justify-content: space-between;
-        margin-right: 2%;
+        // border: 1px solid red;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 60px;
         width: 40%;
         height: 100%;
         align-items: center;
 
         .LeftSide {
           height: 100%;
-          width: 80%;
+          width: 45%;
+          margin-right: 50px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -73,7 +75,6 @@
 
             .SearchWord {
               margin-left: 5px;
-              font-family: 'Roboto';
               font-style: normal;
               font-weight: 400;
               font-size: 14px;
@@ -82,7 +83,7 @@
             }
           }
 
-          .TabNFT {
+          .ActiveTab {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,15 +97,15 @@
           }
 
           .HomeIcon {
-            // width: 35px;
-            // height: 35px;
+            width: 35px;
+            height: 35px;
           }
 
           .DriveIcon {
             width: 35px;
             height: 35px;
           }
-        }           
+        }
       }
     }
   }
