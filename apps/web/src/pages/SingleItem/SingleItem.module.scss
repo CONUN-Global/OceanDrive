@@ -3,9 +3,12 @@
   width: 100vw;
   padding: 20px;
   max-width: 1200px;
+  // TEMP FOR DISTANCING FROM THE LEFT
+  padding: 100px 20px 0 100px;
 
   & .Image {
     width: 50%;
+
     cursor: pointer;
   }
 
@@ -16,10 +19,19 @@
     flex-direction: column;
     justify-content: space-between;
 
+    & h1 {
+      font-size: 3rem;
+    }
+
     & .CreatorContainer {
-      margin-top: 20px;
       display: flex;
       align-items: center;
+      justify-content: space-around;
+
+      & .User {
+        display: flex;
+        align-items: center;
+      }
 
       & .Avatar {
         width: 30px;
@@ -34,7 +46,10 @@
     }
 
     & .DescriptionBox {
-      height: 30%;
+      & h4 {
+        text-transform: bold;
+        font-weight: 600;
+      }
     }
   }
 }
@@ -44,4 +59,41 @@
   height: 30px;
   border-radius: 25px;
   margin-right: 1rem;
+}
+
+.LowerContainer {
+  display: flex;
+  // TEMP
+  flex-direction: column;
+  width: 100vw;
+  padding: 20px;
+  max-width: 1200px;
+  // TEMP FOR DISTANCING FROM OTHER ITEMS
+  padding: 30px 20px 0 100px;
+
+  // TABLE
+
+  .TableContainer {
+    width: 50%;
+    border: 1px solid #e7e7e7;
+    padding: 20px;
+
+    .TableHead {
+      min-width: 500px;
+      & th {
+        color: #5f93f1;
+        padding-bottom: 15px;
+      }
+    }
+
+    .TableBody {
+      text-align: center;
+      & .RowContainer {
+        & td {
+          border-bottom: 1px solid #e7e7e7;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
 }

@@ -4,7 +4,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Aliquam ullamcorper, diam nec finibus dignissim mauris.",
-    "collection": "MONEY COLLECTION",
+    "collection": "Money Collection",
     "price": 0.456
   },
   {
@@ -12,7 +12,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Nunc sodales nunc quis vestibulum rhoncus. Ut eleifend.",
-    "collection": "MONEY COLLECTION",
+    "collection": "Money Collection",
     "price": 0.556
   },
   {
@@ -20,7 +20,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Phasellus fringilla volutpat rhoncus. Vivamus quis nam.",
-    "collection": "EXPENSIVE COLLECTION",
+    "collection": "Expensive Collection",
     "price": 0.456
   },
   {
@@ -28,7 +28,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Aenean non imperdiet ipsum. Cras ac vulputate diam dui.",
-    "collection": "JIMMYS COLLECTION",
+    "collection": "Jimmys Collection",
     "price": 0.956
   },
   {
@@ -36,7 +36,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Phasellus egestas lobortis quam, nec lobortis nulla ac.",
-    "collection": "RARE COLLECTION",
+    "collection": "Rare Collection",
     "price": 0.456
   },
   {
@@ -44,7 +44,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Maecenas lobortis non turpis nec dictum. Phasellus est.",
-    "collection": "SUUPPER COLLECTION",
+    "collection": "Super Collection",
     "price": 0.856
   },
   {
@@ -52,7 +52,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Nulla iaculis aliquam ligula, non viverra leo pharetra.",
-    "collection": "SIDEGUYS COLLECTION",
+    "collection": "Sideguys Collection",
     "price": 0.456
   },
   {
@@ -60,7 +60,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Integer et feugiat dui, et dictum lectus. Sed ac velit.",
-    "collection": "RARE COLLECTION",
+    "collection": "Rare Collection",
     "price": 0.756
   },
   {
@@ -68,7 +68,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Donec et turpis eros. Donec iaculis, erat ut porta nec.",
-    "collection": "RARE COLLECTION",
+    "collection": "Rare Collection",
     "price": 0.456
   },
   {
@@ -76,7 +76,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "Mauris turpis tellus, maximus ac augue non sodales sed.",
-    "collection": "OPULANCE COLLECTION",
+    "collection": "Opulance Collection",
     "price": 0.556
   },
   {
@@ -84,7 +84,7 @@
     "avatar": "../../assets/icons/avatar.png",
     "creator": "righteous",
     "title": "In eget dictum ex, at porta diam. Fusce scelerisque et.",
-    "collection": "SUPPERR COLLECTION",
+    "collection": "Super Collection",
     "price": 0.456
   }
 ]

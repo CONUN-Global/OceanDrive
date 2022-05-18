@@ -12,8 +12,23 @@ export const authorizedRoutes = [
   {
     path: 'marketplace',
     children: [
-      { index: true, element: <MarketPlace /> },
+      { path: '', element: <MarketPlace /> },
       { path: ':collection/:id', element: <SingleItem /> },
     ],
   },
 ];
+// export const authorizedRoutes = [
+//   {
+//     path: '',
+//     children: [
+//       { path: '', element: <Main /> },
+//       {
+//         path: 'marketplace',
+//         children: [
+//           { path: '', element: <MarketPlace /> },
+//           { path: ':id', element: <SingleItem /> },
+//         ],
+//       },
+//     ],
+//   },
+// ];

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import styles from './SingleItem.module.scss';
 
 function SingleItem() {
@@ -9,6 +10,35 @@ function SingleItem() {
     console.log('API Call with the id of the item', collection, id);
   }, []);
 
+  const headings = ['Buyer', 'Edition', 'Date', 'Price'];
+  const seedData = [
+    { buyerData: 'Billy', editionData: 'Rare', dateData: '1 week ago', priceData: 'Free' },
+    { buyerData: 'Jean', editionData: 'Rare', dateData: '1 week ago', priceData: 'Free' },
+    { buyerData: 'Is', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
+    { buyerData: 'Not', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
+    { buyerData: 'My', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
+    { buyerData: 'Lover', editionData: 'Rare', dateData: '3 week ago', priceData: 'Free' },
+    { buyerData: 'Shes', editionData: 'Rare', dateData: '3 weeks ago', priceData: 'Free' },
+    { buyerData: 'Just', editionData: 'Rare', dateData: '3 weeks ago', priceData: 'Free' },
+    { buyerData: 'A Girl', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
+    { buyerData: 'Who', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
+    { buyerData: 'Claims', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
+  ];
+
+  function TableHeaders({ heading }: any) {
+    return <th scope="col">{heading}</th>;
+  }
+  function TableRows({ rowData }: any) {
+    return (
+      <tr className={styles.RowContainer}>
+        <td>{rowData.buyerData}</td>
+        <td>{rowData.editionData}</td>
+        <td style={{ color: '#5F93F1' }}>{rowData.dateData}</td>
+        <td style={{ textTransform: 'uppercase', color: '#64C2D1' }}>{rowData.priceData}</td>
+      </tr>
+    );
+  }
+
   return (
     <div>
       <div className={styles.UpperContainer}>
@@ -16,7 +46,7 @@ function SingleItem() {
         <div className={styles.TextContainer}>
           <h1>IN THE IMAGINARIUM OF THINGS #4/5</h1>
           <div className={styles.CreatorContainer}>
-            <div>
+            <div className={styles.User}>
               <img className={styles.Avatar} src={require('src/assets/icons/avatar.png')} />
               <div>
                 <div>creator</div>
@@ -26,7 +56,7 @@ function SingleItem() {
             <div>{collection}</div>
           </div>
           <div className={styles.DescriptionBox}>
-            <div>Description</div>
+            <h4>Description</h4>
             <div>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti praesentium, ab odio numquam, deleniti autem nihil in temporibus odit fuga distinctio rem maxime quo molestiae
               dignissimos a molestias, minima repellendus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste minus culpa in quasi sit minima laborum facere, libero enim, nisi, dolorem
@@ -35,7 +65,28 @@ function SingleItem() {
           </div>
         </div>
       </div>
-      Collection: {collection}, ID: {id}
+      <div className={styles.LowerContainer}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '25%', margin: '0 0 10px 2px' }}>
+          <h3>Collection </h3>
+          <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
+        </div>
+
+        {/* Start of Table */}
+        <table className={styles.TableContainer}>
+          <thead className={styles.TableHead}>
+            <tr>
+              {headings.map(heading => (
+                <TableHeaders key={heading} heading={heading} />
+              ))}
+            </tr>
+          </thead>
+          <tbody className={styles.TableBody}>
+            {seedData.map((rowData, index) => (
+              <TableRows key={index} rowData={rowData} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

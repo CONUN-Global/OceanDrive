@@ -10,7 +10,7 @@ interface ITable {
 
 function Table({ children, className, scrollable }: ITable) {
   return (
-    <div
+    <table
       className={classNames(
         styles.TableContainer,
         {
@@ -20,7 +20,7 @@ function Table({ children, className, scrollable }: ITable) {
       )}
     >
       {children}
-    </div>
+    </table>
   );
 }
 

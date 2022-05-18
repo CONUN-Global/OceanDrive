@@ -11,15 +11,14 @@ function App() {
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
   const filteredRoutes = onboardingRoutes;
-  const routes = useRoutes(filteredRoutes);
-  const authRoutes = useRoutes(authorizedRoutes);
+
+  const isLoggedIn = true;
+  let routes;
+  isLoggedIn ? (routes = useRoutes(authorizedRoutes)) : (routes = useRoutes(filteredRoutes));
 
   return (
     <Layout>
-      <QueryClientProvider client={queryClient}>
-        {authRoutes}
-        {routes}
-      </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>{routes}</QueryClientProvider>
     </Layout>
   );
 }

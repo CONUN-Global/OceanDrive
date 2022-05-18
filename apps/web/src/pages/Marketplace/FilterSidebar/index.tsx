@@ -11,7 +11,7 @@ interface IFilter {
 
 function Filter({ Data, setCurrentData }: IFilter) {
   function clickHandler() {
-    console.log('hello');
+    console.log('To handle clicks from dynamically made checkBoxes');
   }
 
   // This needs to be changed/// Filter bar does not sort by price
