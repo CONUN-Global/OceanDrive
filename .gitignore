@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+/dist
+/parcel-dist
+.husky
+
 # next.js
 /.next/
 /out/
