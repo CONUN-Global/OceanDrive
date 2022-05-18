@@ -15,13 +15,15 @@ function App() {
 
   const routes = useRoutes(filteredRoutes);
   const mainRoutes = useRoutes(authorizedRoutes);
+ 
+  // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
+  const test = true;
 
   return (
     <Layout>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        {routes}
-        {mainRoutes}
+        {test ? mainRoutes : routes }
       </QueryClientProvider>
     </Layout>
   );
