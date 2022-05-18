@@ -1,10 +1,12 @@
 import React from 'react';
+import { queryClient } from './config/queryClient';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { useRoutes } from 'react-router-dom';
-import Layout from './components/Layout';
-import { queryClient } from './config/queryClient';
 import { onboardingRoutes } from './routes/wallet';
+
+import Layout from './components/Layout';
+
 import './styles/globals.scss';
 
 function App() {

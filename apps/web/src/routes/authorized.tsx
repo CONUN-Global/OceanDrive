@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from 'src/pages/Main';
+import Main from '../pages/Main';
 
 export const authorizedRoutes = [
   {
