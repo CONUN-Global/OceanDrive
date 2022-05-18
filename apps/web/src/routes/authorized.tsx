@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from 'src/pages/Main';
 import Storage from 'src/pages/Storage/Storage';
-import StorageFilledDemo from 'src/pages/StorageFilledDemo/StorageFilledDemo';
+import StorageWithItems from 'src/pages/StorageWithItems/StorageWithItems';
 
 export const authorizedRoutes = [
   {
@@ -13,7 +13,7 @@ export const authorizedRoutes = [
     element: <Storage />,
   },
   {
-    path: '/storage-filled-demo',
-    element: <StorageFilledDemo />,
+    path: '/storage-with-items',
+    element: <StorageWithItems />,
   },
 ];
