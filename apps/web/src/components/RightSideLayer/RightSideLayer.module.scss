@@ -1,4 +1,4 @@
-.lightbg {
+.LightBg {
   display: flex;
   box-sizing: border-box;
   position: absolute;
@@ -10,7 +10,7 @@
   width: 79%;
   border-radius: 20px;
 
-  .whitebg {
+  .WhiteBg {
     position: absolute;
     display: flex;
     box-sizing: border-box;
@@ -23,7 +23,7 @@
     background-color: #ffffff;
     border-radius: 20px;
 
-    .topbg {
+    .TopBg {
       box-sizing: border-box;
       position: absolute;
       display: flex ;
@@ -33,7 +33,7 @@
       height: 10%;
       width: 100% ;
 
-      .topBgLeft {
+      .TopBgLeft {
         box-sizing: border-box;
         margin-left: 2%;
         font-family: 'Source Sans 3';
@@ -45,7 +45,7 @@
         align-items: center;
         color: #A8A8A8;
       }
-      .topBgRight {
+      .TopBgRight {
         box-sizing: border-box;
         display: flex ;
         justify-content: space-between;
@@ -54,24 +54,24 @@
         height: 100%;
         align-items: center;
 
-        .leftSide {
+        .LeftSide {
           height: 100%;
           width: 80%;
           display: flex;
           align-items: center;
           justify-content: space-between;
 
-          .searchBox {
+          .SearchBox {
             display: flex;
             height: 100%;
             align-items: center;
 
-            .searchIcon {
+            .SearchIcon {
               height: 20px;
               width: 21.82px;
             }
 
-            .searchWord {
+            .SearchWord {
               margin-left: 5px;
               font-family: 'Roboto';
               font-style: normal;
@@ -82,7 +82,7 @@
             }
           }
 
-          .tabNFT {
+          .TabNFT {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,12 +95,12 @@
             border-right: 0.5px solid #dadada;
           }
 
-          .iHomeIcon {
+          .HomeIcon {
             // width: 35px;
             // height: 35px;
           }
 
-          .iDriveIcon {
+          .DriveIcon {
             width: 35px;
             height: 35px;
           }

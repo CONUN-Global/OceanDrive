@@ -15,13 +15,13 @@
     position: absolute;
     top: 22%;
 
-    .myDrivePlus {
+    .MyDrivePlus {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 115px;
 
-      .mDrive {
+      .MDrive {
         font-family: 'Source Sans 3';
         font-style: normal;
         font-weight: 600;
@@ -32,7 +32,7 @@
 
     }
 
-    .trackMeeting {
+    .TrackMeeting {
       font-family: 'Source Sans 3';
       font-style: normal;
       font-weight: 400;
@@ -42,11 +42,11 @@
     }
   }
 
-  .contentWalletButton {
+  .ContentWalletButton {
     position: absolute;
     bottom: 10%;
 
-    .walletButton {
+    .WalletButton {
       border-radius: 20px;
       height: 42px;
       width: 150px;
@@ -185,28 +185,20 @@
       text-align: center;
       letter-spacing: 0.02em;
       font-style: normal;
-      // font-family: 'Source Sans 3';
       background: #5F93F1;
       width: 141px;
     }
 
-    .un {
+    .UnlimitedSize {
       font-family: 'Source Sans 3';
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
       line-height: 17px;
-      /* identical to box height */
-
       text-align: center;
       letter-spacing: 0.02em;
-
-      /* Greys/Grey 8 A8 */
-
       color: #A8A8A8;
     }
-
-      
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRoutes } from 'react-router-dom';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClientProvider } from 'react-query';
 import Layout from './components/Layout';
@@ -6,7 +7,6 @@ import { queryClient } from './config/queryClient';
 import { onboardingRoutes } from './routes/wallet';
 import { authorizedRoutes } from './routes/authorized';
 import './styles/globals.scss';
-import { useRoutes } from 'react-router-dom';
 
 function App() {
   // it will be divided into authorized (user with wallet)
