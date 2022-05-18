@@ -18,7 +18,7 @@ OnboardingContainer.defaultProps = {
 
 function OnboardingContainer({ children, title, description, isInitial, className }: OnboardingContainerProps) {
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.Container, className)}>
       <Card className={styles.Card}>
         <div className={styles.header}>
           <h3 className={styles[isInitial ? 'initial' : '']}>

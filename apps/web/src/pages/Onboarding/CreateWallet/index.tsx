@@ -6,7 +6,7 @@ import OnboardingContainer from '../OnboardingContainer';
 import TextBox from '../../../components/TextBox';
 import Button from 'src/components/Button';
 import Modal from '../../../components/Modal';
-import Navigation from 'src/components/Navigation';
+import Navigation from '../../../components/Navigation';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
 import styles from './CreateWallet.module.scss';
 import Backdrop from 'src/components/Backdrop';
