@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './Filter.module.scss';
+
 import { SeedDataType } from '../seedDataType';
+
+import styles from './Filter.module.scss';
 
 interface IFilter {
   Data: SeedDataType[];

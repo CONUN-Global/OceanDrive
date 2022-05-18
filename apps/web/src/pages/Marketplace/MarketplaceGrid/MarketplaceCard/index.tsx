@@ -1,18 +1,18 @@
 import React from 'react';
 
-import styles from './MarketplaceCard.module.scss';
-import ETH from 'src/assets/icons/ETH_Logo.svg';
-import { SeedDataType } from 'src/pages/Marketplace/seedDataType';
 import Card from 'src/components/Card';
+
 import { useNavigate } from 'react-router-dom';
+import { SeedDataType } from 'src/pages/Marketplace/seedDataType';
+import ETH from 'src/assets/icons/ETH_Logo.svg';
+
+import styles from './MarketplaceCard.module.scss';
 
 interface ICollectionCard {
   DataItem: SeedDataType;
 }
 
-function CollectionCard({ DataItem: { id, avatar, creator, title, collection, price } }: ICollectionCard) {
-  // FIX: logging to remove error, avatar should come in as a link
-  console.log(avatar);
+function CollectionCard({ DataItem: { id, creator, title, collection, price } }: ICollectionCard) {
   const navigate = useNavigate();
 
   return (
