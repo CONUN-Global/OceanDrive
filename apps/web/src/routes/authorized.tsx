@@ -17,18 +17,3 @@ export const authorizedRoutes = [
     ],
   },
 ];
-// export const authorizedRoutes = [
-//   {
-//     path: '',
-//     children: [
-//       { path: '', element: <Main /> },
-//       {
-//         path: 'marketplace',
-//         children: [
-//           { path: '', element: <MarketPlace /> },
-//           { path: ':id', element: <SingleItem /> },
-//         ],
-//       },
-//     ],
-//   },
-// ];

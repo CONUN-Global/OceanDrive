@@ -10,7 +10,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   round?: boolean;
   loading?: boolean;
-  variant?: 'primary' | 'secondary' | ' tertiary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
   spinner?: string;
 }
 

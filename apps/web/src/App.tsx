@@ -1,10 +1,13 @@
 import React from 'react';
-import { QueryClientProvider } from 'react-query';
-import { useRoutes } from 'react-router-dom';
-import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
+import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { useRoutes } from 'react-router-dom';
 import { onboardingRoutes } from './routes/wallet';
 import { authorizedRoutes } from './routes/authorized';
+
+import Layout from './components/Layout';
+
 import './styles/globals.scss';
 
 function App() {
@@ -18,7 +21,10 @@ function App() {
 
   return (
     <Layout>
-      <QueryClientProvider client={queryClient}>{routes}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        {routes}
+      </QueryClientProvider>
     </Layout>
   );
 }
