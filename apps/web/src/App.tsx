@@ -16,8 +16,10 @@ function App() {
 
   return (
     <Layout>
-      <ReactQueryDevtools />
-      <QueryClientProvider client={queryClient}>{routes}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        {routes}
+      </QueryClientProvider>
     </Layout>
   );
 }
