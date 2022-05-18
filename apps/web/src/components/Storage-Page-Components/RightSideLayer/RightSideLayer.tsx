@@ -10,7 +10,7 @@ import styles from './RightSideLayer.module.scss';
 interface RightSideProps {
   title: string;
   IconComponent: any;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const RightSideLayer = ({ IconComponent, title, children }: RightSideProps) => {
