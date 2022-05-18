@@ -1,0 +1,323 @@
+.Card {
+  background-color: var(--background);
+  padding: 5% 7%;
+  border-radius: 10px;
+  font-size: 1rem;
+  word-break: break-word;
+}
+.Card.primary {
+  background-color: var(--background);
+}
+.Card.secondary {
+  background-color: var(--foreground);
+}
+.Card.tertiary {
+  background-color: var(--middle-blue-grey);
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sea-blue);
+}
+.container .Card {
+  width: 60%;
+  height: 769px;
+}
+.container .Card .header svg {
+  width: 41px;
+  height: 36px;
+  margin-right: 18px;
+}
+.container .Card .header h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 46px;
+  display: flex;
+  align-items: center;
+  color: var(--main-blue);
+  margin-bottom: 30px;
+}
+.container .Card .header h3.initial {
+  color: var(--sea-blue);
+}
+.container .Card .header p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #585858;
+}
+.container .policy {
+  position: absolute;
+  bottom: 28px;
+  left: calc((100% - 200px) / 2);
+}
+.container .policy .policy_list {
+  list-style: none;
+  display: flex;
+}
+.container .policy .policy_list .policy_item a {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 172%;
+  margin: 0 18px;
+}
+.HStack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.Button {
+  border: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.Button.primary {
+  background-color: var(--main-blue);
+}
+.Button.secondary {
+  background-color: var(--sea-blue);
+}
+.Button.tertiary {
+  background-color: var(--middle-blue-grey);
+}
+.Button.ghost {
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+}
+.Button.round {
+  border-radius: 20px;
+}
+
+.Link {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding-left: 14px;
+}
+@media only screen and (max-width: 1024px) {
+  .Link {
+    padding-left: 0;
+  }
+}
+.HStack .Card {
+  color: var(--sea-blue);
+  padding: 80px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+.HStack .Card .Title {
+  font-size: 1.4rem;
+  text-align: center;
+}
+.Open {
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  visibility: visible;
+}
+
+.Closed {
+  visibility: hidden;
+}
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  background-color: white;
+  visibility: visible;
+  min-width: 400px;
+  max-width: 500px;
+  max-height: 464px;
+  transform: translate(-50%, -50%);
+  padding: 40px 100px;
+  z-index: 200;
+  text-align: center;
+}
+.Modal.closed {
+  visibility: hidden;
+}
+.Modal .Text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.Modal .Text .Title {
+  font-size: 1.6rem;
+  color: var(--main-blue);
+}
+.Modal .Text .Desc {
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+.Modal .ContinueButton {
+  margin-top: 24px;
+  color: var(--foreground);
+}
+.HStack {
+  margin-top: 85px;
+}
+.HStack .PrevButton {
+  background-color: var(--foreground);
+  border: 1px solid var(--sea-blue);
+  color: var(--sea-blue);
+  padding: 10px 20px;
+}
+.HStack .NextButton {
+  background-color: var(--sea-blue);
+  color: var(--foreground);
+  padding: 10px 20px;
+}
+.TextBox {
+  width: 100%;
+  background-color: var(--foreground);
+  height: 94px;
+  padding: 20px 33px;
+  color: var(--teal);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 30px 0px;
+  line-height: 150%;
+  font-family: "Source Sans 3";
+}
+.Onboarding .Description {
+  display: flex;
+  flex-direction: column;
+}
+.Onboarding .Description span:last-child {
+  margin-top: 20px;
+}
+.Onboarding .Container {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.Onboarding .Container .CopyButton {
+  padding: 10px 20px;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+.Onboarding .Container .CopyButton .Clipboard {
+  width: 20px;
+}
+.Onboarding .Container .NotCopied {
+  visibility: hidden;
+}
+.Onboarding .Container .Copied {
+  visibility: visible;
+  font-weight: 600;
+  color: var(--sea-blue);
+}
+.Onboarding .BoxPlaceHolder {
+  width: 100%;
+  height: 102px;
+  background-color: #f4f4f4;
+}
+.Tag {
+  border: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.Tag.round {
+  border-radius: 3px;
+}
+.Tag.clicked {
+  background-color: gray;
+}
+.Tag.unClicked {
+  background-color: white;
+}
+.Onboarding .HStack {
+  margin-top: 85px;
+}
+.Onboarding .HStack .PrevButton {
+  background-color: var(--foreground);
+  border: 1px solid var(--sea-blue);
+  color: var(--sea-blue);
+  padding: 10px 20px;
+}
+.Onboarding .HStack .NextButton {
+  background-color: var(--sea-blue);
+  color: var(--foreground);
+  padding: 10px 20px;
+}
+.Layout {
+  width: 100%;
+  height: 100vh;
+}
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500&family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap");
+:root {
+  --background: #f3f7ff;
+  --foreground: #fff;
+  --middle-blue-grey: #80a0d4;
+  --main-blue: #5f93f1;
+  --sea-blue: #48afe8;
+  --teal: #64c2d1;
+  --gray: #888888;
+  --main-gradient: linear-gradient(244.5deg, #48afe8 12.9%, #317eff 85.63%);
+  --second-gradient: linear-gradient(244.5deg, #317eff 12.9%, #80a0d5 85.63%);
+  --box-shadow: 0 2px 10px 2px rgb(171 171 171 / 40%);
+}
+
+html,
+body {
+  color: var(--font-color);
+  font-family: Barlow, Teko, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+@media only screen and (max-width: 800px) {
+  html,
+body {
+    font-size: 12px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=/renderer.1b98d650.css.map */

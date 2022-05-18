@@ -1,0 +1,43 @@
+.Button {
+  border: none;
+  box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+  cursor: pointer;
+  padding: 10px 15px;
+
+  &.primary {
+    background-color: var(--main-blue);
+  }
+
+  &.secondary {
+    background-color: var(--sea-blue);
+  }
+
+  &.tertiary {
+    background-color: var(--middle-blue-grey);
+  }
+
+  &.ghost {
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+  }
+
+  &.round {
+    border-radius: 20px;
+  }
+}
+
+.Link {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding-left: 14px;
+
+  @media only screen and (max-width: 1024px) {
+    padding-left: 0;
+  }
+}

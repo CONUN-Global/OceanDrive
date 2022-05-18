@@ -1,0 +1,19 @@
+.Card {
+  background-color: var(--background);
+  padding: 5% 7%;
+  border-radius: 10px;
+  font-size: 1rem;
+  word-break: break-word;
+
+  &.primary {
+    background-color: var(--background);
+  }
+
+  &.secondary {
+    background-color: var(--foreground);
+  }
+
+  &.tertiary {
+    background-color: var(--middle-blue-grey);
+  }
+}

@@ -1,32 +1,194 @@
 {
   "name": "ocean-drive",
-  "version": "1.0.0",
-  "description": "Ocean Drive client side apps",
-  "main": "index.js",
-  "private": true,
-  "author": {
-    "name": "Otabek Nosirov",
-    "email": "otabektuit11@gmail.com"
-  },
-  "license": "ISC",
-  "workspaces": {
-    "packages": [
-      "apps/*"
-    ]
-  },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
-  },
+  "productName": "Ocean Drive",
+  "version": "1.0.3-beta",
+  "description": "Ocean Drive App",
+  "main": "dist/index.js",
   "scripts": {
-    "compile": "tsc -b --incremental",
-    "clean": "yarn workspaces run clean",
-    "web": "yarn workspace @ocean-drive/web start",
-    "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn workspace @ocean-drive/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @ocean-drive/desktop start\"",
-    "build:web": "yarn workspace @ocean-drive/web build",
-    "test:web": "yarn workspace @ocean-drive/web test"
+    "elec": "electron .",
+    "start": "parcel src/index.html --out-dir parcel-dist --port 1235",
+    "build": "parcel build src/index.html --out-dir dist/parcel-build --public-url ./",
+    "dev": "concurrently -k \"yarn start\" \"yarn:electron\"",
+    "copy-assets": "copyfiles -f \"electron/assets/**/*\" \"dist/assets\"",
+    "electron": "wait-on tcp:1235 && tsc && yarn copy-assets && electron .",
+    "make": "yarn build && tsc && yarn copy-assets && electron-builder",
+    "release": "yarn build && electron-builder --publish=always",
+    "lint": "eslint --ext .ts .",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "keywords": [
+    "ocean",
+    "file sharing",
+    "p2p",
+    "drive"
+  ],
+  "repository": "https://github.com/CONUN-Global/ocean-drive",
+  "author": {
+    "name": "Conun",
+    "email": "ivanms1@conun.co.kr"
+  },
+  "license": "MIT",
+  "copyright": "Copyright 2021 by CONUN GROUP",
+  "build": {
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "./out"
+    },
+    "appId": "ocean.drive.app",
+    "publish": {
+      "provider": "github"
+    },
+    "protocols": {
+      "name": "ocean-drive",
+      "schemes": [
+        "ocean-drive"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "extendInfo": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "ocean-drive"
+            ],
+            "CFBundleURLName": "Ocean Drive"
+          }
+        ]
+      }
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "certificateFile": "private/conun.io.certificate.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": "false",
+      "publisherName": "conun.io.certificate"
+    },
+    "linux": {
+      "category": "Utility",
+      "target": "deb",
+      "mimeTypes": [
+        "x-scheme-handler/ocean-drive"
+      ],
+      "desktop": {
+        "exec": "ocean-drive %U"
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": true
+    }
   },
   "devDependencies": {
-    "typescript": "4.1.2"
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@types/classnames": "^2.2.11",
+    "@types/file-saver": "^2.0.3",
+    "@types/react": "^17.0.19",
+    "@types/react-autosuggest": "^10.1.5",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-select": "^4.0.17",
+    "@types/websocket": "^1.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "autoprefixer": "9.8.6",
+    "concurrently": "^6.2.1",
+    "copyfiles": "^2.4.1",
+    "electron": "^13.1.6",
+    "electron-builder": "^22.11.7",
+    "electron-devtools-installer": "^3.2.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.0",
+    "lint-staged": ">=11",
+    "parcel-bundler": "1.12.5",
+    "postcss-modules": "3.2.2",
+    "prettier": "2.3.2",
+    "sass": "^1.35.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "typescript": "^4.3.5",
+    "wait-on": "^6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@conun-global/web3.storage": "^2.1.2",
+    "@popperjs/core": "^2.9.2",
+    "@svgr/parcel-plugin-svgr": "^5.5.0",
+    "@types/qrcode": "^1.4.1",
+    "@types/react-router-dom": "^5.1.8",
+    "classnames": "^2.3.1",
+    "electron-fetch": "^1.7.3",
+    "electron-is-dev": "^2.0.0",
+    "electron-notarize": "^1.2.1",
+    "electron-serve": "^1.1.0",
+    "electron-updater": "^4.3.9",
+    "file-saver": "^2.0.5",
+    "form-data": "^4.0.0",
+    "framer-motion": "^4.1.17",
+    "immer": ">=9.0",
+    "ipfs-core": "^0.6.1",
+    "it-all": "^1.0.5",
+    "jimp": "^0.16.1",
+    "libp2p-mplex": "^0.10.7",
+    "libp2p-webrtc-star": "^0.25.0",
+    "pouchdb": "^7.2.2",
+    "qrcode": "^1.4.4",
+    "qrcode-reader": "^1.0.4",
+    "random-words": "^1.1.2",
+    "react": ">=16.8",
+    "react-autosuggest": "^10.1.0",
+    "react-avatar-editor": "^11.1.0",
+    "react-dom": ">=16.0.0",
+    "react-dropzone": "^11.3.4",
+    "react-hook-form": "^7.12.2",
+    "react-indiana-drag-scroll": "^2.0.1",
+    "react-modal": "^3.14.3",
+    "react-outside-click-handler": "^1.3.0",
+    "react-popper": "^2.2.5",
+    "react-query": "^3.19.6",
+    "react-router-dom": "^6.3.0",
+    "react-select": "^4.3.1",
+    "react-spinner-material": "^1.4.0",
+    "react-toastify": "^7.0.4",
+    "react-tooltip": "^4.2.21",
+    "react-waypoint": "^10.1.0",
+    "src": "^1.1.2",
+    "uint8arrays": "^2.1.4",
+    "websocket": "^1.0.34",
+    "winston": "^3.3.3",
+    "wrtc": "^0.4.7",
+    "zustand": "^4.0.0-rc.1"
+  },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write",
+      "./node_modules/.bin/eslint --fix"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix"
+    ]
+  }
 }
