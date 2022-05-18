@@ -1,5 +1,6 @@
 import React from 'react';
 import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { useRoutes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <Layout>
+      <ReactQueryDevtools />
       <QueryClientProvider client={queryClient}>{routes}</QueryClientProvider>
     </Layout>
   );
