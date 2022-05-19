@@ -104,7 +104,8 @@ const Storage = () => {
             </motion.div>
           </div>
         </motion.div>
-
+        
+        {/* drop area - container */}
         <div className={styles.rectangle918}>
           <div className={styles.dragAndDrop}>
             <div className={styles.dr}>Drag and Drop</div>
