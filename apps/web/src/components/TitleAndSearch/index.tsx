@@ -9,9 +9,8 @@ interface IProps {
 function TitleAndSearch({ children }: IProps) {
   return (
     <div className={styles.Container}>
-      <h1>{children}</h1>
-      <div>
-        {/* FILTER ITEMS GO HERE */}
+      <h1 className={styles.Title}>{children}</h1>
+      <div className={styles.FilterContainer}>
         <SearchBar />
       </div>
     </div>

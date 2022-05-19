@@ -16,8 +16,8 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
   const navigate = useNavigate();
 
   return (
-    <a onClick={() => navigate(`/marketplace/${collection}/${id}`)} style={{ cursor: 'pointer' }}>
-      <Card>
+    <div onClick={() => navigate(`/marketplace/${collection}/${id}`)} style={{ cursor: 'pointer' }}>
+      <Card variant="primary" border={true}>
         <div className={styles.TopItems}>
           <img className={styles.Image} src={require(`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
           <div className={styles.TextContainer}>
@@ -42,7 +42,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
           </div>
         </div>
       </Card>
-    </a>
+    </div>
   );
 }
 

@@ -17,9 +17,10 @@
 
       & button {
         font-size: 14px;
-        color: #888888;
+        color: var(--grey);
         border: none;
         padding: 10px 20px;
+
         cursor: pointer;
         background-color: #fff;
         border: 1px solid #d7d7d7;
@@ -33,7 +34,7 @@
     & .CheckboxContainer {
       display: flex;
       align-items: center;
-      color: #888888;
+      color: var(--grey);
 
       & input {
         cursor: pointer;

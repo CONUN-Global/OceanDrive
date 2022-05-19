@@ -14,7 +14,7 @@
     & .Title {
       font-size: 1rem;
       font-weight: 700;
-      color: #888888;
+      color: var(--grey);
     }
     & .Owner {
       font-size: 0.75rem;
@@ -41,7 +41,7 @@
       border-radius: 25px;
     }
     & .UserName {
-      color: #888888;
+      color: var(--grey);
       font-size: 0.75rem;
       margin-left: 5px;
     }
@@ -54,7 +54,7 @@
     align-items: flex-end;
 
     & .PriceTitle {
-      color: #888888;
+      color: var(--grey);
       font-size: 0.875rem;
     }
 

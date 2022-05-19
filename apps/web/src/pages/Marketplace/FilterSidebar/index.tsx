@@ -6,7 +6,7 @@ import styles from './Filter.module.scss';
 
 interface IFilter {
   Data: SeedDataType[];
-  setCurrentData: (data: any[]) => void;
+  setCurrentData: (data: SeedDataType[]) => void;
 }
 
 function Filter({ Data, setCurrentData }: IFilter) {
@@ -35,11 +35,11 @@ function Filter({ Data, setCurrentData }: IFilter) {
       <div className={styles.SelectionContainer}>
         <h3 className={styles.Subtitle}>Currency</h3>
         <label htmlFor="ETH" className={styles.CheckboxContainer}>
-          <input id="ETH" type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} id="ETH" type="checkbox" onClick={clickHandler} />
           ETH
         </label>
         <label className={styles.CheckboxContainer}>
-          <input type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} type="checkbox" onClick={clickHandler} />
           Cycon
         </label>
       </div>
@@ -48,22 +48,22 @@ function Filter({ Data, setCurrentData }: IFilter) {
       <div className={styles.SelectionContainer}>
         <h3 className={styles.Subtitle}>Collection</h3>
         <label className={styles.CheckboxContainer}>
-          <input type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} type="checkbox" onClick={clickHandler} />
           Blocking the Entrance
         </label>
 
         <label className={styles.CheckboxContainer}>
-          <input type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} type="checkbox" onClick={clickHandler} />
           Chogo
         </label>
 
         <label className={styles.CheckboxContainer}>
-          <input type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} type="checkbox" onClick={clickHandler} />
           Rhythm of Jaws
         </label>
 
         <label className={styles.CheckboxContainer}>
-          <input type="checkbox" onClick={clickHandler} />
+          <input className={styles.Input} type="checkbox" onClick={clickHandler} />
           Kake Kreation
         </label>
       </div>

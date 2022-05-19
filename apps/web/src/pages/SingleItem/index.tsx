@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import LeftSidebar from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
 import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
@@ -9,10 +9,6 @@ import styles from './SingleItem.module.scss';
 
 function SingleItem() {
   const { collection, id } = useParams();
-
-  useEffect(() => {
-    console.log('API Call with the id of the item', collection, id);
-  }, []);
 
   const headings = ['Buyer', 'Edition', 'Date', 'Price'];
 
@@ -30,10 +26,17 @@ function SingleItem() {
     { buyerData: 'Claims', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
   ];
 
-  function TableHeaders({ heading }: any) {
+  interface RowData {
+    buyerData: string;
+    editionData: string;
+    dateData: string;
+    priceData: string | number;
+  }
+
+  function TableHeaders({ heading }: { heading: string }) {
     return <th scope="col">{heading}</th>;
   }
-  function TableRows({ rowData }: any) {
+  function TableRows({ rowData }: { rowData: RowData }) {
     return (
       <tr className={styles.RowContainer}>
         <td>{rowData.buyerData}</td>
@@ -50,7 +53,7 @@ function SingleItem() {
         <SidebarContent></SidebarContent>
       </LeftSidebar>
       <RightSideLayer title="xxx">
-        <div>
+        <div className={styles.ContentContainer}>
           <div className={styles.UpperContainer}>
             <img className={styles.Image} src={require(`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
             <div className={styles.TextContainer}>
@@ -104,15 +107,3 @@ function SingleItem() {
 }
 
 export default SingleItem;
-
-// {/* <MainBackground>
-//       <LeftSideLayer>
-//         <SidebarContent>
-//           <Filter Data={currentData} setCurrentData={setCurrentData} />
-//         </SidebarContent>
-//       </LeftSideLayer>
-//       <RightSideLayer title={'Marketplace'}>
-//         {/* <TitleAndSearch>Marketplace</TitleAndSearch> */}
-//         <CollectionGrid Data={currentData} />
-//       </RightSideLayer>
-//     </MainBackground> */}

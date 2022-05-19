@@ -1,10 +1,24 @@
 .Card {
   word-break: break-all;
   min-height: 370px;
-  border: 1px solid #e7e7e7;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  &.border {
+    border: 1px solid #e7e7e7;
+  }
+
+  &.primary {
+    background-color: var(--white);
+  }
+  &.secondary {
+  }
+  &.tertiary {
+  }
+  &.ghost {
+    background-color: none;
+  }
 }
