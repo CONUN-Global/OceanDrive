@@ -1,11 +1,11 @@
 import React from 'react';
-import { useRoutes } from 'react-router-dom';
-import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { useRoutes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
-import { onboardingRoutes } from './routes/wallet';
 import { authorizedRoutes } from './routes/authorized';
+import { onboardingRoutes } from './routes/wallet';
 import './styles/globals.scss';
 
 function App() {
@@ -15,15 +15,15 @@ function App() {
 
   const routes = useRoutes(filteredRoutes);
   const mainRoutes = useRoutes(authorizedRoutes);
- 
+
   // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
-  const test = true;
+  const test = false;
 
   return (
     <Layout>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        {test ? mainRoutes : routes }
+        {test ? mainRoutes : routes}
       </QueryClientProvider>
     </Layout>
   );
