@@ -10,7 +10,5 @@
   },
   "author": "CONUN GLOBAL",
   "license": "ISC",
-  "dependencies": {
-    "@conun-global/web3.storage": "1.1.3"
-  }
+  "dependencies": {}
 }

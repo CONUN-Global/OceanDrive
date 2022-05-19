@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
 import styles from './Modal.module.scss';
@@ -11,10 +11,10 @@ interface IModal {
   title: string;
   desc: string;
   buttonText: string;
-  path: string;
+  handleConfirm: () => void;
 }
-function Modal({ isModalOpen, children, title, desc, buttonText, path }: IModal) {
-  const navigate = useNavigate();
+function Modal({ isModalOpen, children, title, desc, buttonText, handleConfirm }: IModal) {
+  // const navigate = useNavigate();
   return (
     <Card className={classNames(styles.Modal, { [styles.closed]: !isModalOpen })}>
       <div className={styles.Text}>
@@ -23,7 +23,7 @@ function Modal({ isModalOpen, children, title, desc, buttonText, path }: IModal)
         <p className={styles.Desc}>{desc}</p>
       </div>
 
-      <Button round className={styles.ContinueButton} onClick={() => navigate(path)}>
+      <Button round className={styles.ContinueButton} onClick={handleConfirm}>
         {buttonText}
       </Button>
     </Card>

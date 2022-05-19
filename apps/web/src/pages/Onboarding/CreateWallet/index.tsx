@@ -36,6 +36,10 @@ function CreateWallet() {
     setIsModalOpen(true);
     backupPhrase(inputPhrases);
   };
+
+  const handleConfirm = () => {
+    navigate('./confirm');
+  };
   return (
     <OnboardingContainer
       className={styles.Onboarding}
@@ -67,7 +71,7 @@ function CreateWallet() {
               title="Copy and Store Information"
               desc="Did you remember to securely save a copy of your secret backup phrase? Copy and store your secret backup phrase on a personal device or write it down, then proceed to the next screen."
               buttonText="Continue"
-              path="./confirm"
+              handleConfirm={handleConfirm}
             >
               <div className={styles.BoxPlaceHolder}></div>
             </Modal>

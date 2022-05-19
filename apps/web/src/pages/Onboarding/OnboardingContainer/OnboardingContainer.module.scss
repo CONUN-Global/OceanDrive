@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 .Container {
-=======
-@import '../../../styles/fonts';
-
-.container {
->>>>>>> master
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -53,7 +47,7 @@
       display: flex;
       .policy_item a {
         color: white;
-        @include fontBodyXXL;
+        // @include fontBodyXXL;
         margin: 0 18px;
       }
     }
