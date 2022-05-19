@@ -1,10 +1,5 @@
 .Container {
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-  height: 100vh;
-  padding: 100px 50px;
-
+  width: 100%;
   & .Title {
     font-size: 22px;
     color: #5f93f1;

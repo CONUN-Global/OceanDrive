@@ -8,8 +8,7 @@ export const HomeIcon = iHomeIcon;
 export const DriveIcon = iDriveIcon;
 export const SettingsIcon = iSettingsIcon;
 
-
-import { ReactComponent as iTabNftIcon } from '../assets/icons/tabNFT-icon.svg';
+import { ReactComponent as IOceanStorageIcon } from '../assets/icons/OceanStorage-icon.svg';
 import { ReactComponent as IPlusIcon } from '../assets/icons/plus-icon.svg';
 import { ReactComponent as ITrackIcon } from '../assets/icons/track-icon.svg';
 import { ReactComponent as IUnionVectorIcon } from '../assets/icons/union-vector-icon.svg';
@@ -20,7 +19,7 @@ import { ReactComponent as IDArrowIcon } from '../assets/icons/darrow-icon.svg';
 import { ReactComponent as IPArrowIcon } from '../assets/icons/parrow-icon.svg';
 import { ReactComponent as IHeartIcon } from '../assets/icons/heart-icon.svg';
 
-export const TabNftIcon = iTabNftIcon;
+export const OceanStorageIcon = IOceanStorageIcon;
 export const PlusIcon = IPlusIcon;
 export const TrackIcon = ITrackIcon;
 export const UnionVectorIcon = IUnionVectorIcon;

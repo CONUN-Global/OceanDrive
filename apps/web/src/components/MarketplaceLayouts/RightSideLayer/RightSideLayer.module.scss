@@ -1,4 +1,5 @@
-.LightBg {
+// FIRST TWO CLASSES NEEDED FOR RIGHT SIDE BORDER/BACKGROUND
+.OuterBg {
   display: flex;
   box-sizing: border-box;
   position: absolute;
@@ -8,9 +9,9 @@
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
   height: 98%;
   width: 79%;
-  border-radius: 20px;
+  border-radius: 10px;
 
-  .WhiteBg {
+  .InnerBg {
     position: absolute;
     display: flex;
     box-sizing: border-box;
@@ -21,22 +22,20 @@
     width: 99%;
     height: 99%;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
 
-    .TopBg {
+    .TopBar {
       box-sizing: border-box;
       position: absolute;
       display: flex;
-      top: 0;
       align-items: center;
-      justify-content: space-between;
-      height: 10%;
+      justify-content: flex-end;
+      height: 8%;
       width: 100%;
 
       .PageTitle {
         box-sizing: border-box;
         padding-left: 60px;
-        // padding-top: 140px;
         padding-top: 15%;
         font-style: normal;
         font-weight: 500;
@@ -45,65 +44,42 @@
         align-items: center;
         color: #a8a8a8;
       }
-      .TopBgRight {
+      .IconsAndSettings {
         box-sizing: border-box;
-        // border: 1px solid red;
         display: flex;
         justify-content: flex-end;
-        margin-right: 60px;
+        align-items: center;
         width: 40%;
         height: 100%;
-        align-items: center;
 
-        .LeftSide {
+        & div svg {
+          cursor: pointer;
+        }
+
+        .IconsOnly {
           height: 100%;
           width: 45%;
+          min-width: 200px;
           margin-right: 50px;
           display: flex;
           align-items: center;
           justify-content: space-between;
 
-          .SearchBox {
-            display: flex;
-            height: 100%;
-            align-items: center;
-
-            .SearchIcon {
-              height: 20px;
-              width: 21.82px;
-            }
-
-            .SearchWord {
-              margin-left: 5px;
-              font-style: normal;
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 16px;
-              color: #888888;
-            }
-          }
-
-          .ActiveTab {
+          .BtnContainer {
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
-            background-color: #f8f8f9;
+            padding-top: 30px;
             width: 59px;
             border-radius: 0px 0px 50px 50px;
+          }
+
+          .active {
+            background-color: #f8f8f9;
             border-bottom: 1px solid #cac8c8;
             border-left: 0.5px solid #dadada;
             border-right: 0.5px solid #dadada;
-          }
-
-          .HomeIcon {
-            width: 35px;
-            height: 35px;
-          }
-
-          .DriveIcon {
-            width: 35px;
-            height: 35px;
           }
         }
       }

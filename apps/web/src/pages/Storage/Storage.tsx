@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
 
-import { PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
+import { PlusIcon, TrackIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
 
 import { motion } from 'framer-motion';
 
 import styles from './Storage.module.scss';
 
-import GreyishBackground from 'src/components/MainBackground/MainBackground';
-import LeftSideLayer from 'src/components/LeftSideLayer/LeftSideLayer';
-import RightSideLayer from 'src/components/RightSideLayer/RightSideLayer';
+import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
+import LeftSideLayer from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
+import RightSideLayer from 'src/components/MarketplaceLayouts/RightSideLayer/RightSideLayer';
+import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
-  closed: { opacity: 0, traslateY: '10' },
+  closed: { opacity: 0, translateY: '10' },
 };
 
 const Storage = () => {
@@ -26,32 +27,24 @@ const Storage = () => {
   };
 
   return (
-    <GreyishBackground>
+    <MainBackground>
       <LeftSideLayer>
-        <div className={styles.Profile}></div>
+        <SidebarContent>
+          <div className={styles.DriveInfoContainer}>
+            <div className={styles.MyDrivePlus}>
+              <div className={styles.Title}>My Drive</div>
+              <PlusIcon />
+            </div>
 
-        <div className={styles.Frame698}>
-          <div className={styles.MyDrivePlus}>
-            <div className={styles.MDrive}>My Drive</div>
-            <PlusIcon />
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
+
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
           </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-        </div>
-
-        <div className={styles.ContentWalletButton}>
-          <Button className={styles.WalletButton}>Upload a File</Button>
-        </div>
-
-        <div className={styles.lockF}>
-          Lock <UnionVectorIcon />
-        </div>
+        </SidebarContent>
       </LeftSideLayer>
 
       <RightSideLayer title="My Drive">
@@ -120,7 +113,7 @@ const Storage = () => {
 
         <div className={styles.photosZero}>0 Photoss 0MB</div>
       </RightSideLayer>
-    </GreyishBackground>
+    </MainBackground>
   );
 };
 

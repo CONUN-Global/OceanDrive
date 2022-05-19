@@ -7,21 +7,27 @@ import Filter from './FilterSidebar';
 
 import Data from './seedData.json';
 import { SeedDataType } from './seedDataType';
-import GreyishBackground from 'src/components/MainBackground/MainBackground';
-import RightSideLayer from 'src/components/RightSideLayer/RightSideLayer';
+import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
+import RightSideLayer from 'src/components/MarketplaceLayouts/RightSideLayer/RightSideLayer';
+import LeftSideLayer from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
+import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
 // import TitleAndSearch from 'src/components/TitleAndSearch';
 
 function MarketPlace() {
   const [currentData, setCurrentData] = useState<SeedDataType[]>(Data);
 
   return (
-    <GreyishBackground>
-      <Filter Data={currentData} setCurrentData={setCurrentData} />
+    <MainBackground>
+      <LeftSideLayer>
+        <SidebarContent>
+          <Filter Data={currentData} setCurrentData={setCurrentData} />
+        </SidebarContent>
+      </LeftSideLayer>
       <RightSideLayer title={'Marketplace'}>
         {/* <TitleAndSearch>Marketplace</TitleAndSearch> */}
         <CollectionGrid Data={currentData} />
       </RightSideLayer>
-    </GreyishBackground>
+    </MainBackground>
   );
 }
 
