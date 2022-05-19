@@ -17,7 +17,7 @@ function App() {
   const mainRoutes = useRoutes(authorizedRoutes);
 
   // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
-  const test = false;
+  const test = true;
 
   return (
     <Layout>
