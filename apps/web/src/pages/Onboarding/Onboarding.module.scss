@@ -1,15 +1,38 @@
-.HStack {
-  .Card {
-    color: var(--sea-blue);
-    padding: 80px;
+.Onboarding {
+  & .HStack {
+    margin-top: 30px;
+    & .Card {
+      color: var(--sea-blue);
+      padding: 10%;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      & .SquareBox {
+        width: 90px;
+        height: 84px;
+        background-color: var(--sea-blue);
+      }
+      & .Title {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
+  }
+  & .WalletLinkBoxContainer {
+    width: 100%;
     display: flex;
-    gap: 10px;
-    flex-direction: column;
-
-    gap: 20px;
-    & .Title {
-      font-size: 1.4rem;
-      text-align: center;
+    justify-content: center;
+    & .WalletLinkBox {
+      color: var(--sea-blue);
+      height: 30px;
+      width: 160px;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--sea-blue);
+      font-weight: 500;
     }
   }
 }

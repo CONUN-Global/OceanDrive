@@ -5,3 +5,8 @@
   align-items: center;
   gap: 40px;
 }
+@media only screen and (max-width: 800px) {
+  .HStack {
+    flex-direction: column;
+  }
+}

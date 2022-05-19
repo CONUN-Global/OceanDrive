@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 80%;
+
     & .DropdownContainer {
       display: flex;
       flex-direction: row;
@@ -30,6 +31,19 @@
         padding: 0 20px;
         color: var(--gray);
         outline: none;
+      }
+
+      & .InputPhrase {
+        border: none;
+        overflow: auto;
+        outline: none;
+        width: 100%;
+        padding: 20px;
+        color: var(--gray);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        resize: none;
       }
     }
   }

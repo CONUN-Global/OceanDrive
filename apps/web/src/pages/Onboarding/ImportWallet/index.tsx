@@ -16,8 +16,8 @@ const LOGIN_METHODS = [
 
 function ImportWallet() {
   const [selected, setSelected] = useState<ObjectType>(LOGIN_METHODS[0]);
-  const [privateKey, setPrivateKey] = useState('');
-
+  const [inputPrivateKey, setInputPrivateKey] = useState('');
+  const [inputPhrases, setInputPhrases] = useState('');
   const navigate = useNavigate();
 
   return (
@@ -28,9 +28,12 @@ function ImportWallet() {
           <Dropdown items={LOGIN_METHODS} setSelected={setSelected} selected={selected}></Dropdown>
         </div>
         <div className={styles.InputContainer}>
-          {/* {selected ? }
-          <TextBox inputText={inputPhrases.join(' ')} /> */}
-          <input className={styles.InputKey} value={privateKey} onChange={e => setPrivateKey(e.target.value)} placeholder="Enter your private key here" />
+          {selected.id === 'private-key' ? (
+            <input className={styles.InputKey} value={inputPrivateKey} onChange={e => setInputPrivateKey(e.target.value)} placeholder="Enter your private key here" />
+          ) : (
+            <textarea className={styles.InputPhrase} rows={3} value={inputPhrases} onChange={e => setInputPhrases(e?.target?.value)}></textarea>
+          )}
+
           <Navigation prev={() => navigate(-1)} next={() => navigate('/')} />
         </div>
       </div>

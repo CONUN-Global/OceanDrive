@@ -55,3 +55,11 @@
     }
   }
 }
+@media only screen and (max-width: 800px) {
+  .Container {
+    & .Card {
+      width: 90%;
+      height: auto;
+    }
+  }
+}
