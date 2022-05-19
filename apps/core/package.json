@@ -14,7 +14,7 @@
   "author": "CONUN GLOBAL",
   "license": "ISC",
   "dependencies": {
-    "@conun-global/web3.storage": "^1.1.4"
+    "@conun-global/web3.storage": "*"
   },
   "files": [
     "lib/**/*"

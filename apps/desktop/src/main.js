@@ -5,8 +5,6 @@ import { eventLogger, logger } from './utils/logger';
 import { getBounds, quitWindow, setBounds } from './utils/state';
 import { executeWeb3Storage } from '@ocean-drive/core';
 
-
-
 require('dotenv').config({
   path: isDevelopment() ? '.env.development.local' : '.env'
 });
