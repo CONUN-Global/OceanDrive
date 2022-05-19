@@ -1,32 +1,51 @@
 {
-  "name": "ocean-drive",
+  "name": "ipfs-electron",
   "version": "1.0.0",
-  "description": "Ocean Drive client side apps",
-  "main": "index.js",
   "private": true,
-  "author": {
-    "name": "Otabek Nosirov",
-    "email": "otabektuit11@gmail.com"
-  },
-  "license": "ISC",
-  "workspaces": {
-    "packages": [
-      "apps/*"
-    ]
-  },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
-  },
+  "description": "A minimal Electron application with js-ipfs",
+  "keywords": [
+    "Electron",
+    "IPFS",
+    "Example"
+  ],
+  "license": "MIT",
+  "author": "David Dias <daviddias@ipfs.io>",
+  "main": "main.js",
   "scripts": {
-    "compile": "tsc -b --incremental",
-    "clean": "yarn workspaces run clean",
-    "web": "yarn workspace @ocean-drive/web start",
-    "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn workspace @ocean-drive/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @ocean-drive/desktop start\"",
-    "build:web": "yarn workspace @ocean-drive/web build",
-    "test:web": "yarn workspace @ocean-drive/web test"
+    "clean": "echo 'Nothing to clean...'",
+    "start": "parcel serve ./src/index.html --public-url ./",
+    "dev": "concurrently -k \"yarn start\" \"yarn electron\"",
+    "serve": "npm run start",
+    "test": "node test.js",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "@conun-global/web3.storage": "^2.1.3",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6.3.3",
+    "random-words": "^1.1.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-query": "^3.39.0",
+    "react-router-dom": "^6.3.0",
+    "react-spinner-material": "^1.4.0",
+    "sass": "^1.51.0",
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
-    "typescript": "4.1.2"
+    "@parcel/transformer-sass": "2.5.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "electron": "^17.0.0",
+    "electron-rebuild": "^3.1.1",
+    "parcel": "^2.5.0",
+    "process": "^0.11.10",
+    "test-util-ipfs-example": "^1.0.2",
+    "typescript": "^4.6.4"
   },
-  "dependencies": {}
+  "greenkeeper": {
+    "ignore": [
+      "electron"
+    ]
+  }
 }
