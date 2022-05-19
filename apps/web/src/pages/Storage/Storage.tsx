@@ -111,7 +111,7 @@ const Storage = () => {
           </div>
         </div>
 
-        <div className={styles.photosZero}>0 Photoss 0MB</div>
+        <div className={styles.photosZero}>0 Photos - 0 MB</div>
       </RightSideLayer>
     </MainBackground>
   );

@@ -8,7 +8,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   return (
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
-        <img src={require('src/assets//images/Profile.png')} className={styles.Avatar} />
+        <img src={require('src/assets/images/Profile.png')} className={styles.Avatar} />
         {children}
         <div>
           <Button className={styles.UploadButton}>Upload a File</Button>

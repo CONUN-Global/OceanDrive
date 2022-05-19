@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Button from 'src/components/Button';
 import LeftSidebar from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
 import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
 import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
@@ -74,6 +75,9 @@ function SingleItem() {
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti praesentium, ab odio numquam, deleniti autem nihil in temporibus odit fuga distinctio rem maxime quo molestiae
                   dignissimos a molestias, minima repellendus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste minus culpa in quasi sit minima laborum facere, libero enim, nisi, dolorem
                   delectus natus aut ea aperiam eos reiciendis reprehenderit mollitia.
+                </div>
+                <div>
+                  <Button>Buy</Button>
                 </div>
               </div>
             </div>
