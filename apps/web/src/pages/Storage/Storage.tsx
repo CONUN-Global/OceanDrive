@@ -1,24 +1,48 @@
-import React, { useState } from 'react';
-import Button from 'src/components/Button';
+import React, { useCallback, useState } from 'react';
 
-import { TabNftIcon, PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
+import { ReactComponent as PlusIcon } from 'src/assets/icons/plus-icon.svg';
+import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
+import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-icon.svg';
+import { ReactComponent as UpArrowIcon } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as DownArrowIcon } from 'src/assets/icons/darrow-icon.svg';
+import { ReactComponent as ParrowIcon } from 'src/assets/icons/parrow-icon.svg';
+import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
+import { ReactComponent as TrackIcon } from 'src/assets/icons/track-icon.svg';
 
 import { motion } from 'framer-motion';
+import cuid from 'cuid';
 
 import styles from './Storage.module.scss';
 
-import GreyishBackground from 'src/components/MainBackground/MainBackground';
-import LeftSideLayer from 'src/components/LeftSideLayer/LeftSideLayer';
-import RightSideLayer from 'src/components/RightSideLayer/RightSideLayer';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import LeftSideLayer from 'src/components/DriveLayouts/LeftSide';
+import RightSideLayer from 'src/components/DriveLayouts/RightSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
+import DropZone from 'src/components/DropZone/DropZone';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
-  closed: { opacity: 0, traslateY: '10' },
+  closed: { opacity: 0, translateY: 10 },
 };
+
+interface EventInterface {
+  target: any;
+}
 
 const Storage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState('most-recent');
+  const [images, setImages] = useState<any[]>([]);
+  const onDrop = useCallback((acceptedFiles: any[]) => {
+    acceptedFiles.map((file: any) => {
+      const reader = new FileReader();
+      reader.onload = function (e: EventInterface) {
+        setImages(prevState => [...prevState, { id: cuid(), src: e.target.result }]);
+      };
+      reader.readAsDataURL(file);
+      return file;
+    });
+  }, []);
 
   const sortByOption = (option: string) => {
     setClicked(option);
@@ -26,35 +50,25 @@ const Storage = () => {
   };
 
   return (
-    <GreyishBackground>
+    <MainBackground>
       <LeftSideLayer>
-        <div className={styles.Profile}></div>
-
-        <div className={styles.Frame698}>
-          <div className={styles.MyDrivePlus}>
-            <div className={styles.MDrive}>My Drive</div>
-            <PlusIcon />
+        <SidebarContent>
+          <div className={styles.DriveInfoContainer}>
+            <div className={styles.MyDrivePlus}>
+              <div className={styles.Title}>My Drive</div>
+              <PlusIcon />
+            </div>
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
           </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-        </div>
-
-        <div className={styles.ContentWalletButton}>
-          <Button className={styles.WalletButton}>Upload a File</Button>
-        </div>
-
-        <div className={styles.lockF}>
-          Lock <UnionVectorIcon />
-        </div>
+        </SidebarContent>
       </LeftSideLayer>
 
-      <RightSideLayer title="My Drive" IconComponent={<TabNftIcon />}>
+      <RightSideLayer title="My Drive">
         <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
           <div>Sort by </div>
           <div>
@@ -75,52 +89,48 @@ const Storage = () => {
               {clicked === 'most-popular' && 'Most Popular'}
               {isOpen ? (
                 <span>
-                  {' '}
                   <UpArrowIcon style={{ width: '10px', marginBottom: '2px' }} />
                 </span>
               ) : (
                 <span>
-                  {' '}
                   <DownVectorIcon style={{ width: '10px' }} />
                 </span>
               )}
             </span>
           </div>
         </div>
+
         <motion.div className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
-          <div className={styles.sortItems}>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('most-recent')}>
+          <div className={styles.SortItemsContainer}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-recent')}>
               <EllipseIcon /> Most Recent
             </motion.div>
 
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('low-to-high')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('low-to-high')}>
               <DownArrowIcon /> Price (low to high)
             </motion.div>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('high-to-low')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('high-to-low')}>
               <ParrowIcon /> Price (high to low)
             </motion.div>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('most-popular')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-popular')}>
               <HeartIcon /> Most Popular
             </motion.div>
           </div>
         </motion.div>
 
-        <div className={styles.rectangle918}>
-          <div className={styles.dragAndDrop}>
-            <div className={styles.dr}>Drag and Drop</div>
-            <div className={styles.dr} style={{ marginTop: '-7px' }}>
-              or
-            </div>
-            <div>
-              <Button className={styles.Button}>Browse</Button>
-            </div>
-            <div className={styles.UnlimitedSize}>Unlimitied Size Upload</div>
-          </div>
+        <DropZone onDrop={onDrop} accept={'image/*'} />
+        <div style={{ position: 'absolute', top: '60%', left: '20%', width: '60%', display: 'flex', flexWrap: 'wrap', overflow: 'hidden', overflowY: 'hidden' }}>
+          {images.map((image: any) => {
+            console.log(image);
+            return <li key={image.id}>
+              <img src={image.src} alt="nft-art-pic" style={{width: '200px', height: '150px'}}/>
+            </li>;
+          })}
         </div>
 
-        <div className={styles.photosZero}>0 Photoss 0MB</div>
+        <div className={styles.photosZero}>0 Photos - 0 MB</div>
       </RightSideLayer>
-    </GreyishBackground>
+    </MainBackground>
   );
 };
 

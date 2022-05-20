@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Aliquam ullamcorper, diam nec finibus dignissim mauris.",
+    "collection": "Money Collection",
+    "price": 0.456
+  },
+  {
+    "id": 2,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Nunc sodales nunc quis vestibulum rhoncus. Ut eleifend.",
+    "collection": "Money Collection",
+    "price": 0.556
+  },
+  {
+    "id": 3,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Phasellus fringilla volutpat rhoncus. Vivamus quis nam.",
+    "collection": "Expensive Collection",
+    "price": 0.456
+  },
+  {
+    "id": 4,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Aenean non imperdiet ipsum. Cras ac vulputate diam dui.",
+    "collection": "Jimmys Collection",
+    "price": 0.956
+  },
+  {
+    "id": 5,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Phasellus egestas lobortis quam, nec lobortis nulla ac.",
+    "collection": "Rare Collection",
+    "price": 0.456
+  },
+  {
+    "id": 6,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Maecenas lobortis non turpis nec dictum. Phasellus est.",
+    "collection": "Super Collection",
+    "price": 0.856
+  },
+  {
+    "id": 7,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Nulla iaculis aliquam ligula, non viverra leo pharetra.",
+    "collection": "Sideguys Collection",
+    "price": 0.456
+  },
+  {
+    "id": 8,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Integer et feugiat dui, et dictum lectus. Sed ac velit.",
+    "collection": "Rare Collection",
+    "price": 0.756
+  },
+  {
+    "id": 9,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Donec et turpis eros. Donec iaculis, erat ut porta nec.",
+    "collection": "Rare Collection",
+    "price": 0.456
+  },
+  {
+    "id": 10,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "Mauris turpis tellus, maximus ac augue non sodales sed.",
+    "collection": "Opulance Collection",
+    "price": 0.556
+  },
+  {
+    "id": 11,
+    "avatar": "../../assets/icons/avatar.png",
+    "creator": "righteous",
+    "title": "In eget dictum ex, at porta diam. Fusce scelerisque et.",
+    "collection": "Super Collection",
+    "price": 0.456
+  }
+]
