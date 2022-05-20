@@ -1,12 +1,12 @@
 'use strict';
 
 const { app, BrowserWindow } = require('electron');
-const { libp2pBundle, Web3Storage } = require('@conun-global/web3.storage');
+const { Web3Storage } = require('@conun-global/web3.storage');
 const path = require('path');
 
 async function executeWeb3Storage() {
   try {
-    const storage = new Web3Storage(await libp2pBundle());
+    const storage = new Web3Storage();
     await storage.startUp();
     return storage;
   } catch (error) {
