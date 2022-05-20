@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
 
-import { TabNftIcon, PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
+import { ReactComponent as PlusIcon } from 'src/assets/icons/plus-icon.svg';
+import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
+import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-icon.svg';
+import { ReactComponent as UpArrowIcon } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as DownArrowIcon } from 'src/assets/icons/darrow-icon.svg';
+import { ReactComponent as ParrowIcon } from 'src/assets/icons/parrow-icon.svg';
+import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
+import { ReactComponent as TrackIcon } from 'src/assets/icons/track-icon.svg';
 
 import { motion } from 'framer-motion';
 
 import styles from './Storage.module.scss';
 
-import GreyishBackground from 'src/components/MainBackground/MainBackground';
-import LeftSideLayer from 'src/components/LeftSideLayer/LeftSideLayer';
-import RightSideLayer from 'src/components/RightSideLayer/RightSideLayer';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import LeftSideLayer from 'src/components/DriveLayouts/LeftSide';
+import RightSideLayer from 'src/components/DriveLayouts/RightSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
-  closed: { opacity: 0, traslateY: '10' },
+  closed: { opacity: 0, translateY: 10 },
 };
 
 const Storage = () => {
@@ -26,35 +34,25 @@ const Storage = () => {
   };
 
   return (
-    <GreyishBackground>
+    <MainBackground>
       <LeftSideLayer>
-        <div className={styles.Profile}></div>
-
-        <div className={styles.Frame698}>
-          <div className={styles.MyDrivePlus}>
-            <div className={styles.MDrive}>My Drive</div>
-            <PlusIcon />
+        <SidebarContent>
+          <div className={styles.DriveInfoContainer}>
+            <div className={styles.MyDrivePlus}>
+              <div className={styles.Title}>My Drive</div>
+              <PlusIcon />
+            </div>
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
+            <div className={styles.DriveItem}>
+              Track Meeting <TrackIcon />
+            </div>
           </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-
-          <div className={styles.TrackMeeting}>
-            Track Meeting <TrackIcon />
-          </div>
-        </div>
-
-        <div className={styles.ContentWalletButton}>
-          <Button className={styles.WalletButton}>Upload a File</Button>
-        </div>
-
-        <div className={styles.lockF}>
-          Lock <UnionVectorIcon />
-        </div>
+        </SidebarContent>
       </LeftSideLayer>
 
-      <RightSideLayer title="My Drive" IconComponent={<TabNftIcon />}>
+      <RightSideLayer title="My Drive">
         <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
           <div>Sort by </div>
           <div>
@@ -75,53 +73,50 @@ const Storage = () => {
               {clicked === 'most-popular' && 'Most Popular'}
               {isOpen ? (
                 <span>
-                  {' '}
                   <UpArrowIcon style={{ width: '10px', marginBottom: '2px' }} />
                 </span>
               ) : (
                 <span>
-                  {' '}
                   <DownVectorIcon style={{ width: '10px' }} />
                 </span>
               )}
             </span>
           </div>
         </div>
+
         <motion.div className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
-          <div className={styles.sortItems}>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('most-recent')}>
+          <div className={styles.SortItemsContainer}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-recent')}>
               <EllipseIcon /> Most Recent
             </motion.div>
 
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('low-to-high')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('low-to-high')}>
               <DownArrowIcon /> Price (low to high)
             </motion.div>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('high-to-low')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('high-to-low')}>
               <ParrowIcon /> Price (high to low)
             </motion.div>
-            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('most-popular')}>
+            <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-popular')}>
               <HeartIcon /> Most Popular
             </motion.div>
           </div>
         </motion.div>
-        
-        {/* drop area - container */}
-        <div className={styles.rectangle918}>
-          <div className={styles.dragAndDrop}>
-            <div className={styles.dr}>Drag and Drop</div>
-            <div className={styles.dr} style={{ marginTop: '-7px' }}>
+        <div className={styles.DropZoneContainer}>
+          <div className={styles.DropZoneTextContainer}>
+            <div className={styles.Title}>Drag and Drop</div>
+            <div className={styles.Title} style={{ marginTop: '-7px' }}>
               or
             </div>
             <div>
               <Button className={styles.Button}>Browse</Button>
             </div>
-            <div className={styles.UnlimitedSize}>Unlimitied Size Upload</div>
+            <div className={styles.UnlimitedSize}>Unlimited Upload Size</div>
           </div>
         </div>
 
-        <div className={styles.photosZero}>0 Photoss 0MB</div>
+        <div className={styles.photosZero}>0 Photos - 0 MB</div>
       </RightSideLayer>
-    </GreyishBackground>
+    </MainBackground>
   );
 };
 
