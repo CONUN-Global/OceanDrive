@@ -101,11 +101,14 @@
   position: absolute;
   background-color: #f7f7f7;
   border-radius: 10px;
-  height: 56%;
-  width: 92%;
+  // height: 56%;
+  height: 20%;
+  // width: 92%;
+  width: 35%;
   left: 4%;
   right: 4%;
   top: 40%;
+  // top: 20%;
   border: 2px dashed #48afe8;
 
   .DropZoneTextContainer {
@@ -155,6 +158,10 @@
       color: var(--grey-text);
     }
   }
+}
+
+.dragAndDropContainer {
+
 }
 
 .photosZero {
