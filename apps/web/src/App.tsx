@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+// import useStore from './store/store';
+
 import { useRoutes } from 'react-router-dom';
+import useUserStatus from './hooks/useUserStatus';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClientProvider } from 'react-query';
 import Layout from './components/Layout';
@@ -11,19 +14,15 @@ import './styles/globals.scss';
 function App() {
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
-  const [isUserLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
-  useEffect(() => {
-    const test = JSON.parse(localStorage.getItem('test') || 'null');
+  const isUserLoggedIn = useUserStatus();
 
-    setUserLoggedIn(test);
-  });
   const filteredRoutes = onboardingRoutes;
 
   const routes = useRoutes(filteredRoutes);
   const mainRoutes = useRoutes(authorizedRoutes);
 
-  // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
+  // in order to see storage and marketplace pages, please delete localStorage -userLoggedIn,
 
   return (
     <Layout>

@@ -50,7 +50,10 @@ function ConfirmCreate() {
   };
 
   const handleConfirm = () => {
+    setIsModalOpen(false);
     localStorage.setItem('userLoggedIn', JSON.stringify(true));
+    navigate('/storage', { replace: true });
+    window.location.reload();
   };
   return (
     <OnboardingContainer className={styles.Onboarding} title={title} description={description}>

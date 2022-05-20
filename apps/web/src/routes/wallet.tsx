@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
+
 import CreateWallet from 'src/pages/Onboarding/CreateWallet';
 import ImportWallet from 'src/pages/Onboarding/ImportWallet';
 import ConfirmCreate from '../pages/Onboarding/CreateWallet/ConfirmCreate';
@@ -9,21 +10,12 @@ export const onboardingRoutes = [
   {
     path: 'wallet',
     children: [
-      {
-        path: '',
-        element: <Onboarding />,
-      },
+      { path: '', element: <Onboarding /> },
       {
         path: 'create',
         children: [
-          {
-            path: '',
-            element: <CreateWallet />,
-          },
-          {
-            path: 'confirm',
-            element: <ConfirmCreate />,
-          },
+          { path: '', element: <CreateWallet /> },
+          { path: 'confirm', element: <ConfirmCreate /> },
         ],
       },
       {
@@ -32,8 +24,8 @@ export const onboardingRoutes = [
       },
     ],
   },
-  {
-    path: '*',
-    element: <Navigate to="/wallet" replace />,
-  },
+  // {
+  //   path: '*',
+  //   element: <Navigate to="/wallet" replace />,
+  // },
 ];

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-// import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
 import styles from './Modal.module.scss';
@@ -14,7 +13,6 @@ interface IModal {
   handleConfirm: () => void;
 }
 function Modal({ isModalOpen, children, title, desc, buttonText, handleConfirm }: IModal) {
-  // const navigate = useNavigate();
   return (
     <Card className={classNames(styles.Modal, { [styles.closed]: !isModalOpen })}>
       <div className={styles.Text}>
@@ -22,10 +20,11 @@ function Modal({ isModalOpen, children, title, desc, buttonText, handleConfirm }
         {children}
         <p className={styles.Desc}>{desc}</p>
       </div>
-
-      <Button round className={styles.ContinueButton} onClick={handleConfirm}>
-        {buttonText}
-      </Button>
+      <div className={styles.ButtonContainer}>
+        <Button round className={styles.ContinueButton} onClick={handleConfirm}>
+          {buttonText}
+        </Button>
+      </div>
     </Card>
   );
 }

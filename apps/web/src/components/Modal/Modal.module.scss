@@ -33,8 +33,15 @@
     }
   }
 
-  & .ContinueButton {
-    margin-top: 24px;
-    color: var(--foreground);
+  & .ButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .ContinueButton {
+      font-size: 1.2rem;
+      margin-top: 24px;
+      width: 114px;
+      color: var(--foreground);
+    }
   }
 }

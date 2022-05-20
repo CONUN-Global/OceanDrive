@@ -8,12 +8,13 @@
   font-size: 1rem;
   margin-right: 10px;
   margin-top: 10px;
+  color: var(--gray);
   &.round {
     border-radius: 3px;
   }
 
   &.clicked {
-    background-color: gray;
+    background-color: var(--background);
   }
   &.unClicked {
     background-color: white;
