@@ -21,7 +21,7 @@ import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentL
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
-  closed: { opacity: 0, translateY: '10' },
+  closed: { opacity: 0, translateY: 10 },
 };
 
 const Storage = () => {
