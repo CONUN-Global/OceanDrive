@@ -41,3 +41,6 @@ yarn.lock
 dist
 build
 lib
+
+/.parcel-cache
+/.cache

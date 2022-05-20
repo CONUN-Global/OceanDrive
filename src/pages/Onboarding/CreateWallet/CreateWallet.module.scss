@@ -1,0 +1,43 @@
+.Onboarding {
+  & .Description {
+    display: flex;
+    flex-direction: column;
+    span:last-child {
+      margin-top: 20px;
+    }
+  }
+  & .Container {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    & .CopyButton {
+      padding: 10px 20px;
+      color: var(--foreground);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 200px;
+      & .Clipboard {
+        width: 20px;
+      }
+    }
+    & .NotCopied {
+      visibility: hidden;
+    }
+
+    & .Copied {
+      visibility: visible;
+      font-weight: 600;
+      color: var(--sea-blue);
+    }
+  }
+
+  & .BoxPlaceHolder {
+    width: 100%;
+    height: 102px;
+    background-color: #f4f4f4;
+  }
+}
