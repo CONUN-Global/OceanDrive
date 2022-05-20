@@ -5,10 +5,10 @@ import Filter from './FilterSidebar';
 
 import Data from './seedData.json';
 import { SeedDataType } from './seedDataType';
-import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
-import RightSideLayer from 'src/components/MarketplaceLayouts/RightSideLayer/RightSideLayer';
-import LeftSideLayer from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
-import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import RightSideLayer from 'src/components/DriveLayouts/RightSide';
+import LeftSideLayer from 'src/components/DriveLayouts/LeftSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
 
 function MarketPlace() {
   const [currentData, setCurrentData] = useState<SeedDataType[]>(Data);

@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
 
-import { PlusIcon, TrackIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
+import { ReactComponent as PlusIcon } from 'src/assets/icons/plus-icon.svg';
+import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
+import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-icon.svg';
+import { ReactComponent as UpArrowIcon } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as DownArrowIcon } from 'src/assets/icons/darrow-icon.svg';
+import { ReactComponent as ParrowIcon } from 'src/assets/icons/parrow-icon.svg';
+import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
+import { ReactComponent as TrackIcon } from 'src/assets/icons/track-icon.svg';
 
 import { motion } from 'framer-motion';
 
 import styles from './Storage.module.scss';
 
-import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
-import LeftSideLayer from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
-import RightSideLayer from 'src/components/MarketplaceLayouts/RightSideLayer/RightSideLayer';
-import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import LeftSideLayer from 'src/components/DriveLayouts/LeftSide';
+import RightSideLayer from 'src/components/DriveLayouts/RightSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
@@ -35,11 +42,9 @@ const Storage = () => {
               <div className={styles.Title}>My Drive</div>
               <PlusIcon />
             </div>
-
             <div className={styles.DriveItem}>
               Track Meeting <TrackIcon />
             </div>
-
             <div className={styles.DriveItem}>
               Track Meeting <TrackIcon />
             </div>

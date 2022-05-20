@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
-import { UnionVectorIcon } from 'src/const';
 import Button from 'src/components/Button';
+import placeholderImg from 'src/assets/images/Profile.png';
+
+import { ReactComponent as UnionVectorIcon } from 'src/assets/icons/union-vector-icon.svg';
 
 import styles from './LeftSidebar.module.scss';
 
@@ -8,7 +10,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   return (
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
-        <img src={require('src/assets/images/Profile.png')} className={styles.Avatar} />
+        <img src={placeholderImg} className={styles.Avatar} />
         {children}
         <div>
           <Button className={styles.UploadButton}>Upload a File</Button>

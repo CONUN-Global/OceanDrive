@@ -2,7 +2,10 @@ import React, { ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import classNames from 'classnames';
-import { OceanStorageIcon, HomeIcon, DriveIcon } from 'src/const';
+
+import { ReactComponent as OceanStorageIcon } from 'src/assets/icons/OceanStorage-icon.svg';
+import { ReactComponent as HomeIcon } from 'src/assets/icons/home-icon.svg';
+import { ReactComponent as DriveIcon } from 'src/assets/icons/drive-icon.svg';
 
 import styles from './RightSideLayer.module.scss';
 

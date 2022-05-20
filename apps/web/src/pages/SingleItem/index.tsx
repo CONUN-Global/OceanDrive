@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Button from 'src/components/Button';
-import LeftSidebar from 'src/components/MarketplaceLayouts/LeftSidebar/LeftSidebar';
-import SidebarContent from 'src/components/MarketplaceLayouts/LeftSidebar/SidebarContentLayout';
-import MainBackground from 'src/components/MarketplaceLayouts/MainBackground/MainBackground';
-import RightSideLayer from 'src/components/MarketplaceLayouts/RightSideLayer/RightSideLayer';
+import LeftSidebar from 'src/components/DriveLayouts/LeftSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import RightSideLayer from 'src/components/DriveLayouts/RightSide';
 
 import styles from './SingleItem.module.scss';
 
