@@ -1,24 +1,40 @@
-import React, { useState } from 'react';
-import Button from 'src/components/Button';
-
-import { TabNftIcon, PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
-
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import cuid from 'cuid';
+
+import Button from 'src/components/Button';
+import { TabNftIcon, PlusIcon, TrackIcon, UnionVectorIcon, EllipseIcon, DownVectorIcon, UpArrowIcon, DownArrowIcon, ParrowIcon, HeartIcon } from 'src/const';
 
 import styles from './Storage.module.scss';
 
 import GreyishBackground from 'src/components/MainBackground/MainBackground';
 import LeftSideLayer from 'src/components/LeftSideLayer/LeftSideLayer';
 import RightSideLayer from 'src/components/RightSideLayer/RightSideLayer';
+import DropZone from 'src/components/DropZone/DropZone';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
   closed: { opacity: 0, traslateY: '10' },
 };
 
+interface EventInterface {
+  target: any;
+}
+
 const Storage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState('most-recent');
+  const [images, setImages] = useState<any[]>([]);
+  const onDrop = useCallback((acceptedFiles: any[]) => {
+    acceptedFiles.map((file: any) => {
+      const reader = new FileReader();
+      reader.onload = function (e: EventInterface) {
+        setImages(prevState => [...prevState, { id: cuid(), src: e.target.result }]);
+      };
+      reader.readAsDataURL(file);
+      return file;
+    });
+  }, []);
 
   const sortByOption = (option: string) => {
     setClicked(option);
@@ -104,19 +120,15 @@ const Storage = () => {
             </motion.div>
           </div>
         </motion.div>
-        
-        {/* drop area - container */}
-        <div className={styles.rectangle918}>
-          <div className={styles.dragAndDrop}>
-            <div className={styles.dr}>Drag and Drop</div>
-            <div className={styles.dr} style={{ marginTop: '-7px' }}>
-              or
-            </div>
-            <div>
-              <Button className={styles.Button}>Browse</Button>
-            </div>
-            <div className={styles.UnlimitedSize}>Unlimitied Size Upload</div>
-          </div>
+
+        <DropZone onDrop={onDrop} accept={'image/*'} />
+        <div style={{ position: 'absolute', top: '60%', left: '20%', width: '60%', display: 'flex', flexWrap: 'wrap', overflow: 'hidden', overflowY: 'hidden' }}>
+          {images.map((image: any) => {
+            console.log(image);
+            return <li key={image.id}>
+              <img src={image.src} alt="nft-art-pic" style={{width: '200px', height: '150px'}}/>
+            </li>;
+          })}
         </div>
 
         <div className={styles.photosZero}>0 Photoss 0MB</div>
