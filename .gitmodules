@@ -1,3 +1,3 @@
-[submodule "apps/core/web3.storage"]
-	path = apps/core/web3.storage
+[submodule "apps/packages/web3.storage"]
+	path = apps/packages/web3.storage
 	url = git@github.com:CONUN-Global/web3.storage.git
