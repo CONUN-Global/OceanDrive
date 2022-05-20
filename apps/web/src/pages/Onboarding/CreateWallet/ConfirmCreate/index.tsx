@@ -16,7 +16,7 @@ function ConfirmCreate() {
   const [inputPhrases, setInputPhrases] = useState<string[]>([]);
   const backupPhrases = useStore(state => state.backupPhrase);
   const [phraseArr, setPhraseArr] = useState<string[]>([]);
-  const [isEnoughLength, setIsEnoughLength] = useState<boolean>(true);
+  const [showWarning, setShowWarning] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,10 +42,10 @@ function ConfirmCreate() {
     setInputPhrases(selectedItems);
   };
 
-  const AuthCheckAndNext = () => {
+  const InputPhraseCheckAndNext = () => {
     if (inputPhrases.length < 12) {
-      setIsEnoughLength(false);
-      setTimeout(() => setIsEnoughLength(true), 2000);
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 2000);
     }
     if (inputPhrases.length === 12) navigate('./create');
   };
@@ -55,7 +55,7 @@ function ConfirmCreate() {
       <TextBox inputText={inputPhrases.join(' ')} />
 
       {/* currently there is no design thing for warnings onboarding confirmation page if the selected words less than 12, so when it is ready we can replace it with the below div (using kinda tost, popup whatever it is ASAP), but the logic will be same */}
-      {!isEnoughLength && (
+      {showWarning && (
         <div style={{ display: 'flex' }}>
           <p style={{ backgroundColor: '#efcc00' }}>Please select exactly 12 words!!!</p>
         </div>
@@ -65,7 +65,7 @@ function ConfirmCreate() {
         <Tag key={`${i}_${phrase}`} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
       ))}
 
-      <Navigation prev={() => navigate(-1)} next={() => AuthCheckAndNext()} />
+      <Navigation prev={() => navigate(-1)} next={() => InputPhraseCheckAndNext()} />
     </OnboardingContainer>
   );
 }
