@@ -73,18 +73,17 @@ const Storage = () => {
               {clicked === 'most-popular' && 'Most Popular'}
               {isOpen ? (
                 <span>
-                  {' '}
                   <UpArrowIcon style={{ width: '10px', marginBottom: '2px' }} />
                 </span>
               ) : (
                 <span>
-                  {' '}
                   <DownVectorIcon style={{ width: '10px' }} />
                 </span>
               )}
             </span>
           </div>
         </div>
+
         <motion.div className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
           <div className={styles.sortItems}>
             <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.mItem} onClick={() => sortByOption('most-recent')}>
@@ -102,17 +101,16 @@ const Storage = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        <div className={styles.rectangle918}>
-          <div className={styles.dragAndDrop}>
-            <div className={styles.dr}>Drag and Drop</div>
-            <div className={styles.dr} style={{ marginTop: '-7px' }}>
+        <div className={styles.DropZoneContainer}>
+          <div className={styles.DropZoneTextContainer}>
+            <div className={styles.Title}>Drag and Drop</div>
+            <div className={styles.Title} style={{ marginTop: '-7px' }}>
               or
             </div>
             <div>
               <Button className={styles.Button}>Browse</Button>
             </div>
-            <div className={styles.UnlimitedSize}>Unlimitied Size Upload</div>
+            <div className={styles.UnlimitedSize}>Unlimited Upload Size</div>
           </div>
         </div>
 

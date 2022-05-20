@@ -44,7 +44,7 @@
       .LockAccount {
         font-style: normal;
         @include fontBodyXL;
-        color: #a8a8a8;
+        color: var(--grey-text);
         display: flex;
         justify-content: space-between;
         align-items: center;

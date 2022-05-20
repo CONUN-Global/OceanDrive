@@ -77,32 +77,45 @@ function SingleItem() {
                   delectus natus aut ea aperiam eos reiciendis reprehenderit mollitia.
                 </div>
                 <div>
-                  <Button>Buy</Button>
+                  <Button className={styles.BuyBtn}>Buy</Button>
                 </div>
               </div>
             </div>
           </div>
           <div className={styles.LowerContainer}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '25%', margin: '0 0 10px 2px' }}>
-              <h3>Collection </h3>
-              <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
+            <div className={styles.LeftSideContainer}>
+              <div className={styles.TableHeadings}>
+                <h3>Collection </h3>
+                <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
+              </div>
+
+              {/* Start of Table */}
+
+              <table className={styles.TableContainer}>
+                <thead className={styles.TableHead}>
+                  <tr>
+                    {headings.map(heading => (
+                      <TableHeaders key={heading} heading={heading} />
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className={styles.TableBody}>
+                  {seedData.map((rowData, index) => (
+                    <TableRows key={index} rowData={rowData} />
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            {/* Start of Table */}
-            <table className={styles.TableContainer}>
-              <thead className={styles.TableHead}>
-                <tr>
-                  {headings.map(heading => (
-                    <TableHeaders key={heading} heading={heading} />
-                  ))}
-                </tr>
-              </thead>
-              <tbody className={styles.TableBody}>
-                {seedData.map((rowData, index) => (
-                  <TableRows key={index} rowData={rowData} />
-                ))}
-              </tbody>
-            </table>
+            {/* Bottom Right Items */}
+
+            <div>
+              <div>
+                <button>Views</button>
+                <button>Likes</button>
+                <button>Sold</button>
+              </div>
+            </div>
           </div>
         </div>
       </RightSideLayer>

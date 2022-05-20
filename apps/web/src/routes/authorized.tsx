@@ -11,7 +11,7 @@ export const authorizedRoutes = [
     path: '/',
     element: <Main />,
   },
-  { path: '/storage', element: <Storage /> },
+  { path: 'storage', element: <Storage /> },
   {
     path: 'marketplace',
     children: [

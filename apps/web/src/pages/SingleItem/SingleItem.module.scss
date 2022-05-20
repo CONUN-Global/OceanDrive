@@ -49,6 +49,10 @@
           text-transform: bold;
           font-weight: 600;
         }
+
+        & .BuyBtn {
+          width: 200px;
+        }
       }
     }
   }
@@ -62,17 +66,31 @@
 
   .LowerContainer {
     display: flex;
-    // TEMP
-    flex-direction: column;
-    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     padding: 30px;
     max-width: 1200px;
+
+    & .LeftSideContainer {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      & .TableHeadings {
+        // border: 1px solid red;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+    }
 
     // TABLE
 
     .TableContainer {
-      width: 50%;
-      border: 1px solid #e7e7e7;
+      width: 100%;
+      border-top: 1px solid #e7e7e7;
       padding: 20px;
 
       .TableHead {
