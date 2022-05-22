@@ -18,7 +18,7 @@ function CreateWallet() {
   const [inputPhrases, setInputPhrases] = useState<string>('');
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const backupPhrase = useStore((store) => store.setBackupPhrase);
+  const backupPhrase = useStore(store => store.setBackupPhrase);
 
   const navigate = useNavigate();
 
@@ -42,27 +42,15 @@ function CreateWallet() {
       title={title}
       description={
         <span className={styles.Description}>
-          <span>
-            Copy your unique secret phrase to keep somewhere safe. The phrase
-            cannot be recovered. This phrase will remain as your wallet password
-            until it is changed.
-          </span>
-          <span>
-            Your secret phrase is 12 words with spaces included. When storing
-            your secret phrase the order of the words should remain the same.
-          </span>
+          <span>Copy your unique secret phrase to keep somewhere safe. The phrase cannot be recovered. This phrase will remain as your wallet password until it is changed.</span>
+          <span>Your secret phrase is 12 words with spaces included. When storing your secret phrase the order of the words should remain the same.</span>
         </span>
       }
     >
       <>
         <TextBox inputText={inputPhrases}></TextBox>
         <div className={styles.Container}>
-          <Button
-            className={styles.CopyButton}
-            round
-            variant="tertiary"
-            onClick={handleCopy}
-          >
+          <Button className={styles.CopyButton} round variant="tertiary" onClick={handleCopy}>
             <CopyIcon className={styles.Clipboard} />
             <p>Copy Secret Phase</p>
           </Button>
@@ -73,10 +61,7 @@ function CreateWallet() {
 
         {isModalOpen && (
           <>
-            <Backdrop
-              isModalOpen={isModalOpen}
-              setIsModalOpen={setIsModalOpen}
-            ></Backdrop>
+            <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
             <Modal
               isModalOpen={isModalOpen}
               title="Copy and Store Information"

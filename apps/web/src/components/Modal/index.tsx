@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
-import Card from '../Card';
-import Button from '../Button';
+import Card from '../../components/Card';
+import Button from '../../components/Button';
 import styles from './Modal.module.scss';
 
 interface IModal {

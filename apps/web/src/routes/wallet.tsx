@@ -10,29 +10,29 @@ export const onboardingRoutes = [
     children: [
       {
         path: '',
-        element: <Onboarding />
+        element: <Onboarding />,
       },
       {
         path: 'create',
         children: [
           {
             path: '',
-            element: <CreateWallet />
+            element: <CreateWallet />,
           },
           {
             path: 'confirm',
-            element: <ConfirmCreate />
-          }
-        ]
+            element: <ConfirmCreate />,
+          },
+        ],
       },
       {
         path: 'import',
-        element: <CreateWallet />
-      }
-    ]
+        element: <CreateWallet />,
+      },
+    ],
   },
   {
     path: '*',
-    element: <Navigate to="/wallet" replace />
-  }
+    element: <Navigate to="/wallet" replace />,
+  },
 ];

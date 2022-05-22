@@ -1,0 +1,115 @@
+.ContentContainer {
+  width: 100%;
+  .UpperContainer {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    padding: 200px 30px 0 30px;
+
+    & .Image {
+      width: 50%;
+      cursor: pointer;
+    }
+
+    & .TextContainer {
+      width: 50%;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & h1 {
+        font-size: 3rem;
+      }
+
+      & .CreatorContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & .User {
+          display: flex;
+          align-items: center;
+        }
+
+        & .Avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 25px;
+          margin-right: 1rem;
+        }
+
+        & .CreatorName {
+          font-weight: 800;
+        }
+      }
+
+      & .DescriptionBox {
+        & h4 {
+          text-transform: bold;
+          font-weight: 600;
+        }
+
+        & .BuyBtn {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  .Avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    margin-right: 1rem;
+  }
+
+  .LowerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    max-width: 1200px;
+
+    & .LeftSideContainer {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      & .TableHeadings {
+        // border: 1px solid red;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+    }
+
+    // TABLE
+
+    .TableContainer {
+      width: 100%;
+      border-top: 1px solid #e7e7e7;
+      padding: 20px;
+
+      .TableHead {
+        min-width: 500px;
+        & th {
+          color: #5f93f1;
+          padding-bottom: 15px;
+        }
+      }
+
+      .TableBody {
+        text-align: center;
+        & .RowContainer {
+          & td {
+            border-bottom: 1px solid #e7e7e7;
+            height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

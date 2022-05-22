@@ -1,12 +1,10 @@
 import React from 'react';
-
 import { useNavigate } from 'react-router-dom';
-import OnboardingContainer from './OnboardingContainer';
-
-import HStack from '../../components/HStack';
-import Card from '../../components/Card';
 import Button from '../../components/Button';
+import Card from '../../components/Card';
+import HStack from '../../components/HStack';
 import styles from './Onboarding.module.scss';
+import OnboardingContainer from './OnboardingContainer';
 
 const title = 'Welcome to Conun Drive';
 const description = 'Conun Drive is a place for storage sharing and content sharing. Connect or create your wallet to explore today.';

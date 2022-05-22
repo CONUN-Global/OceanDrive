@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
 import Card from '../../../components/Card';
 import styles from './OnboardingContainer.module.scss';
 
@@ -12,24 +13,18 @@ interface OnboardingContainerProps {
 }
 
 OnboardingContainer.defaultProps = {
-  isInitial: false
+  isInitial: false,
 };
 
-function OnboardingContainer({
-  children,
-  title,
-  description,
-  isInitial,
-  className
-}: OnboardingContainerProps) {
+function OnboardingContainer({ children, title, description, isInitial, className }: OnboardingContainerProps) {
   return (
     <div className={classNames(styles.container, className)}>
       <Card className={styles.Card}>
         <div className={styles.header}>
-          {/* <h3 className={styles[isInitial ? 'initial' : '']}>
-            {isInitial && <OceanIcon />}
-            {title}
-          </h3> */}
+          <h3 className={styles[isInitial ? 'initial' : '']}>
+            {isInitial ? <OceanIcon /> : ''}
+            {title || ''}
+          </h3>
           <p>{description}</p>
         </div>
         {children}

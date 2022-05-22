@@ -8,27 +8,19 @@
   ],
   "license": "MIT",
   "author": "CONUN GLOBAL <jamshid@conun.co.kr>",
-  "main": "main.js",
+  "main": "./electron/main.js",
   "scripts": {
     "clean": "echo 'Nothing to clean...'",
-    "start": "parcel serve ./src/index.html --public-url ./",
-    "dev": "concurrently -k \"yarn start\" \"yarn electron\"",
-    "serve": "npm run start",
-    "test": "node test.js",
-    "electron": "electron ."
+    "wait": "wait-on http://localhost:3000",
+    "start": "nodemon --watch build --exec \"yarn electron\"",
+    "electron": "electron .",
+    "web": "yarn workspace @ocean-drive/web start",
+    "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn compile -w\" \"yarn wait && yarn start\"",
+    "compile": "tsc -b --incremental",
+    "serve": "npm run start"
   },
   "dependencies": {
-    "@conun-global/web3.storage": "1.1.4",
-    "classnames": "^2.3.1",
-    "framer-motion": "^6.3.3",
-    "random-words": "^1.1.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-query": "^3.39.0",
-    "react-router-dom": "^6.3.0",
-    "react-spinner-material": "^1.4.0",
-    "sass": "^1.51.0",
-    "zustand": "^4.0.0-rc.1"
+    "@conun-global/web3.storage": "1.1.4"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.5.0",
@@ -43,7 +35,8 @@
   },
   "workspaces": {
     "packages": [
-      "apps/**/*"
+      "apps/**/*",
+      "apps/*"
     ]
   },
   "greenkeeper": {
