@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import MainBackground from '../../components/DriveLayouts/Background/index';
 import LeftSideLayer from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
-import MainBackground from '../../components/DriveLayouts/Background/index';
 import Filter from './FilterSidebar';
 import CollectionGrid from './MarketplaceGrid';
 import Data from './seedData.json';
