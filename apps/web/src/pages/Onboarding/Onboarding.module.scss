@@ -1,15 +1,7 @@
-.HStack {
-  .Card {
-    color: var(--sea-blue);
-    padding: 80px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-
-    gap: 20px;
-    & .Title {
-      font-size: 1.4rem;
-      text-align: center;
-    }
-  }
+.More {
+  color: var(--sea-blue);
+  cursor: pointer;
+  margin: 30px auto;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--sea-blue);
 }

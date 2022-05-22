@@ -10,9 +10,12 @@
   background-color: var(--sea-blue);
 
   & .Card {
-    width: 60%;
-    height: 769px;
-    color: white;
+    width: 50%;
+    min-height: 60vh;
+    background-color: var(--background);
+    padding: 70px 80px;
+    justify-content: flex-start;
+    align-items: flex-start;
     & .header {
       svg {
         width: 41px;

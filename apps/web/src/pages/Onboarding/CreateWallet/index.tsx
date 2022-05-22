@@ -9,9 +9,8 @@ import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
 import useStore from '../../../store/store';
 import OnboardingContainer from '../OnboardingContainer';
+import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from './config';
 import styles from './CreateWallet.module.scss';
-
-const title = 'Your Secret Backup Phrases';
 
 function CreateWallet() {
   const randomPhrases = RandomWord({ exactly: 12 }).join(' ');
@@ -39,11 +38,11 @@ function CreateWallet() {
   return (
     <OnboardingContainer
       className={styles.Onboarding}
-      title={title}
+      title={CREATE_WALLET_TITLE}
       description={
         <span className={styles.Description}>
-          <span>Copy your unique secret phrase to keep somewhere safe. The phrase cannot be recovered. This phrase will remain as your wallet password until it is changed.</span>
-          <span>Your secret phrase is 12 words with spaces included. When storing your secret phrase the order of the words should remain the same.</span>
+          <span>{CREATE_WALLET_DESCR1}</span>
+          <span>{CREATE_WALLET_DESCR2}</span>
         </span>
       }
     >

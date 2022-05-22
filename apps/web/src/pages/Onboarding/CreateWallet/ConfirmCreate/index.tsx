@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import RandomWord from 'random-words';
-import useStore from '../../../../store/store';
-
-import OnboardingContainer from '../../OnboardingContainer';
-import TextBox from '../../../../components/TextBox';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '../../../../components/Navigation';
 import Tag from '../../../../components/Tag';
+import TextBox from '../../../../components/TextBox';
 import suffleItems from '../../../../helpers/suffleItems';
+import useStore from '../../../../store/store';
+import OnboardingContainer from '../../OnboardingContainer';
 import styles from './ConfirmCreate.module.scss';
 
 const title = 'Your Secret Backup Phrases';
@@ -56,14 +55,16 @@ function ConfirmCreate() {
 
       {/* currently there is no design thing for warnings onboarding confirmation page if the selected words less than 12, so when it is ready we can replace it with the below div (using kinda tost, popup whatever it is ASAP), but the logic will be same */}
       {showWarning && (
-        <div style={{ display: 'flex' }}>
-          <p style={{ backgroundColor: '#efcc00' }}>Please select exactly 12 words!!!</p>
+        <div className={styles.WarningBox}>
+          <p>Please select exactly 12 words!</p>
         </div>
       )}
 
-      {phraseArr.map((phrase, i) => (
-        <Tag key={`${i}_${phrase}`} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
-      ))}
+      <div className={styles.Tags}>
+        {phraseArr.map((phrase, i) => (
+          <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
+        ))}
+      </div>
 
       <Navigation prev={() => navigate(-1)} next={() => InputPhraseCheckAndNext()} />
     </OnboardingContainer>
