@@ -37,6 +37,7 @@ function CreateWallet() {
   };
   return (
     <OnboardingContainer
+      key="create-wallet-page"
       className={styles.Onboarding}
       title={CREATE_WALLET_TITLE}
       description={

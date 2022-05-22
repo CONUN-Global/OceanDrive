@@ -1,8 +1,8 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import styles from './Card.module.scss';
 
-interface ICard {
+export interface ICard {
   variant?: 'primary' | 'secondary' | ' tertiary' | 'ghost';
   children: React.ReactNode;
   className?: string;

@@ -1,5 +1,7 @@
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 import React from 'react';
+import { AOnboardingProps } from 'src/animations/onboarding';
 import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
 import Card from '../../../components/Card';
 import styles from './OnboardingContainer.module.scss';
@@ -19,16 +21,18 @@ OnboardingContainer.defaultProps = {
 function OnboardingContainer({ children, title, description, isInitial, className }: OnboardingContainerProps) {
   return (
     <div className={classNames(styles.container, className)}>
-      <Card className={styles.Card}>
-        <div className={styles.header}>
-          <h3 className={styles[isInitial ? 'initial' : '']}>
-            {isInitial ? <OceanIcon /> : ''}
-            {title || ''}
-          </h3>
-          <p>{description}</p>
-        </div>
-        {children}
-      </Card>
+      <motion.div {...AOnboardingProps} className={styles.CardWrapper}>
+        <Card className={styles.Card}>
+          <div className={styles.header}>
+            <h3 className={styles[isInitial ? 'initial' : '']}>
+              {isInitial ? <OceanIcon /> : ''}
+              {title || ''}
+            </h3>
+            <p>{description}</p>
+          </div>
+          {children}
+        </Card>
+      </motion.div>
       <div className={styles.policy}>
         <ul className={styles.policy_list}>
           <li className={styles.policy_item}>

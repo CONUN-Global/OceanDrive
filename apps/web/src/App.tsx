@@ -1,7 +1,8 @@
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { useRoutes } from 'react-router-dom';
+import { useLocation, useRoutes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { queryClient } from './config/queryClient';
 import { authorizedRoutes } from './routes/authorized';
@@ -9,6 +10,7 @@ import { onboardingRoutes } from './routes/wallet';
 import './styles/globals.scss';
 
 function App() {
+  const location = useLocation();
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
   const filteredRoutes = onboardingRoutes;
@@ -23,7 +25,9 @@ function App() {
     <Layout>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        {test ? mainRoutes : routes}
+        <AnimatePresence exitBeforeEnter>
+          <div key={location.pathname}>{test ? mainRoutes : routes}</div>
+        </AnimatePresence>
       </QueryClientProvider>
     </Layout>
   );
