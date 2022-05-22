@@ -5,7 +5,7 @@ function Main() {
 
   return (
     <div>
-      <div ref={cardRef}>Card1</div>
+      <div ref={cardRef}>Card 1</div>
     </div>
   );
 }

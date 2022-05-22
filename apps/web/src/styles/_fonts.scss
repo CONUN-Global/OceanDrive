@@ -16,6 +16,12 @@
   line-height: 28px;
 }
 
+@mixin fontTitleS {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
 @mixin fontBodyXXL {
   font-weight: 400;
   font-size: 16px;

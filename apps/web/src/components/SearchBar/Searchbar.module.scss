@@ -1,0 +1,34 @@
+.Search {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  & form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    & svg {
+      border: none;
+      color: grey;
+      height: 17px;
+      position: absolute;
+      right: 15px;
+      width: 17px;
+      z-index: 100;
+    }
+
+    & input {
+      border: 1px solid var(--grey-text);
+      border-radius: 20px;
+      padding: 6px 0 6px 20px;
+      width: 150px;
+    }
+
+    & input:focus {
+      border: 1px solid rgb(131, 131, 131);
+      outline: none;
+    }
+  }
+}
