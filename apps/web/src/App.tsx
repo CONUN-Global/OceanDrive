@@ -11,22 +11,22 @@ import './styles/globals.scss';
 
 function App() {
   const location = useLocation();
-  // it will be divided into authorized (user with wallet)
-  // and non authorized that will pass through onboarding process
-  const filteredRoutes = onboardingRoutes;
-
-  const routes = useRoutes(filteredRoutes);
-  const mainRoutes = useRoutes(authorizedRoutes);
 
   // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
-  const test = false;
+  const test = true;
+
+  // it will be divided into authorized (user with wallet)
+  // and non authorized that will pass through onboarding process
+  const filteredRoutes = test ? authorizedRoutes : onboardingRoutes;
+
+  const routes = useRoutes(filteredRoutes);
 
   return (
     <Layout>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <AnimatePresence exitBeforeEnter>
-          <div key={location.pathname}>{test ? mainRoutes : routes}</div>
+          <div key={location.pathname}>{routes}</div>
         </AnimatePresence>
       </QueryClientProvider>
     </Layout>
