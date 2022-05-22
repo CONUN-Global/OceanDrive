@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { AOnboardingProps } from 'src/animations/onboarding';
+import { AOnboardingProps } from '../../../animations/onboarding';
 import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
 import Card from '../../../components/Card';
 import styles from './OnboardingContainer.module.scss';

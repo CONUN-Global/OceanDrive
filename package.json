@@ -20,7 +20,7 @@
     "serve": "npm run start"
   },
   "dependencies": {
-    "@conun-global/web3.storage": "1.1.4"
+    "@conun-global/web3.storage": "2.1.3"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.5.0",
