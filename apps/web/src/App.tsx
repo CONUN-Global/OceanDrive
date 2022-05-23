@@ -21,7 +21,7 @@ function App() {
   const persistor = persistStore(store);
 
   // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
-  const test = false;
+  const test = true;
 
   // it will be divided into authorized (user with wallet)
   // and non authorized that will pass through onboarding process
