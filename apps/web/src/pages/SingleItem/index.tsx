@@ -1,30 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Button from '../../components/Button';
 import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import styles from './SingleItem.module.scss';
+import ETH from 'src/assets/icons/ETH_Logo.svg';
+
+import { TableSeedData, NFTData } from './SEED_DATA';
+import classNames from 'classnames';
 
 function SingleItem() {
   const { collection, id } = useParams();
 
   const headings = ['Buyer', 'Edition', 'Date', 'Price'];
-
-  const seedData = [
-    { buyerData: 'Billy', editionData: 'Rare', dateData: '1 week ago', priceData: 'Free' },
-    { buyerData: 'Jean', editionData: 'Rare', dateData: '1 week ago', priceData: 'Free' },
-    { buyerData: 'Is', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
-    { buyerData: 'Not', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
-    { buyerData: 'My', editionData: 'Rare', dateData: '2 weeks ago', priceData: 'Free' },
-    { buyerData: 'Lover', editionData: 'Rare', dateData: '3 week ago', priceData: 'Free' },
-    { buyerData: 'Shes', editionData: 'Rare', dateData: '3 weeks ago', priceData: 'Free' },
-    { buyerData: 'Just', editionData: 'Rare', dateData: '3 weeks ago', priceData: 'Free' },
-    { buyerData: 'A Girl', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
-    { buyerData: 'Who', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
-    { buyerData: 'Claims', editionData: 'Rare', dateData: '4 weeks ago', priceData: 'Free' },
-  ];
 
   interface RowData {
     buyerData: string;
@@ -34,15 +23,19 @@ function SingleItem() {
   }
 
   function TableHeaders({ heading }: { heading: string }) {
-    return <th scope="col">{heading}</th>;
+    return (
+      <th scope="col" className={styles.Heading}>
+        {heading}
+      </th>
+    );
   }
   function TableRows({ rowData }: { rowData: RowData }) {
     return (
       <tr className={styles.RowContainer}>
         <td>{rowData.buyerData}</td>
         <td>{rowData.editionData}</td>
-        <td style={{ color: '#5F93F1' }}>{rowData.dateData}</td>
-        <td style={{ textTransform: 'uppercase', color: '#64C2D1' }}>{rowData.priceData}</td>
+        <td style={{ color: '#a8a8a8', textTransform: 'uppercase', fontSize: '12px' }}>{rowData.dateData}</td>
+        <td style={{ textTransform: 'uppercase' }}>{rowData.priceData}</td>
       </tr>
     );
   }
@@ -52,67 +45,99 @@ function SingleItem() {
       <LeftSidebar>
         <SidebarContent></SidebarContent>
       </LeftSidebar>
-      <RightSideLayer title="xxx">
+      <RightSideLayer>
         <div className={styles.ContentContainer}>
           <div className={styles.UpperContainer}>
-            <img className={styles.Image} src={`../../assets/images/NFTTiles/NFT_Tiles-${id}.jpg`} alt="NFT IMAGE" />
+            <img className={styles.Image} src={require(`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
             <div className={styles.TextContainer}>
-              <h1>IN THE IMAGINARIUM OF THINGS #4/5</h1>
+              <h1>{NFTData.title}</h1>
               <div className={styles.CreatorContainer}>
-                <div className={styles.User}>
-                  <img className={styles.Avatar} src="src/assets/icons/avatar.png" />
+                <div className={classNames(styles.User, styles.CreatorItem)}>
+                  <img className={styles.Avatar} src={require('src/assets/icons/avatar.png')} />
                   <div>
                     <div>creator</div>
-                    <div className={styles.CreatorName}>Adam Driver</div>
+                    <div className={styles.CreatorName}>{NFTData.creator}</div>
                   </div>
                 </div>
-                <div>{collection}</div>
+                <div className={classNames(styles.CollectionName, styles.CreatorItem)}>{collection}</div>
               </div>
               <div className={styles.DescriptionBox}>
                 <h4>Description</h4>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti praesentium, ab odio numquam, deleniti autem nihil in temporibus odit fuga distinctio rem maxime quo molestiae
-                  dignissimos a molestias, minima repellendus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste minus culpa in quasi sit minima laborum facere, libero enim, nisi, dolorem
-                  delectus natus aut ea aperiam eos reiciendis reprehenderit mollitia.
-                </div>
-                <div>
-                  <Button className={styles.BuyBtn}>Buy</Button>
-                </div>
+                <div>{NFTData.description}</div>
               </div>
             </div>
           </div>
           <div className={styles.LowerContainer}>
+            {/* Bottom Left Items */}
             <div className={styles.LeftSideContainer}>
-              <div className={styles.TableHeadings}>
-                <h3>Collection </h3>
-                <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
-              </div>
+              <div className={styles.HeadAndTableContainer}>
+                <div className={styles.TableHeadings}>
+                  <h3>Collection </h3>
+                  <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
+                </div>
+                <table className={styles.TableContainer}>
+                  <thead className={styles.TableHead}>
+                    <tr>
+                      {headings.map(heading => (
+                        <TableHeaders key={heading} heading={heading} />
+                      ))}
+                    </tr>
+                  </thead>
 
-              {/* Start of Table */}
-
-              <table className={styles.TableContainer}>
-                <thead className={styles.TableHead}>
-                  <tr>
-                    {headings.map(heading => (
-                      <TableHeaders key={heading} heading={heading} />
+                  <tbody className={styles.TableBody}>
+                    {TableSeedData.map((rowData, index) => (
+                      <TableRows key={index} rowData={rowData} />
                     ))}
-                  </tr>
-                </thead>
-                <tbody className={styles.TableBody}>
-                  {seedData.map((rowData, index) => (
-                    <TableRows key={index} rowData={rowData} />
-                  ))}
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* Bottom Right Items */}
+            <div className={styles.RightSideContainer}>
+              {/* INFO CONTAINER BOX (VIEWS,LIKES,SOLD) */}
+              <div className={styles.InfoContainer}>
+                <div className={styles.SingleItem}>
+                  <div className={styles.ItemTitle}>Views</div>
+                  <div className={styles.ItemNumber}>{NFTData.views}</div>
+                </div>
+                |
+                <div className={styles.SingleItem}>
+                  <div className={styles.ItemTitle}>Likes</div>
+                  <div className={styles.ItemNumber}>{NFTData.likes}</div>
+                </div>
+                |
+                <div className={styles.SingleItem}>
+                  <div className={styles.ItemTitle}>Sold</div>
+                  <div className={styles.ItemNumber}>{NFTData.sold}</div>
+                </div>
+              </div>
+              {/* PURCHASE PRICE CONTAINER */}
+              <div className={styles.PurchaseContainer}>
+                <h2>Price</h2>
+                <div className={styles.PurchaseBox}>
+                  <div className={styles.LeftItems}>
+                    <div className={styles.Price}>
+                      <img src={ETH} />
 
-            <div>
-              <div>
-                <button>Views</button>
-                <button>Likes</button>
-                <button>Sold</button>
+                      <div>{NFTData.price}</div>
+                    </div>
+                    <div className={styles.USDPrice}>${NFTData.priceUSD} USD</div>
+                  </div>
+                  <button className={styles.BuyButton}>BUY</button>
+                </div>
+              </div>
+
+              {/* TAGS CONTAINER */}
+              <div className={styles.TagContainer}>
+                <h2>TAGS</h2>
+                <div className={styles.TagBtnContainer}>
+                  {NFTData.tags.map((tag, index) => (
+                    <button className={styles.TagBtn} key={index}>
+                      {tag}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

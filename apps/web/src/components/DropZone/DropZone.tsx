@@ -15,7 +15,7 @@ function Dropzone({ onDrop, accept }: any) {
   //   </li>
   // ));
   return (
-    <div className={styles.Container}>
+    <div className={styles.DropZoneContainer}>
       <div {...getRootProps({ className: styles.container })}>
         <input className="input-zone" {...getInputProps()} />
         <div className="text-center">

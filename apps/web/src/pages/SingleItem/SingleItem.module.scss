@@ -7,13 +7,14 @@
     padding: 200px 30px 0 30px;
 
     & .Image {
+      padding: 0 20px;
       width: 50%;
       cursor: pointer;
     }
 
     & .TextContainer {
+      padding: 0 20px;
       width: 50%;
-      padding-left: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -27,9 +28,24 @@
         align-items: center;
         justify-content: space-around;
 
+        & .CreatorItem {
+          width: 40%;
+          height: 100%;
+          padding: 10px 0;
+          background-color: #f7f7f7;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
         & .User {
           display: flex;
           align-items: center;
+        }
+
+        & .CollectionName {
+          color: #48afe8;
         }
 
         & .Avatar {
@@ -41,6 +57,7 @@
 
         & .CreatorName {
           font-weight: 800;
+          color: #48afe8;
         }
       }
 
@@ -49,19 +66,8 @@
           text-transform: bold;
           font-weight: 600;
         }
-
-        & .BuyBtn {
-          width: 200px;
-        }
       }
     }
-  }
-
-  .Avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 25px;
-    margin-right: 1rem;
   }
 
   .LowerContainer {
@@ -73,41 +79,169 @@
     max-width: 1200px;
 
     & .LeftSideContainer {
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       width: 50%;
-
-      & .TableHeadings {
-        // border: 1px solid red;
-        width: 60%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-      }
     }
 
     // TABLE
 
+    .HeadAndTableContainer {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 10px;
+
+      & .TableHeadings {
+        padding-left: 20px;
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+    }
     .TableContainer {
       width: 100%;
-      border-top: 1px solid #e7e7e7;
-      padding: 20px;
 
       .TableHead {
         min-width: 500px;
+
         & th {
           color: #5f93f1;
           padding-bottom: 15px;
+          text-transform: uppercase;
         }
       }
 
       .TableBody {
         text-align: center;
+
         & .RowContainer {
           & td {
-            border-bottom: 1px solid #e7e7e7;
             height: 2.5rem;
           }
+        }
+      }
+    }
+
+    .RightSideContainer {
+      width: 50%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      // INFO BOX
+      .InfoContainer {
+        width: 100%;
+        height: 100px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .SingleItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          & .ItemTitle {
+            color: #48afe8;
+            font-size: 12px;
+            padding-bottom: 3px;
+          }
+
+          & .ItemNumber {
+            color: #3a3a3a;
+            font-size: 22px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      // PURCHASE BOX
+      .PurchaseContainer {
+        h2 {
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+
+        & .PurchaseBox {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          height: 70%;
+          background-color: #f7f7f7;
+          border-radius: 8px;
+
+          & .LeftItems {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 55%;
+
+            .Price {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              padding-left: 10px;
+              & img {
+                height: 32px;
+              }
+              & div {
+                font-size: 32px;
+                color: #5f93f1;
+                font-weight: 800;
+                padding-left: 8px;
+              }
+            }
+            & .USDPrice {
+              color: #a8a8a8;
+              font-size: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+              width: 40%;
+              height: 100%;
+              margin-bottom: 5px;
+            }
+          }
+
+          & .BuyButton {
+            width: 200px;
+            // height: 50px;
+            height: 100%;
+            border: none;
+            background-color: #5f93f1;
+            color: white;
+            border-radius: 5px;
+            font-size: 24px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    // TAGS BOX
+    .TagContainer {
+      h2 {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      & .TagBtnContainer {
+        display: flex;
+        justify-content: space-between;
+
+        & .TagBtn {
+          background-color: #48afe8;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 50px;
+          cursor: pointer;
+          min-width: 100px;
         }
       }
     }

@@ -16,7 +16,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
     <div onClick={() => navigate(`/marketplace/${collection}/${id}`)} style={{ cursor: 'pointer' }}>
       <Card variant="primary" border={true}>
         <div className={styles.TopItems}>
-          <img className={styles.Image} src={`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`} alt="NFT IMAGE" />
+          <img className={styles.Image} src={require(`/src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
           <div className={styles.TextContainer}>
             <div className={styles.Title}>{title}</div>
             <div className={styles.Owner}>{collection}</div>
@@ -25,7 +25,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
         <div className={styles.BottomItems}>
           <div className={styles.UserItems}>
             {/* FIX: Needs to be made dynamic once we have API data*/}
-            <img className={styles.Avatar} src={'src/assets/icons/avatar.png'} />
+            <img className={styles.Avatar} src={require('src/assets/icons/avatar.png')} />
             <div className={styles.UserName}>{creator}</div>
           </div>
 

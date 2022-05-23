@@ -1,7 +1,7 @@
-.Container {
+.DropZoneContainer {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   margin: auto;
   text-align: center;
   gap: 10px;
@@ -10,7 +10,10 @@
 .container {
   text-align: center;
   padding: 20px;
-  border: 3px blue dashed;
+  border: 1.5px #5f93f1 dashed;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  height: 300px;
   width: 100%;
   margin: auto;
 
@@ -21,18 +24,18 @@
 
 .InsideContainer {
   flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 40px;
-	border-width: 2px;
-	border-radius: 10px;
-	border-color: green;
-	border-style: dashed;
-	background-color: #fafafa;
-	color: black;
-	font-weight: bold;
-	font-size: 1.4rem;
-	outline: none;
-	transition: border 0.24s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: green;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: black;
+  font-weight: bold;
+  font-size: 1.4rem;
+  outline: none;
+  transition: border 0.24s ease-in-out;
 }
