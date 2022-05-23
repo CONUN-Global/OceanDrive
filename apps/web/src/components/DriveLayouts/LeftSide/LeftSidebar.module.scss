@@ -38,19 +38,38 @@
 
     .UtilityButtons {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
       cursor: pointer;
+      padding-left: 5px;
+      width: 100%;
+      padding-top: 10px;
 
-      .LockAccount {
+      & .UtilItem {
         font-style: normal;
         @include fontBodyXL;
         color: var(--grey-text);
         display: flex;
-        justify-content: space-between;
+        width: 60%;
         align-items: center;
+        border-radius: 5px;
+
+        &:hover {
+          color: grey;
+        }
 
         svg {
-          margin-top: 2px;
+          margin-right: 5px;
+        }
+      }
+
+      .Logout {
+        margin-bottom: 10px;
+      }
+
+      .Settings {
+        svg {
+          padding: 3px;
         }
       }
     }
