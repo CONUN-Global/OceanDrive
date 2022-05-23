@@ -71,6 +71,8 @@
     width: 100%;
     padding: 30px;
     max-width: 1200px;
+    height: 37%;
+    overflow-y: auto;
 
     & .LeftSideContainer {
       display: flex;
@@ -78,7 +80,6 @@
       width: 50%;
 
       & .TableHeadings {
-        // border: 1px solid red;
         width: 60%;
         display: flex;
         justify-content: space-between;
@@ -87,7 +88,6 @@
     }
 
     // TABLE
-
     .TableContainer {
       width: 100%;
       border-top: 1px solid #e7e7e7;
