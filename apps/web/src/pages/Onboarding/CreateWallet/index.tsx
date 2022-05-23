@@ -2,15 +2,19 @@ import RandomWord from 'random-words';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
+
+import OnboardingContainer from '../OnboardingContainer';
 import Backdrop from '../../../components/Backdrop';
 import Button from '../../../components/Button';
 import Modal from '../../../components/Modal';
 import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
+
 import { setBackupPhrase } from '../../../redux/onboardingSlice';
-import OnboardingContainer from '../OnboardingContainer';
 import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from './config';
+
+import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
+
 import styles from './CreateWallet.module.scss';
 
 function CreateWallet() {

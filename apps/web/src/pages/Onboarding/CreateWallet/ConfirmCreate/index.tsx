@@ -1,12 +1,15 @@
-import RandomWord from 'random-words';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import RandomWord from 'random-words';
+
 import Navigation from '../../../../components/Navigation';
 import Tag from '../../../../components/Tag';
 import TextBox from '../../../../components/TextBox';
-import suffleItems from '../../../../helpers/suffleItems';
 import OnboardingContainer from '../../OnboardingContainer';
+
+import suffleItems from '../../../../helpers/suffleItems';
+
 import styles from './ConfirmCreate.module.scss';
 
 const title = 'Your Secret Backup Phrases';
