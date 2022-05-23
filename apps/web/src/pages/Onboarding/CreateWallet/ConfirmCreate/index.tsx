@@ -1,11 +1,11 @@
 import RandomWord from 'random-words';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../../../../components/Navigation';
 import Tag from '../../../../components/Tag';
 import TextBox from '../../../../components/TextBox';
 import suffleItems from '../../../../helpers/suffleItems';
-import useStore from '../../../../store/store';
 import OnboardingContainer from '../../OnboardingContainer';
 import styles from './ConfirmCreate.module.scss';
 
@@ -13,7 +13,7 @@ const title = 'Your Secret Backup Phrases';
 const description = 'Copy your unique secret phrase to keep somewhere safe. The phrase cannot be recovered. This phrase will remain as your wallet password until it is changed.';
 function ConfirmCreate() {
   const [inputPhrases, setInputPhrases] = useState<string[]>([]);
-  const backupPhrases = useStore(state => state.backupPhrase);
+  const backupPhrases = useSelector((store: any) => store.onboardingReducer?.backupPhrase);
   const [phraseArr, setPhraseArr] = useState<string[]>([]);
   const [showWarning, setShowWarning] = useState<boolean>(false);
   const navigate = useNavigate();

@@ -1,5 +1,6 @@
 import RandomWord from 'random-words';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
 import Backdrop from '../../../components/Backdrop';
@@ -7,17 +8,17 @@ import Button from '../../../components/Button';
 import Modal from '../../../components/Modal';
 import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
-import useStore from '../../../store/store';
+import { setBackupPhrase } from '../../../redux/onboardingSlice';
 import OnboardingContainer from '../OnboardingContainer';
 import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from './config';
 import styles from './CreateWallet.module.scss';
 
 function CreateWallet() {
+  const dispatch = useDispatch();
   const randomPhrases = RandomWord({ exactly: 12 }).join(' ');
   const [inputPhrases, setInputPhrases] = useState<string>('');
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const backupPhrase = useStore(store => store.setBackupPhrase);
 
   const navigate = useNavigate();
 
@@ -33,7 +34,7 @@ function CreateWallet() {
 
   const handleNext = () => {
     setIsModalOpen(true);
-    backupPhrase(inputPhrases);
+    dispatch(setBackupPhrase(inputPhrases));
   };
   return (
     <OnboardingContainer
