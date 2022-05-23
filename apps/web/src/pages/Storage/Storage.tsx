@@ -4,7 +4,7 @@ import TitleAndSearch from 'src/components/TitleAndSearch';
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
 import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
 import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSideLayer from '../../components/DriveLayouts/LeftSide';
+import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import DropZone from '../../components/DropZone/DropZone';
@@ -29,7 +29,7 @@ const Storage = () => {
 
   return (
     <MainBackground>
-      <LeftSideLayer>
+      <LeftSidebar>
         <SidebarContent>
           <div className={styles.DriveInfoContainer}>
             <div className={styles.MyDrivePlus}>
@@ -44,7 +44,7 @@ const Storage = () => {
             </div>
           </div>
         </SidebarContent>
-      </LeftSideLayer>
+      </LeftSidebar>
 
       <RightSideLayer>
         <div className={styles.PageContainer}>

@@ -9,6 +9,8 @@ interface ICollectionCard {
   DataItem: SeedDataType;
 }
 
+const uri = (id: number) => require(`/src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`);
+
 function CollectionCard({ DataItem: { id, creator, title, collection, price } }: ICollectionCard) {
   const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
     <div onClick={() => navigate(`/marketplace/${collection}/${id}`)} style={{ cursor: 'pointer' }}>
       <Card variant="primary" border={true}>
         <div className={styles.TopItems}>
-          <img className={styles.Image} src={require(`/src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
+          <img className={styles.Image} src={uri(id)} alt="NFT IMAGE" />
           <div className={styles.TextContainer}>
             <div className={styles.Title}>{title}</div>
             <div className={styles.Owner}>{collection}</div>
