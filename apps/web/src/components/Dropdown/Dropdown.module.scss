@@ -1,18 +1,35 @@
 .Dropdown {
-  width: 100%;
+  width: 156px;
 
-  & .SelectedItem {
+  & .SelectedItemContainer {
     align-items: center;
-    border: 1px solid var(--conun-blue);
-    border-radius: 5px;
+    border: 1px solid var(--teal);
+    text-align: center;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     height: 25px;
-    justify-content: space-around;
-    width: 100%;
+    color: var(--gray);
+    background-color: var(--foreground);
 
     &:hover {
       cursor: pointer;
+    }
+  }
+  & .ListContainer {
+    visibility: visible;
+    cursor: pointer;
+    background-color: var(--foreground);
+
+    &.close {
+      visibility: hidden;
+    }
+
+    & .Item {
+      height: 25px;
+      &:hover {
+        background-color: var(--light-gray);
+      }
     }
   }
 }

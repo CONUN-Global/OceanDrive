@@ -9,7 +9,7 @@ import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
 import useStore from '../../../store/store';
 import OnboardingContainer from '../OnboardingContainer';
-import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from './config';
+import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from '../const';
 import styles from './CreateWallet.module.scss';
 
 function CreateWallet() {
@@ -34,6 +34,10 @@ function CreateWallet() {
   const handleNext = () => {
     setIsModalOpen(true);
     backupPhrase(inputPhrases);
+  };
+
+  const handleConfirm = () => {
+    navigate('./confirm');
   };
   return (
     <OnboardingContainer
@@ -67,7 +71,7 @@ function CreateWallet() {
               title="Copy and Store Information"
               desc="Did you remember to securely save a copy of your secret backup phrase? Copy and store your secret backup phrase on a personal device or write it down, then proceed to the next screen."
               buttonText="Continue"
-              path="./confirm"
+              handleConfirm={handleConfirm}
             >
               <div className={styles.BoxPlaceHolder}></div>
             </Modal>
