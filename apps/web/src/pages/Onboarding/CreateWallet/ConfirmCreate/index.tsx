@@ -61,7 +61,6 @@ function ConfirmCreate() {
   return (
     <OnboardingContainer className={styles.Onboarding} title={CONFIRM_WALLET_TITLE} description={CONFIRM_WALLET_DESCR}>
       <TextBox inputText={inputPhrases.join(' ')} />
-
       {/* currently there is no design thing for warnings onboarding confirmation page if the selected words less than 12, so when it is ready we can replace it with the below div (using kinda tost, popup whatever it is ASAP), but the logic will be same */}
       {showWarning && (
         <div className={styles.WarningBox}>

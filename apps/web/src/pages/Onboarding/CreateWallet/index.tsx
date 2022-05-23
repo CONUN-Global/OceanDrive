@@ -9,6 +9,7 @@ import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
 import useStore from '../../../store/store';
 import OnboardingContainer from '../OnboardingContainer';
+
 import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from '../const';
 import styles from './CreateWallet.module.scss';
 
@@ -62,7 +63,6 @@ function CreateWallet() {
           <p className={isCopied ? styles.Copied : styles.NotCopied}>Copied!</p>
         </div>
         <Navigation prev={() => navigate(-1)} next={handleNext} />
-
         {isModalOpen && (
           <>
             <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
