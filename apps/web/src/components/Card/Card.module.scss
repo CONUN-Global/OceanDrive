@@ -1,19 +1,21 @@
 .Card {
-  background-color: var(--background);
-  padding: 5% 7%;
+  word-break: break-all;
+  min-height: 370px;
   border-radius: 10px;
-  font-size: 1rem;
-  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &.border {
+    border: 1px solid var(--off-white);
+  }
 
   &.primary {
-    background-color: var(--background);
+    background-color: var(--white);
   }
 
-  &.secondary {
-    background-color: var(--foreground);
-  }
-
-  &.tertiary {
-    background-color: var(--middle-blue-grey);
+  &.ghost {
+    background-color: none;
   }
 }

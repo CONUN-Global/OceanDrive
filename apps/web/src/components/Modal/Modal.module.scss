@@ -5,7 +5,7 @@
   right: auto;
   bottom: auto;
   margin-right: -50%;
-  background-color: white;
+  background-color: white !important;
   visibility: visible;
   min-width: 400px;
   max-width: 500px;
@@ -29,7 +29,7 @@
 
     & .Desc {
       font-size: 1.2rem;
-      color: var(--gray);
+      color: var(--grey);
     }
   }
 

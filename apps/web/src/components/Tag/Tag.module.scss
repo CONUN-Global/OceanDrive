@@ -1,20 +1,24 @@
+@import '../../styles/fonts';
+
 .Tag {
   border: none;
-  box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
   cursor: pointer;
-  padding: 10px;
+  padding: 3px 10px;
+  color: var(--grey);
   background-color: #fff;
   display: inline-block;
-  font-size: 1rem;
   margin-right: 10px;
   margin-top: 10px;
   color: var(--gray);
+  @include fontBodyXL;
+  transition: 0.4s ease-in-out all;
   &.round {
     border-radius: 3px;
   }
 
   &.clicked {
-    background-color: var(--background);
+    background-color: var(--sea-blue);
+    color: white;
   }
   &.unClicked {
     background-color: white;

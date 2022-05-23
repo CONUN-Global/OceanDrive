@@ -1,0 +1,10 @@
+.PageContainer {
+  width: 100%;
+  padding: 200px 60px 0 60px;
+
+  .GridContainer {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}

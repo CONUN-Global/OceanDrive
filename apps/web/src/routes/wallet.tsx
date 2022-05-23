@@ -1,9 +1,9 @@
 import React from 'react';
-// import { Navigate } from 'react-router-dom';
 
 import CreateWallet from 'src/pages/Onboarding/CreateWallet';
 import ImportWallet from 'src/pages/Onboarding/ImportWallet';
 import ConfirmCreate from '../pages/Onboarding/CreateWallet/ConfirmCreate';
+
 import Onboarding from '../pages/Onboarding';
 
 export const onboardingRoutes = [

@@ -1,17 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import useStore from '../../../store/store';
 import RandomWord from 'random-words';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
+import Backdrop from '../../../components/Backdrop';
+import Button from '../../../components/Button';
+import Modal from '../../../components/Modal';
+import Navigation from '../../../components/Navigation';
+import TextBox from '../../../components/TextBox';
+import useStore from '../../../store/store';
 import OnboardingContainer from '../OnboardingContainer';
+<<<<<<< HEAD
 import TextBox from '../../../components/TextBox';
 import Button from 'src/components/Button';
 import Modal from '../../../components/Modal';
 import Navigation from '../../../components/Navigation';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';
+=======
+import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from './config';
+>>>>>>> master
 import styles from './CreateWallet.module.scss';
-import Backdrop from 'src/components/Backdrop';
-
-const title = 'Your Secret Backup Phrases';
 
 function CreateWallet() {
   const randomPhrases = RandomWord({ exactly: 12 }).join(' ');
@@ -42,12 +49,13 @@ function CreateWallet() {
   };
   return (
     <OnboardingContainer
+      key="create-wallet-page"
       className={styles.Onboarding}
-      title={title}
+      title={CREATE_WALLET_TITLE}
       description={
         <span className={styles.Description}>
-          <span>Copy your unique secret phrase to keep somewhere safe. The phrase cannot be recovered. This phrase will remain as your wallet password until it is changed.</span>
-          <span>Your secret phrase is 12 words with spaces included. When storing your secret phrase the order of the words should remain the same.</span>
+          <span>{CREATE_WALLET_DESCR1}</span>
+          <span>{CREATE_WALLET_DESCR2}</span>
         </span>
       }
     >

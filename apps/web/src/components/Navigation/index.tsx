@@ -1,9 +1,8 @@
 import React from 'react';
-
-import Button from 'src/components/Button';
-import HStack from 'src/components/HStack';
-
+import Button from '../Button';
+import HStack from '../HStack';
 import styles from './Navigation.module.scss';
+
 interface INavigation {
   prev: () => void;
   next: () => void;

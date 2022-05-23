@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import OnboardingContainer from '../OnboardingContainer';
+<<<<<<< HEAD
 import Dropdown from '../../../components/Dropdown';
 import Navigation from '../../../components/Navigation';
 // import TextBox from '../../../components/TextBox';
 import { ObjectType } from '../../../types/index';
 import styles from './ImportWallet.module.scss';
+=======
+// import styles from './ImportWallet.module.scss';
+>>>>>>> master
 
 const title = 'Import Account with Private Key';
 const description = 'Import an existing account with your secret seed prhase or use a private key.';

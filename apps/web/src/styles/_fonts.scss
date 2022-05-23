@@ -16,20 +16,14 @@
   line-height: 28px;
 }
 
-// @mixin fontBodyXXL {
-//   font-weight: 400;
-//   font-size: 16px;
-//   line-height: 174.4%;
-// }
+@mixin fontTitleS {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
 
-// @mixin fontBodyXL {
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 150%;
-// }
-
-// @mixin fontBodyXS {
-//   font-weight: 400;
-//   font-size: 12px;
-//   line-height: 150%;
-// }
+@mixin fontBodyXXL {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 174.4%;
+}

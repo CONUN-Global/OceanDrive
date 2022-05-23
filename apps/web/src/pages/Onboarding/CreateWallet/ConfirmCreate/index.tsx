@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import RandomWord from 'random-words';
-import useStore from '../../../../store/store';
-import OnboardingContainer from '../../OnboardingContainer';
-
-import TextBox from '../../../../components/TextBox';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '../../../../components/Navigation';
 import Tag from '../../../../components/Tag';
-import Backdrop from '../../../../components/Backdrop';
-import Modal from '../../../../components/Modal';
+import TextBox from '../../../../components/TextBox';
 import suffleItems from '../../../../helpers/suffleItems';
-
+import useStore from '../../../../store/store';
+import OnboardingContainer from '../../OnboardingContainer';
 import styles from './ConfirmCreate.module.scss';
 
 const title = 'Your Secret Backup Phrases';
@@ -20,6 +16,7 @@ function ConfirmCreate() {
   const backupPhrases = useStore(state => state.backupPhrase);
   const [phraseArr, setPhraseArr] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [showWarning, setShowWarning] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,18 +47,34 @@ function ConfirmCreate() {
   };
 
   const handleConfirm = () => {
-    setIsModalOpen(false);
-    localStorage.setItem('userLoggedIn', JSON.stringify(true));
-    navigate('/storage', { replace: true });
-    window.location.reload();
+    if (inputPhrases.length < 12) {
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 2000);
+    }
+    if (inputPhrases.length === 12) {
+      setIsModalOpen(false);
+      localStorage.setItem('userLoggedIn', JSON.stringify(true));
+      navigate('/storage', { replace: true });
+      window.location.reload();
+    }
   };
+
   return (
     <OnboardingContainer className={styles.Onboarding} title={title} description={description}>
       <TextBox inputText={inputPhrases.join(' ')} />
 
-      {phraseArr.map((phrase, i) => (
-        <Tag key={`${i}_${phrase}`} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
-      ))}
+      {/* currently there is no design thing for warnings onboarding confirmation page if the selected words less than 12, so when it is ready we can replace it with the below div (using kinda tost, popup whatever it is ASAP), but the logic will be same */}
+      {showWarning && (
+        <div className={styles.WarningBox}>
+          <p>Please select exactly 12 words!</p>
+        </div>
+      )}
+
+      <div className={styles.Tags}>
+        {phraseArr.map((phrase, i) => (
+          <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
+        ))}
+      </div>
 
       <Navigation prev={() => navigate(-1)} next={handleNext} />
       {isModalOpen && (

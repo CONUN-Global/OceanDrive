@@ -1,0 +1,58 @@
+@import '../../../styles/fonts';
+
+.leftSideBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20%;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  .ContentContainer {
+    padding: 50% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .Avatar {
+      width: 100px;
+      height: 100px;
+    }
+
+    .UploadButton {
+      border-radius: 20px;
+      height: 42px;
+      width: 150px;
+      background: #5f93f1;
+      font-style: normal;
+      @include fontBodyXXL;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .UtilityButtons {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .LockAccount {
+        font-style: normal;
+        @include fontBodyXL;
+        color: var(--grey-text);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
