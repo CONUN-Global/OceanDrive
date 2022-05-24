@@ -55,7 +55,7 @@ function FilterBar() {
           </span>
         </div>
       </div>
-      <motion.div className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
+      <motion.div initial={false} className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
         <div className={styles.SortItemsContainer}>
           <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-recent')}>
             <EllipseIcon /> Most Recent
