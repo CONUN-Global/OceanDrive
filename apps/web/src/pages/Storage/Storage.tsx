@@ -9,9 +9,9 @@ import { ReactComponent as ParrowIcon } from '../../assets/icons/parrow-icon.svg
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
 import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
 import { ReactComponent as UpArrowIcon } from '../../assets/icons/up-arrow-icon.svg';
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSideLayer from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
+import MainBackground from 'src/components/DriveLayouts/Background';
+import LeftSidebar from 'src/components/DriveLayouts/LeftSide';
+import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import DropZone from '../../components/DropZone/DropZone';
 import styles from './Storage.module.scss';
@@ -47,7 +47,7 @@ const Storage = () => {
 
   return (
     <MainBackground>
-      <LeftSideLayer>
+      <LeftSidebar>
         <SidebarContent>
           <div className={styles.DriveInfoContainer}>
             <div className={styles.MyDrivePlus}>
@@ -62,7 +62,7 @@ const Storage = () => {
             </div>
           </div>
         </SidebarContent>
-      </LeftSideLayer>
+      </LeftSidebar>
 
       <RightSideLayer title="My Drive">
         <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
@@ -96,7 +96,7 @@ const Storage = () => {
           </div>
         </div>
 
-        <motion.div className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
+        <motion.div initial={false} className={styles.MainBySortDet} animate={isOpen ? 'open' : 'closed'} variants={variants}>
           <div className={styles.SortItemsContainer}>
             <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-recent')}>
               <EllipseIcon /> Most Recent

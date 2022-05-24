@@ -55,7 +55,7 @@ function SingleItem() {
       <RightSideLayer title="xxx">
         <div className={styles.ContentContainer}>
           <div className={styles.UpperContainer}>
-            <img className={styles.Image} src={`../../assets/images/NFTTiles/NFT_Tiles-${id}.jpg`} alt="NFT IMAGE" />
+            <img className={styles.Image} src={require(`../../assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
             <div className={styles.TextContainer}>
               <h1>IN THE IMAGINARIUM OF THINGS #4/5</h1>
               <div className={styles.CreatorContainer}>
