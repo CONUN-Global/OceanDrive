@@ -6,6 +6,7 @@ import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarConten
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import styles from './SingleItem.module.scss';
 import ETH from 'src/assets/icons/ETH_Logo.svg';
+import Button from 'src/components/Button';
 
 import { TableSeedData, NFTData } from './SEED_DATA';
 import classNames from 'classnames';
@@ -133,9 +134,9 @@ function SingleItem() {
                 <h2>TAGS</h2>
                 <div className={styles.TagBtnContainer}>
                   {NFTData.tags.map((tag, index) => (
-                    <button className={styles.TagBtn} key={index}>
+                    <Button className={styles.TagBtn} key={index}>
                       {tag}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
