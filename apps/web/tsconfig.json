@@ -19,5 +19,5 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
 
-  "include": ["src", "**/*.ts", "**/*.tsx"]
+  "include": ["src", "**/*.ts", "**/*.tsx", "./declarations.d.ts"]
 }
