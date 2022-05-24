@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../../../redux/store';
 import { useNavigate } from 'react-router-dom';
-import RandomWord from 'random-words';
+import type { RootState } from '../../../../redux/store';
 import OnboardingContainer from '../../OnboardingContainer';
 import Navigation from '../../../../components/Navigation';
 import Tag from '../../../../components/Tag';
@@ -15,32 +14,23 @@ import styles from './ConfirmCreate.module.scss';
 
 function ConfirmCreate() {
   const [inputPhrases, setInputPhrases] = useState<string[]>([]);
-  const [phraseArr, setPhraseArr] = useState<string[]>([]);
+  const [allPhraseArr, setAllPhraseArr] = useState<string[]>([]);
+  const [answerPhrases, setAnswerPhrases] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [showWarning, setShowWarning] = useState<boolean>(false);
-  const backupPhrases = useSelector((store: RootState) => store.onboardingReducer.backupPhrase);
+  const confirmPhrases = useSelector((store: RootState) => store.onboardingReducer.backupPhrase);
   const navigate = useNavigate();
 
-  const getRandomPhrase = (num: number) => {
-    const randomPhrase = RandomWord({ exactly: num });
-    const phrases = backupPhrases.split(' ').concat(randomPhrase);
-    return phrases;
-  };
-  const isDuplicated = (arr: string[]) => {
-    const duplicated = arr.filter((letter, index, arr) => {
-      return arr.indexOf(letter) !== index;
-    });
-    return duplicated.length > 0 ? true : false;
+  const isIdentical = (arrA: string[], arrB: string[]) => {
+    return arrA.every((item, index) => item === arrB[index]);
   };
   useEffect(() => {
-    if (backupPhrases) {
-      let randomPhrase = getRandomPhrase(8);
-
-      while (isDuplicated(randomPhrase)) {
-        randomPhrase = getRandomPhrase(8);
-      }
-      const suffledPhrases = suffleItems(randomPhrase);
-      setPhraseArr(suffledPhrases);
+    if (confirmPhrases) {
+      const backupPhrase = confirmPhrases.slice(0, 12);
+      setAnswerPhrases(backupPhrase);
+      const arrayCopy = [...confirmPhrases];
+      const suffledPhrases = suffleItems(arrayCopy);
+      setAllPhraseArr(suffledPhrases);
     } else {
       navigate(-1);
     }
@@ -63,7 +53,12 @@ function ConfirmCreate() {
       setTimeout(() => setShowWarning(false), 2000);
     }
     if (inputPhrases.length === 12) {
-      setIsModalOpen(true);
+      if (isIdentical(inputPhrases, answerPhrases)) {
+        setIsModalOpen(true);
+      } else {
+        setShowWarning(true);
+        setTimeout(() => setShowWarning(false), 2000);
+      }
     }
   };
 
@@ -85,7 +80,7 @@ function ConfirmCreate() {
       )}
 
       <div className={styles.Tags}>
-        {phraseArr.map((phrase, i) => (
+        {allPhraseArr?.map((phrase, i) => (
           <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
         ))}
       </div>

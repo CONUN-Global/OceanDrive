@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  backupPhrase: '',
+  backupPhrase: [],
 };
 
 export const onboardingSlice = createSlice({
