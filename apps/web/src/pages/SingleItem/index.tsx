@@ -34,8 +34,8 @@ function SingleItem() {
       <tr className={styles.RowContainer}>
         <td>{rowData.buyerData}</td>
         <td>{rowData.editionData}</td>
-        <td style={{ color: '#a8a8a8', textTransform: 'uppercase', fontSize: '12px' }}>{rowData.dateData}</td>
-        <td style={{ textTransform: 'uppercase' }}>{rowData.priceData}</td>
+        <td className={styles.DateCell}>{rowData.dateData}</td>
+        <td className={styles.PriceCell}>{rowData.priceData}</td>
       </tr>
     );
   }
@@ -73,7 +73,7 @@ function SingleItem() {
               <div className={styles.HeadAndTableContainer}>
                 <div className={styles.TableHeadings}>
                   <h3>Collection </h3>
-                  <h3 style={{ color: '#d7d7d7' }}>Buying History</h3>
+                  <h3 className={styles.BuyHeading}>Buying History</h3>
                 </div>
                 <table className={styles.TableContainer}>
                   <thead className={styles.TableHead}>

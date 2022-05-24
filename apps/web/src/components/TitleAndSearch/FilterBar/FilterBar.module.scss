@@ -1,3 +1,5 @@
+@import '../../../styles/fonts.scss';
+
 .MainBySortBy {
   display: flex;
   align-items: center;
@@ -6,11 +8,9 @@
   top: 37%;
   min-width: 200px;
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  @include fontBodyXL;
   background-color: white;
-  color: var(--grey-text);
+  color: var(--grey8);
   padding-left: 0.8%;
   padding: 5px 0.8% 5px 0.8%;
   border: 1px solid #ececec;
@@ -39,12 +39,10 @@
   left: 4%;
   width: 24%;
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  @include fontBodyXL;
   background-color: white;
-  color: var(--grey-text);
-  border: 1px solid var(--off-white);
+  color: var(--grey8);
+  border: 1px solid var(--grey4);
   border-radius: 5px;
   padding-bottom: 12px;
 

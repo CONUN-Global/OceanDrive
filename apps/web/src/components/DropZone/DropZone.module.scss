@@ -10,8 +10,8 @@
 .container {
   text-align: center;
   padding: 20px;
-  border: 1.5px #5f93f1 dashed;
-  background-color: #f7f7f7;
+  border: 1.5px var(--main-blue) dashed;
+  background-color: var(--grey1);
   border-radius: 20px;
   height: 300px;
   width: 100%;

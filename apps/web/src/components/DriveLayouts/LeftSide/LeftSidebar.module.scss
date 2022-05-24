@@ -27,7 +27,7 @@
       border-radius: 20px;
       height: 42px;
       width: 150px;
-      background: #5f93f1;
+      background: var(--main-blue);
       font-style: normal;
       @include fontBodyXXL;
       text-align: center;
@@ -48,14 +48,14 @@
       & .UtilItem {
         font-style: normal;
         @include fontBodyXL;
-        color: var(--grey-text);
+        color: var(--grey8);
         display: flex;
         width: 60%;
         align-items: center;
         border-radius: 5px;
 
         &:hover {
-          color: grey;
+          color: var(--grey10);
         }
 
         svg {

@@ -32,7 +32,7 @@
           width: 40%;
           height: 100%;
           padding: 10px 0;
-          background-color: #f7f7f7;
+          background-color: var(--grey1);
           border-radius: 10px;
           display: flex;
           justify-content: center;
@@ -45,7 +45,7 @@
         }
 
         & .CollectionName {
-          color: #48afe8;
+          color: var(--sea-blue);
         }
 
         & .Avatar {
@@ -57,7 +57,7 @@
 
         & .CreatorName {
           font-weight: 800;
-          color: #48afe8;
+          color: var(--sea-blue);
         }
       }
 
@@ -90,7 +90,7 @@
     // TABLE
 
     .HeadAndTableContainer {
-      background-color: #f7f7f7;
+      background-color: var(--grey1);
       padding: 20px;
       border-radius: 10px;
 
@@ -101,6 +101,10 @@
         justify-content: space-between;
         margin-bottom: 15px;
         text-transform: uppercase;
+
+        & .BuyHeading {
+          color: var(--grey5);
+        }
       }
     }
     .TableContainer {
@@ -110,7 +114,7 @@
         min-width: 500px;
 
         & th {
-          color: #5f93f1;
+          color: var(--main-blue);
           padding-bottom: 15px;
           text-transform: uppercase;
         }
@@ -120,12 +124,23 @@
         text-align: center;
 
         & .RowContainer {
+          & .DateCell {
+            color: var(--grey8);
+            text-transform: uppercase;
+            font-size: 12px;
+          }
+          & .PriceCell {
+            text-transform: uppercase;
+          }
+
           & td {
             height: 2.5rem;
           }
         }
       }
     }
+
+    ////END OF TABLE
 
     .RightSideContainer {
       width: 50%;
@@ -138,7 +153,7 @@
       .InfoContainer {
         width: 100%;
         height: 100px;
-        background-color: #f7f7f7;
+        background-color: var(--grey1);
         border-radius: 10px;
         display: flex;
         justify-content: space-evenly;
@@ -150,7 +165,7 @@
           align-items: center;
 
           & .ItemTitle {
-            color: #48afe8;
+            color: var(--sea-blue);
             font-size: 12px;
             padding-bottom: 3px;
           }
@@ -175,7 +190,7 @@
           justify-content: space-between;
           width: 100%;
           height: 70%;
-          background-color: #f7f7f7;
+          background-color: var(--grey1);
           border-radius: 8px;
 
           & .LeftItems {
@@ -194,7 +209,7 @@
               }
               & div {
                 font-size: 32px;
-                color: #5f93f1;
+                color: var(--main-blue);
                 font-weight: 800;
                 padding-left: 8px;
               }
@@ -213,10 +228,9 @@
 
           & .BuyButton {
             width: 200px;
-            // height: 50px;
             height: 100%;
             border: none;
-            background-color: #5f93f1;
+            background-color: var(--main-blue);
             color: white;
             border-radius: 5px;
             font-size: 24px;
@@ -237,7 +251,7 @@
         justify-content: space-between;
 
         & .TagBtn {
-          background-color: #48afe8;
+          background-color: var(--sea-blue);
           color: white;
           border: none;
           padding: 10px;

@@ -17,7 +17,7 @@
       font-size: 18px;
       line-height: 26px;
       font-size: 1.5rem;
-      color: #5f93f1;
+      color: var(--main-blue);
     }
   }
 
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
-    color: var(--grey-text);
+    color: var(--grey8);
     padding: 10px 0;
   }
 }
@@ -40,14 +40,14 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    background-color: #f7f7f7;
+    background-color: var(--grey1);
     border-radius: 10px;
     height: 50%;
     width: 35%;
     left: 4%;
     right: 4%;
     top: 40%;
-    border: 2px dashed #48afe8;
+    border: 2px dashed var(--sea-blue);
 
     .DropZoneTextContainer {
       position: absolute;
@@ -65,7 +65,7 @@
         font-size: 22px;
         line-height: 25px;
         text-align: center;
-        background: linear-gradient(244.5deg, #48afe8 12.9%, #317eff 85.63%);
+        background: var(--main-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -82,7 +82,7 @@
         text-align: center;
         letter-spacing: 0.02em;
         font-style: normal;
-        background: #5f93f1;
+        background: var(--main-blue);
         width: 141px;
       }
 
@@ -93,7 +93,7 @@
         line-height: 17px;
         text-align: center;
         letter-spacing: 0.02em;
-        color: var(--grey-text);
+        color: var(--grey8);
       }
     }
   }

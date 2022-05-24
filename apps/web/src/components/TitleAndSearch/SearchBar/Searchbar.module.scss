@@ -11,7 +11,7 @@
 
     & svg {
       border: none;
-      color: grey;
+      color: var(--grey10);
       height: 17px;
       position: absolute;
       right: 15px;
@@ -20,7 +20,7 @@
     }
 
     & input {
-      border: 1px solid var(--grey-text);
+      border: 1px solid var(--grey8);
       border-radius: 20px;
       padding: 7px 0 7px 20px;
       width: 150px;
