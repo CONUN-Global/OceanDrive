@@ -1,15 +1,17 @@
+import React from 'react';
 import classNames from 'classnames';
+import { ObjectType } from '../../../types/index';
 import styles from './DropdownItem.module.scss';
 
 interface Props {
-  item: string;
+  item: ObjectType;
   className?: string;
-  onclick: React.MouseEventHandler<HTMLLIElement> | undefined;
+  selectItem: React.Dispatch<React.SetStateAction<ObjectType>>;
 }
-function DropdownItem({ item, onclick, className }: Props) {
+function DropdownItem({ item, selectItem, className }: Props) {
   return (
-    <li className={classNames(styles.DropdownItem, className)} onClick={onclick}>
-      {item}
+    <li className={classNames(styles.DropdownItem, className)} onClick={() => selectItem(item)}>
+      {item.method}
     </li>
   );
 }

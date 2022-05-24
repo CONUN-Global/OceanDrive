@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  backupPhrase: '',
+  backupPhrase: [],
 };
 
 export const onboardingSlice = createSlice({
@@ -16,4 +16,5 @@ export const onboardingSlice = createSlice({
 
 // each case under reducers becomes an action
 export const { setBackupPhrase } = onboardingSlice.actions;
+
 export default onboardingSlice.reducer;
