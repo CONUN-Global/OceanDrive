@@ -1,25 +1,31 @@
 import React from 'react';
 import classNames from 'classnames';
-
+import useToggle from '../../hooks/useToggle';
+import DropdownItem from '../../components/Dropdown/DropdownItem';
+import { ObjectType } from '../../types/index';
 import styles from './Dropdown.module.scss';
 
 interface IDropdown {
-  selected: string;
-  children: React.ReactNode;
+  selected: ObjectType;
+  items: {
+    [key: string]: string;
+  }[];
   classname?: string;
-  onclick: React.MouseEventHandler<HTMLDivElement> | undefined;
-  isDropdownOpen: boolean;
-  arrow?: React.ReactNode;
+  setSelected: React.Dispatch<React.SetStateAction<ObjectType>>;
 }
-function Dropdown({ children, selected, classname, onclick, isDropdownOpen, arrow }: IDropdown) {
+function Dropdown({ items, selected, setSelected, classname }: IDropdown) {
+  const [toggle, setToggle] = useToggle(false);
   return (
     <div className={classNames(styles.Dropdown, classname)}>
-      <div onClick={onclick} className={styles.SelectedItem}>
-        <div>{selected}</div>
-        {!!arrow && arrow}
+      <div onClick={setToggle} className={styles.SelectedItemContainer}>
+        <div>{selected.method}</div>
       </div>
 
-      {isDropdownOpen && children}
+      <ul className={classNames(styles.ListContainer, { [styles.close]: !toggle })}>
+        {items.map(item => (
+          <DropdownItem className={classNames(styles.Item)} selectItem={setSelected} key={item.id} item={item} />
+        ))}
+      </ul>
     </div>
   );
 }

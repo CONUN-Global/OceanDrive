@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import HStack from '../../components/HStack';
 import OnboardingCard from '../../components/OnboardingCard';
-import { ONBOARDING_DESCR, ONBOARDING_TITLE, walletCards } from './config';
+import { ONBOARDING_DESCR, ONBOARDING_TITLE, walletCards } from './const';
 import styles from './Onboarding.module.scss';
 import OnboardingContainer from './OnboardingContainer';
 
