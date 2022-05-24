@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as OceanDriveIcon } from 'src/assets/icons/Ocean-Drive.svg';
+import { ReactComponent as OceanDriveIcon } from '../../assets/icons/OceanStorage-icon.svg';
 
 import styles from './SplashScreen.module.scss';
 
