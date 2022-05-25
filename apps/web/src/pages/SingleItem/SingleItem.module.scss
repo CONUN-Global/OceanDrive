@@ -5,6 +5,7 @@
     padding: 20px;
     max-width: 1200px;
     padding: 200px 30px 0 30px;
+    margin-bottom: 3%;
 
     & .Image {
       padding: 0 20px;
@@ -78,13 +79,14 @@
     padding: 30px;
     max-width: 1200px;
     max-height: 37%;
-    overflow-y: auto;
+    overflow: hidden;
 
     & .LeftSideContainer {
       padding: 0 20px;
       display: flex;
       flex-direction: column;
       width: 50%;
+      overflow-y: auto;
     }
 
     // TABLE

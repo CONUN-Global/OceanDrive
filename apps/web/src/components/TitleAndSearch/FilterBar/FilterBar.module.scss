@@ -36,8 +36,8 @@
 
 .MainBySortDet {
   position: absolute;
-  left: 4%;
-  width: 24%;
+  left: 60px;
+  min-width: 200px;
   font-style: normal;
   @include fontBodyXL;
   background-color: white;
