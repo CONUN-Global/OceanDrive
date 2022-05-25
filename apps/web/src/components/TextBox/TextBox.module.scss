@@ -8,3 +8,8 @@
   color: var(--teal);
   @include fontTitleS;
 }
+@media only screen and (max-width: 1024px) {
+  .TextBox {
+    height: 124px;
+  }
+}
