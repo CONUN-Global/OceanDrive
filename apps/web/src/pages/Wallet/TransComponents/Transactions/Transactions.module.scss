@@ -1,0 +1,50 @@
+.Container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  // border: 1px solid var(--main-blue);
+
+  .Table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+
+    .TableRow {
+      background: #efefef;
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+
+      th {
+        width: 25%;
+        font-family: 'Source Sans 3';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 104.9%;
+        text-transform: capitalize;
+        color: #888888;
+        border-radius: 5px;
+      }
+    }
+
+    .P {
+      background-color: #ffffff;
+    }
+  }
+
+  .NoData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    color: #a8a8a8;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

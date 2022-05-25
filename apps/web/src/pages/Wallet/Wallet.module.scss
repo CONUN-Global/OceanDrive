@@ -1,6 +1,7 @@
 .Container {
   padding: 200px 60px 0 60px;
   width: 100%;
+  box-sizing: border-box;
 
   //   TOP
   & .BalanceContainer {
@@ -58,7 +59,8 @@
   //   BOTTOM
 
   & .BottomContainer {
-    height: 50%;
+    box-sizing: border-box;
+    height: 48%;
     & .SelectTabContainer {
       display: flex;
       padding-top: 100px;

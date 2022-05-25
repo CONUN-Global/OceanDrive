@@ -73,10 +73,16 @@
             height: 100%;
             padding-top: 30px;
             width: 59px;
+
+            svg {
+              fill: var(--grey4)
+            }
           }
 
           .active {
-            border-bottom: 2px solid var(--grey7);
+            svg {
+              fill: var(--main-blue);
+            }
           }
         }
       }
