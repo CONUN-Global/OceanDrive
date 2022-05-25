@@ -1,0 +1,25 @@
+.Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .InputBox {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin-left: 50px;
+
+    & .InputText {
+      color: var(--black);
+      text-transform: uppercase;
+    }
+    & .Input {
+      padding: 10px;
+      min-width: 350px;
+    }
+  }
+}
