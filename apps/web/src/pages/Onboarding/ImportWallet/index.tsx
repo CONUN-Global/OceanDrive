@@ -26,9 +26,8 @@ function ImportWallet() {
           ) : (
             <textarea className={styles.InputPhrase} rows={3} value={inputPhrases} onChange={e => setInputPhrases(e?.target?.value)}></textarea>
           )}
-
-          <Navigation prev={() => navigate(-1)} next={() => navigate('/')} />
         </div>
+        <Navigation prev={() => navigate(-1)} next={() => navigate('/')} />
       </div>
     </OnboardingContainer>
   );
