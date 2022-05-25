@@ -13,3 +13,8 @@
     padding: 10px 20px;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .HStack {
+    flex-direction: row;
+  }
+}

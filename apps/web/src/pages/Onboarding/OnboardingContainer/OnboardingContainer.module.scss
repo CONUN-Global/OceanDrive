@@ -29,7 +29,7 @@
         }
         h3 {
           font-weight: 600;
-          font-size: 32px;
+          font-size: 2.2rem;
           line-height: 46px;
           display: flex;
           align-items: center;
@@ -60,6 +60,24 @@
         color: white;
         @include fontBodyXXL;
         margin: 0 18px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    & .CardWrapper {
+      height: 100%;
+      & .Card {
+        width: 90%;
+        padding: 30px 20px;
+        min-height: 720px;
+        gap: 10px;
+        & .header {
+          svg {
+            margin-right: 10px;
+          }
+        }
       }
     }
   }
