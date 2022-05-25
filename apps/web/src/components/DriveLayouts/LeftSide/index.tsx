@@ -8,10 +8,12 @@ import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.sv
 import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Settings.svg';
 import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
 
-import placeholderImg from '../../../assets/images/Profile.png';
+import placeholderImg from '../../../assets/images/Avatar.png';
 import Button from '../../Button';
 
 import styles from './LeftSidebar.module.scss';
+
+import ToolTip from 'src/components/Tooltip';
 
 const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   const navigate = useNavigate();
@@ -50,7 +52,9 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
           </div>
         </div>
         <div>
-          <Button className={styles.UploadButton}>Upload a File</Button>
+          <ToolTip delay={100} content="Upload any file" direction="Bottom">
+            <Button className={styles.UploadButton}>Upload a File</Button>
+          </ToolTip>
           <div className={styles.UtilityButtons}>
             <div className={styles.Link}>
               <div className={styles.SVGBox}>
