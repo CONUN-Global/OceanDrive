@@ -17,7 +17,7 @@
       font-size: 18px;
       line-height: 26px;
       font-size: 1.5rem;
-      color: #5f93f1;
+      color: var(--main-blue);
     }
   }
 
@@ -26,153 +26,87 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
-    color: var(--grey-text);
+    color: var(--grey8);
     padding: 10px 0;
   }
 }
 
-.MainBySortBy {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  left: 4%;
-  top: 37%;
-  width: 24%;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  background-color: white;
-  color: var(--grey-text);
-  padding-left: 0.8%;
-  padding: 5px 0.8% 5px 0.8%;
-  border: 1px solid #ececec;
-  border-radius: 5px;
+.PageContainer {
+  width: 100%;
+  padding: 200px 60px 0 60px;
 
-  .SortItemsContainer {
-    text-align: end;
-    padding-right: 15%;
-  }
-
-  .mostRecent {
-    font-weight: 700;
-    color: #829ece;
-    cursor: pointer;
-    opacity: 1;
-    margin-left: 5px;
-
-    & svg {
-      margin-left: 4px;
-    }
-  }
-}
-
-.MainBySortDet {
-  position: absolute;
-  left: 4%;
-  top: 39.8%;
-  width: 24%;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  background-color: white;
-  color: var(--grey-text);
-  border: 1px solid var(--off-white);
-  border-radius: 5px;
-  padding-bottom: 12px;
-
-  .SortListItem {
-    width: 100%;
-    margin-top: 10px;
-    cursor: pointer;
-    padding-left: 5%;
-    padding-right: 10%;
-    padding: 7px 18px;
-    text-align: end;
-  }
-}
-
-.DropZoneContainer {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  // height: 56%;
-  height: 20%;
-  // width: 92%;
-  width: 35%;
-  left: 4%;
-  right: 4%;
-  top: 40%;
-  // top: 20%;
-  border: 2px dashed #48afe8;
-
-  .DropZoneTextContainer {
-    position: absolute;
-    top: 20%;
+  .DropZoneContainer {
     box-sizing: border-box;
     display: flex;
-    gap: 11px;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--grey1);
+    border-radius: 10px;
+    height: 50%;
+    width: 35%;
+    left: 4%;
+    right: 4%;
+    top: 40%;
+    border: 2px dashed var(--sea-blue);
 
-    .Title {
-      font-family: 'Barlow';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 22px;
-      line-height: 25px;
-      text-align: center;
+    .DropZoneTextContainer {
+      position: absolute;
+      top: 20%;
+      box-sizing: border-box;
+      display: flex;
+      gap: 11px;
+      flex-direction: column;
+      align-items: center;
 
-      background: linear-gradient(244.5deg, #48afe8 12.9%, #317eff 85.63%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+      .Title {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+        background: var(--main-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
 
-    .Button {
-      border-radius: 5px;
-      height: 45px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 26px;
-      text-align: center;
-      letter-spacing: 0.02em;
-      font-style: normal;
-      background: #5f93f1;
-      width: 141px;
-    }
+      .Button {
+        border-radius: 5px;
+        padding: 10px;
+        height: 45px;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-style: normal;
+        background: var(--main-blue);
+        width: 141px;
+      }
 
-    .UnlimitedSize {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 17px;
-      text-align: center;
-      letter-spacing: 0.02em;
-      color: var(--grey-text);
+      .UnlimitedSize {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--grey8);
+      }
     }
   }
-}
 
-.dragAndDropContainer {
-
-}
-
-.photosZero {
-  position: absolute;
-  bottom: 2%;
-  right: 4%;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: right;
-  color: #989898;
+  .photosZero {
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #989898;
+  }
 }

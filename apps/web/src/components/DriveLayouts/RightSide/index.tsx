@@ -7,7 +7,6 @@ import { ReactComponent as OceanStorageIcon } from '../../../assets/icons/OceanS
 import styles from './RightSideLayer.module.scss';
 
 interface IRightSide {
-  title: string;
   children: ReactNode;
 }
 
@@ -17,7 +16,7 @@ const IconArray = [
   { title: 'drive', icon: <DriveIcon /> },
 ];
 
-const RightSideLayer = ({ children }: IRightSide) => {
+function RightSideLayer({ children }: IRightSide) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -41,6 +40,6 @@ const RightSideLayer = ({ children }: IRightSide) => {
       </div>
     </div>
   );
-};
+}
 
 export default RightSideLayer;

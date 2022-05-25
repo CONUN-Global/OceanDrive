@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
+import Button from '../Button';
 
 import styles from './DropZone.module.scss';
 
@@ -15,14 +16,20 @@ function Dropzone({ onDrop, accept }: any) {
   //   </li>
   // ));
   return (
-    <div className={styles.Container}>
-      <div {...getRootProps({ className: styles.container })}>
-        <input className="input-zone" {...getInputProps()} />
-        <div className="text-center">
-          {isDragActive ? <p className="dropzone-content">Release to drop the files here</p> : <p className="dropzone-content">Drag and drop some files here, or click to select files</p>}
-          <button type="button" onClick={open} className="btn">
-            Click to select files
-          </button>
+    <div className={styles.DropZoneContainer}>
+      <div {...getRootProps({ className: styles.Container })}>
+        <input {...getInputProps()} />
+        <div className={styles.ContentContainer}>
+          {isDragActive ? (
+            <p className="dropzone-content">Release to drop the files here</p>
+          ) : (
+            <p className={styles.Text}>
+              Drag and drop <br /> or
+            </p>
+          )}
+          <Button type="button" onClick={open}>
+            Browse
+          </Button>
         </div>
       </div>
       {/* <aside>
