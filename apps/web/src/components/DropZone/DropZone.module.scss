@@ -3,22 +3,45 @@
   flex-direction: column;
   width: 70%;
   margin: auto;
+  margin-top: 100px;
   text-align: center;
   gap: 10px;
 }
 
-.container {
+.Container {
   text-align: center;
   padding: 20px;
   border: 1.5px var(--main-blue) dashed;
   background-color: var(--grey1);
-  border-radius: 20px;
+  border-radius: 15px;
   height: 300px;
   width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &:focus {
     outline: none;
+  }
+
+  & .ContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    & .Text {
+      font-size: 22px;
+      color: var(--main-blue);
+    }
+
+    button {
+      margin-top: 20px;
+      border-radius: 10px;
+      min-width: 100px;
+    }
   }
 }
 
@@ -38,4 +61,5 @@
   font-size: 1.4rem;
   outline: none;
   transition: border 0.24s ease-in-out;
+  border: 1px solid red;
 }
