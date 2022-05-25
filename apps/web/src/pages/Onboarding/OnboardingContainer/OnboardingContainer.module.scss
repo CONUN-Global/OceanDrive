@@ -13,12 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     & .Card {
       width: 50%;
-      min-height: 60vh;
+      height: 650px;
       background-color: var(--background);
       padding: 70px 80px;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: flex-start;
       & .header {
         svg {
