@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Transactions() {
-  return <div>Transactions</div>;
+  return <div>No Previous Transactions</div>;
 }
 
 export default Transactions;
