@@ -37,7 +37,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
               </div>
               <div className={styles.Text}>Storage</div>
             </div>
-            <div className={styles.Link}>
+            <div className={styles.Link} onClick={() => navigate(`/wallet/`)}>
               <div className={styles.SVGBox}>
                 <WalletIcon />
               </div>

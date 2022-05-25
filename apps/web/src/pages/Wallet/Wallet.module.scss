@@ -1,0 +1,96 @@
+.Container {
+  padding: 200px 60px 0 60px;
+  width: 100%;
+
+  //   TOP
+  & .BalanceContainer {
+    & .Title {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: var(--black);
+      font-size: 18px;
+    }
+
+    & .Balance {
+      color: white;
+      width: 256px;
+      height: 263px;
+      border-radius: 4px;
+      background-image: url('../../assets/images/Cycon_Card.svg');
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .TopItems {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        & .Title {
+          align-self: flex-start;
+          font-size: 18px;
+        }
+        & .Total {
+          align-self: flex-end;
+          font-size: 24px;
+        }
+      }
+      & .BottomItems {
+        & .BuyButton {
+          padding: 5px 20px;
+          border-radius: 20px;
+          border: none;
+          color: white;
+          background-color: #ffffff66;
+          border: 1px solid var(--grey5);
+          cursor: pointer;
+        }
+        & .BuyInfo {
+          font-size: 10px;
+          margin-top: 10px;
+          margin-left: 3px;
+          color: var(--grey1);
+        }
+      }
+    }
+  }
+
+  //   BOTTOM
+
+  & .BottomContainer {
+    height: 50%;
+    & .SelectTabContainer {
+      display: flex;
+      padding-top: 100px;
+
+      & .Tab {
+        text-transform: uppercase;
+        margin: 10px 20px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        color: var(--grey7);
+
+        &.active {
+          color: var(--black);
+        }
+      }
+
+      & .Tab:first-of-type {
+        margin-left: 5px;
+      }
+    }
+
+    & .InfoContainer {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--main-blue);
+      border-radius: 5px;
+      background-color: var(--grey3);
+    }
+  }
+}
