@@ -15,7 +15,6 @@ function Send() {
 
   function handleSubmit(e: React.FormEvent<any>) {
     e.preventDefault();
-    console.log('Submitted');
     setCurrentStep(prev => prev + 1);
   }
 
