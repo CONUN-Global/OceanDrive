@@ -7,6 +7,7 @@
 
   .Table {
     width: 100%;
+    overflow: auto;
     border-collapse: collapse;
     border-radius: 5px;
     background: #efefef;
@@ -101,7 +102,7 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 23px;
-        color: #3A3A3A;
+        color: #3a3a3a;
       }
     }
 
