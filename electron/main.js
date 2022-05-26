@@ -5,6 +5,8 @@ const path = require('path');
 const { initIpfs } = require('./ipcMain/ipfs');
 const { isDevelopment } = require('./utils');
 
+require('./ipcMain/api');
+
 let mainWindow;
 
 function createWindow() {
@@ -12,7 +14,8 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.resolve(__dirname, 'preload.js')
     }
   });
 
