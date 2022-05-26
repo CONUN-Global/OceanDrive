@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 20%;
+  width: 20vw;
   min-width: 200px;
   height: 100%;
   display: flex;
@@ -33,35 +33,53 @@
 
     & .LinksContainer {
       margin-top: 100px;
+      width: 20vw;
       cursor: pointer;
       display: flex;
       justify-content: center;
       flex-direction: column;
 
-      & .Link {
+      & .LinksAndIcon {
+        cursor: pointer;
         display: flex;
-        max-height: 50px;
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        border-radius: 10px;
+        align-items: center;
+        justify-content: space-between;
+        width: 20vw;
 
-        &:hover {
-          background-color: var(--grey2);
-        }
-
-        & .Text {
+        & .Link {
+          align-self: flex-end;
+          display: flex;
+          align-self: flex-end;
+          width: 85%;
+          max-height: 50px;
+          padding: 10px;
           font-size: 16px;
           color: var(--grey9);
-        }
 
-        & .SVGBox {
-          margin-right: 10px;
-          height: 15px;
-          width: 15px;
-          padding-top: 2px;
+          & .Text {
+            font-size: 16px;
+            color: var(--grey9);
+          }
 
-          & svg {
-            fill: var(--grey9);
+          &:hover {
+            color: var(--main-blue);
+          }
+          &:hover .SVGBox svg {
+            fill: var(--main-blue);
+          }
+          &:hover .Text {
+            color: var(--main-blue);
+          }
+
+          & .SVGBox {
+            margin-right: 10px;
+            height: 15px;
+            width: 15px;
+            padding-top: 2px;
+
+            & svg {
+              fill: var(--grey9);
+            }
           }
         }
       }
