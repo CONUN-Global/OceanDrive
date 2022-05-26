@@ -27,7 +27,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
         <div className={styles.BottomItems}>
           <div className={styles.UserItems}>
             {/* FIX: Needs to be made dynamic once we have API data*/}
-            <img className={styles.Avatar} src={'src/assets/icons/avatar.png'} />
+            <img className={styles.Avatar} src={require('src/assets/icons/avatar.png')} />
             <div className={styles.UserName}>{creator}</div>
           </div>
 

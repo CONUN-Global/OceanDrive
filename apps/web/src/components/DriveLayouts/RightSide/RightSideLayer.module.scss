@@ -23,6 +23,7 @@
     height: 99%;
     background-color: #ffffff;
     border-radius: 10px;
+    padding-bottom: 1rem;
 
     .TopBar {
       box-sizing: border-box;
@@ -42,7 +43,7 @@
         font-size: 3rem;
         display: flex;
         align-items: center;
-        color: var(--grey-text);
+        color: var(--grey8);
       }
       .IconsAndSettings {
         box-sizing: border-box;
@@ -72,14 +73,10 @@
             height: 100%;
             padding-top: 30px;
             width: 59px;
-            border-radius: 0px 0px 50px 50px;
           }
 
           .active {
-            background-color: #f8f8f9;
-            border-bottom: 1px solid #cac8c8;
-            border-left: 0.5px solid #dadada;
-            border-right: 0.5px solid #dadada;
+            border-bottom: 2px solid var(--grey7);
           }
         }
       }

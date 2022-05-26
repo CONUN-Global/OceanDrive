@@ -1,5 +1,4 @@
 .HStack {
-  margin-top: 85px;
   width: 100%;
 
   & .PrevButton {
@@ -12,5 +11,10 @@
     background-color: var(--sea-blue);
     color: var(--foreground);
     padding: 10px 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .HStack {
+    flex-direction: row;
   }
 }

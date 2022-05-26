@@ -2,7 +2,7 @@
   width: 100%;
   & .Title {
     font-size: 22px;
-    color: #5f93f1;
+    color: var(--main-blue);
     margin-bottom: 50px;
   }
 
@@ -17,12 +17,12 @@
 
       & button {
         font-size: 14px;
-        color: var(--grey);
+        color: var(--grey10);
         border: none;
         padding: 10px 20px;
 
         cursor: pointer;
-        background-color: #fff;
+        background-color: var(--foreground);
         border: 1px solid #d7d7d7;
         border-radius: 5px;
       }
@@ -34,7 +34,7 @@
     & .CheckboxContainer {
       display: flex;
       align-items: center;
-      color: var(--grey);
+      color: var(--grey10);
 
       & input {
         cursor: pointer;
