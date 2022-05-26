@@ -3,6 +3,7 @@
   width: 100%;
   height: calc(100vh - 25px);
   overflow-y: auto;
+  box-sizing: border-box;
 
   & .TopContainer {
     & .Title {
@@ -60,8 +61,9 @@
   //   BOTTOM
 
   & .BottomContainer {
-    height: 60%;
-    margin-bottom: 100px;
+    box-sizing: border-box;
+    height: 48%;
+    width: 100%;
     & .SelectTabContainer {
       display: flex;
       padding-top: 100px;
@@ -93,7 +95,9 @@
       justify-content: center;
       border: 1px solid var(--main-blue);
       border-radius: 5px;
-      background-color: var(--grey1);
+      // GREY 1 ?????
+      background-color: var(--grey3);
+      overflow: auto;
     }
   }
 }

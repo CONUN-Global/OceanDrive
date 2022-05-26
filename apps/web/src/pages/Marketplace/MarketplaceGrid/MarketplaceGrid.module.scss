@@ -7,7 +7,7 @@
     display: grid;
     gap: 1.2rem;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    height: 81%; // please don't make it over 81%, if we give more height it is overlapping and not showing last row pictures fully
+    height: 80%; // please don't make it over 81%, if we give more height it is overlapping and not showing last row pictures fully
     overflow-y: auto;
   }
 }
