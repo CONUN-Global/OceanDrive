@@ -8,6 +8,7 @@ import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.sv
 import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Settings.svg';
 import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
 import { ReactComponent as RectIcon } from 'src/assets/icons/rect.svg';
+import { ReactComponent as UploadIcon } from 'src/assets/icons/upload.svg';
 
 import placeholderImg from '../../../assets/images/Avatar.png';
 import Button from '../../Button';
@@ -15,6 +16,7 @@ import Button from '../../Button';
 import styles from './LeftSidebar.module.scss';
 
 import ToolTip from 'src/components/Tooltip';
+import classNames from 'classnames';
 
 const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/marketplace') && <RectIcon />}
               <div></div>
-              <div className={styles.Link} onClick={() => navigate(`/marketplace/`)}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/marketplace') })} onClick={() => navigate(`/marketplace/`)}>
                 <div className={styles.SVGBox}>
                   <MarketIcon />
                 </div>
@@ -45,7 +47,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/storage') && <RectIcon />}
               <div></div>
-              <div className={styles.Link} onClick={() => navigate(`/storage/`)}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/storage') })} onClick={() => navigate(`/storage/`)}>
                 <div className={styles.SVGBox}>
                   <HostIcon />
                 </div>
@@ -57,7 +59,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/wallet') && <RectIcon />}
               <div></div>
-              <div className={styles.Link} onClick={() => navigate(`/wallet/`)}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/wallet') })} onClick={() => navigate(`/wallet/`)}>
                 <div className={styles.SVGBox}>
                   <WalletIcon />
                 </div>
@@ -69,7 +71,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/publish') && <RectIcon />}
               <div></div>
-              <div className={styles.Link}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/publish') })}>
                 <div className={styles.SVGBox}>
                   <PublishIcon />
                 </div>
@@ -79,9 +81,10 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
           </div>
         </div>
         <div>
-          <ToolTip delay={100} content="Upload any file" direction="Bottom">
-            <Button className={styles.UploadButton}>Upload a File</Button>
-          </ToolTip>
+          <Button className={styles.UploadButton}>
+            <UploadIcon /> Drop File
+          </Button>
+
           <div className={styles.UtilityButtons}>
             <div className={styles.Link}>
               <div className={styles.SVGBox}>
@@ -104,4 +107,4 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
 
 export default LeftSidebar;
 
-// onClick={() => navigate(`/marketplace/${collection}/${id}`)}
+// className={classNames(styles.Tab, { [styles.active]: currentTab === 'Transactions' })}
