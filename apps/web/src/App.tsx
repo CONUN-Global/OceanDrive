@@ -16,6 +16,7 @@ import { authorizedRoutes } from './routes/authorized';
 import { onboardingRoutes } from './routes/wallet';
 
 import './styles/globals.scss';
+import useGetAppVersion from './hooks/useGetAppVersion';
 
 function App() {
   const location = useLocation();
