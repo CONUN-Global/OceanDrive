@@ -1,7 +1,7 @@
 .PageContainer {
   height: 100vh;
   width: 100vw;
-  background-color: #e5e5e5;
+  background-color: var(--foreground);
   display: grid;
   place-items: center;
 

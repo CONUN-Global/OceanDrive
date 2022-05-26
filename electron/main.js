@@ -1,19 +1,11 @@
 'use strict';
 
 const { app, BrowserWindow } = require('electron');
-const { Web3Storage } = require('@conun-global/web3.storage');
 const path = require('path');
+const { initIpfs } = require('./ipcMain/ipfs');
 const { isDevelopment } = require('./utils');
 
-async function executeWeb3Storage() {
-  try {
-    const storage = new Web3Storage();
-    await storage.startUp();
-    return storage;
-  } catch (error) {
-    console.log('error: ', error);
-  }
-}
+require('./ipcMain/api');
 
 let mainWindow;
 
@@ -22,7 +14,8 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.resolve(__dirname, 'preload.js')
     }
   });
 
@@ -44,13 +37,7 @@ function createWindow() {
 
 app.on('ready', async () => {
   createWindow();
-
-  try {
-    const node = await executeWeb3Storage();
-    console.log(node);
-  } catch (err) {
-    console.error(err);
-  }
+  initIpfs();
 });
 
 // Quit when all windows are closed.
