@@ -24,7 +24,7 @@
     gap: 24px;
     & .Title {
       font-size: 1.6rem;
-      color: var(--main-blue);
+      color: var(--black);
     }
 
     & .Desc {
@@ -34,7 +34,14 @@
   }
 
   & .ContinueButton {
-    margin-top: 24px;
+    // margin-top: 24px;
+    width: 100%;
     color: var(--foreground);
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    bottom: 0px;
+    height: 64px;
+    border-radius: 0 0 10px 10px;
   }
 }

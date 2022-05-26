@@ -1,9 +1,10 @@
 .Container {
-  padding: 200px 60px 0 60px;
+  padding: 15% 60px 0px 60px;
   width: 100%;
+  height: calc(100vh - 25px);
+  overflow-y: auto;
 
-  //   TOP
-  & .BalanceContainer {
+  & .TopContainer {
     & .Title {
       margin-bottom: 10px;
       text-transform: uppercase;
@@ -59,7 +60,8 @@
   //   BOTTOM
 
   & .BottomContainer {
-    height: 50%;
+    height: 60%;
+    margin-bottom: 100px;
     & .SelectTabContainer {
       display: flex;
       padding-top: 100px;

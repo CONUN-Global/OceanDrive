@@ -15,14 +15,11 @@ import Button from '../../Button';
 
 import styles from './LeftSidebar.module.scss';
 
-import ToolTip from 'src/components/Tooltip';
 import classNames from 'classnames';
 
 const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
-  console.log(pathname);
 
   return (
     <div className={styles.leftSideBar}>
@@ -59,7 +56,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/wallet') && <RectIcon />}
               <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/wallet') })} onClick={() => navigate(`/wallet/`)}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/wallet') })} onClick={() => navigate(`/wallet`)}>
                 <div className={styles.SVGBox}>
                   <WalletIcon />
                 </div>

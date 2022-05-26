@@ -24,7 +24,7 @@ function Wallet() {
       <RightSideLayer>
         <div className={styles.Container}>
           {/* TOP */}
-          <div className={styles.BalanceContainer}>
+          <div className={styles.TopContainer}>
             <h4 className={styles.Title}>MY BALANCE</h4>
             <div className={styles.Balance}>
               <div className={styles.TopItems}>
