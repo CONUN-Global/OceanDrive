@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-const { node } = require("test-util-ipfs-example");
-const path = require("path");
+import { node } from 'test-util-ipfs-example';
+import { resolve } from 'path';
 
 async function test() {
-  await node.waitForOutput("protocolVersion", "electron", [
-    path.resolve(`${__dirname}/main.js`)
+  await node.waitForOutput('protocolVersion', 'electron', [
+    resolve(`${__dirname}/main.js`)
   ]);
 }
 

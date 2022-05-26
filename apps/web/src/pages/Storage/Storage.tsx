@@ -9,9 +9,9 @@ import { ReactComponent as ParrowIcon } from '../../assets/icons/parrow-icon.svg
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
 import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
 import { ReactComponent as UpArrowIcon } from '../../assets/icons/up-arrow-icon.svg';
-import MainBackground from 'src/components/DriveLayouts/Background';
-import LeftSidebar from 'src/components/DriveLayouts/LeftSide';
-import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
+import MainBackground from '../../components/DriveLayouts/Background';
+import LeftSidebar from '../../components/DriveLayouts/LeftSide';
+import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import DropZone from '../../components/DropZone/DropZone';
 import styles from './Storage.module.scss';
