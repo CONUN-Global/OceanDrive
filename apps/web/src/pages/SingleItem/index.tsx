@@ -12,7 +12,7 @@ import Button from 'src/components/Button';
 
 import ETH from 'src/assets/icons/ETH_Logo.svg';
 
-import { TableSeedData, BuyHistorySeedData, NFTData } from './SEED_DATA';
+import { NFTData } from './SEED_DATA';
 import styles from './SingleItem.module.scss';
 
 function SingleItem() {
