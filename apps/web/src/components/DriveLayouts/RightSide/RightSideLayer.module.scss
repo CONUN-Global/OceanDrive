@@ -64,7 +64,8 @@
           margin-right: 50px;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: flex-end;
+          gap: 12px;
 
           .BtnContainer {
             display: flex;
@@ -72,11 +73,18 @@
             justify-content: center;
             height: 100%;
             padding-top: 30px;
-            width: 59px;
+            width: 25px;
+            height: 24px;
+
+            svg {
+              fill: var(--grey4);
+            }
           }
 
           .active {
-            border-bottom: 2px solid var(--grey7);
+            svg {
+              fill: var(--main-blue);
+            }
           }
         }
       }

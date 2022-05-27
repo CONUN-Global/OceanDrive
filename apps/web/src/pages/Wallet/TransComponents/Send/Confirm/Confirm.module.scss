@@ -1,0 +1,42 @@
+.Container {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  & .InfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+
+    & .Title {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    & .Info {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--main-blue);
+    }
+  }
+
+  & button {
+    align-self: center;
+    border-radius: 8px;
+    min-width: 148px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & svg {
+      margin-right: 4px;
+    }
+  }
+}

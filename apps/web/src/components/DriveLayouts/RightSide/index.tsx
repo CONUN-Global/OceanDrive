@@ -1,9 +1,13 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ReactComponent as DriveIcon } from '../../../assets/icons/drive-icon.svg';
-import { ReactComponent as HomeIcon } from '../../../assets/icons/home-icon.svg';
 import { ReactComponent as OceanStorageIcon } from '../../../assets/icons/OceanStorage-icon.svg';
+
+import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.svg';
+import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
+import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Publish.svg';
+import { ReactComponent as HostIcon } from 'src/assets/icons/Sidebar/Host.svg';
+
 import styles from './RightSideLayer.module.scss';
 
 interface IRightSide {
@@ -11,9 +15,10 @@ interface IRightSide {
 }
 
 const IconArray = [
-  { title: 'storage', icon: <OceanStorageIcon /> },
-  { title: 'marketplace', icon: <HomeIcon /> },
-  { title: 'drive', icon: <DriveIcon /> },
+  { title: 'marketplace', icon: <MarketIcon /> },
+  { title: 'wallet', icon: <WalletIcon /> },
+  { title: 'publish', icon: <PublishIcon /> },
+  { title: 'host', icon: <HostIcon /> },
 ];
 
 function RightSideLayer({ children }: IRightSide) {

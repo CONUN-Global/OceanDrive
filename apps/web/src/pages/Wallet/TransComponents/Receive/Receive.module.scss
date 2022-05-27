@@ -1,0 +1,43 @@
+.Container {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey1);
+
+  & .Title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  & .ImageContainer {
+    width: 160px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin: 40px 0;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  & .Address {
+    border: 1px solid var(--main-blue);
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    & svg {
+      width: 12px;
+      margin-left: 3px;
+    }
+  }
+}
