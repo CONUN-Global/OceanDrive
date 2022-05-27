@@ -1,25 +1,57 @@
 .Container {
-  width: 100%;
   height: 100%;
+  width: 100%;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
-  & .InputBox {
-    height: 20%;
+  & .InputsContainer {
     display: flex;
     flex-direction: column;
-    align-self: start;
-    margin-left: 50px;
+    justify-content: space-between;
 
-    & .InputText {
-      color: var(--black);
-      text-transform: uppercase;
+    & .InputBox {
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      padding-bottom: 5%;
+      & .Warning {
+        min-height: 25px;
+        font-size: 12px;
+        color: #d12221;
+        padding-top: 2px;
+      }
+
+      & .InputText {
+        color: var(--black);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      & .Input {
+        padding: 10px;
+        height: 40px;
+        min-width: 355px;
+        border: 1px solid var(--grey6);
+        border-radius: 3px;
+
+        &:focus {
+          outline: none;
+          border: 1px solid #4788ff;
+          box-shadow: 0 0 3px #4788ff;
+        }
+      }
     }
-    & .Input {
-      padding: 10px;
-      min-width: 350px;
-    }
+  }
+
+  & .Button {
+    width: 150px;
+    border-radius: 8px;
+    font-size: 16px;
+    align-self: center;
   }
 }

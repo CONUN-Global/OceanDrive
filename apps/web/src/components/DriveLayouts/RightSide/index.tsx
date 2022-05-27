@@ -11,8 +11,8 @@ interface IRightSide {
 }
 
 const IconArray = [
-  { title: 'storage', icon: <OceanStorageIcon /> },
   { title: 'marketplace', icon: <HomeIcon /> },
+  { title: 'storage', icon: <OceanStorageIcon /> },
   { title: 'wallet', icon: <WalletIcon /> },
 ];
 

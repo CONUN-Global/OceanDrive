@@ -1,7 +1,7 @@
 :root {
-  --tooltip-margin: 30px;
+  --tooltip-margin: 40px;
   --tooltip-arrow-size: 6px;
-  --tooltip-colour: var(--grey7);
+  --tooltip-colour: var(--main-blue);
   --font-colour: white;
 }
 
@@ -15,11 +15,12 @@
     border-radius: 4px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 7px;
+    padding: 7px 10px;
     color: var(--font-colour);
     background: var(--tooltip-colour);
     font-size: 14px;
     font-family: sans-serif;
+    letter-spacing: 0.5px;
     line-height: 1;
     z-index: 100;
     white-space: nowrap;
