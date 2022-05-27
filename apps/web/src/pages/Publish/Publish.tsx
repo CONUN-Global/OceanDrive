@@ -1,9 +1,6 @@
-import cuid from 'cuid';
 import React, { useCallback, useState } from 'react';
+import cuid from 'cuid';
 import TitleAndSearch from 'src/components/TitleAndSearch';
-import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
-import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
-import { ReactComponent as UpArrowIcon } from '../../assets/icons/up-arrow-icon.svg';
 import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
@@ -31,27 +28,14 @@ const Publish = () => {
   return (
     <MainBackground>
       <LeftSidebar>
-        <SidebarContent>
-          <div className={styles.DriveInfoContainer}>
-            <div className={styles.MyDrivePlus}>
-              <div className={styles.Title}>My Drive</div>
-              <PlusIcon />
-            </div>
-            <div className={styles.DriveItem}>
-              Track Meeting <TrackIcon />
-            </div>
-            <div className={styles.DriveItem}>
-              Track Meeting <TrackIcon />
-            </div>
-          </div>
-        </SidebarContent>
+        <SidebarContent></SidebarContent>
       </LeftSidebar>
 
       <RightSideLayer>
         <div className={styles.PageContainer}>
           <TitleAndSearch>My Drive</TitleAndSearch>
           <DropZone onDrop={onDrop} accept={'image/*'} />
-          <div style={{ position: 'absolute', top: '60%', left: '20%', width: '60%', display: 'flex', flexWrap: 'wrap', overflow: 'hidden', overflowY: 'hidden' }}>
+          <div>
             {images.map((image: any) => {
               console.log(image);
               return (

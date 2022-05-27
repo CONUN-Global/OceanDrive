@@ -85,15 +85,15 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
           <div className={styles.UtilityButtons}>
             <div className={styles.Link}>
               <div className={styles.SVGBox}>
-                <LogoutIcon />
-              </div>
-              <div className={styles.Text}>Logout</div>
-            </div>
-            <div className={styles.Link}>
-              <div className={styles.SVGBox}>
                 <SettingsIcon />
               </div>
               <div className={styles.Text}>Settings</div>
+            </div>
+            <div className={styles.Link}>
+              <div className={styles.SVGBox}>
+                <LogoutIcon />
+              </div>
+              <div className={styles.Text}>Logout</div>
             </div>
           </div>
         </div>

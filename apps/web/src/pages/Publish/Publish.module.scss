@@ -35,69 +35,6 @@
   width: 100%;
   padding: 200px 60px 0 60px;
 
-  .DropZoneContainer {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    background-color: var(--grey1);
-    border-radius: 10px;
-    height: 50%;
-    width: 35%;
-    left: 4%;
-    right: 4%;
-    top: 40%;
-    border: 2px dashed var(--sea-blue);
-
-    .DropZoneTextContainer {
-      position: absolute;
-      top: 20%;
-      box-sizing: border-box;
-      display: flex;
-      gap: 11px;
-      flex-direction: column;
-      align-items: center;
-
-      .Title {
-        font-family: 'Barlow';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 25px;
-        text-align: center;
-        background: var(--main-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .Button {
-        border-radius: 5px;
-        padding: 10px;
-        height: 45px;
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 26px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        font-style: normal;
-        background: var(--main-blue);
-        width: 141px;
-      }
-
-      .UnlimitedSize {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 17px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        color: var(--grey8);
-      }
-    }
-  }
-
   .photosZero {
     position: absolute;
     bottom: 2%;
