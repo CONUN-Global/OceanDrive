@@ -18,6 +18,8 @@
     "baseUrl": ".",
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-
+  "rules": {
+    "no-inferrable-types": [true]
+  },
   "include": ["src", "**/*.ts", "**/*.tsx", "./declaration.d.ts"]
 }

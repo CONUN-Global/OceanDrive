@@ -11,7 +11,7 @@ function Onboarding() {
   const navigate = useNavigate();
   return (
     <>
-      <OnboardingContainer title={ONBOARDING_TITLE} description={ONBOARDING_DESCR} isInitial={true}>
+      <OnboardingContainer title={ONBOARDING_TITLE} description={ONBOARDING_DESCR} isInitial={true} isCentered={true}>
         <HStack>
           {walletCards.map((card: any, idx: number) => (
             <Button variant="ghost" onClick={() => navigate(card.link)} key={idx}>
