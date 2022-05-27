@@ -9,13 +9,13 @@ import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import DropZone from '../../components/DropZone/DropZone';
-import styles from './Storage.module.scss';
+import styles from './Publish.module.scss';
 
 interface EventInterface {
   target: any;
 }
 
-const Storage = () => {
+const Publish = () => {
   const [images, setImages] = useState<any[]>([]);
   const onDrop = useCallback((acceptedFiles: any[]) => {
     acceptedFiles.map((file: any) => {
@@ -49,7 +49,7 @@ const Storage = () => {
 
       <RightSideLayer>
         <div className={styles.PageContainer}>
-          <TitleAndSearch>Storage</TitleAndSearch>
+          <TitleAndSearch>My Drive</TitleAndSearch>
           <DropZone onDrop={onDrop} accept={'image/*'} />
           <div style={{ position: 'absolute', top: '60%', left: '20%', width: '60%', display: 'flex', flexWrap: 'wrap', overflow: 'hidden', overflowY: 'hidden' }}>
             {images.map((image: any) => {
@@ -69,4 +69,4 @@ const Storage = () => {
   );
 };
 
-export default Storage;
+export default Publish;

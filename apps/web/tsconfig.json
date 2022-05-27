@@ -18,6 +18,5 @@
     "baseUrl": ".",
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-
   "include": ["src", "**/*.ts", "**/*.tsx", "./declaration.d.ts"]
 }

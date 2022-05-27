@@ -4,7 +4,7 @@ import Wallet from 'src/pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
-import Storage from '../pages/Storage/Storage';
+import Storage from '../pages/Publish/Publish';
 
 export const authorizedRoutes = [
   {
@@ -12,10 +12,10 @@ export const authorizedRoutes = [
     children: [
       {
         path: '/',
-        element: <SplashScreen path="/storage" />,
+        element: <SplashScreen path="/publish" />,
       },
       { path: 'wallet', element: <Wallet /> },
-      { path: 'storage', element: <Storage /> },
+      { path: 'publish', element: <Storage /> },
       {
         path: 'marketplace',
         children: [
