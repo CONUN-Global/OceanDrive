@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Button from '../Button';
 
 import styles from './DropZone.module.scss';
 
+const baseStyle = {
+  borderWidth: 2,
+  borderRadius: 2,
+  borderColor: '#eeeeee',
+  borderStyle: 'dashed',
+  backgroundColor: '#fafafa',
+  color: '#bdbdbd',
+  outline: 'none',
+  transition: 'border .24s ease-in-out',
+};
+
+const focusedStyle = {
+  borderColor: '#2196f3',
+};
+
+const acceptStyle = {
+  // borderColor: '#2196f3',
+  borderColor: '#00e676',
+};
+
+const rejectStyle = {
+  borderColor: '#ff1744',
+};
+
 function Dropzone({ onDrop, accept }: any) {
-  const { getRootProps, getInputProps, open, isDragActive } = useDropzone({
+  const { getRootProps, isFocused, isDragAccept, isDragReject, getInputProps, open, isDragActive } = useDropzone({
     accept,
     onDrop,
     noClick: true,
   });
+
+  const style = useMemo(
+    () => ({
+      ...baseStyle,
+      ...(isFocused ? focusedStyle : {}),
+      ...(isDragAccept ? acceptStyle : {}),
+      ...(isDragReject ? rejectStyle : {}),
+    }),
+    [isFocused, isDragAccept, isDragReject],
+  );
   // const files = acceptedFiles.map((file: any) => (
   //   <li key={file.path}>
   //     {file.path} - {file.size} bytes
@@ -17,7 +51,7 @@ function Dropzone({ onDrop, accept }: any) {
   // ));
   return (
     <div className={styles.DropZoneContainer}>
-      <div {...getRootProps({ className: styles.Container })}>
+      <div {...getRootProps({ className: styles.Container, style })}>
         <input {...getInputProps()} />
         <div className={styles.ContentContainer}>
           {isDragActive ? (

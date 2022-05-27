@@ -1,11 +1,13 @@
 .Container {
   padding: 15% 60px 0px 60px;
   width: 100%;
-  height: calc(100vh - 25px);
-  overflow-y: auto;
+  height: 100%;
   box-sizing: border-box;
+  margin-top: -15px;
 
-  & .TopContainer {
+  //   TOP
+  & .BalanceContainer {
+    height: 30%;
     & .Title {
       margin-bottom: 10px;
       text-transform: uppercase;
