@@ -4,8 +4,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 20vw;
-  min-width: 200px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -86,7 +84,6 @@
 
             & svg {
               fill: var(--grey9);
-              // border: 1px solid red;
             }
           }
         }

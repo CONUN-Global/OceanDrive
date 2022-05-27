@@ -1,47 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
 import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
-
-import styles from './SingleItem.module.scss';
-import ETH from 'src/assets/icons/ETH_Logo.svg';
+import Table from './Table';
+import History from './History';
 import Button from 'src/components/Button';
 
-import { TableSeedData, NFTData } from './SEED_DATA';
-import classNames from 'classnames';
+import ETH from 'src/assets/icons/ETH_Logo.svg';
+
+import { TableSeedData, BuyHistorySeedData, NFTData } from './SEED_DATA';
+import styles from './SingleItem.module.scss';
 
 function SingleItem() {
   const { collection, id } = useParams();
 
-  const headings = ['Buyer', 'Edition', 'Date', 'Price'];
-
-  interface RowData {
-    buyerData: string;
-    editionData: string;
-    dateData: string;
-    priceData: string | number;
-  }
-
-  function TableHeaders({ heading }: { heading: string }) {
-    return (
-      <th scope="col" className={styles.Heading}>
-        {heading}
-      </th>
-    );
-  }
-  function TableRows({ rowData }: { rowData: RowData }) {
-    return (
-      <tr className={styles.RowContainer}>
-        <td>{rowData.buyerData}</td>
-        <td>{rowData.editionData}</td>
-        <td className={styles.DateCell}>{rowData.dateData}</td>
-        <td className={styles.PriceCell}>{rowData.priceData}</td>
-      </tr>
-    );
-  }
+  const [currentTab, setCurrentTab] = useState<'Table' | 'History'>('Table');
 
   return (
     <MainBackground>
@@ -75,24 +52,21 @@ function SingleItem() {
             <div className={styles.LeftSideContainer}>
               <div className={styles.HeadAndTableContainer}>
                 <div className={styles.TableHeadings}>
-                  <h3>Collection </h3>
-                  <h3 className={styles.BuyHeading}>Buying History</h3>
+                  <h3 onClick={() => setCurrentTab('Table')} className={classNames(styles.Tab, { [styles.active]: currentTab === 'Table' })}>
+                    Collection
+                  </h3>
+                  <h3 onClick={() => setCurrentTab('History')} className={classNames(styles.Tab, { [styles.active]: currentTab === 'History' })}>
+                    Buying History
+                  </h3>
                 </div>
-                <table className={styles.TableContainer}>
-                  <thead className={styles.TableHead}>
-                    <tr>
-                      {headings.map(heading => (
-                        <TableHeaders key={heading} heading={heading} />
-                      ))}
-                    </tr>
-                  </thead>
-
-                  <tbody className={styles.TableBody}>
-                    {TableSeedData.map((rowData, index) => (
-                      <TableRows key={index} rowData={rowData} />
-                    ))}
-                  </tbody>
-                </table>
+                <div className={styles.TableContainer}>
+                  {
+                    {
+                      Table: <Table />,
+                      History: <History />,
+                    }[currentTab]
+                  }
+                </div>
               </div>
             </div>
 

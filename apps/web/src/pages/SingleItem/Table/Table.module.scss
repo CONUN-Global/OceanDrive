@@ -1,0 +1,58 @@
+.HeadAndTableContainer {
+  background-color: var(--grey1);
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  & .TableHeadings {
+    padding-left: 10px;
+    width: 70%;
+    min-width: 200px;
+    max-width: 330px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--grey8);
+
+    & .active {
+      color: var(--black);
+    }
+  }
+}
+.TableContainer {
+  // width: 100%;
+  // min-height: 330px;
+  display: flex;
+  flex-direction: column;
+
+  .TableHead {
+    min-width: 500px;
+    & th {
+      color: var(--main-blue);
+      padding-bottom: 15px;
+      text-transform: uppercase;
+    }
+  }
+
+  .TableBody {
+    text-align: center;
+    border: 1px solid red;
+
+    & .RowContainer {
+      & .DateCell {
+        color: var(--grey8);
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      & .PriceCell {
+        text-transform: uppercase;
+      }
+
+      & td {
+        height: 2.5rem;
+      }
+    }
+  }
+}
