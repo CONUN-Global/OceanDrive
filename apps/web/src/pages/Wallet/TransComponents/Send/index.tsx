@@ -15,6 +15,7 @@ function Send() {
 
   function handleSubmit(e: React.FormEvent<any>) {
     e.preventDefault();
+    // Check for errors -> Then push to next step
     setCurrentStep(prev => prev + 1);
   }
 

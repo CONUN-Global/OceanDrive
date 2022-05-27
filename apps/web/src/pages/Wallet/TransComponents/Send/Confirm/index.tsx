@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
 import styles from './Confirm.module.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { ReactComponent as SendIcon } from 'src/assets/icons/send.svg';
 import Modal from 'src/components/Modal';
 import Backdrop from 'src/components/Backdrop';
+import { toast, ToastContainer } from 'react-toastify';
 
 const seedData = {
   address: '83159875343845982754389897543983453634438',
@@ -19,6 +21,13 @@ function Confirm() {
   function handleSubmit(e: any) {
     e.preventDefault();
     // API CALL
+    toast.success('Sent!', {
+      position: 'bottom-center',
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      progress: undefined,
+    });
     setShowModal(true);
   }
 
@@ -58,6 +67,7 @@ function Confirm() {
           </Modal>
         </>
       )}
+      <ToastContainer />
     </>
   );
 }
