@@ -21,7 +21,12 @@
       padding: 70px 80px;
       justify-content: space-between;
       align-items: flex-start;
-      & .header {
+
+      & .Header {
+        &.centered {
+          text-align: center;
+          width: 100%;
+        }
         svg {
           width: 41px;
           height: 36px;
@@ -31,8 +36,6 @@
           font-weight: 600;
           font-size: 2.2rem;
           line-height: 46px;
-          display: flex;
-          align-items: center;
           color: var(--main-blue);
           margin-bottom: 30px;
         }
