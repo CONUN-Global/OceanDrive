@@ -17,7 +17,7 @@ function ConfirmCreate() {
   const [allPhraseArr, setAllPhraseArr] = useState<string[]>([]);
   const [answerPhrases, setAnswerPhrases] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [isPasswordVerified, setIsPasswordVerified] = useState<boolean>(false);
+  const [isPhraseVerified, setIsPhraseVerified] = useState<boolean>(false);
   const confirmPhrases = useSelector((store: RootState) => store.onboardingReducer.backupPhrase);
 
   const navigate = useNavigate();
@@ -38,10 +38,10 @@ function ConfirmCreate() {
 
   useEffect(() => {
     if (inputPhrases.length !== 12) {
-      setIsPasswordVerified(false);
+      setIsPhraseVerified(false);
     } else {
       if (isIdentical(inputPhrases, answerPhrases)) {
-        setIsPasswordVerified(true);
+        setIsPhraseVerified(true);
       }
     }
   }, [inputPhrases]);
@@ -75,7 +75,7 @@ function ConfirmCreate() {
           <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
         ))}
       </div>
-      <Navigation isButtonAvailable={isPasswordVerified} prev={() => navigate(-1)} next={handleNext} />
+      <Navigation isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
       {isModalOpen && (
         <>
           <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
@@ -85,7 +85,7 @@ function ConfirmCreate() {
             desc="You will now be directed to your profile"
             buttonText="Continue"
             handleConfirm={handleConfirm}
-            isButtonAvailable={isPasswordVerified}
+            isButtonAvailable={isPhraseVerified}
           >
             <div className={styles.BoxPlaceHolder}></div>
           </Modal>
