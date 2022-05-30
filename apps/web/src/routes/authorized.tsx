@@ -5,6 +5,7 @@ import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
 import Storage from '../pages/Publish/Publish';
+import Profile from 'src/pages/Profile';
 
 export const authorizedRoutes = [
   {
@@ -23,6 +24,7 @@ export const authorizedRoutes = [
           { path: ':collection/:id', element: <SingleItem /> },
         ],
       },
+      {path: 'profile', element: <Profile />}
     ],
   },
 ];
