@@ -10,7 +10,6 @@
 
   .ContentContainer {
     padding: 50% 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +30,7 @@
 
     & .LinksContainer {
       margin-top: 100px;
-      width: 20vw;
+      max-width: 240px;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -42,7 +41,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 20vw;
+        min-width: 240px;
 
         & .Link {
           align-self: flex-end;
