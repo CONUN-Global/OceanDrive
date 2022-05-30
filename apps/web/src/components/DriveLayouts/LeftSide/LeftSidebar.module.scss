@@ -4,15 +4,12 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 20vw;
-  min-width: 200px;
   height: 100%;
   display: flex;
   justify-content: center;
 
   .ContentContainer {
     padding: 50% 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +30,7 @@
 
     & .LinksContainer {
       margin-top: 100px;
-      width: 20vw;
+      max-width: 240px;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -44,7 +41,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 20vw;
+        min-width: 240px;
 
         & .Link {
           align-self: flex-end;
@@ -86,7 +83,6 @@
 
             & svg {
               fill: var(--grey9);
-              // border: 1px solid red;
             }
           }
         }
@@ -132,8 +128,11 @@
           color: var(--grey9);
 
           &:hover {
-            color: var(--grey10);
+            color: var(--main-blue);
           }
+        }
+        &:hover .SVGBox svg {
+          fill: var(--main-blue);
         }
 
         & .SVGBox {

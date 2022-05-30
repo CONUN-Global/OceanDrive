@@ -1,15 +1,19 @@
 // FIRST TWO CLASSES NEEDED FOR RIGHT SIDE BORDER/BACKGROUND
+:root {
+  --leftbar-size: 240px;
+}
+
 .OuterBg {
   display: flex;
   box-sizing: border-box;
   position: absolute;
   top: 1%;
   bottom: 1%;
-  left: 20%;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
   height: 98%;
-  width: 79%;
   border-radius: 10px;
+  width: calc(99vw - var(--leftbar-size));
+  left: var(--leftbar-size);
 
   .InnerBg {
     position: absolute;
