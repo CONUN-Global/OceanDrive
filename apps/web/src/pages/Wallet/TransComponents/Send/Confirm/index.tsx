@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Button from 'src/components/Button';
+import Button from '../../../../../components/Button';
 import styles from './Confirm.module.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { ReactComponent as SendIcon } from 'src/assets/icons/send.svg';
-import Modal from 'src/components/Modal';
-import Backdrop from 'src/components/Backdrop';
+import { ReactComponent as SendIcon } from '../../../../../assets/icons/send.svg';
+import Modal from '../../../../../components/Modal';
+import Backdrop from '../../../../../components/Backdrop';
 import { toast, ToastContainer } from 'react-toastify';
 
 const seedData = {

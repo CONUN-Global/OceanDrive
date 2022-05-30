@@ -10,17 +10,87 @@
   "author": "CONUN GLOBAL <jamshid@conun.co.kr>",
   "main": "./electron/main.js",
   "scripts": {
-    "clean": "echo 'Nothing to clean...'",
+    "build": "yarn clean && yarn build:base && cross-env PUBLIC_URL=./ yarn build:web && cross-env PUBLIC_URL=./ yarn build:web:post",
+    "build:web": "pushd \"./apps/web\" && cross-env REACT_APP_ELECTRON=true yarn build && popd",
+    "build:base": "yarn compile",
+    "build:mac": "npm run build && electron-builder --mac ",
+    "build:win": "npm run build && electron-builder --win ",
+    "build:web:post": "shx cp -Rf ./apps/web/build build/web",
     "wait": "wait-on http://localhost:3000",
     "start": "nodemon --watch build --exec \"yarn electron\"",
     "electron": "electron .",
     "web": "yarn workspace @ocean-drive/web start",
     "desktop": "cross-env BROWSER=none concurrently \"yarn web\" \"yarn compile -w\" \"yarn wait && yarn start\"",
     "compile": "tsc -b --incremental",
-    "serve": "npm run start"
+    "clean": "shx rm -f *.tsbuildinfo && shx rm -rf dist && shx rm -rf build && mkdir build"
+  },
+  "build": {
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "./out"
+    },
+    "appId": "ocean.drive.app",
+    "publish": {
+      "provider": "github"
+    },
+    "protocols": {
+      "name": "ocean-drive",
+      "schemes": [
+        "ocean-drive"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "extendInfo": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "ocean-drive"
+            ],
+            "CFBundleURLName": "Ocean Drive"
+          }
+        ]
+      }
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "certificateFile": "private/conun.io.certificate.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": "false",
+      "publisherName": "conun.io.certificate"
+    },
+    "linux": {
+      "category": "Utility",
+      "target": "deb",
+      "mimeTypes": [
+        "x-scheme-handler/ocean-drive"
+      ],
+      "desktop": {
+        "exec": "ocean-drive %U"
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": true
+    }
   },
   "dependencies": {
     "@conun-global/web3.storage": "2.1.3"
+    
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.5.0",
@@ -28,6 +98,7 @@
     "@types/react-dom": "^18.0.4",
     "electron": "^17.0.0",
     "electron-rebuild": "^3.1.1",
+    "electron-builder": "^23.0.3",
     "parcel": "^2.5.0",
     "typescript": "^4.6.4"
   },
