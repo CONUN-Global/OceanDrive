@@ -10,6 +10,12 @@ export const TableSeedData = [
   { buyerData: 'Claims', editionData: 'Rare', dateData: '4 weeks ago', priceData: '55' },
 ];
 
+export const BuyHistorySeedData = [
+  { icon: '../../assets/icons/Conun-Icon.svg', fileName: 'kash_way_img.jpeg', size: '2.4mb' },
+  { icon: '../../assets/icons/Conun-Icon.svg', fileName: 'history_of_nations.txt', size: '.4mb' },
+  { icon: '../../assets/icons/Conun-Icon.svg', fileName: 'karl_marx.jpg', size: '12.4mb' },
+];
+
 export const NFTData = {
   title: 'IN THE IMAGINARIUM OF THINGS #4/5',
   // IMG SHOULD BE INCLUDED--- COULDNT CAUSE IT IS DYNAMIC AND NEEDS THE ID

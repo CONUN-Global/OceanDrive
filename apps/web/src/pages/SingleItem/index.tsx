@@ -5,52 +5,29 @@ import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
-
-import styles from './SingleItem.module.scss';
-import ETH from 'src/assets/icons/ETH_Logo.svg';
+import Table from './Table';
+import History from './History';
 import Button from 'src/components/Button';
 
-import { TableSeedData, NFTData } from './SEED_DATA';
+import ETH from 'src/assets/icons/ETH_Logo.svg';
+
+import { NFTData } from './SEED_DATA';
+import styles from './SingleItem.module.scss';
 import classNames from 'classnames';
 
 function SingleItem() {
   const { collection, id } = useParams();
   const [clicked, setClicked] = useState<string>('buying-history');
 
-  const headings = ['Buyer', 'Edition', 'Date', 'Price'];
-
-  interface RowData {
-    buyerData: string;
-    editionData: string;
-    dateData: string;
-    priceData: string | number;
-  }
-
-  function TableHeaders({ heading }: { heading: string }) {
-    return (
-      <th scope="col" className={styles.Heading}>
-        {heading}
-      </th>
-    );
-  }
-  function TableRows({ rowData }: { rowData: RowData }) {
-    return (
-      <tr className={styles.RowContainer}>
-        <td>{rowData.buyerData}</td>
-        <td>{rowData.editionData}</td>
-        <td className={styles.DateCell}>{rowData.dateData}</td>
-        <td className={styles.PriceCell}>{rowData.priceData}</td>
-      </tr>
-    );
-  }
+  const [currentTab, setCurrentTab] = useState<'Table' | 'History'>('Table');
 
   const headingStyle = (word: string) => {
-    if(clicked === word) {
+    if (clicked === word) {
       return {
         color: '#3A3A3A',
       };
     }
-  }
+  };
 
   return (
     <MainBackground>
@@ -81,7 +58,7 @@ function SingleItem() {
           </div>
           <div className={styles.LowerContainer}>
             {/* Bottom Left Items */}
-            <div className={styles.LeftSideContainer}>
+            {/* <div className={styles.LeftSideContainer}>
               <div className={styles.HeadAndTableContainer}>
                 <div className={styles.TableHeadings}>
                   <h3 style={headingStyle('buying-history')} onClick={() => setClicked('buying-history')}>
@@ -110,7 +87,7 @@ function SingleItem() {
                 )}
                 {clicked === 'files' && <p>files table</p>}
               </div>
-            </div>
+            </div> */}
 
             {/* Bottom Right Items */}
             <div className={styles.RightSideContainer}>
