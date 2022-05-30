@@ -5,12 +5,11 @@ import Button from '../Button';
 import styles from './DropZone.module.scss';
 
 const baseStyle = {
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#eeeeee',
+  borderWidth: 1.6,
+  borderRadius: 10,
+  borderColor: '#5f93f1',
   borderStyle: 'dashed',
-  backgroundColor: '#fafafa',
-  color: '#bdbdbd',
+  backgroundColor: '#F7F7F7',
   outline: 'none',
   transition: 'border .24s ease-in-out',
 };

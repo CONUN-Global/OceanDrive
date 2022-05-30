@@ -5,7 +5,7 @@ import { ReactComponent as SettingsIcon } from 'src/assets/icons/Sidebar/Setting
 import { ReactComponent as HostIcon } from 'src/assets/icons/Sidebar/Host.svg';
 import { ReactComponent as LogoutIcon } from 'src/assets/icons/Sidebar/Logout.svg';
 import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.svg';
-import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Settings.svg';
+import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Publish.svg';
 import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
 import { ReactComponent as RectIcon } from 'src/assets/icons/rect.svg';
 import { ReactComponent as UploadIcon } from 'src/assets/icons/upload.svg';
@@ -32,23 +32,11 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/marketplace') && <RectIcon />}
               <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/marketplace') })} onClick={() => navigate(`/marketplace/`)}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/marketplace') })} onClick={() => navigate(`/marketplace`)}>
                 <div className={styles.SVGBox}>
                   <MarketIcon />
                 </div>
                 <div className={styles.Text}>Marketplace</div>
-              </div>
-            </div>
-
-            {/* STORAGE CONTAINER */}
-            <div className={styles.LinksAndIcon}>
-              {pathname.startsWith('/storage') && <RectIcon />}
-              <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/storage') })} onClick={() => navigate(`/storage/`)}>
-                <div className={styles.SVGBox}>
-                  <HostIcon />
-                </div>
-                <div className={styles.Text}>Storage</div>
               </div>
             </div>
 
@@ -68,11 +56,23 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
             <div className={styles.LinksAndIcon}>
               {pathname.startsWith('/publish') && <RectIcon />}
               <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/publish') })}>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/publish') })} onClick={() => navigate('/publish')}>
                 <div className={styles.SVGBox}>
                   <PublishIcon />
                 </div>
                 <div className={styles.Text}>Publish</div>
+              </div>
+            </div>
+
+            {/* HOST CONTAINER */}
+            <div className={styles.LinksAndIcon}>
+              {pathname.startsWith('/host') && <RectIcon />}
+              <div></div>
+              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/host') })} onClick={() => navigate(`/host`)}>
+                <div className={styles.SVGBox}>
+                  <HostIcon />
+                </div>
+                <div className={styles.Text}>Host</div>
               </div>
             </div>
           </div>
@@ -85,15 +85,15 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
           <div className={styles.UtilityButtons}>
             <div className={styles.Link}>
               <div className={styles.SVGBox}>
-                <LogoutIcon />
-              </div>
-              <div className={styles.Text}>Logout</div>
-            </div>
-            <div className={styles.Link}>
-              <div className={styles.SVGBox}>
                 <SettingsIcon />
               </div>
               <div className={styles.Text}>Settings</div>
+            </div>
+            <div className={styles.Link}>
+              <div className={styles.SVGBox}>
+                <LogoutIcon />
+              </div>
+              <div className={styles.Text}>Logout</div>
             </div>
           </div>
         </div>
