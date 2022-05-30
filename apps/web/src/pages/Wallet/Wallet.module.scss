@@ -1,10 +1,10 @@
 .Container {
-  padding: 15% 60px 0px 60px;
+  //Padding Top === NavBar height
+  padding: 10vh 60px 0px 60px;
   width: 100%;
-  height: calc(100vh - 25px);
+  height: calc(100vh - 36px);
   overflow-y: auto;
   box-sizing: border-box;
-  margin-top: -15px;
 
   //   TOP
   & .TopContainer {

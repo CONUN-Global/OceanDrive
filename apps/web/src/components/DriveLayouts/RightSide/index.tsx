@@ -29,16 +29,14 @@ function RightSideLayer({ children }: IRightSide) {
     <div className={styles.OuterBg}>
       <div className={styles.InnerBg}>
         <div className={styles.TopBar}>
-          <div className={styles.IconsAndSettings}>
-            <div className={styles.IconsOnly}>
-              {IconArray.map((item, index) => {
-                return (
-                  <div key={index} onClick={() => navigate(`/${item.title}`)} className={classNames(styles.BtnContainer, { [styles.active]: pathname.includes(`${item.title}`) })}>
-                    {item.icon}
-                  </div>
-                );
-              })}
-            </div>
+          <div className={styles.IconContainer}>
+            {IconArray.map((item, index) => {
+              return (
+                <div key={index} onClick={() => navigate(`/${item.title}`)} className={classNames(styles.BtnContainer, { [styles.active]: pathname.includes(`${item.title}`) })}>
+                  {item.icon}
+                </div>
+              );
+            })}
           </div>
         </div>
         {children}

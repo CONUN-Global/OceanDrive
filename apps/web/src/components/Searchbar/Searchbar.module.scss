@@ -1,0 +1,44 @@
+:root {
+  --input-height: 43px;
+  --input-width: 374px;
+}
+
+.Container {
+  position: absolute;
+  right: 210px;
+  top: 3%;
+  width: var(--input-width);
+  height: var(--input-height);
+  background-color: #f7f7f7;
+  border-radius: 50px;
+  display: flex;
+
+  & .SVGContainer {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: calc(var(--input-height) / 2);
+    height: calc(var(--input-height) / 2);
+    margin: 11px 10px 11px 17px;
+  }
+  .SVGContainer svg {
+    fill: var(--main-blue);
+  }
+
+  & .Input {
+    width: var(--input-width);
+    height: calc(var(--input-height - 5px));
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 0 50px 50px 0;
+
+    &::placeholder {
+      color: var(--main-blue);
+      padding-left: 2px;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
