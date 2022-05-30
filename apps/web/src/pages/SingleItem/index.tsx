@@ -75,8 +75,8 @@ function SingleItem() {
             <div className={styles.LeftSideContainer}>
               <div className={styles.HeadAndTableContainer}>
                 <div className={styles.TableHeadings}>
-                  <h3>Collection </h3>
-                  <h3 className={styles.BuyHeading}>Buying History</h3>
+                  <h3>Buying History </h3>
+                  <h3 className={styles.BuyHeading}>FILES</h3>
                 </div>
                 <table className={styles.TableContainer}>
                   <thead className={styles.TableHead}>

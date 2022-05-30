@@ -97,11 +97,10 @@
       border-radius: 10px;
 
       & .TableHeadings {
-        padding-left: 20px;
         width: 65%;
         display: flex;
-        justify-content: space-between;
         margin-bottom: 15px;
+        gap: 20px;
         text-transform: uppercase;
 
         & .BuyHeading {
@@ -114,11 +113,24 @@
 
       .TableHead {
         min-width: 500px;
+        // background-color: green;
+
+        & tr {
+          width: 100%;
+        }
 
         & th {
           color: var(--main-blue);
           padding-bottom: 15px;
           text-transform: uppercase;
+          width: 25%;
+        }
+
+        & tr :nth-child(1), & tr :nth-child(2) {
+          text-align: left;
+        }
+        & tr :nth-child(3), & tr :nth-child(4) {
+          text-align: right;
         }
       }
 
@@ -137,6 +149,13 @@
 
           & td {
             height: 2.5rem;
+          }
+
+          & :nth-child(1), & :nth-child(2) {
+            text-align: left;
+          }
+          & :nth-child(3), & :nth-child(4) {
+            text-align: right;
           }
         }
       }
