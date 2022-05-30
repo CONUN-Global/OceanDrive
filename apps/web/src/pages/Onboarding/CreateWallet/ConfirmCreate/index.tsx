@@ -17,8 +17,9 @@ function ConfirmCreate() {
   const [allPhraseArr, setAllPhraseArr] = useState<string[]>([]);
   const [answerPhrases, setAnswerPhrases] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [showWarning, setShowWarning] = useState<boolean>(false);
+  const [isPhraseVerified, setIsPhraseVerified] = useState<boolean>(false);
   const confirmPhrases = useSelector((store: RootState) => store.onboardingReducer.backupPhrase);
+
   const navigate = useNavigate();
 
   const isIdentical = (arrA: string[], arrB: string[]) => {
@@ -26,8 +27,7 @@ function ConfirmCreate() {
   };
   useEffect(() => {
     if (confirmPhrases) {
-      const backupPhrase = confirmPhrases.slice(0, 12);
-      setAnswerPhrases(backupPhrase);
+      setAnswerPhrases(confirmPhrases);
       const arrayCopy = [...confirmPhrases];
       const suffledPhrases = suffleItems(arrayCopy);
       setAllPhraseArr(suffledPhrases);
@@ -35,6 +35,16 @@ function ConfirmCreate() {
       navigate(-1);
     }
   }, []);
+
+  useEffect(() => {
+    if (inputPhrases.length !== 12) {
+      setIsPhraseVerified(false);
+    } else {
+      if (isIdentical(inputPhrases, answerPhrases)) {
+        setIsPhraseVerified(true);
+      }
+    }
+  }, [inputPhrases]);
 
   const addItem = (name: string) => {
     const itemFound = inputPhrases.find(phrase => phrase == name);
@@ -48,18 +58,7 @@ function ConfirmCreate() {
     setInputPhrases(selectedItems);
   };
   const handleNext = () => {
-    if (inputPhrases.length < 12) {
-      setShowWarning(true);
-      setTimeout(() => setShowWarning(false), 2000);
-    }
-    if (inputPhrases.length === 12) {
-      if (isIdentical(inputPhrases, answerPhrases)) {
-        setIsModalOpen(true);
-      } else {
-        setShowWarning(true);
-        setTimeout(() => setShowWarning(false), 2000);
-      }
-    }
+    setIsModalOpen(true);
   };
 
   const handleConfirm = () => {
@@ -71,25 +70,23 @@ function ConfirmCreate() {
   return (
     <OnboardingContainer className={styles.Onboarding} title={CONFIRM_WALLET_TITLE} description={CONFIRM_WALLET_DESCR}>
       <TextBox inputText={inputPhrases.join(' ')} />
-
-      {/* currently there is no design thing for warnings onboarding confirmation page if the selected words less than 12, so when it is ready we can replace it with the below div (using kinda tost, popup whatever it is ASAP), but the logic will be same */}
-      {showWarning && (
-        <div className={styles.WarningBox}>
-          <p>Please select exactly 12 words!</p>
-        </div>
-      )}
-
       <div className={styles.Tags}>
         {allPhraseArr?.map((phrase, i) => (
           <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
         ))}
       </div>
-
-      <Navigation prev={() => navigate(-1)} next={handleNext} />
+      <Navigation isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
       {isModalOpen && (
         <>
           <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
-          <Modal isModalOpen={isModalOpen} title="Wallet Successfully Created" desc="You will now be directed to your profile" buttonText="Continue" handleConfirm={handleConfirm}>
+          <Modal
+            isModalOpen={isModalOpen}
+            title="Wallet Successfully Created"
+            desc="You will now be directed to your profile"
+            buttonText="Continue"
+            handleConfirm={handleConfirm}
+            isButtonAvailable={isPhraseVerified}
+          >
             <div className={styles.BoxPlaceHolder}></div>
           </Modal>
         </>

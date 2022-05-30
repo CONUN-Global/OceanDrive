@@ -12,11 +12,12 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
   spinner?: string;
+  isDisabled?: boolean;
 }
 
-function Button({ children, className, round, loading = false, variant = 'primary', spinner = '#FFF', ...props }: IButton) {
+function Button({ children, className, round, loading = false, variant = 'primary', spinner = '#FFF', isDisabled = false, ...props }: IButton) {
   return (
-    <button className={classNames(styles.Button, styles[variant], { [styles.round]: round }, className)} {...props}>
+    <button disabled={isDisabled} className={classNames(styles.Button, styles[variant], { [styles.round]: round }, { [styles.disabled]: isDisabled }, className)} {...props}>
       {loading ? <SmallSpinner color={spinner} /> : children}
     </button>
   );
