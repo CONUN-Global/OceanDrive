@@ -7,8 +7,8 @@ import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarConten
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 
 import styles from './SingleItem.module.scss';
-import ETH from 'src/assets/icons/ETH_Logo.svg';
-import Button from 'src/components/Button';
+import ETH from '../../assets/icons/ETH_Logo.svg';
+import Button from '../../components/Button';
 
 import { TableSeedData, NFTData } from './SEED_DATA';
 import classNames from 'classnames';
