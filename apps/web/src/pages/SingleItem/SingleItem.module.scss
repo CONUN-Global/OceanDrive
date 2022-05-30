@@ -103,6 +103,11 @@
         gap: 20px;
         text-transform: uppercase;
 
+        h3 {
+          cursor: pointer;
+          color: var(--grey5);
+        }
+
         & .BuyHeading {
           color: var(--grey5);
         }

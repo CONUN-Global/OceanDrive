@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import MainBackground from '../../components/DriveLayouts/Background';
@@ -15,6 +15,7 @@ import classNames from 'classnames';
 
 function SingleItem() {
   const { collection, id } = useParams();
+  const [clicked, setClicked] = useState<string>('buying-history');
 
   const headings = ['Buyer', 'Edition', 'Date', 'Price'];
 
@@ -41,6 +42,14 @@ function SingleItem() {
         <td className={styles.PriceCell}>{rowData.priceData}</td>
       </tr>
     );
+  }
+
+  const headingStyle = (word: string) => {
+    if(clicked === word) {
+      return {
+        color: '#3A3A3A',
+      };
+    }
   }
 
   return (
@@ -75,24 +84,31 @@ function SingleItem() {
             <div className={styles.LeftSideContainer}>
               <div className={styles.HeadAndTableContainer}>
                 <div className={styles.TableHeadings}>
-                  <h3>Buying History </h3>
-                  <h3 className={styles.BuyHeading}>FILES</h3>
+                  <h3 style={headingStyle('buying-history')} onClick={() => setClicked('buying-history')}>
+                    Buying History{' '}
+                  </h3>
+                  <h3 style={headingStyle('files')} className={styles.BuyHeading} onClick={() => setClicked('files')}>
+                    FILES
+                  </h3>
                 </div>
-                <table className={styles.TableContainer}>
-                  <thead className={styles.TableHead}>
-                    <tr>
-                      {headings.map(heading => (
-                        <TableHeaders key={heading} heading={heading} />
-                      ))}
-                    </tr>
-                  </thead>
+                {clicked === 'buying-history' && (
+                  <table className={styles.TableContainer}>
+                    <thead className={styles.TableHead}>
+                      <tr>
+                        {headings.map(heading => (
+                          <TableHeaders key={heading} heading={heading} />
+                        ))}
+                      </tr>
+                    </thead>
 
-                  <tbody className={styles.TableBody}>
-                    {TableSeedData.map((rowData, index) => (
-                      <TableRows key={index} rowData={rowData} />
-                    ))}
-                  </tbody>
-                </table>
+                    <tbody className={styles.TableBody}>
+                      {TableSeedData.map((rowData, index) => (
+                        <TableRows key={index} rowData={rowData} />
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+                {clicked === 'files' && <p>files table</p>}
               </div>
             </div>
 
