@@ -26,7 +26,10 @@
     outline: none;
     padding: 0;
   }
-
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   &.round {
     border-radius: 20px;
   }
