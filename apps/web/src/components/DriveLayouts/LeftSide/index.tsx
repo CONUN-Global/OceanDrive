@@ -1,14 +1,14 @@
 import React, { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { ReactComponent as SettingsIcon } from 'src/assets/icons/Sidebar/Settings.svg';
-import { ReactComponent as HostIcon } from 'src/assets/icons/Sidebar/Host.svg';
-import { ReactComponent as LogoutIcon } from 'src/assets/icons/Sidebar/Logout.svg';
-import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.svg';
-import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Publish.svg';
-import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
 import { ReactComponent as RectIcon } from 'src/assets/icons/rect.svg';
 import { ReactComponent as UploadIcon } from 'src/assets/icons/upload.svg';
+import { ReactComponent as SettingsIcon } from '../../../assets/icons/Sidebar/Settings.svg';
+import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
+import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logout.svg';
+import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
+import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Settings.svg';
+import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
 
 import placeholderImg from '../../../assets/images/Avatar.png';
 import Button from '../../Button';

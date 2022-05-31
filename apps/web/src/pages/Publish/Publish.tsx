@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import cuid from 'cuid';
-import TitleAndSearch from 'src/components/TitleAndSearch';
+import TitleAndSearch from '../../components/TitleAndSearch';
+import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
+import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
+import { ReactComponent as UpArrowIcon } from '../../assets/icons/up-arrow-icon.svg';
 import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
