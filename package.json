@@ -98,11 +98,8 @@
     "@types/react-dom": "^18.0.4",
     "electron": "^17.0.0",
     "electron-rebuild": "^3.1.1",
-<<<<<<< HEAD
     "nodemon": "^2.0.16",
-=======
     "electron-builder": "^23.0.3",
->>>>>>> master
     "parcel": "^2.5.0",
     "typescript": "^4.6.4"
   },

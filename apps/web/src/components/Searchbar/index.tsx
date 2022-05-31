@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 function Searchbar() {
   const { pathname } = useLocation();
-  console.log(location);
 
   // JUST AN IDEA
   let placeholder = 'Search';
