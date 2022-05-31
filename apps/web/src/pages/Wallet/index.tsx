@@ -16,7 +16,7 @@ import SearchBar from 'src/components/Searchbar';
 const seedData = { balance: 598.0 };
 
 function Wallet() {
-  const [currentTab, setCurrentTab] = useState('Send');
+  const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Send');
   return (
     <MainBackground>
       <LeftSidebar>
