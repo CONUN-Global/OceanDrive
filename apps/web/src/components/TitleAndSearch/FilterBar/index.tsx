@@ -6,7 +6,6 @@ import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-i
 import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
 import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
 import { ReactComponent as UpArrow } from 'src/assets/icons/up-arrow-icon.svg';
-
 import { ReactComponent as UpCaret } from 'src/assets/icons/up-caret-icon.svg';
 
 const variants = {
