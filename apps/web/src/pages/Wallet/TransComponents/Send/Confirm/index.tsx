@@ -7,6 +7,7 @@ import { ReactComponent as SendIcon } from 'src/assets/icons/send.svg';
 import Modal from 'src/components/Modal';
 import Backdrop from 'src/components/Backdrop';
 import { toast, ToastContainer } from 'react-toastify';
+import classNames from 'classnames';
 
 const seedData = {
   address: '83159875343845982754389897543983453634438',
@@ -38,20 +39,20 @@ function Confirm() {
       <form className={styles.Container} onSubmit={handleSubmit}>
         <div className={styles.InfoContainer}>
           <div>
-            <h3 className={styles.Title}>RECIPIENT ADDRESS</h3>
+            <h3 className={styles.Title}>Recipient Address</h3>
             <div className={styles.Info}>{seedData.address}</div>
           </div>
           <div>
-            <h3 className={styles.Title}>RECIPIENT CURRENCY</h3>
+            <h3 className={styles.Title}>Currency</h3>
             <div className={styles.Info}>{seedData.currency}</div>
           </div>
           <div>
-            <h3 className={styles.Title}>AMOUNT</h3>
-            <div className={styles.Info}>{seedData.amount} CYC</div>
+            <h3 className={styles.Title}>Amount</h3>
+            <div className={classNames(styles.Info, styles.Bold)}>{seedData.amount} CYC</div>
           </div>
           <div>
-            <h3 className={styles.Title}>NETWORK FEE</h3>
-            <div className={styles.Info}>{seedData.fee} CYC/KB</div>
+            <h3 className={styles.Title}>Network Fee</h3>
+            <div className={classNames(styles.Info, styles.Bold)}>{seedData.fee} CYC/KB</div>
           </div>
         </div>
         <Button type="submit">
@@ -63,6 +64,7 @@ function Confirm() {
         <>
           <Backdrop isModalOpen={showModal} setIsModalOpen={setShowModal}></Backdrop>
           <Modal isModalOpen={showModal} title="Transaction Successful" desc="Your transaction was successful." buttonText="Confirm" handleConfirm={handleConfirm}>
+            {/* Temporary */}
             <div style={{ height: '120px', width: '290px', backgroundColor: '#a8a8a8', borderRadius: '15px' }}></div>
           </Modal>
         </>

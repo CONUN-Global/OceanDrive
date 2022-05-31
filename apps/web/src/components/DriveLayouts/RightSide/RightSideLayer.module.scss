@@ -14,6 +14,7 @@
   border-radius: 10px;
   width: calc(99vw - var(--leftbar-size));
   left: var(--leftbar-size);
+  overflow: auto;
 
   .InnerBg {
     position: absolute;
