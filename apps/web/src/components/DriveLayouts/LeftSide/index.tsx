@@ -10,7 +10,7 @@ import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Mark
 import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Settings.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
 
-import placeholderImg from '../../../assets/images/Avatar.png';
+import placeholderImg from '../../../assets/images/Avatar2.png';
 import Button from '../../Button';
 
 import styles from './LeftSidebar.module.scss';
