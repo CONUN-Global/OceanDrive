@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useToggle from '../../hooks/useToggle';
 import DropdownItem from '../../components/Dropdown/DropdownItem';
+import { ReactComponent as DArrowIcon } from '../../assets/icons/down-vector-icon.svg';
 import { ObjectType } from '../../types/index';
 import styles from './Dropdown.module.scss';
 
@@ -19,6 +20,7 @@ function Dropdown({ items, selected, setSelected, classname }: IDropdown) {
     <div className={classNames(styles.Dropdown, classname)}>
       <div onClick={setToggle} className={styles.SelectedItemContainer}>
         <div>{selected.method}</div>
+        <DArrowIcon />
       </div>
 
       <ul className={classNames(styles.ListContainer, { [styles.close]: !toggle })}>

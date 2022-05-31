@@ -21,11 +21,13 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const avatarBorder = pathname === '/profile' ? '2.5px solid #5f93f1' : 'none';
+
   return (
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
-          <img src={placeholderImg} className={styles.Avatar} />
+          <img style={{ border: avatarBorder }} onClick={() => navigate('/profile')} src={placeholderImg} className={styles.Avatar} />
 
           <div className={styles.LinksContainer}>
             {/* MARKET CONTAINER */}

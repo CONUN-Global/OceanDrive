@@ -5,6 +5,8 @@ import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
+import Table from './Table';
+import History from './History';
 // import Table from './Table';
 // import History from './History';
 
