@@ -1,11 +1,10 @@
 import React from 'react';
-
-import styles from './Receive.module.scss';
-
 import QRCode from '../../../../assets/images/qr-code.png';
 import { ReactComponent as CopyIcon } from '../../../../assets/icons/copy-icon.svg';
 import Tooltip from '../../../../components/Tooltip';
 import { toast, ToastContainer } from 'react-toastify';
+
+import styles from './Receive.module.scss';
 
 const seedData = {
   walletAddress: '0x879879879879877349509245092854439',
@@ -27,15 +26,17 @@ function copyText() {
 function Receive() {
   return (
     <div className={styles.Container}>
-      <h3 className={styles.Title}>My Wallet Address</h3>
-      <div className={styles.ImageContainer}>
-        <img src={QRCode} />
-      </div>
-      <Tooltip content="Click to copy to clipboard" direction="Bottom">
-        <div className={styles.Address} onClick={copyText}>
-          {seedData.walletAddress} <CopyIcon />
+      <div className={styles.InnerContainer}>
+        <h3 className={styles.Title}>My Wallet Address</h3>
+        <div className={styles.ImageContainer}>
+          <img src={QRCode} />
         </div>
-      </Tooltip>
+        <Tooltip content="Click to copy to clipboard" direction="Top">
+          <div className={styles.Address} onClick={copyText}>
+            {seedData.walletAddress} <CopyIcon />
+          </div>
+        </Tooltip>
+      </div>
       <ToastContainer />
     </div>
   );

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styles from './FilterBar.module.scss';
 import { motion } from 'framer-motion';
-import { ReactComponent as DownArrowIcon } from 'src/assets/icons/darrow-icon.svg';
+import { ReactComponent as DownArrowIcon } from 'src/assets/icons/down-arrow-icon.svg';
 import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-icon.svg';
 import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
 import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
-import { ReactComponent as ParrowIcon } from 'src/assets/icons/parrow-icon.svg';
-
-import { ReactComponent as UpArrowIcon } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as UpArrow } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as UpCaret } from 'src/assets/icons/up-caret-icon.svg';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
@@ -30,7 +29,7 @@ function FilterBar() {
         <div>
           {clicked === 'most-recent' && <EllipseIcon />}
           {clicked === 'low-to-high' && <DownArrowIcon />}
-          {clicked === 'high-to-low' && <ParrowIcon />}
+          {clicked === 'high-to-low' && <UpArrow />}
           {clicked === 'most-popular' && <HeartIcon />}
 
           <span
@@ -45,7 +44,7 @@ function FilterBar() {
             {clicked === 'most-popular' && 'Most Popular'}
             {isOpen ? (
               <span>
-                <UpArrowIcon style={{ width: '10px', marginBottom: '2px' }} />
+                <UpCaret style={{ width: '10px', marginBottom: '2px' }} />
               </span>
             ) : (
               <span>
@@ -65,7 +64,7 @@ function FilterBar() {
             <DownArrowIcon /> Price (low to high)
           </motion.div>
           <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('high-to-low')}>
-            <ParrowIcon /> Price (high to low)
+            <UpArrow /> Price (high to low)
           </motion.div>
           <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-popular')}>
             <HeartIcon /> Most Popular

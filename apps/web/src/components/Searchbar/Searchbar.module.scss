@@ -1,0 +1,47 @@
+$input_height: 43px;
+$input_width: 374px;
+
+@media screen and (max-width: 1170px) {
+  $input_width: 100px;
+}
+
+.Container {
+  position: absolute;
+  right: 210px;
+  top: calc($input_height / 2);
+  width: $input_width;
+  height: $input_height;
+  background-color: #f7f7f7;
+  border-radius: 50px;
+  display: flex;
+
+  & .SVGContainer {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: calc($input_height / 2);
+    height: calc($input_height / 2);
+    margin: 11px 10px 11px 17px;
+  }
+  .SVGContainer svg {
+    fill: var(--main-blue);
+  }
+
+  & .Input {
+    width: $input_width;
+    height: calc(var($input_height - 5px));
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    color: var(--black);
+
+    &::placeholder {
+      color: var(--black);
+      padding-left: 1px;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}

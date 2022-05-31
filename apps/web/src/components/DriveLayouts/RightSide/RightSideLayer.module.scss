@@ -14,6 +14,7 @@
   border-radius: 10px;
   width: calc(99vw - var(--leftbar-size));
   left: var(--leftbar-size);
+  overflow: auto;
 
   .InnerBg {
     position: absolute;
@@ -35,60 +36,32 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      height: 8%;
       width: 100%;
 
-      .PageTitle {
-        box-sizing: border-box;
-        padding-left: 60px;
-        padding-top: 15%;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 3rem;
+      .IconContainer {
         display: flex;
         align-items: center;
-        color: var(--grey8);
-      }
-      .IconsAndSettings {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 40%;
-        height: 100%;
+        gap: 12px;
+        margin-top: 30px;
+        padding-right: 40px;
 
-        & div svg {
-          cursor: pointer;
-        }
-
-        .IconsOnly {
-          height: 100%;
-          width: 45%;
-          min-width: 200px;
-          margin-right: 50px;
+        .BtnContainer {
           display: flex;
           align-items: center;
-          justify-content: flex-end;
-          gap: 12px;
+          justify-content: center;
+          height: 100%;
+          width: 25px;
+          height: 24px;
 
-          .BtnContainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            padding-top: 30px;
-            width: 25px;
-            height: 24px;
-
-            svg {
-              fill: var(--grey4);
-            }
+          svg {
+            fill: var(--grey4);
+            cursor: pointer;
           }
+        }
 
-          .active {
-            svg {
-              fill: var(--main-blue);
-            }
+        .active {
+          svg {
+            fill: var(--main-blue);
           }
         }
       }
