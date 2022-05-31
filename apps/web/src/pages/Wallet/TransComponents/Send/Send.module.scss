@@ -7,6 +7,10 @@
   align-items: flex-start;
   justify-content: center;
 
+  & .SizingContainer {
+    height: 100%;
+  }
+
   & .InputsContainer {
     display: flex;
     flex-direction: column;
@@ -16,7 +20,8 @@
       display: flex;
       flex-direction: column;
       align-self: start;
-      padding-bottom: 5%;
+      padding-bottom: 1rem;
+
       & .Warning {
         min-height: 25px;
         font-size: 12px;
@@ -27,9 +32,8 @@
       & .InputText {
         color: var(--black);
         font-size: 16px;
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-bottom: 14px;
+        font-weight: 400;
+        margin-bottom: 5px;
       }
 
       & .Input {

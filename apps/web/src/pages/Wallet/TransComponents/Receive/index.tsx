@@ -27,15 +27,17 @@ function copyText() {
 function Receive() {
   return (
     <div className={styles.Container}>
-      <h3 className={styles.Title}>My Wallet Address</h3>
-      <div className={styles.ImageContainer}>
-        <img src={QRCode} />
-      </div>
-      <Tooltip content="Click to copy to clipboard" direction="Bottom">
-        <div className={styles.Address} onClick={copyText}>
-          {seedData.walletAddress} <CopyIcon />
+      <div className={styles.InnerContainer}>
+        <h3 className={styles.Title}>My Wallet Address</h3>
+        <div className={styles.ImageContainer}>
+          <img src={QRCode} />
         </div>
-      </Tooltip>
+        <Tooltip content="Click to copy to clipboard" direction="Top">
+          <div className={styles.Address} onClick={copyText}>
+            {seedData.walletAddress} <CopyIcon />
+          </div>
+        </Tooltip>
+      </div>
       <ToastContainer />
     </div>
   );
