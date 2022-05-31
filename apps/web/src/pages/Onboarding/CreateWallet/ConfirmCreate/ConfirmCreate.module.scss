@@ -16,13 +16,4 @@
       display: flex;
     }
   }
-  & .WarningBox {
-    display: flex;
-    p {
-      padding: 5px 10px;
-      border-radius: 4px;
-      background-color: rgb(252, 252, 147);
-      color: rgb(136, 136, 38);
-    }
-  }
 }

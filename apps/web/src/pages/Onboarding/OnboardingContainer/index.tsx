@@ -12,18 +12,19 @@ interface OnboardingContainerProps {
   description?: string | React.ReactNode;
   isInitial: boolean;
   className?: string;
+  isCentered?: boolean;
 }
 
 OnboardingContainer.defaultProps = {
   isInitial: false,
 };
 
-function OnboardingContainer({ children, title, description, isInitial, className }: OnboardingContainerProps) {
+function OnboardingContainer({ children, title, description, isInitial, className, isCentered }: OnboardingContainerProps) {
   return (
     <div className={classNames(styles.container, className)}>
       <motion.div {...AOnboardingProps} className={styles.CardWrapper}>
         <Card className={styles.Card}>
-          <div className={styles.header}>
+          <div className={classNames(styles.Header, { [styles.centered]: isCentered })}>
             <h3 className={styles[isInitial ? 'initial' : '']}>
               {isInitial ? <OceanIcon /> : ''}
               {title || ''}

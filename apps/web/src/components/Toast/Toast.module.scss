@@ -1,0 +1,13 @@
+.Toast {
+  display: flex;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+  p {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: rgb(252, 252, 147);
+    color: rgb(136, 136, 38);
+  }
+}
