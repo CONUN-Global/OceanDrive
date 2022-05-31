@@ -1,11 +1,10 @@
 import React from 'react';
-
-import styles from './Receive.module.scss';
-
 import QRCode from '../../../../assets/images/qr-code.png';
 import { ReactComponent as CopyIcon } from 'src/assets/icons/copy-icon.svg';
 import Tooltip from 'src/components/Tooltip';
 import { toast, ToastContainer } from 'react-toastify';
+
+import styles from './Receive.module.scss';
 
 const seedData = {
   walletAddress: '0x879879879879877349509245092854439',

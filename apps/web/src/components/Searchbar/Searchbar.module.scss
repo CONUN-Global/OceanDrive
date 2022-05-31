@@ -33,10 +33,11 @@ $input_width: 374px;
     background-color: #f7f7f7;
     border: none;
     border-radius: 0 50px 50px 0;
+    color: var(--black);
 
     &::placeholder {
-      color: var(--main-blue);
-      padding-left: 2px;
+      color: var(--black);
+      padding-left: 1px;
     }
     &:focus {
       border: none;
