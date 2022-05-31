@@ -41,6 +41,7 @@
           display: flex;
           flex-direction: column;
           width: 90%;
+
           & .Title {
             align-self: flex-start;
             font-size: 18px;
@@ -50,6 +51,7 @@
             font-size: 24px;
           }
         }
+
         & .BottomItems {
           & .BuyButton {
             padding: 5px 20px;

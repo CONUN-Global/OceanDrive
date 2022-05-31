@@ -3,7 +3,7 @@ import styles from './Searchbar.module.scss';
 import { ReactComponent as SearchIcon } from 'src/assets/icons/search_icon.svg';
 
 function Searchbar() {
-  const [searchTerm, setSearchTerm] = useState<string>();
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchTerm(e.target.value);
@@ -14,7 +14,7 @@ function Searchbar() {
       <div className={styles.SVGContainer}>
         <SearchIcon />
       </div>
-      <input value={searchTerm} className={styles.Input} type="text" placeholder="Search Here" onChange={handleChange} />
+      <input value={searchTerm} className={styles.Input} type="text" placeholder="Search" onChange={handleChange} />
     </div>
   );
 }
