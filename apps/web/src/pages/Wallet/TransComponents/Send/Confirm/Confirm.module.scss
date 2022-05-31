@@ -10,7 +10,7 @@
   & .InfoContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
     height: 100%;
 
     & .Title {
@@ -18,11 +18,9 @@
       font-weight: 400;
       padding-bottom: 5px;
       color: var(--black);
-      // border: 1px solid red;
     }
     & .Info {
-      // border: 1px solid red;
-      margin-bottom: 1rem;
+      padding-bottom: 1rem;
       font-size: 16px;
       font-weight: 400;
       color: var(--main-blue);
