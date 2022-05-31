@@ -6,7 +6,7 @@
 .Container {
   position: absolute;
   right: 210px;
-  top: 3%;
+  top: calc(var(--input-height) / 2);
   width: var(--input-width);
   height: var(--input-height);
   background-color: #f7f7f7;
