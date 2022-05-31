@@ -7,6 +7,7 @@
   width: 100%;
   height: calc(100vh - 36px);
   min-height: 900px;
+  overflow-y: auto;
   box-sizing: border-box;
 
   .Content {
@@ -41,7 +42,10 @@
           display: flex;
           flex-direction: column;
           width: 90%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6943b4d... Fix styling issues around the application
           & .Title {
             align-self: flex-start;
             font-size: 18px;
@@ -51,13 +55,20 @@
             font-size: 24px;
           }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6943b4d... Fix styling issues around the application
         & .BottomItems {
           & .BuyButton {
             padding: 5px 20px;
             border-radius: 20px;
             border: none;
+<<<<<<< HEAD
             color: var(--foreground);
+=======
+            color: white;
+>>>>>>> 6943b4d... Fix styling issues around the application
             background-color: #ffffff66;
             border: 1px solid var(--grey5);
             cursor: pointer;
@@ -103,6 +114,10 @@
 
       & .InfoContainer {
         height: 400px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6943b4d... Fix styling issues around the application
         width: 100%;
         display: flex;
         align-items: center;
@@ -111,7 +126,10 @@
         border-radius: 5px;
         background-color: var(--grey1);
         overflow: auto;
+<<<<<<< HEAD
         overflow-x: hidden;
+=======
+>>>>>>> 6943b4d... Fix styling issues around the application
       }
     }
   }

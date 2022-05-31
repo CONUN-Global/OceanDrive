@@ -46,7 +46,7 @@ function Send() {
                       onChange={({ target }) => setInputInfo((prevState: any) => ({ ...prevState, input1: target.value }))}
                       value={inputInfo.input1}
                     />
-                    <p className={styles.Warning}>Invalid address, please check your input again</p>
+                    {errors > 0 && <p className={styles.Warning}>Invalid address, please check your input again</p>}
                   </div>
                   <div className={styles.InputBox}>
                     <label className={styles.InputText} htmlFor="Amount">

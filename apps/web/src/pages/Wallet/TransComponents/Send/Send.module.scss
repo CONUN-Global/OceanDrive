@@ -1,10 +1,17 @@
 .MotionContainer {
   height: 100%;
   width: 100%;
-  .Container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  & .SizingContainer {
     height: 100%;
-    width: 100%;
-    padding: 50px;
+  }
+
+  & .InputsContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
