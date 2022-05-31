@@ -11,7 +11,7 @@ let mainWindow,
   tray = null;
 
 function createTray() {
-  console.log('creating tray');
+
   const icon = path.join(__dirname, './assets/icon.png');
   const trayicon = nativeImage.createFromPath(icon);
   tray = new Tray(trayicon.resize({ width: 16 }));
