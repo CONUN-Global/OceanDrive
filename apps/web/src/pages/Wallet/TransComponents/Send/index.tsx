@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'src/components/Button';
+import Button from '../../../../components/Button';
 import Confirm from './Confirm';
 
 import styles from './Send.module.scss';

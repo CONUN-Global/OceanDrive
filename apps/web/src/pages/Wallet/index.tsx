@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import MainBackground from 'src/components/DriveLayouts/Background';
-import LeftSidebar from 'src/components/DriveLayouts/LeftSide';
-import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from 'src/components/DriveLayouts/RightSide';
+import MainBackground from '../../components/DriveLayouts/Background';
+import LeftSidebar from '../../components/DriveLayouts/LeftSide';
+import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
+import RightSideLayer from '../../components/DriveLayouts/RightSide';
 
 import Send from './TransComponents/Send';
 import Receive from './TransComponents/Receive';
