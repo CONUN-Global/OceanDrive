@@ -17,6 +17,24 @@ import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg'
 
 import styles from './CreateWallet.module.scss';
 
+const titleStyle = {
+  fontFamily: 'Barlow',
+  fontStyle: 'normal',
+  fontWeight: '600',
+  fontSize: '24px',
+  lineHeight: '160%',
+  textAlign: 'center',
+  color: '#5f93f1',
+  width: '395px',
+  height: '38px',
+};
+
+const description = (
+  <div>
+    Did you remember to <span style={{fontWeight: 'bold'}}>securely save a copy</span> of your secret backup phrase? Copy and store your secret backup phrase on a personal device or write it down, then proceed to the next screen.
+  </div>
+);
+
 function CreateWallet() {
   const dispatch = useDispatch();
   const [randomPhrases, setRandomPhrases] = useState<string[]>();
@@ -66,7 +84,7 @@ function CreateWallet() {
         <div className={styles.Container}>
           <Button className={styles.CopyButton} round variant="tertiary" onClick={handleCopy}>
             <CopyIcon className={styles.Clipboard} />
-            <p>Copy Secret Phase</p>
+            <p>Copy Secret Phrase</p>
           </Button>
 
           <p className={showMessage ? styles.Copied : styles.NotCopied}>Copied!</p>
@@ -77,8 +95,9 @@ function CreateWallet() {
             <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
             <Modal
               isModalOpen={isModalOpen}
-              title="Copy and Store Information"
-              desc="Did you remember to securely save a copy of your secret backup phrase? Copy and store your secret backup phrase on a personal device or write it down, then proceed to the next screen."
+              title="Copy and Store Information Reminder"
+              desc={description}
+              titleStyle={titleStyle}
               buttonText="Continue"
               handleConfirm={handleConfirm}
               isButtonAvailable={isCopied}

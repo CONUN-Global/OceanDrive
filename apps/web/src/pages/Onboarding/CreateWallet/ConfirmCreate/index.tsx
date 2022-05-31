@@ -12,6 +12,18 @@ import suffleItems from '../../../../helpers/suffleItems';
 import { CONFIRM_WALLET_TITLE, CONFIRM_WALLET_DESCR } from '../../const';
 import styles from './ConfirmCreate.module.scss';
 
+const titleStyle = {
+  fontFamily: 'Barlow',
+  fontStyle: 'normal',
+  fontWeight: '600',
+  fontSize: '24px',
+  lineHeight: '160%',
+  textAlign: 'center',
+  color: '#5f93f1',
+  width: '395px',
+  height: '38px',
+};
+
 function ConfirmCreate() {
   const [inputPhrases, setInputPhrases] = useState<string[]>([]);
   const [allPhraseArr, setAllPhraseArr] = useState<string[]>([]);
@@ -75,13 +87,14 @@ function ConfirmCreate() {
           <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
         ))}
       </div>
-      <Navigation isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
+      <Navigation clickText='Confirm' isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
       {isModalOpen && (
         <>
           <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
           <Modal
             isModalOpen={isModalOpen}
             title="Wallet Successfully Created"
+            titleStyle={titleStyle}
             desc="You will now be directed to your profile"
             buttonText="Continue"
             handleConfirm={handleConfirm}
