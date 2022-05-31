@@ -3,10 +3,10 @@ import React, { ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as OceanStorageIcon } from '../../../assets/icons/OceanStorage-icon.svg';
 
-import { ReactComponent as MarketIcon } from 'src/assets/icons/Sidebar/Market.svg';
-import { ReactComponent as WalletIcon } from 'src/assets/icons/Sidebar/Wallet.svg';
-import { ReactComponent as PublishIcon } from 'src/assets/icons/Sidebar/Publish.svg';
-import { ReactComponent as HostIcon } from 'src/assets/icons/Sidebar/Host.svg';
+import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
+import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
+import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
+import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 
 import styles from './RightSideLayer.module.scss';
 
