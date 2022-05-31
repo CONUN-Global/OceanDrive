@@ -7,7 +7,9 @@
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 10px;
     height: 25px;
     color: var(--gray);
     background-color: var(--foreground);
@@ -20,6 +22,7 @@
     visibility: visible;
     cursor: pointer;
     background-color: var(--foreground);
+    padding-top: 6px;
 
     &.close {
       visibility: hidden;
@@ -27,8 +30,11 @@
 
     & .Item {
       height: 25px;
+      text-align: left;
+      margin: 0;
+
       &:hover {
-        background-color: var(--light-gray);
+        background-color: var(--grey3);
       }
     }
   }

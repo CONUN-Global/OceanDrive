@@ -21,7 +21,7 @@ function Onboarding() {
             </Button>
           ))}
         </HStack>
-        <span className={styles.More}>More about Conun Wallet</span>
+        <span className={styles.More}>More about CONUN Wallet</span>
       </OnboardingContainer>
     </>
   );
