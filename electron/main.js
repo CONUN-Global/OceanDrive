@@ -1,15 +1,58 @@
 'use strict';
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron');
 const path = require('path');
 const { initIpfs } = require('./ipcMain/ipfs');
 const { isDevelopment } = require('./utils');
 
 require('./ipcMain/api');
 
-let mainWindow;
+let mainWindow,
+  tray = null;
+
+function createTray() {
+
+  const icon = path.join(__dirname, './assets/icon.png');
+  const trayicon = nativeImage.createFromPath(icon);
+  tray = new Tray(trayicon.resize({ width: 16 }));
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Open Drive',
+      click: () => {
+        /* eslint-disable */
+        if (!mainWindow) {
+          createWindow();
+        } else {
+          mainWindow.restore();
+        }
+      }
+    },
+    {
+      label: 'Quit',
+      click: () => {
+        app.quit();
+      }
+    }
+  ]);
+
+  tray.on('click', () => {
+    /* eslint-disable */
+    if (!mainWindow) {
+      createWindow();
+    } else {
+      mainWindow.restore();
+    }
+  });
+
+  tray.setContextMenu(contextMenu);
+  console.log('tray created');
+}
 
 function createWindow() {
+  if (!tray) {
+    createTray();
+  }
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,

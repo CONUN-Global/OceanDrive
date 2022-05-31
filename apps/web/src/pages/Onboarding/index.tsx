@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useGetAppVersion from 'src/hooks/useGetAppVersion';
+
 import Button from '../../components/Button';
 import HStack from '../../components/HStack';
 import OnboardingCard from '../../components/OnboardingCard';

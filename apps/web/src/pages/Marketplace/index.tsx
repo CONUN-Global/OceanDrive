@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import RightSideLayer from 'src/components/DriveLayouts/RightSide';
-import MainBackground from 'src/components/DriveLayouts/Background/index';
+import RightSideLayer from '../../components/DriveLayouts/RightSide';
+import MainBackground from '../../components/DriveLayouts/Background/index';
 
-import LeftSideLayer from 'src/components/DriveLayouts/LeftSide';
-import SidebarContent from 'src/components/DriveLayouts/LeftSide/SidebarContentLayout';
+import LeftSideLayer from '../../components/DriveLayouts/LeftSide';
+import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import Filter from './FilterSidebar';
 import CollectionGrid from './MarketplaceGrid';
 import Data from './seedData.json';

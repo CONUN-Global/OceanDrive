@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Wallet from 'src/pages/Wallet';
+import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';

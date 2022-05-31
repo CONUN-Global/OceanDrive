@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './Receive.module.scss';
 
 import QRCode from '../../../../assets/images/qr-code.png';
-import { ReactComponent as CopyIcon } from 'src/assets/icons/copy-icon.svg';
-import Tooltip from 'src/components/Tooltip';
+import { ReactComponent as CopyIcon } from '../../../../assets/icons/copy-icon.svg';
+import Tooltip from '../../../../components/Tooltip';
 import { toast, ToastContainer } from 'react-toastify';
 
 const seedData = {

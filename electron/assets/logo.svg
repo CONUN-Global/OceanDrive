@@ -1,0 +1,27 @@
+<svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8" filter="url(#filter0_ii_805_294)">
+<path d="M16.6837 0.487496C19.8021 0.782643 22.8127 1.77892 25.4888 3.40134C28.165 5.02375 30.437 7.23002 32.1338 9.85409C33.8306 12.4782 34.9081 15.4516 35.2851 18.5507C35.662 21.6498 35.3287 24.7937 34.3101 27.7458C33.2915 30.698 31.6143 33.3813 29.4046 35.594C27.195 37.8067 24.5104 39.491 21.5531 40.5201C18.5958 41.5493 15.4428 41.8965 12.3314 41.5355C9.21997 41.1746 6.23124 40.115 3.59018 38.4365C0.949108 36.7579 3.45304 34.9674 0.684868 29.0585C-2.0833 23.1496 9.34623 29.4412 9.34623 29.4412C10.6221 30.2521 12.0659 30.764 13.569 30.9384C15.0721 31.1127 16.5953 30.945 18.024 30.4478C19.4526 29.9507 20.7495 29.137 21.817 28.0681C22.8844 26.9991 23.6947 25.7028 24.1868 24.2767C24.6788 22.8505 24.8399 21.3317 24.6578 19.8346C24.4756 18.3375 23.9551 16.901 23.1354 15.6333C22.3157 14.3657 21.2181 13.2998 19.9253 12.5161C18.6325 11.7323 16.5547 10.82 14.0328 10.82C14.0328 10.82 8.73849 10.5627 9.34611 4.90024C9.95372 -0.76217 16.6837 0.487496 16.6837 0.487496Z" fill="url(#paint0_linear_805_294)"/>
+</g>
+<defs>
+<filter id="filter0_ii_805_294" x="-3.74805" y="-3.62988" width="39.1836" height="49.3037" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4" dy="-4"/>
+<feGaussianBlur stdDeviation="7"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_805_294"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_805_294" result="effect2_innerShadow_805_294"/>
+</filter>
+<linearGradient id="paint0_linear_805_294" x1="13.6663" y1="1.19265" x2="3.51273" y2="38.7153" gradientUnits="userSpaceOnUse">
+<stop stop-color="#48AFE8"/>
+<stop offset="1" stop-color="#317EFF"/>
+</linearGradient>
+</defs>
+</svg>
