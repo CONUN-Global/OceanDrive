@@ -1,3 +1,5 @@
+@import '../../../../../styles/fonts';
+
 .Container {
   height: 100%;
   width: 100%;
@@ -14,15 +16,13 @@
     height: 100%;
 
     & .Title {
-      font-size: 16px;
-      font-weight: 400;
+      @include fontBodyXXL;
       padding-bottom: 5px;
       color: var(--black);
     }
     & .Info {
       padding-bottom: 1rem;
-      font-size: 16px;
-      font-weight: 400;
+      @include fontBodyXXL;
       color: var(--main-blue);
     }
     & .Bold {
@@ -43,4 +43,11 @@
       margin-right: 4px;
     }
   }
+}
+
+.PlaceholderBox {
+  height: 120px;
+  width: 290px;
+  background-color: #a8a8a8;
+  border-radius: 15px;
 }
