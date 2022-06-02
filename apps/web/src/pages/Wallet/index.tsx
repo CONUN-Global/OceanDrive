@@ -12,11 +12,12 @@ import Transactions from './TransComponents/Transactions';
 
 import styles from './Wallet.module.scss';
 import SearchBar from 'src/components/Searchbar';
+import { AnimatePresence } from 'framer-motion';
 
 const seedData = { balance: 598.0 };
 
 function Wallet() {
-  const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Send');
+  const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Transactions');
   return (
     <MainBackground>
       <LeftSidebar>
