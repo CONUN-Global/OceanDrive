@@ -6,12 +6,6 @@ import { useLocation } from 'react-router-dom';
 function Searchbar() {
   const { pathname } = useLocation();
 
-  // JUST AN IDEA
-  let placeholder = 'Search';
-  if (pathname.startsWith('/marketplace')) placeholder = 'Search Marketplace';
-  if (pathname.startsWith('/wallet')) placeholder = 'Search Files';
-  if (pathname.startsWith('/publish')) placeholder = 'Search Files';
-
   const [searchTerm, setSearchTerm] = useState<string>('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -23,7 +17,7 @@ function Searchbar() {
       <div className={styles.SVGContainer}>
         <SearchIcon />
       </div>
-      <input value={searchTerm} className={styles.Input} type="text" placeholder={placeholder} onChange={handleChange} />
+      <input value={searchTerm} className={styles.Input} type="text" placeholder="Search" onChange={handleChange} />
     </div>
   );
 }

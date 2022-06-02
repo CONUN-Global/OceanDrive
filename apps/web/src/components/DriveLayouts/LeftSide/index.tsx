@@ -7,7 +7,7 @@ import { ReactComponent as SettingsIcon } from '../../../assets/icons/Sidebar/Se
 import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logout.svg';
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
-import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Settings.svg';
+import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
 import { motion } from 'framer-motion';
 
