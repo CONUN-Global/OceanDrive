@@ -1,16 +1,14 @@
-$input_height: 43px;
-$input_width: 374px;
-
-@media screen and (max-width: 1170px) {
-  $input_width: 100px;
+:root {
+  --input_height: 43px;
+  --input_width: 374px;
 }
 
 .Container {
   position: absolute;
   right: 210px;
-  top: calc($input_height / 2);
-  width: $input_width;
-  height: $input_height;
+  top: calc(var(--input_height) / 2);
+  width: var(--input_width);
+  height: var(--input_height);
   background-color: #f7f7f7;
   border-radius: 50px;
   display: flex;
@@ -19,8 +17,8 @@ $input_width: 374px;
     display: flex;
     justify-self: center;
     align-self: center;
-    width: calc($input_height / 2);
-    height: calc($input_height / 2);
+    width: calc(var(--input_height) / 2);
+    height: calc(var(--input_height) / 2);
     margin: 11px 10px 11px 17px;
   }
   .SVGContainer svg {
@@ -28,8 +26,8 @@ $input_width: 374px;
   }
 
   & .Input {
-    width: $input_width;
-    height: calc(var($input_height - 5px));
+    width: var(--input_width);
+    height: calc(var(--input_height) - 5px);
     background-color: #f7f7f7;
     border: none;
     border-radius: 0 50px 50px 0;

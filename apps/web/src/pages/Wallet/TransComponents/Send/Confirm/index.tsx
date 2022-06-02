@@ -65,7 +65,7 @@ function Confirm() {
           <Backdrop isModalOpen={showModal} setIsModalOpen={setShowModal}></Backdrop>
           <Modal isModalOpen={showModal} title="Transaction Successful" desc="Your transaction was successful." buttonText="Confirm" handleConfirm={handleConfirm}>
             {/* Temporary */}
-            <div style={{ height: '120px', width: '290px', backgroundColor: '#a8a8a8', borderRadius: '15px' }}></div>
+            <div className={styles.PlaceholderBox}></div>
           </Modal>
         </>
       )}
