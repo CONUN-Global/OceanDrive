@@ -8,15 +8,11 @@ import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import Table from './Table';
 import History from './History';
 import Button from 'src/components/Button';
-
-import styles from './SingleItem.module.scss';
 import ETH from '../../assets/icons/ETH_Logo.svg';
-import Button from '../../components/Button';
-
-
-import { NFTData } from './SEED_DATA';
 import styles from './SingleItem.module.scss';
 import classNames from 'classnames';
+
+import { NFTData } from './SEED_DATA';
 
 function SingleItem() {
   const { collection, id } = useParams();
