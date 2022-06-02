@@ -6,10 +6,9 @@ import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
 
-import styles from './SingleItem.module.scss';
+import Button from 'src/components/Button';
 import ETH from '../../assets/icons/ETH_Logo.svg';
-import Button from '../../components/Button';
-
+import styles from './SingleItem.module.scss';
 import classNames from 'classnames';
 
 import { NFTData } from './SEED_DATA';
