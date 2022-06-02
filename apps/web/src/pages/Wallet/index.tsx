@@ -12,7 +12,6 @@ import Transactions from './TransComponents/Transactions';
 
 import styles from './Wallet.module.scss';
 import SearchBar from 'src/components/Searchbar';
-import { AnimatePresence } from 'framer-motion';
 
 const seedData = { balance: 598.0 };
 
