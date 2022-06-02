@@ -23,7 +23,6 @@ function Send() {
   const variants = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -100 },
   };
 
   return (
@@ -47,7 +46,7 @@ function Send() {
                       onChange={({ target }) => setInputInfo((prevState: any) => ({ ...prevState, input1: target.value }))}
                       value={inputInfo.input1}
                     />
-                    {errors > 0 && <p className={styles.Warning}>Invalid address, please check your input again</p>}
+                    <p className={styles.Warning}>Invalid address, please check your input again</p>
                   </div>
                   <div className={styles.InputBox}>
                     <label className={styles.InputText} htmlFor="Amount">

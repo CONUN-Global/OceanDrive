@@ -68,3 +68,13 @@
     }
   }
 }
+
+@media (max-width: 750px) {
+  :root {
+    --leftbar-size: 80px;
+  }
+  .OuterBg {
+    width: calc(99vw - var(--leftbar-size));
+    left: var(--leftbar-size);
+  }
+}

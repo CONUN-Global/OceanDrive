@@ -31,6 +31,7 @@
           font-size: 12px;
           color: #d12221;
           padding-top: 2px;
+          margin-bottom: 34px;
         }
 
         & .InputText {
@@ -46,12 +47,14 @@
           min-width: 355px;
           border: 1px solid var(--grey6);
           border-radius: 3px;
-          margin-bottom: 34px;
 
           &:focus {
             outline: none;
             border: 1px solid #4788ff;
             box-shadow: 0 0 3px #4788ff;
+          }
+          &::placeholder {
+            color: var(--grey8);
           }
         }
       }

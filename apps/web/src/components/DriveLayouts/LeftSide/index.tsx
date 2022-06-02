@@ -53,7 +53,8 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
         </div>
         <div>
           <Button className={styles.UploadButton}>
-            <UploadIcon /> Drop File
+            <UploadIcon />
+            <div className={styles.UploadText}>Drop File</div>
           </Button>
 
           <div className={styles.UtilityButtons}>
