@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
+import classNames from 'classnames';
 import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
@@ -10,8 +10,8 @@ import Send from './TransComponents/Send';
 import Receive from './TransComponents/Receive';
 import Transactions from './TransComponents/Transactions';
 
-import styles from './Wallet.module.scss';
 import SearchBar from 'src/components/Searchbar';
+import styles from './Wallet.module.scss';
 
 const seedData = { balance: 598.0 };
 

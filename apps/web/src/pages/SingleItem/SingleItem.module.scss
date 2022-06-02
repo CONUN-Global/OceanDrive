@@ -1,5 +1,6 @@
 .ContentContainer {
   width: 100%;
+
   .UpperContainer {
     display: flex;
     padding: 20px;
@@ -9,7 +10,10 @@
 
     & .Image {
       padding: 0 20px;
+      aspect-ratio: 1/1;
       width: 50%;
+      height: 100%;
+      overflow: hidden;
       cursor: pointer;
     }
 

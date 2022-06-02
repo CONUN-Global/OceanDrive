@@ -12,17 +12,18 @@
   & .InfoContainer {
     display: flex;
     flex-direction: column;
-
     height: 100%;
+    height: 400px;
 
     & .Title {
       @include fontBodyXXL;
-      padding-bottom: 5px;
+      line-height: normal;
       color: var(--black);
     }
     & .Info {
-      padding-bottom: 1rem;
       @include fontBodyXXL;
+      line-height: normal;
+      padding-bottom: 1rem;
       color: var(--main-blue);
     }
     & .Bold {
