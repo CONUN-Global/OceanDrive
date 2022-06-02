@@ -99,13 +99,15 @@
       background: var(--foreground);
       border: 1px solid var(--main-blue);
       font-style: normal;
-      @include fontBodyXXL;
-      text-align: center;
-      letter-spacing: 0.02em;
-      color: var(--main-blue);
       font-weight: 700;
       margin-bottom: 10px;
 
+      & .UploadText {
+        @include fontBodyXXL;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--main-blue);
+      }
       & svg {
         margin-right: 7px;
       }
@@ -150,5 +152,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .leftSideBar {
+    display: none;
   }
 }
