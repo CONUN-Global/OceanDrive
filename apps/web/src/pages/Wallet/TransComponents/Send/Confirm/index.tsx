@@ -63,8 +63,7 @@ function Confirm() {
       {showModal && (
         <>
           <Backdrop isModalOpen={showModal} setIsModalOpen={setShowModal}></Backdrop>
-          <Modal isModalOpen={showModal} title="Transaction Successful" desc="Your transaction was successful." buttonText="Confirm" handleConfirm={handleConfirm}>
-            {/* Temporary */}
+          <Modal isModalOpen={showModal} isButtonAvailable={true} title="Transaction Successful" desc="Your transaction was successful." buttonText="Confirm" handleConfirm={handleConfirm}>
             <div className={styles.PlaceholderBox}></div>
           </Modal>
         </>

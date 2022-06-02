@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../../../components/Button';
 import Confirm from './Confirm';
+import { motion } from 'framer-motion';
 
 import styles from './Send.module.scss';
 
@@ -19,8 +20,14 @@ function Send() {
     setCurrentStep(prev => prev + 1);
   }
 
+  const variants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -100 },
+  };
+
   return (
-    <>
+    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants}>
       {
         {
           // SHOW FORM ON STEP 1 /// SHOW CONFIRM COMPONENT ON STEP 2
@@ -66,7 +73,7 @@ function Send() {
           2: <Confirm />,
         }[currentStep]
       }
-    </>
+    </motion.div>
   );
 }
 

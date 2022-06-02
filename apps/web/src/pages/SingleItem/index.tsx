@@ -18,8 +18,6 @@ function SingleItem() {
   const { collection, id } = useParams();
   const [clicked, setClicked] = useState<string>('buying-history');
 
-  const [currentTab, setCurrentTab] = useState<'Table' | 'History'>('Table');
-
   const headingStyle = (word: string) => {
     if (clicked === word) {
       return {
@@ -56,38 +54,6 @@ function SingleItem() {
             </div>
           </div>
           <div className={styles.LowerContainer}>
-            {/* Bottom Left Items */}
-            {/* <div className={styles.LeftSideContainer}>
-              <div className={styles.HeadAndTableContainer}>
-                <div className={styles.TableHeadings}>
-                  <h3 style={headingStyle('buying-history')} onClick={() => setClicked('buying-history')}>
-                    Buying History{' '}
-                  </h3>
-                  <h3 style={headingStyle('files')} className={styles.BuyHeading} onClick={() => setClicked('files')}>
-                    FILES
-                  </h3>
-                </div>
-                {clicked === 'buying-history' && (
-                  <table className={styles.TableContainer}>
-                    <thead className={styles.TableHead}>
-                      <tr>
-                        {headings.map(heading => (
-                          <TableHeaders key={heading} heading={heading} />
-                        ))}
-                      </tr>
-                    </thead>
-
-                    <tbody className={styles.TableBody}>
-                      {TableSeedData.map((rowData, index) => (
-                        <TableRows key={index} rowData={rowData} />
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-                {clicked === 'files' && <p>files table</p>}
-              </div>
-            </div> */}
-
             {/* Bottom Right Items */}
             <div className={styles.RightSideContainer}>
               {/* INFO CONTAINER BOX (VIEWS,LIKES,SOLD) */}

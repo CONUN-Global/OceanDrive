@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import styles from './Transactions.module.scss';
 
 const data = [
@@ -9,9 +11,15 @@ const data = [
   { transactionId: '0x7UY0...9488', status: 'FAILURE', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
 ];
 
+const variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -100 },
+};
+
 function Transactions() {
   return (
-    <div className={styles.Container}>
+    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.Container}>
       <table className={styles.Table}>
         <thead>
           <tr className={styles.TableRow}>
@@ -40,7 +48,7 @@ function Transactions() {
         </tbody>
       </table>
       {data.length === 0 && <div className={styles.NoData}>NO DATA</div>}
-    </div>
+    </motion.div>
   );
 }
 
