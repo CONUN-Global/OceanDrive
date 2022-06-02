@@ -78,5 +78,3 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
 };
 
 export default LeftSidebar;
-
-// className={classNames(styles.Tab, { [styles.active]: currentTab === 'Transactions' })}

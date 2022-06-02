@@ -14,6 +14,11 @@ const variants = {
 };
 
 function FilterBar() {
+  const arr1 = ['most-recent', 'low-to-high', 'high-to-low', 'most-popular'];
+  // eslint-disable-next-line react/jsx-key
+  const arr2 = [<EllipseIcon />, <DownArrowIcon />, <UpArrow />, <HeartIcon />];
+  const arr3 = ['Most Recent', 'Price (low to high)', 'Price (high to low)', 'Most Popular'];
+
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState('most-recent');
 
@@ -22,33 +27,29 @@ function FilterBar() {
     setIsOpen(false);
   };
 
+  const loop1 = utilFunc(arr1, arr2, clicked);
+  const loop2 = utilFunc(arr1, arr3, clicked);
+
   return (
     <div>
       <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
         <div>Sort by </div>
         <div>
-          {clicked === 'most-recent' && <EllipseIcon />}
-          {clicked === 'low-to-high' && <DownArrowIcon />}
-          {clicked === 'high-to-low' && <UpArrow />}
-          {clicked === 'most-popular' && <HeartIcon />}
-
+          {loop1}
           <span
             className={styles.mostRecent}
             onClick={() => {
               setIsOpen(isOpen => !isOpen);
             }}
           >
-            {clicked === 'most-recent' && 'Most Recent'}
-            {clicked === 'low-to-high' && 'Price (low to high)'}
-            {clicked === 'high-to-low' && 'Price (high to low)'}
-            {clicked === 'most-popular' && 'Most Popular'}
+            {loop2}
             {isOpen ? (
               <span>
-                <UpCaret style={{ width: '10px', marginBottom: '2px' }} />
+                <UpCaret className={styles.UpCaret} />
               </span>
             ) : (
               <span>
-                <DownVectorIcon style={{ width: '10px' }} />
+                <DownVectorIcon className={styles.DownVectorIcon} />
               </span>
             )}
           </span>
@@ -74,5 +75,13 @@ function FilterBar() {
     </div>
   );
 }
+
+const utilFunc = (array1: any, array2: any, word: string) => {
+  for (const el of array1) {
+    if (el === word) {
+      return array2[array1.indexOf(el)];
+    }
+  }
+};
 
 export default FilterBar;
