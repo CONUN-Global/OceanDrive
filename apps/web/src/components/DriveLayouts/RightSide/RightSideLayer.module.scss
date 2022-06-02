@@ -14,7 +14,7 @@
   border-radius: 10px;
   width: calc(99vw - var(--leftbar-size));
   left: var(--leftbar-size);
-  overflow: auto;
+  overflow: hidden;
 
   .InnerBg {
     position: absolute;
@@ -29,6 +29,7 @@
     background-color: #ffffff;
     border-radius: 10px;
     padding-bottom: 1rem;
+    overflow: auto;
 
     .TopBar {
       box-sizing: border-box;

@@ -12,10 +12,10 @@ interface INavigation {
 function Navigation({ prev, next, isButtonAvailable = true, clickText }: INavigation) {
   return (
     <HStack className={styles.HStack}>
-      <Button className={styles.PrevButton} style={{ boxShadow: 'none' }} round onClick={prev}>
+      <Button className={styles.PrevButton} round onClick={prev}>
         Previous
       </Button>
-      <Button className={styles.NextButton} style={{ boxShadow: 'none' }} round onClick={next} isDisabled={!isButtonAvailable}>
+      <Button className={styles.NextButton} round onClick={next} isDisabled={!isButtonAvailable}>
         {clickText ? clickText : 'Next'}
       </Button>
     </HStack>
