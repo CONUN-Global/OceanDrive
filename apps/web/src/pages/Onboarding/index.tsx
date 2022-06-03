@@ -14,15 +14,17 @@ function Onboarding() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const clickFunc = (pageComp: any) => {
+    dispatch(setBackAnimation(false));
+    navigate(pageComp);
+  };
+
   return (
     <>
       <OnboardingContainer title={ONBOARDING_TITLE} description={ONBOARDING_DESCR} isInitial={true} isCentered={true}>
         <HStack>
           {walletCards.map((card: any, idx: number) => (
-            <Button variant="ghost" onClick={() => {
-              dispatch(setBackAnimation(false));
-              navigate(card.link);
-              }} key={idx}>
+            <Button variant="ghost" onClick={() => clickFunc(card.link)} key={idx}>
               <OnboardingCard {...card} />
             </Button>
           ))}
