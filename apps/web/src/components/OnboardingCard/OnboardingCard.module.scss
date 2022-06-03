@@ -12,7 +12,6 @@
   min-width: 240px;
   max-width: 300px;
   transition: 0.4s ease-in-out all;
-  margin: 15px;
 
   & .ImagePlaceholder {
     width: 80px;
@@ -29,9 +28,7 @@
   }
   & .Desc {
     @include fontBodyXS;
-    margin: 10px 0;
     text-align: left;
-
     word-break: keep-all;
     color: var(--grey8);
   }
