@@ -19,7 +19,7 @@ function Dropdown({ items, selected, setSelected, classname }: IDropdown) {
   return (
     <div className={classNames(styles.Dropdown, classname)}>
       <div onClick={setToggle} className={styles.SelectedItemContainer}>
-        <div>{selected.method}</div>
+        <div className={styles.Method}>{selected.method}</div>
         <DArrowIcon />
       </div>
 

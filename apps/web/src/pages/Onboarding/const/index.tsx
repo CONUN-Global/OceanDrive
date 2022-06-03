@@ -20,7 +20,7 @@ export const CREATE_WALLET_DESCR2 = `Your secret phrase is 12 words with spaces 
 export const CONFIRM_WALLET_TITLE = 'Confirm  Secret Backup Phrase';
 export const CONFIRM_WALLET_DESCR = 'Please select the below given words in correct order to match your secret backup phrase.';
 
-export const IMPORT_WALLET_TITLE = 'Import an Account with Secret Phrase or Private Key';
+export const IMPORT_WALLET_TITLE = 'Import an Existing Account ';
 export const IMPORT_WALLET_DESCR = 'Import an existing account with your secret seed prhase or use a private key.';
 
 export const ONBOARDING_TITLE = 'Welcome to OceanDrive';

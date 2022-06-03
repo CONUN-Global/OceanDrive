@@ -8,21 +8,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-left: 20px;
     padding-right: 10px;
-    height: 25px;
+    height: 35px;
     color: var(--gray);
     background-color: var(--foreground);
+    border-radius: 2px;
 
     &:hover {
       cursor: pointer;
+    }
+
+    & .Method {
+      margin-top: -3px;
     }
   }
   & .ListContainer {
     visibility: visible;
     cursor: pointer;
     background-color: var(--foreground);
-    padding-top: 6px;
 
     &.close {
       visibility: hidden;
