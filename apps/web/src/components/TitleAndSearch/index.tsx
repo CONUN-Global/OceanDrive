@@ -14,7 +14,6 @@ function TitleAndSearch({ children }: IProps) {
       <h1 className={styles.Title}>{children}</h1>
       <div className={styles.SearchAndSort}>
         <FilterBar />
-        <SearchBar />
       </div>
     </div>
   );

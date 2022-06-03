@@ -10,6 +10,7 @@ import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Pub
 import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 
 import styles from './RightSideLayer.module.scss';
+import Searchbar from 'src/components/Searchbar';
 
 interface IRightSide {
   children: ReactNode;
@@ -30,6 +31,7 @@ function RightSideLayer({ children }: IRightSide) {
     <div className={styles.OuterBg}>
       <div className={styles.InnerBg}>
         <div className={styles.TopBar}>
+          <Searchbar />
           <div className={styles.IconContainer}>
             {IconArray.map((item, index) => {
               return (

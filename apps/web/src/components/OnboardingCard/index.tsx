@@ -11,7 +11,7 @@ interface IOnboardingCard {
 const OnboardingCard = ({ title, description, img }: IOnboardingCard) => {
   return (
     <Card variant="secondary" className={styles.Card}>
-      <div>{img && <img src={img} alt={title} />}</div>
+      <div className={styles.ImagePlaceholder}>{img && <img src={img} alt={title} />}</div>
       <div>
         <h3 className={styles.Title}>{title}</h3>
         <div className={styles.Desc}>{description}</div>
