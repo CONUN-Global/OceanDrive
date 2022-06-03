@@ -1,7 +1,9 @@
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { AOnboardingProps } from '../../../animations/onboarding';
+import { useSelector } from 'react-redux';
+import { RootState } from 'src/redux/store';
+import { AOnboardingProps, BOnboardingProps } from '../../../animations/onboarding';
 import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
 import Card from '../../../components/Card';
 import styles from './OnboardingContainer.module.scss';
@@ -20,9 +22,13 @@ OnboardingContainer.defaultProps = {
 };
 
 function OnboardingContainer({ children, title, description, isInitial, className, isCentered }: OnboardingContainerProps) {
+  const backAnimation = useSelector((store: RootState) => store.onboardingReducer.backAnimation);
+
+  const onboardingAnimation = backAnimation ? BOnboardingProps : AOnboardingProps;
+
   return (
     <div className={classNames(styles.container, className)}>
-      <motion.div {...AOnboardingProps} className={styles.CardWrapper}>
+      <motion.div {...onboardingAnimation} className={styles.CardWrapper}>
         <Card className={styles.Card}>
           <div className={classNames(styles.Header, { [styles.centered]: isCentered })}>
             <h3 className={styles[isInitial ? 'initial' : '']}>
