@@ -52,6 +52,7 @@ ipcMain.handle('get-file-preview', async (_, hash) => {
     };
   } catch (error) {
     console.log('get-file-preview', error?.message, 'error');
+
     return {
       success: false,
       error: String(error)
