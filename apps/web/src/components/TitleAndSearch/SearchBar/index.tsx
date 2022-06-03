@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
 import { ReactComponent as SearchIcon } from 'src/assets/icons/search_icon.svg';
 import useGetImage from 'src/hooks/useGetImage';
 import styles from './Searchbar.module.scss';
