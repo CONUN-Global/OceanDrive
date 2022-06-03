@@ -1,6 +1,7 @@
 const { app, ipcMain } = require('electron');
 const { getIpfsNode } = require('../ipfs');
-const fs = require('fs');
+const { concat } = require('uint8arrays');
+const all = require('it-all');
 
 ipcMain.handle('get-app-version', async () => {
   try {
@@ -16,30 +17,18 @@ ipcMain.handle('get-app-version', async () => {
   }
 });
 
-ipcMain.handle('upload-file', async (info) => {
+ipcMain.handle('upload-file', async (_, info) => {
   try {
-    const node = getIpfsNode();
+    const { node } = await getIpfsNode();
 
-    const handleProgress = (data) => {
-      const currentPercentage = ((data * 100) / info?.size).toFixed(2);
+    const fileContent = Buffer.from(info.src, 'base64');
 
-      mainWindow.webContents.send('upload-percentage', currentPercentage);
-    };
-
-    const file = fs.readFileSync(info.filePath);
-    const fileContent = Buffer.from(file);
-
-    const { cid } = await node.add(
-      {
-        content: fileContent
-      },
-      {
-        progress: handleProgress
-      }
-    );
+    const response = await node.add({
+      content: fileContent
+    });
 
     return {
-      data: cid,
+      data: response,
       success: true
     };
   } catch (error) {
@@ -47,6 +36,25 @@ ipcMain.handle('upload-file', async (info) => {
     return {
       data: null,
       success: false
+    };
+  }
+});
+
+ipcMain.handle('get-file-preview', async (_, hash) => {
+  try {
+    const { node } = await getIpfsNode();
+
+    const preview = concat(await all(node.cat(hash)));
+
+    return {
+      success: true,
+      data: preview
+    };
+  } catch (error) {
+    console.log('get-file-preview', error?.message, 'error');
+    return {
+      success: false,
+      error: String(error)
     };
   }
 });

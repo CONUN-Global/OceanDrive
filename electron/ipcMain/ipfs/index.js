@@ -22,7 +22,9 @@ const initIpfs = async () => {
   }
 };
 
-const getIpfsNode = async () => node;
+const getIpfsNode = async () => {
+  return node;
+};
 
 module.exports = {
   initIpfs,
