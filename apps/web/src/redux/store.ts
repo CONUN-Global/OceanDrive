@@ -10,7 +10,7 @@ const persistConfig = {
 };
 
 const reducers = combineReducers({
-  onboardingReducer,
+  onboardingReducer: onboardingReducer, // if we just use { a } instead of {a: a} it is not recongnizing another states in later usages
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

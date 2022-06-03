@@ -23,7 +23,7 @@ function App() {
   const persistor = persistStore(store);
 
   // in order to see storage and marketplace pages conditionally rendering routes, later we may remove test after implementing full onboarding pages
-  const test = true;
+  const test = false;
 
   // const isUserLoggedIn = useUserStatus();
 
