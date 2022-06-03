@@ -7,10 +7,9 @@
     }
   }
   & .Container {
-    max-width: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     & .CopyButton {
       padding: 10px 20px;

@@ -3,10 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 5%;
+  // gap: 5%;
 }
 @media only screen and (max-width: 600px) {
   .HStack {
     flex-direction: column;
+    justify-content: center;
+    align-self: center;
   }
 }

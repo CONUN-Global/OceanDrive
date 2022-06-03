@@ -7,8 +7,21 @@
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  min-height: 230px;
+  min-height: 250px;
+  // Min-width before text breaks to 3 lines
+  min-width: 240px;
+  max-width: 300px;
   transition: 0.4s ease-in-out all;
+  margin: 15px;
+
+  & .ImagePlaceholder {
+    width: 80px;
+    height: 80px;
+    background-color: var(--sea-blue);
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
   & .Title {
     @include fontTitleXS;
     margin: 10px 0;
@@ -18,11 +31,17 @@
     @include fontBodyXS;
     margin: 10px 0;
     text-align: left;
+
+    word-break: keep-all;
+    color: var(--grey8);
   }
 
   &:hover {
     background-color: var(--sea-blue);
     color: white;
     transform: scale(1.03);
+    & .Desc {
+      color: white;
+    }
   }
 }
