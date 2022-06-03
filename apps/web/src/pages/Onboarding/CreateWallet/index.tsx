@@ -93,7 +93,7 @@ function CreateWallet() {
         {isModalOpen && (
           <>
             <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
-            <Modal isModalOpen={isModalOpen} title="Reminder!" desc={description} titleStyle={titleStyle} buttonText="Continue" handleConfirm={handleConfirm} isButtonAvailable={isCopied}>
+            <Modal isModalOpen={isModalOpen} title="Reminder" desc={description} titleStyle={titleStyle} buttonText="Continue" handleConfirm={handleConfirm} isButtonAvailable={isCopied}>
               <div className={styles.BoxPlaceHolder}></div>
             </Modal>
           </>

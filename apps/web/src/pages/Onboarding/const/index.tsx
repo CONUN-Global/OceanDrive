@@ -23,7 +23,7 @@ export const CONFIRM_WALLET_DESCR = 'Please select the below given words in corr
 export const IMPORT_WALLET_TITLE = 'Import an Account with Secret Phrase or Private Key';
 export const IMPORT_WALLET_DESCR = 'Import an existing account with your secret seed prhase or use a private key.';
 
-export const ONBOARDING_TITLE = 'Welcome to Ocean Drive';
+export const ONBOARDING_TITLE = 'Welcome to OceanDrive';
 export const ONBOARDING_DESCR = 'Ocean Drive is a place for storage sharing and content sharing. Connect or create your wallet to explore today.';
 
 export const LOGIN_METHODS = [
