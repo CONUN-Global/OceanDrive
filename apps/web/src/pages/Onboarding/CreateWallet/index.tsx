@@ -31,7 +31,7 @@ const titleStyle = {
 
 const description = (
   <div>
-    Did you remember to <span style={{fontWeight: 'bold'}}>securely save a copy</span> of your secret backup phrase? Copy and store your secret backup phrase on a personal device or write it down, then proceed to the next screen.
+    Store your key phrase securely as it is <b>non-recoverable</b> and can grant access to your account.
   </div>
 );
 
@@ -93,15 +93,7 @@ function CreateWallet() {
         {isModalOpen && (
           <>
             <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>
-            <Modal
-              isModalOpen={isModalOpen}
-              title="Copy and Store Information Reminder"
-              desc={description}
-              titleStyle={titleStyle}
-              buttonText="Continue"
-              handleConfirm={handleConfirm}
-              isButtonAvailable={isCopied}
-            >
+            <Modal isModalOpen={isModalOpen} title="Reminder!" desc={description} titleStyle={titleStyle} buttonText="Continue" handleConfirm={handleConfirm} isButtonAvailable={isCopied}>
               <div className={styles.BoxPlaceHolder}></div>
             </Modal>
           </>

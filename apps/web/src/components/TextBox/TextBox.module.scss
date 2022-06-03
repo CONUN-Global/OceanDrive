@@ -7,6 +7,7 @@
   padding: 20px 33px;
   color: var(--teal);
   @include fontTitleS;
+  word-break: keep-all;
 }
 @media only screen and (max-width: 1024px) {
   .TextBox {
