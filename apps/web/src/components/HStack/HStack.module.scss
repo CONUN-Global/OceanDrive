@@ -3,9 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // gap: 5%;
+  gap: 5%;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   .HStack {
     flex-direction: column;
     justify-content: center;
