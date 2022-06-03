@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setBackAnimation } from 'src/redux/onboardingSlice';
 
 import Button from '../../components/Button';
 import HStack from '../../components/HStack';
@@ -10,13 +12,17 @@ import OnboardingContainer from './OnboardingContainer';
 
 function Onboarding() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <>
       <OnboardingContainer title={ONBOARDING_TITLE} description={ONBOARDING_DESCR} isInitial={true} isCentered={true}>
         <HStack>
           {walletCards.map((card: any, idx: number) => (
-            <Button variant="ghost" onClick={() => navigate(card.link)} key={idx}>
+            <Button variant="ghost" onClick={() => {
+              dispatch(setBackAnimation(false));
+              navigate(card.link);
+              }} key={idx}>
               <OnboardingCard {...card} />
             </Button>
           ))}
