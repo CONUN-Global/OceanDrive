@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styles from './FilterBar.module.scss';
 import { motion } from 'framer-motion';
-import { ReactComponent as DownArrowIcon } from 'src/assets/icons/darrow-icon.svg';
+import { ReactComponent as DownArrowIcon } from 'src/assets/icons/down-arrow-icon.svg';
 import { ReactComponent as DownVectorIcon } from 'src/assets/icons/down-vector-icon.svg';
 import { ReactComponent as EllipseIcon } from 'src/assets/icons/ellipse-icon.svg';
 import { ReactComponent as HeartIcon } from 'src/assets/icons/heart-icon.svg';
-import { ReactComponent as ParrowIcon } from 'src/assets/icons/parrow-icon.svg';
-
-import { ReactComponent as UpArrowIcon } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as UpArrow } from 'src/assets/icons/up-arrow-icon.svg';
+import { ReactComponent as UpCaret } from 'src/assets/icons/up-caret-icon.svg';
 
 const variants = {
   open: { opacity: 1, zIndex: 100 },
@@ -15,6 +14,11 @@ const variants = {
 };
 
 function FilterBar() {
+  const arr1 = ['most-recent', 'low-to-high', 'high-to-low', 'most-popular'];
+  // eslint-disable-next-line react/jsx-key
+  const arr2 = [<EllipseIcon />, <DownArrowIcon />, <UpArrow />, <HeartIcon />];
+  const arr3 = ['Most Recent', 'Price (low to high)', 'Price (high to low)', 'Most Popular'];
+
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState('most-recent');
 
@@ -23,33 +27,29 @@ function FilterBar() {
     setIsOpen(false);
   };
 
+  const loop1 = utilFunc(arr1, arr2, clicked);
+  const loop2 = utilFunc(arr1, arr3, clicked);
+
   return (
     <div>
       <div className={styles.MainBySortBy} style={{ backgroundColor: isOpen ? '#80a0d433' : '#ffffff' }}>
         <div>Sort by </div>
         <div>
-          {clicked === 'most-recent' && <EllipseIcon />}
-          {clicked === 'low-to-high' && <DownArrowIcon />}
-          {clicked === 'high-to-low' && <ParrowIcon />}
-          {clicked === 'most-popular' && <HeartIcon />}
-
+          {loop1}
           <span
             className={styles.mostRecent}
             onClick={() => {
               setIsOpen(isOpen => !isOpen);
             }}
           >
-            {clicked === 'most-recent' && 'Most Recent'}
-            {clicked === 'low-to-high' && 'Price (low to high)'}
-            {clicked === 'high-to-low' && 'Price (high to low)'}
-            {clicked === 'most-popular' && 'Most Popular'}
+            {loop2}
             {isOpen ? (
               <span>
-                <UpArrowIcon style={{ width: '10px', marginBottom: '2px' }} />
+                <UpCaret className={styles.UpCaret} />
               </span>
             ) : (
               <span>
-                <DownVectorIcon style={{ width: '10px' }} />
+                <DownVectorIcon className={styles.DownVectorIcon} />
               </span>
             )}
           </span>
@@ -65,7 +65,7 @@ function FilterBar() {
             <DownArrowIcon /> Price (low to high)
           </motion.div>
           <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('high-to-low')}>
-            <ParrowIcon /> Price (high to low)
+            <UpArrow /> Price (high to low)
           </motion.div>
           <motion.div whileHover={{ backgroundColor: '#80a0d433' }} className={styles.SortListItem} onClick={() => sortByOption('most-popular')}>
             <HeartIcon /> Most Popular
@@ -75,5 +75,13 @@ function FilterBar() {
     </div>
   );
 }
+
+const utilFunc = (array1: any, array2: any, word: string) => {
+  for (const el of array1) {
+    if (el === word) {
+      return array2[array1.indexOf(el)];
+    }
+  }
+};
 
 export default FilterBar;

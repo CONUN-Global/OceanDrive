@@ -1,0 +1,65 @@
+@import '../../styles/fonts';
+
+.Container {
+  padding: 15% 60px 0px 60px;
+  width: 100%;
+  height: calc(100vh - 25px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-top: -15px;
+
+  //   TOP
+  & .TopContainer {
+    height: 30%;
+    & .Title {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: var(--black);
+      @include fontTitleS;
+    }
+
+    & .Balance {
+      color: white;
+      width: 256px;
+      height: 263px;
+      border-radius: 4px;
+      background-color: var(--sea-blue);
+      background-image: url('../../assets/images/Cycon_Card.svg');
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .TopItems {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        & .Title {
+          align-self: flex-start;
+          @include fontTitleS;
+        }
+        & .Total {
+          align-self: flex-end;
+          @include fontTitleXL;
+        }
+      }
+      & .BottomItems {
+        & .BuyButton {
+          padding: 5px 20px;
+          border-radius: 20px;
+          border: none;
+          color: white;
+          background-color: #ffffff66;
+          border: 1px solid var(--grey5);
+          cursor: pointer;
+        }
+        & .BuyInfo {
+          font-size: 10px;
+          margin-top: 10px;
+          margin-left: 3px;
+          color: var(--grey1);
+        }
+      }
+    }
+  }
+}

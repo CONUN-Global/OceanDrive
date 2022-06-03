@@ -1,12 +1,12 @@
 .Container {
-  width: 100%;
+  width: calc(100% - 1px);
   height: 100%;
   background-color: #ffffff;
   border-radius: 5px;
-  // border: 1px solid var(--main-blue);
 
   .Table {
     width: 100%;
+    min-width: 500px;
     overflow: auto;
     border-collapse: collapse;
     border-radius: 5px;

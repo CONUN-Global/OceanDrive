@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './Transactions.module.scss';
 
 const data = [
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5.43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5.43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5.43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'FAILURE', date: '04.23.2022 5.43 pm', amount: '0.435CYC' },
+  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x7UY0...9488', status: 'FAILURE', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
 ];
 
 function Transactions() {

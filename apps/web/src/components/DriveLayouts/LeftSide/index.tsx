@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { ReactComponent as RectIcon } from 'src/assets/icons/rect.svg';
-import { ReactComponent as UploadIcon } from 'src/assets/icons/upload.svg';
+import { ReactComponent as RectIcon } from '../../../assets/icons/rect.svg';
+import { ReactComponent as UploadIcon } from '../../../assets/icons/upload.svg';
 import { ReactComponent as SettingsIcon } from '../../../assets/icons/Sidebar/Settings.svg';
 import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logout.svg';
@@ -25,7 +25,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
-          <img src={placeholderImg} className={styles.Avatar} />
+          <img onClick={() => navigate('/profile')} src={placeholderImg} className={classNames(styles.Avatar, {[styles.AvatarBorder]: pathname.startsWith('/profile')})} />
 
           <div className={styles.LinksContainer}>
             {/* MARKET CONTAINER */}

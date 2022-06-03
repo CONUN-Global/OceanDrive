@@ -1,5 +1,6 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
+import SearchBar from '../Searchbar';
 import FilterBar from './FilterBar';
 import styles from './TitleAndSearch.module.scss';
 
