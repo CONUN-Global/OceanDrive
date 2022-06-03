@@ -43,9 +43,12 @@
         svg {
           width: 41px;
           height: 36px;
+
           margin-right: 18px;
         }
         h3 {
+          display: flex;
+          align-items: center;
           font-weight: 600;
           font-size: 2.2rem;
           line-height: 46px;
