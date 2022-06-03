@@ -20,17 +20,19 @@
       width: 50%;
       height: 650px;
       background-color: var(--background);
-      padding: 70px 80px;
+      padding: 60px 80px !important;
       justify-content: space-between;
       align-items: center;
 
       & .Header {
         word-break: keep-all;
+        width: 100%;
+
         &.centered {
           display: flex;
           flex-direction: column;
           align-items: baseline;
-          width: 100%;
+          width: 80%;
         }
         svg {
           width: 41px;
@@ -53,7 +55,6 @@
           line-height: 150%;
           color: #585858;
           word-break: keep-all;
-          max-width: 380px;
         }
       }
     }
