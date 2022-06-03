@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
@@ -24,7 +23,7 @@ export const authorizedRoutes = [
           { path: ':collection/:id', element: <SingleItem /> },
         ],
       },
-      {path: 'profile', element: <Profile />}
+      { path: 'profile', element: <Profile /> },
     ],
   },
 ];

@@ -5,7 +5,6 @@
   left: 0;
   top: 0;
   height: 100%;
-
   display: flex;
   justify-content: center;
   min-height: 500px;
@@ -70,6 +69,7 @@
           & .Text {
             font-size: 16px;
             color: var(--grey9);
+            text-transform: capitalize;
           }
 
           &:hover {
@@ -103,13 +103,15 @@
       background: var(--foreground);
       border: 1px solid var(--main-blue);
       font-style: normal;
-      @include fontBodyXXL;
-      text-align: center;
-      letter-spacing: 0.02em;
-      color: var(--main-blue);
       font-weight: 700;
       margin-bottom: 10px;
 
+      & .UploadText {
+        @include fontBodyXXL;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--main-blue);
+      }
       & svg {
         margin-right: 7px;
       }
@@ -154,5 +156,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .leftSideBar {
+    display: none;
   }
 }

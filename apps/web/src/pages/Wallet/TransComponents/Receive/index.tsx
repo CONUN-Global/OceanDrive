@@ -4,6 +4,8 @@ import { ReactComponent as CopyIcon } from '../../../../assets/icons/copy-icon.s
 import Tooltip from '../../../../components/Tooltip';
 import { toast, ToastContainer } from 'react-toastify';
 
+import { motion } from 'framer-motion';
+
 import styles from './Receive.module.scss';
 
 const seedData = {
@@ -23,9 +25,15 @@ function copyText() {
   });
 }
 
+const variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -100 },
+};
+
 function Receive() {
   return (
-    <div className={styles.Container}>
+    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.Container}>
       <div className={styles.InnerContainer}>
         <h3 className={styles.Title}>My Wallet Address</h3>
         <div className={styles.ImageContainer}>
@@ -38,7 +46,7 @@ function Receive() {
         </Tooltip>
       </div>
       <ToastContainer />
-    </div>
+    </motion.div>
   );
 }
 

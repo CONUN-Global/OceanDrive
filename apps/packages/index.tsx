@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { PageProps } from 'src/animations/pages';
+import { ReactComponent as OceanStorageIcon } from '../../../assets/icons/OceanStorage-icon.svg';
 
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
@@ -40,9 +39,7 @@ function RightSideLayer({ children }: IRightSide) {
             })}
           </div>
         </div>
-        <motion.div style={{ width: '100%', height: '100%' }} {...PageProps}>
-          {children}
-        </motion.div>
+        {children}
       </div>
     </div>
   );

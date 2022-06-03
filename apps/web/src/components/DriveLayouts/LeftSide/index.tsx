@@ -7,10 +7,11 @@ import { ReactComponent as SettingsIcon } from '../../../assets/icons/Sidebar/Se
 import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logout.svg';
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
-import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Settings.svg';
+import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
+import { motion } from 'framer-motion';
 
-import placeholderImg from '../../../assets/images/Avatar.png';
+import placeholderImg from '../../../assets/images/Avatar2.png';
 import Button from '../../Button';
 
 import styles from './LeftSidebar.module.scss';
@@ -21,65 +22,39 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const avatarBorder = pathname === '/profile' ? '2.5px solid #5f93f1' : 'none';
+
+  const linkContent = [
+    { title: 'marketplace', icon: <MarketIcon /> },
+    { title: 'wallet', icon: <WalletIcon /> },
+    { title: 'publish', icon: <PublishIcon /> },
+    { title: 'host', icon: <HostIcon /> },
+  ];
+
   return (
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
-          <img onClick={() => navigate('/profile')} src={placeholderImg} className={classNames(styles.Avatar, {[styles.AvatarBorder]: pathname.startsWith('/profile')})} />
-
-          <div className={styles.LinksContainer}>
-            {/* MARKET CONTAINER */}
-            <div className={styles.LinksAndIcon}>
-              {pathname.startsWith('/marketplace') && <RectIcon />}
-              <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/marketplace') })} onClick={() => navigate(`/marketplace`)}>
-                <div className={styles.SVGBox}>
-                  <MarketIcon />
+          <img style={{ border: avatarBorder }} onClick={() => navigate('/profile')} src={placeholderImg} className={styles.Avatar} />
+          <div className={styles.LinksContainer} style={{ position: 'relative' }}>
+            {linkContent.map((linkItem, index) => {
+              return (
+                <div key={index} className={styles.LinksAndIcon}>
+                  {pathname.startsWith(`/${linkItem.title}`) && <RectIcon />}
+                  <div></div>
+                  <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith(`/${linkItem.title}`) })} onClick={() => navigate(`/${linkItem.title}`)}>
+                    <div className={styles.SVGBox}>{linkItem.icon}</div>
+                    <div className={styles.Text}>{linkItem.title}</div>
+                  </div>
                 </div>
-                <div className={styles.Text}>Marketplace</div>
-              </div>
-            </div>
-
-            {/* WALLET CONTAINER */}
-            <div className={styles.LinksAndIcon}>
-              {pathname.startsWith('/wallet') && <RectIcon />}
-              <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/wallet') })} onClick={() => navigate(`/wallet`)}>
-                <div className={styles.SVGBox}>
-                  <WalletIcon />
-                </div>
-                <div className={styles.Text}>Wallet</div>
-              </div>
-            </div>
-
-            {/* PUBLISH CONTAINER */}
-            <div className={styles.LinksAndIcon}>
-              {pathname.startsWith('/publish') && <RectIcon />}
-              <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/publish') })} onClick={() => navigate('/publish')}>
-                <div className={styles.SVGBox}>
-                  <PublishIcon />
-                </div>
-                <div className={styles.Text}>Publish</div>
-              </div>
-            </div>
-
-            {/* HOST CONTAINER */}
-            <div className={styles.LinksAndIcon}>
-              {pathname.startsWith('/host') && <RectIcon />}
-              <div></div>
-              <div className={classNames(styles.Link, { [styles.active]: pathname.startsWith('/host') })} onClick={() => navigate(`/host`)}>
-                <div className={styles.SVGBox}>
-                  <HostIcon />
-                </div>
-                <div className={styles.Text}>Host</div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
         <div>
           <Button className={styles.UploadButton}>
-            <UploadIcon /> Drop File
+            <UploadIcon />
+            <div className={styles.UploadText}>Drop File</div>
           </Button>
 
           <div className={styles.UtilityButtons}>
@@ -103,5 +78,3 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
 };
 
 export default LeftSidebar;
-
-// className={classNames(styles.Tab, { [styles.active]: currentTab === 'Transactions' })}
