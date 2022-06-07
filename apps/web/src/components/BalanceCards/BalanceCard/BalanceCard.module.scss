@@ -1,0 +1,112 @@
+@import '../../../styles/fonts';
+
+.WalletCard {
+  height: 104px;
+  width: 372px;
+  background: radial-gradient(81.07% 41.44% at 74.1% 69.96%, #48a8e8 0%, rgba(100, 194, 209, 0.8) 100%);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .CardItems {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .Text {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 9px;
+
+      .Wallet {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 100.9%;
+        text-transform: uppercase;
+        color: var(--foreground);
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .Address {
+        display: flex;
+        justify-content: space-between;
+
+        .AddressName {
+          font-family: 'Roboto';
+          font-style: normal;
+          @include fontBodyXXL;
+          text-transform: uppercase;
+          color: var(--foreground);
+          opacity: 0.6;
+        }
+
+        .CopyIcon {
+          width: 11.95px;
+          height: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.BalanceCard {
+  background: #48afe8;
+
+  .Wallet2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    @include fontBodyXXL;
+    text-transform: uppercase;
+    color: var(--foreground);
+    opacity: 0.6;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .AddressName2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--foreground);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .CopyIcon2 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+    gap: 10px;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #d7d7d7;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    width: 54px;
+    height: 23px;
+    margin-top: -10px;
+
+    // text
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--foreground);
+  }
+}
