@@ -31,7 +31,6 @@
       padding: 60px 80px !important;
       justify-content: space-between;
       align-items: center;
-
       & .Header {
         word-break: keep-all;
 
@@ -88,11 +87,9 @@
 @media only screen and (max-width: 1024px) {
   .container {
     & .CardWrapper {
-      height: 100%;
       & .Card {
         width: 90%;
         padding: 30px 20px;
-        min-height: 720px;
         gap: 10px;
         & .header {
           svg {

@@ -41,6 +41,7 @@ function CreateWallet() {
   const [inputPhrases, setInputPhrases] = useState<string>('');
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // const { showMessage, handleMessage } = useMessageTimer(2000);
   const { showMessage, handleMessage } = useMessageTimer(2000);
   const navigate = useNavigate();
 
