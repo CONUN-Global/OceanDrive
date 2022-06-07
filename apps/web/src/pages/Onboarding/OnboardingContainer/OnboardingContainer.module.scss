@@ -25,6 +25,7 @@
     }
     & .Card {
       height: 650px;
+      min-width: 800px;
       background-color: var(--background);
       // Not sure why important is needed as of now
       padding: 60px 80px !important;
