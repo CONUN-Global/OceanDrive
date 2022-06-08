@@ -30,14 +30,16 @@ function OnboardingContainer({ children, title, description, isInitial, classNam
     <div className={classNames(styles.container, className)}>
       <motion.div {...onboardingAnimation} className={styles.CardWrapper}>
         <Card className={styles.Card}>
-          <div className={classNames(styles.Header, { [styles.centered]: isCentered })}>
-            <h3 className={styles[isInitial ? 'initial' : '']}>
-              {isInitial ? <OceanIcon /> : ''}
-              {title || ''}
-            </h3>
-            <p>{description}</p>
+          <div className={styles.ContentContainer}>
+            <div className={classNames(styles.Header, { [styles.centered]: isCentered })}>
+              <h3 className={styles[isInitial ? 'initial' : '']}>
+                {isInitial ? <OceanIcon /> : ''}
+                {title || ''}
+              </h3>
+              <p>{description}</p>
+            </div>
+            {children}
           </div>
-          {children}
         </Card>
       </motion.div>
       <div className={styles.policy}>

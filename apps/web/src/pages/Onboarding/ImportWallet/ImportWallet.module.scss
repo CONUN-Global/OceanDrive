@@ -1,22 +1,30 @@
 .Onboarding {
+  & .SubTitle {
+    color: var(--grey9);
+  }
   & .CardContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 80%;
     width: 100%;
+
     & .DropdownContainer {
       display: flex;
       flex-direction: row;
       gap: 10px;
       margin-top: 30px;
+      color: var(--grey10);
+      height: 10%;
 
       & .DefaultMessage {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 25px;
+        height: 40%;
+        margin-top: 9px;
+
         color: var(--teal);
         font-weight: 600;
         font-size: 1.2rem;
@@ -24,14 +32,19 @@
     }
     & .InputContainer {
       height: 70px;
+
       & .InputKey {
         background-color: var(--foreground);
         width: 100%;
         height: 39px;
         border: 0px solid;
         padding: 0 20px;
-        color: var(--gray);
+        color: var(--grey9);
         outline: none;
+
+        &::placeholder {
+          color: var(--grey9);
+        }
       }
 
       & .InputPhrase {
@@ -40,7 +53,7 @@
         outline: none;
         width: 100%;
         padding: 20px;
-        color: var(--gray);
+        color: var(--grey10);
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;

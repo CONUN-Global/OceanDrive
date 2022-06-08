@@ -15,6 +15,7 @@ function ImportWallet() {
   const navigate = useNavigate();
   return (
     <OnboardingContainer className={styles.Onboarding} title={IMPORT_WALLET_TITLE}>
+      <div className={styles.SubTitle}>Import an existing account with Private Key or Seed Phrase.</div>
       <div className={styles.CardContainer}>
         <div className={styles.DropdownContainer}>
           <div className={styles.DefaultMessage}>Select import method</div>
@@ -27,7 +28,7 @@ function ImportWallet() {
             <textarea className={styles.InputPhrase} rows={3} value={inputPhrases} onChange={e => setInputPhrases(e?.target?.value)}></textarea>
           )}
         </div>
-        <Navigation clickText='Import' prev={() => navigate(-1)} next={() => navigate('/')} />
+        <Navigation clickText="Import" prev={() => navigate(-1)} next={() => navigate('/')} />
       </div>
     </OnboardingContainer>
   );

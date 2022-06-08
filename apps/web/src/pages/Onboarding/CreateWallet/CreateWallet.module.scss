@@ -2,35 +2,39 @@
   & .Description {
     display: flex;
     flex-direction: column;
+    width: 100%;
     span:last-child {
       margin-top: 20px;
     }
   }
   & .Container {
-    max-width: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    position: relative;
     & .CopyButton {
-      padding: 10px 20px;
       color: var(--foreground);
       display: flex;
       align-items: center;
       gap: 10px;
-      width: 200px;
+      width: 185px;
+
       & .Clipboard {
         width: 20px;
       }
     }
-    & .NotCopied {
-      visibility: hidden;
-    }
-
     & .Copied {
       visibility: visible;
       font-weight: 600;
       color: var(--sea-blue);
+      position: absolute;
+      top: 50px;
+      left: 70px;
+    }
+
+    & .NotCopied {
+      visibility: hidden;
+      position: absolute;
     }
   }
 
