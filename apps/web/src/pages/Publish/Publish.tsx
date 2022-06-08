@@ -53,7 +53,6 @@ const Publish = () => {
 
   return (
     <DriveLayout>
-<<<<<<< HEAD
       <div className={styles.PageContainer}>
         <TitleAndSearch>My Drive</TitleAndSearch>
         <DropZone onDrop={onDrop} accept={'image/*'} />
@@ -66,23 +65,6 @@ const Publish = () => {
               </div>
             );
           })}
-=======
-        <div className={styles.PageContainer}>
-          <TitleAndSearch>My Drive</TitleAndSearch>
-          <DropZone onDrop={onDrop} accept={'image/*'} />
-          <div>
-            {images.map((image: any) => {
-              return (
-                <li key={image.id}>
-                  <img src={image.src} alt="nft-art-pic" style={{ width: '200px', height: '150px' }} />
-                </li>
-              );
-            })}
-          </div>
-          {/* For testing upload files , TODO: need to make design for submit button */}
-          <Button onClick={handleSubmit}>Submit</Button>
-          <div className={styles.photosZero}>0 Photos - 0 MB</div>
->>>>>>> bdf832a9c1b7c417a7c6d81864f237539564772a
         </div>
 
         <div className={styles.photosZero}>0 Photos - 0 MB</div>
