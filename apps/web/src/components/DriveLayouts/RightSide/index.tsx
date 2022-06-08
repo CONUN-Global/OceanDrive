@@ -42,7 +42,7 @@ function RightSide({ children }: IRightSide) {
             })}
           </div>
         </div>
-        <motion.div style={{ width: '100%', height: '100%' }} {...PageProps}>
+        <motion.div className={styles.ChildrenContainer} {...PageProps}>
           {children}
         </motion.div>
       </div>
