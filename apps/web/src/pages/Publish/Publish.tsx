@@ -24,24 +24,23 @@ const Publish = () => {
 
   return (
     <DriveLayout>
-        <div className={styles.PageContainer}>
-          <TitleAndSearch>My Drive</TitleAndSearch>
-          <DropZone onDrop={onDrop} accept={'image/*'} />
-          <div>
-            {images.map((image: any) => {
-              console.log(image);
-              return (
-                <li key={image.id}>
-                  <img src={image.src} alt="nft-art-pic" style={{ width: '200px', height: '150px' }} />
-                </li>
-              );
-            })}
-          </div>
-
-          <div className={styles.photosZero}>0 Photos - 0 MB</div>
+      <div className={styles.PageContainer}>
+        <TitleAndSearch>My Drive</TitleAndSearch>
+        <DropZone onDrop={onDrop} accept={'image/*'} />
+        <div className={styles.DroppedImgContainer}>
+          {images.map((image: any) => {
+            console.log(image);
+            return (
+              <div key={image.id}>
+                <img src={image.src} alt="nft-art-pic" style={{ width: '200px', height: '150px' }} />
+              </div>
+            );
+          })}
         </div>
+
+        <div className={styles.photosZero}>0 Photos - 0 MB</div>
+      </div>
     </DriveLayout>
-    
   );
 };
 
