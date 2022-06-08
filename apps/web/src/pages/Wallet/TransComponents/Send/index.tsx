@@ -27,7 +27,7 @@ function Send() {
   };
 
   return (
-    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants}>
+    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.MotionContainer}>
       {
         {
           // SHOW FORM ON STEP 1 /// SHOW CONFIRM COMPONENT ON STEP 2
