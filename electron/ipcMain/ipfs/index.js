@@ -15,13 +15,16 @@ async function executeWeb3Storage() {
 const initIpfs = async () => {
   try {
     node = await executeWeb3Storage();
+
     console.log('Ipfs created successfuly');
   } catch (err) {
     console.error(err);
   }
 };
 
-const getIpfsNode = async () => node;
+const getIpfsNode = async () => {
+  return node;
+};
 
 module.exports = {
   initIpfs,

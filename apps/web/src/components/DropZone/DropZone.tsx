@@ -43,11 +43,7 @@ function Dropzone({ onDrop, accept }: any) {
     }),
     [isFocused, isDragAccept, isDragReject],
   );
-  // const files = acceptedFiles.map((file: any) => (
-  //   <li key={file.path}>
-  //     {file.path} - {file.size} bytes
-  //   </li>
-  // ));
+
   return (
     <div className={styles.DropZoneContainer}>
       <div {...getRootProps({ className: styles.Container, style })}>
@@ -65,9 +61,6 @@ function Dropzone({ onDrop, accept }: any) {
           </Button>
         </div>
       </div>
-      {/* <aside>
-        <ul>file - {files}</ul>
-      </aside> */}
     </div>
   );
 }

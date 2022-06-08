@@ -17,6 +17,7 @@ function Navigation({ prev, next, isButtonAvailable = true, clickText }: INaviga
   const prevFunc = () => {
     dispatch(setBackAnimation(true));
     prev();
+
   }
   const nextFunc = () => {
     dispatch(setBackAnimation(false));
