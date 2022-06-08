@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { NFTData } from './SEED_DATA';
 
+
 import ETH from '../../assets/icons/ETH_Logo.svg';
 import Button from '../../components/Button';
 import DriveLayout from 'src/components/DriveLayouts';
 
-
-import classNames from 'classnames';
+import Button from 'src/components/Button';
+import ETH from '../../assets/icons/ETH_Logo.svg';
 import styles from './SingleItem.module.scss';
+import classNames from 'classnames';
 
 function SingleItem() {
   const { collection, id } = useParams();
