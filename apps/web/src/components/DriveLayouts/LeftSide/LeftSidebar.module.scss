@@ -28,6 +28,12 @@
       height: 100px;
       border-radius: 100px;
       cursor: pointer;
+
+      &:hover {
+          transition: all 0.05s ease-out;
+          box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+          transform: scale(1.02);
+      }
     }
 
     .AvatarBorder {
