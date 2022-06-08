@@ -1,25 +1,22 @@
-import React, { ReactNode } from 'react'
-import Background from './Background'
-import LeftSide from './LeftSide'
-import SidebarContent from './LeftSide/SidebarContentLayout'
-import RightSideLayer from './RightSide'
+import React, { ReactNode } from 'react';
+import Background from './Background';
+import LeftSide from './LeftSide';
+import SidebarContent from './LeftSide/SidebarContentLayout';
+import RightSideLayer from './RightSide';
 
 interface IPageProps {
-    children?: ReactNode;
-  }
+  children?: ReactNode;
+}
 
-function DriveLayout({children}: IPageProps) {
+function DriveLayout({ children }: IPageProps) {
   return (
     <Background>
       <LeftSide>
-        <SidebarContent>
-        </SidebarContent>
+        <SidebarContent></SidebarContent>
       </LeftSide>
-      <RightSideLayer>
-        {children}
-      </RightSideLayer>
+      <RightSideLayer>{children}</RightSideLayer>
     </Background>
-  )
+  );
 }
 
-export default DriveLayout
+export default DriveLayout;
