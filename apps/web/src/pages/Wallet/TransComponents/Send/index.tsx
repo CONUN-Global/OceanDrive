@@ -12,11 +12,10 @@ interface Inputs {
 function Send() {
   const [inputInfo, setInputInfo] = useState<Inputs>({ input1: '', input2: '' });
   const [currentStep, setCurrentStep] = useState(1);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState(0);
 
   function handleSubmit(e: React.FormEvent<any>) {
     e.preventDefault();
-    // Check for errors -> Then push to next step
     setCurrentStep(prev => prev + 1);
   }
 
@@ -47,7 +46,7 @@ function Send() {
                       onChange={({ target }) => setInputInfo((prevState: any) => ({ ...prevState, input1: target.value }))}
                       value={inputInfo.input1}
                     />
-                    {errors > 0 && <p className={styles.Warning}>Invalid address, please check your input again</p>}
+                    <p className={styles.Warning}>{errors > 0 && 'Invalid address, please check your input again'}</p>
                   </div>
                   <div className={styles.InputBox}>
                     <label className={styles.InputText} htmlFor="Amount">

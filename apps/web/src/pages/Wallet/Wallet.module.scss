@@ -5,7 +5,6 @@
   height: calc(100vh - 36px);
   min-height: 900px;
   box-sizing: border-box;
-
   .Content {
     height: 800px;
     display: flex;
@@ -107,7 +106,7 @@
         border: 1px solid var(--main-blue);
         border-radius: 5px;
         background-color: var(--grey1);
-        overflow: auto;
+        overflow-x: hidden;
       }
     }
   }

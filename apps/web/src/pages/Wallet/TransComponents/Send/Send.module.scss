@@ -1,19 +1,15 @@
 .MotionContainer {
   height: 100%;
   width: 100%;
-
-  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 
-  & .SizingContainer {
+  .Container {
     height: 100%;
-  }
-
-  & .InputsContainer {
-
+    width: 100%;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -21,7 +17,7 @@
 
     & .SizingContainer {
       height: 100%;
-      height: 400px;
+      height: 380px;
       padding-bottom: 1rem;
     }
 
@@ -36,7 +32,7 @@
         align-self: start;
 
         & .Warning {
-          min-height: 25px;
+          height: 25px;
           font-size: 12px;
           color: #d12221;
           padding-top: 2px;
