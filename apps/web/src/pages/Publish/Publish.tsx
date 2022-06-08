@@ -1,15 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import cuid from 'cuid';
 import TitleAndSearch from '../../components/TitleAndSearch';
-import { ReactComponent as PlusIcon } from '../../assets/icons/plus-icon.svg';
-import { ReactComponent as TrackIcon } from '../../assets/icons/track-icon.svg';
-import { ReactComponent as UpArrowIcon } from '../../assets/icons/up-arrow-icon.svg';
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSidebar from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from '../../components/DriveLayouts/RightSide';
 import DropZone from '../../components/DropZone/DropZone';
 import styles from './Publish.module.scss';
+import DriveLayout from 'src/components/DriveLayouts';
 
 interface EventInterface {
   target: any;
@@ -29,12 +23,7 @@ const Publish = () => {
   }, []);
 
   return (
-    <MainBackground>
-      <LeftSidebar>
-        <SidebarContent></SidebarContent>
-      </LeftSidebar>
-
-      <RightSideLayer>
+    <DriveLayout>
         <div className={styles.PageContainer}>
           <TitleAndSearch>My Drive</TitleAndSearch>
           <DropZone onDrop={onDrop} accept={'image/*'} />
@@ -51,8 +40,8 @@ const Publish = () => {
 
           <div className={styles.photosZero}>0 Photos - 0 MB</div>
         </div>
-      </RightSideLayer>
-    </MainBackground>
+    </DriveLayout>
+    
   );
 };
 

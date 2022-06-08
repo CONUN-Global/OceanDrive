@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 
 import classNames from 'classnames';
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSidebar from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from '../../components/DriveLayouts/RightSide';
-
 import Send from './TransComponents/Send';
 import Receive from './TransComponents/Receive';
 import Transactions from './TransComponents/Transactions';
 
-import SearchBar from 'src/components/Searchbar';
+import DriveLayout from 'src/components/DriveLayouts';
 import styles from './Wallet.module.scss';
 
 const seedData = { balance: 598.0 };
@@ -18,13 +13,10 @@ const seedData = { balance: 598.0 };
 function Wallet() {
   const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Transactions');
   return (
-    <MainBackground>
-      <LeftSidebar>
-        <SidebarContent></SidebarContent>
-      </LeftSidebar>
-      <RightSideLayer>
+    <DriveLayout>
+     
         <>
-          <SearchBar />
+
           <div className={styles.Container}>
             {/* TOP */}
             <div className={styles.Content}>
@@ -67,8 +59,7 @@ function Wallet() {
             </div>
           </div>
         </>
-      </RightSideLayer>
-    </MainBackground>
+    </DriveLayout>
   );
 }
 

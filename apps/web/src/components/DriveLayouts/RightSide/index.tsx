@@ -23,7 +23,7 @@ const IconArray = [
   { title: 'host', icon: <HostIcon /> },
 ];
 
-function RightSideLayer({ children }: IRightSide) {
+function RightSide({ children }: IRightSide) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -50,4 +50,4 @@ function RightSideLayer({ children }: IRightSide) {
   );
 }
 
-export default RightSideLayer;
+export default RightSide;

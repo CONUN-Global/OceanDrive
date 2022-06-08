@@ -1,27 +1,13 @@
-import React, { useCallback, useState } from 'react';
-import cuid from 'cuid';
-import TitleAndSearch from 'src/components/TitleAndSearch';
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSidebar from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from '../../components/DriveLayouts/RightSide';
-import DropZone from '../../components/DropZone/DropZone';
+import React from 'react';
 import styles from './Profile.module.scss';
+import DriveLayout from 'src/components/DriveLayouts';
 
-interface EventInterface {
-  target: any;
-}
 
 const seedData = { balance: 598.0 };
 
 const Profile = () => {
   return (
-    <MainBackground>
-      <LeftSidebar>
-        <SidebarContent></SidebarContent>
-      </LeftSidebar>
-
-      <RightSideLayer>
+    <DriveLayout>
         <div className={styles.Container}>
           {/* TOP */}
           <div className={styles.TopContainer}>
@@ -37,10 +23,9 @@ const Profile = () => {
               </div>
             </div>
           </div>
-
         </div>
-      </RightSideLayer>
-    </MainBackground>
+    </DriveLayout>
+     
   );
 };
 

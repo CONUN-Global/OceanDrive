@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSidebar from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from '../../components/DriveLayouts/RightSide';
-import Table from './Table';
-import History from './History';
-
-import styles from './SingleItem.module.scss';
-import ETH from '../../assets/icons/ETH_Logo.svg';
-import Button from '../../components/Button';
-
 import { NFTData } from './SEED_DATA';
 
+import ETH from '../../assets/icons/ETH_Logo.svg';
+import Button from '../../components/Button';
+import DriveLayout from 'src/components/DriveLayouts';
+
+
 import classNames from 'classnames';
+import styles from './SingleItem.module.scss';
 
 function SingleItem() {
   const { collection, id } = useParams();
@@ -29,11 +23,8 @@ function SingleItem() {
   };
 
   return (
-    <MainBackground>
-      <LeftSidebar>
-        <SidebarContent></SidebarContent>
-      </LeftSidebar>
-      <RightSideLayer>
+    <DriveLayout>
+
         <div className={styles.ContentContainer}>
           <div className={styles.UpperContainer}>
             <img className={styles.Image} src={require(`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
@@ -105,8 +96,7 @@ function SingleItem() {
             </div>
           </div>
         </div>
-      </RightSideLayer>
-    </MainBackground>
+    </DriveLayout>
   );
 }
 

@@ -5,6 +5,7 @@ import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
 import Storage from '../pages/Publish/Publish';
 import Profile from 'src/pages/Profile';
+import Host from 'src/pages/Host';
 
 export const authorizedRoutes = [
   {
@@ -24,6 +25,7 @@ export const authorizedRoutes = [
         ],
       },
       { path: 'profile', element: <Profile /> },
+      { path: 'host', element: <Host /> },
     ],
   },
 ];

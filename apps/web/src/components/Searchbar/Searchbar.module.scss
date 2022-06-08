@@ -12,6 +12,11 @@
   background-color: #f7f7f7;
   border-radius: 50px;
   display: flex;
+  border: 1px solid #f7f7f7;
+  
+  &:focus-within {
+    border: 1px solid var(--grey5);
+  }
 
   & .SVGContainer {
     display: flex;
