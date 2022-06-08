@@ -15,7 +15,7 @@ function CollectionCard({ DataItem: { id, creator, title, collection, price } }:
   const navigate = useNavigate();
 
   return (
-    <div  className={styles.CardContainer} onClick={() => navigate(`/marketplace/${collection}/${id}`)} style={{ cursor: 'pointer' }}>
+    <div  className={styles.CardContainer} onClick={() => navigate(`/marketplace/${collection}/${id}`)} >
       <Card variant="primary" border={true}>
         <div className={styles.TopItems}>
           <img className={styles.Image} src={uri(id)} alt="NFT IMAGE" />

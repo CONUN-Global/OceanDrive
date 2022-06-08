@@ -1,4 +1,5 @@
 .CardContainer { 
+  cursor: pointer;
   &:hover {
     border-radius: 15px;
     transition: all 0.05s ease-out;
