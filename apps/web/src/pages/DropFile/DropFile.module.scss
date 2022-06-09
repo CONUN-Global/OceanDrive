@@ -1,0 +1,28 @@
+.PageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 30px;
+
+  & .DroppedImgContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .photosZero {
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #989898;
+  }
+}

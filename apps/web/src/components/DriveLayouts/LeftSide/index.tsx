@@ -51,7 +51,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
           </div>
         </div>
         <div>
-          <Button className={styles.UploadButton}>
+          <Button className={classNames(styles.UploadButton, { [styles.activeButton]: pathname.startsWith('/dropfile') })} onClick={() => navigate('/dropfile')}>
             <UploadIcon />
             <div className={styles.UploadText}>Drop File</div>
           </Button>
