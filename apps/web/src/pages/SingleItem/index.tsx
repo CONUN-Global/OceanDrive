@@ -21,7 +21,6 @@ function SingleItem() {
   };
 
   return (
-    // <DriveLayout>
     <>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
