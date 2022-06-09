@@ -15,153 +15,76 @@
     margin-bottom: 76px;
   }
 
-  .BottomBox {
+  .BottomBoxContainer {
     margin-bottom: 16px;
-    width: calc(100% - 5px);       
-  }
+    width: calc(100% - 5px);
 
-  .BottomTable {
-    min-height: 60%;
-    max-height: 70%;
-    width: 100%;
-    border: 1px solid var(--main-blue);
-    border-radius: 5px;
-    overflow: auto;
-    overflow-x: hidden;
-  }
-
-  .TableContainer {
-    width: calc(100% - 1px);
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 5px;
-
-    .Table {
+    .BottomBox {
       width: 100%;
-      min-width: 500px;
-      overflow: auto;
-      border-collapse: collapse;
-      border-radius: 5px;
-      background: #efefef;
-
-      .TableRow {
-        background: #efefef;
-        width: 100%;
-        height: 40px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-collapse: collapse;
-
-        th {
-          width: 20%;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 104.9%;
-          text-transform: capitalize;
-          color: #3A3A3A;
-        }
-
-        & :nth-child(1) {
-          text-align: left;
-          padding-left: 25px;
-          border-top-left-radius: 5px;
-        }
-        & :nth-child(2) {
-          text-align: left;
-          padding-left: 25px;
-        }
-        & :nth-child(3) {
-          text-align: left;
-          padding-left: 25px;
-        }
-        & :nth-child(4) {
-          text-align: right;
-          padding-right: 25px;
-        }
-        & :nth-child(5) {
-          text-align: right;
-          padding-right: 25px;
-          border-top-right-radius: 5px;
-        }
-      }
-
-      .TableRow2 {
-        width: 100%;
-        height: 60px;
-        text-align: center;
-        border-bottom: 1px solid black;
-        border-width: 0px 1px 1px 1px;
-        border-style: solid;
-        border-color: #e7e7e7;
-        background-color: #ffffff;
-
-        & :nth-child(1) {
-          text-align: left;
-          padding-left: 25px;
-          letter-spacing: 0.005em;
-          color: #686868;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 104.9%;
-        }
-        & :nth-child(2) {
-          text-align: left;
-          padding-left: 25px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 104.9%;
-          letter-spacing: 0.005em;
-          text-transform: capitalize;
-        }
-        & :nth-child(3) {
-          text-align: left;
-          padding-left: 25px;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 23px;
-          color: #a8a8a8;
-        }
-        & :nth-child(4) {
-          text-align: right;
-          padding-right: 25px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 23px;
-          color: #3a3a3a;
-        }
-        & :nth-child(5) {
-          text-align: right;
-          padding-right: 25px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 23px;
-          color: #3a3a3a;
-        }
-      }
-
-      .P {
-        background-color: #ffffff;
-      }
-    }
-
-    .NoData {
+      height: 89px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
       flex-direction: column;
-      height: 100%;
-      color: #a8a8a8;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
+      justify-content: space-between;
+
+      .DescriptionTitle {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        color: #3a3a3a;
+        text-transform: uppercase;
+        margin-left: -2.25px;
+      }
+
+      .DescriptionBox {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .DescriptionWords {
+          display: flex;
+          gap: 20px;
+
+          .DescriptionWord {
+            background: #f7f7f7;
+            border: none;
+            width: 159px;
+            height: 42px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            // text
+            font-weight: 500;
+            color: #888888;
+            font-size: 18px;
+            line-height: 26px;
+            text-transform: uppercase;
+          }
+
+          .ClickedWord {
+            background: #dbf2ff;
+            border: 1px solid #5f93f1;
+
+            // text
+            font-style: normal;
+            font-weight: 700;
+            color: #5f93f1;
+          }
+        }
+
+        .BoxedIcon {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+        }
+      }
     }
   }
 }
