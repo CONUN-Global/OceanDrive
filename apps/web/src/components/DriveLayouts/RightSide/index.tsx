@@ -23,7 +23,7 @@ const IconArray = [
   { title: 'host', icon: <HostIcon /> },
 ];
 
-function RightSideLayer({ children }: IRightSide) {
+function RightSide({ children }: IRightSide) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ function RightSideLayer({ children }: IRightSide) {
             })}
           </div>
         </div>
-        <motion.div style={{ width: '100%', height: '100%' }} {...PageProps}>
+        <motion.div className={styles.ChildrenContainer} {...PageProps}>
           {children}
         </motion.div>
       </div>
@@ -50,4 +50,4 @@ function RightSideLayer({ children }: IRightSide) {
   );
 }
 
-export default RightSideLayer;
+export default RightSide;

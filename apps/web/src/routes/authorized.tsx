@@ -5,13 +5,16 @@ import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
 import Storage from '../pages/Publish/Publish';
 import Profile from 'src/pages/Profile';
+import Host from 'src/pages/Host';
+import DriveLayout from 'src/components/DriveLayouts';
 
 export const authorizedRoutes = [
   {
-    path: '',
+    path: '/',
+    element: <DriveLayout />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <SplashScreen path="/publish" />,
       },
       { path: 'wallet', element: <Wallet /> },
@@ -19,11 +22,12 @@ export const authorizedRoutes = [
       {
         path: 'marketplace',
         children: [
-          { path: '', element: <MarketPlace /> },
+          { index: true, element: <MarketPlace /> },
           { path: ':collection/:id', element: <SingleItem /> },
         ],
       },
       { path: 'profile', element: <Profile /> },
+      { path: 'host', element: <Host /> },
     ],
   },
 ];

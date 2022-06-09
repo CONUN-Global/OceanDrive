@@ -1,7 +1,5 @@
 import React from 'react';
-// import SearchBar from './SearchBar';
-import SearchBar from '../Searchbar';
-import FilterBar from './FilterBar';
+import FilterButtons from './FilterButtons';
 import styles from './TitleAndSearch.module.scss';
 
 interface IProps {
@@ -13,7 +11,7 @@ function TitleAndSearch({ children }: IProps) {
     <div className={styles.Container}>
       <h1 className={styles.Title}>{children}</h1>
       <div className={styles.SearchAndSort}>
-        <FilterBar />
+        <FilterButtons />
       </div>
     </div>
   );

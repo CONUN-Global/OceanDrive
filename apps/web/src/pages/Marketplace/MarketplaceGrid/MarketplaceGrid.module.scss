@@ -1,10 +1,9 @@
 .PageContainer {
-  width: 100%;
-  padding: 200px 60px 0 60px;
   overflow: hidden;
 
   .GridContainer {
     display: grid;
+    padding: 15px;
     gap: 1.2rem;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     height: 80%; // please don't make it over 81%, if we give more height it is overlapping and not showing last row pictures fully

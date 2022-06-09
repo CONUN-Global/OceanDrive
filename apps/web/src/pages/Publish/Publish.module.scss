@@ -1,41 +1,20 @@
-.DriveInfoContainer {
+.PageContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding-bottom: 30px;
 
-  .MyDrivePlus {
+  & .DroppedImgContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 70%;
     align-items: center;
-    min-width: 115px;
-    margin-bottom: 40px;
-
-    .Title {
-      font-style: normal;
-      display: flex;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 26px;
-      font-size: 1.5rem;
-      color: var(--main-blue);
-    }
+    justify-content: center;
   }
 
-  .DriveItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1rem;
-    color: var(--grey8);
-    padding: 10px 0;
-  }
-}
-
-.PageContainer {
-  width: 100%;
-  padding: 200px 60px 0 60px;
-
-  .photosZero {
+  & .photosZero {
     position: absolute;
     bottom: 2%;
     right: 4%;
