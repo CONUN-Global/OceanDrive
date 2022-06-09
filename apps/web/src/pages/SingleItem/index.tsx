@@ -4,7 +4,6 @@ import { NFTData } from './SEED_DATA';
 
 import ETH from '../../assets/icons/ETH_Logo.svg';
 import Button from '../../components/Button';
-import DriveLayout from 'src/components/DriveLayouts';
 
 import styles from './SingleItem.module.scss';
 import classNames from 'classnames';
@@ -22,7 +21,8 @@ function SingleItem() {
   };
 
   return (
-    <DriveLayout>
+    // <DriveLayout>
+    <>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
           <img className={styles.Image} src={require(`src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`)} alt="NFT IMAGE" />
@@ -94,7 +94,7 @@ function SingleItem() {
           </div>
         </div>
       </div>
-    </DriveLayout>
+    </>
   );
 }
 
