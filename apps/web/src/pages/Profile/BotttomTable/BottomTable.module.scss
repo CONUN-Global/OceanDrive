@@ -1,0 +1,198 @@
+.BottomTable {
+  min-height: 60%;
+  max-height: 70%;
+  width: 100%;
+  border: 1px solid var(--main-blue);
+  border-radius: 5px;
+  overflow: auto;
+  overflow-x: hidden;
+
+  .TableContainer {
+    width: calc(100% - 1px);
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    .Table {
+      width: 100%;
+      min-width: 500px;
+      overflow: auto;
+      border-collapse: collapse;
+      border-radius: 5px;
+      background: #efefef;
+
+      .TableRow {
+        background: #efefef;
+        width: 100%;
+        height: 40px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-collapse: collapse;
+
+        th {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 104.9%;
+          text-transform: capitalize;
+          color: #3a3a3a;
+        }
+
+        & :nth-child(1) {
+          width: 5%;
+          padding-left: 5px;
+        }
+
+        & :nth-child(2) {
+          text-align: left;
+          width: 30%;
+          border-top-left-radius: 5px;
+        }
+        & :nth-child(3) {
+          width: 10%;
+          text-align: left;
+        }
+
+        & :nth-child(4) {
+          width: 15%;
+          text-align: left;
+        }
+        .HideTh {
+          width: 35px;
+          // background-color: green;
+        }
+
+        & :nth-child(5) {
+          width: 21%;
+          text-align: left;
+          padding-left: 25px;
+        }
+        & :nth-child(6) {
+          width: 20%;
+          text-align: left;
+          padding-left: 35px;
+          border-top-right-radius: 5px;
+        }
+        & :nth-child(7) {
+          padding-right: 25px;
+        }
+        .DownloadedIconStyle {
+          width: 100%;
+          height: 18px;
+          padding-right: 10px;
+        }
+      }
+
+      .TableRow2 {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-width: 0px 1px 1px 1px;
+        border-style: solid;
+        border-color: #e7e7e7;
+        background-color: #ffffff;
+
+        .FirstTd {
+          padding-left: 5px;
+        }
+
+        & :nth-child(2) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          color: #5f93f1;
+        }
+        & :nth-child(3) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 26px;
+          color: #64c2d1;
+        }
+        & :nth-child(4) {
+          text-align: left;
+
+          .AmountContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            width: 122px;
+            height: 29px;
+            background: #ffecde;
+            border-radius: 4px;
+            padding-right: 10px;
+
+            .Cycon {
+              width: 18.14px;
+              height: 18.14px;
+            }
+            .CyconDescDiv {
+              font-style: normal;
+              font-weight: 700;
+              font-size: 15px;
+              line-height: 23px;
+              letter-spacing: 0.03em;
+              color: #f37123;
+            }
+          }
+        }
+
+        & :nth-child(5) {
+          text-align: left;
+          padding-left: 25px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 23px;
+          color: #888888;
+        }
+        & :nth-child(6) {
+          text-align: left;
+          padding-left: 35px;
+          font-family: 'Source Sans 3';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          letter-spacing: 0.005em;
+          color: #48afe8;
+        }
+
+        & :nth-child(7) {
+          padding-right: 25px;
+          cursor: pointer;
+          transition: all 0.05s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .P {
+        background-color: #ffffff;
+      }
+    }
+
+    .NoData {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      height: 100%;
+      color: #a8a8a8;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}

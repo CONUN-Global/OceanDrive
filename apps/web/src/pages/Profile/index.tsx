@@ -4,26 +4,17 @@ import MainBackground from '../../components/DriveLayouts/Background';
 import LeftSidebar from '../../components/DriveLayouts/LeftSide';
 import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
 import RightSideLayer from '../../components/DriveLayouts/RightSide';
-
 import styles from './Profile.module.scss';
 import WalletCard from 'src/components/BalanceCards/WalletCard';
 import BalanceCard from 'src/components/BalanceCards/BalanceCard';
-
 import BottomBox from 'src/pages/Profile/BottomBox';
+import BottomTable from './BotttomTable';
 
-interface EventInterface {
-  target: any;
-}
-
-const data = [
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC', txHash: 'ksdflklkds', copy: 'copy' },
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC', txHash: 'ksdflklkds', copy: 'copy' },
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC', txHash: 'ksdflklkds', copy: 'copy' },
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC', txHash: 'ksdflklkds', copy: 'copy' },
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC', txHash: 'ksdflklkds', copy: 'copy' },
-];
+import { ReactComponent as BoxedIcon } from '../../assets/icons/boxed-icon.svg';
 
 const Profile = () => {
+  const [clicked, setClicked] = useState('published');
+
   return (
     <MainBackground>
       <LeftSidebar>
@@ -35,48 +26,36 @@ const Profile = () => {
           {/* TOP */}
           <div className={styles.BalanceCards}>
             <WalletCard />
-            <BalanceCard />                
+            <BalanceCard />
           </div>
 
           {/* BottomBox */}
-          <div className={styles.BottomBox}>
-            <BottomBox />
+          <div className={styles.BottomBoxContainer}>
+            <div className={styles.BottomBox}>
+              <div className={styles.DescriptionTitle}>My Files</div>
+
+              <div className={styles.DescriptionBox}>
+                <div className={styles.DescriptionWords}>
+                  <div onClick={() => setClicked('published')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'published' })}>
+                    Published (20)
+                  </div>
+                  <div onClick={() => setClicked('downloads')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'downloads' })}>
+                    Downloads (20)
+                  </div>
+                  <div onClick={() => setClicked('personal')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'personal' })}>
+                    Personal (20)
+                  </div>
+                </div>
+
+                <div className={styles.BoxedIcon}>
+                  <BoxedIcon />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Table */}
-          <div className={styles.BottomTable}>
-            <div className={styles.TableContainer}>
-              <table className={styles.Table}>
-                <thead>
-                  <tr className={styles.TableRow}>
-                    <th>Content Name</th>
-                    <th>File Size</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>TX Hash</th>
-                    <th>copy</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.length > 0 &&
-                    data.map((val: any, key: any) => {
-                      
-                      return (
-                        <tr key={key} className={styles.TableRow2}>
-                          <td>{val.transactionId}</td>
-                          <td>{val.status}</td>
-                          <td>{val.date}</td>
-                          <td>{val.amount}</td>
-                          <td>{val.txHash}</td>
-                          <td>{val.copy}</td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
-              {data.length === 0 && <div className={styles.NoData}>NO DATA</div>}
-            </div>
-          </div>
+          <BottomTable clicked={clicked} />
         </div>
       </RightSideLayer>
     </MainBackground>
