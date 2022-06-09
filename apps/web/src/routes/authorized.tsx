@@ -2,10 +2,12 @@ import React from 'react';
 import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
-import Storage from '../pages/Publish/Publish';
-import Profile from '../pages/Profile';
-import Host from '../pages/Host';
-import DriveLayout from '../components/DriveLayouts';
+import SplashScreen from '../pages/SplashScreen';
+import DropFile from '../pages/DropFile';
+import Profile from 'src/pages/Profile';
+import Host from 'src/pages/Host';
+import DriveLayout from 'src/components/DriveLayouts';
+import Publish from '../pages/Publish';
 import { Navigate } from 'react-router-dom';
 
 export const authorizedRoutes = [
@@ -15,10 +17,13 @@ export const authorizedRoutes = [
     children: [
       {
         path: '',
-        element: <Navigate to="/publish" replace />,
+        element: <Navigate to="/marketplace" replace />,
       },
+      { path: 'profile', element: <Profile /> },
       { path: 'wallet', element: <Wallet /> },
-      { path: 'publish', element: <Storage /> },
+      { path: 'publish', element: <Publish /> },
+      { path: 'host', element: <Host /> },
+      { path: 'dropfile', element: <DropFile /> },
       {
         path: 'marketplace',
         children: [
@@ -26,12 +31,10 @@ export const authorizedRoutes = [
           { path: ':collection/:id', element: <SingleItem /> },
         ],
       },
-      { path: 'profile', element: <Profile /> },
-      { path: 'host', element: <Host /> },
     ],
   },
   {
     path: '*',
-    element: <Navigate to="/publish" replace />,
+    element: <Navigate to="/marketplace" replace />,
   },
 ];

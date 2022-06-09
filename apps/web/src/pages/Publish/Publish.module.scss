@@ -1,28 +1,32 @@
 .PageContainer {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 30px;
 
-  & .DroppedImgContainer {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    align-items: center;
-    justify-content: center;
+  & .TitleBarContainer {
+    width: 100%;
+    margin-bottom: 30px;
   }
 
-  & .photosZero {
-    position: absolute;
-    bottom: 2%;
-    right: 4%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: right;
-    color: #989898;
+  & .LowerContainer {
+    display: flex;
+    justify-content: center;
+
+    & .Column {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    & .LeftColumn {
+      //   border: 2px solid blue;
+      margin-right: 10px;
+    }
+    & .RightColumn {
+      margin-left: 10px; //   border: 2px solid orange;
+    }
   }
 }

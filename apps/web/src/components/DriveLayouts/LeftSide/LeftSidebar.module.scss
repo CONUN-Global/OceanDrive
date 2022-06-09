@@ -31,9 +31,9 @@
       cursor: pointer;
 
       &:hover {
-          transition: all 0.05s ease-out;
-          box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-          transform: scale(1.02);
+        transition: all 0.05s ease-out;
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        transform: scale(1.02);
       }
     }
 
@@ -121,7 +121,11 @@
       }
       & svg {
         margin-right: 7px;
+        fill: var(--main-blue);
       }
+    }
+    .activeButton {
+      border: 2px solid var(--main-blue);
     }
 
     .UtilityButtons {
