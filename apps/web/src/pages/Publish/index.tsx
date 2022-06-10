@@ -17,19 +17,21 @@ function reducer(state: any, action: any) {
   return { ...state, [action.input]: action.value };
 }
 
+//Gets the value of the input that was changed
+//depends on the type of input method (checkbox vs file vs text input)
+function getValue(eTarget: any) {
+  if (eTarget.name === 'file' || eTarget.name === 'thumbnail') {
+    return eTarget.files[0];
+  }
+  if (eTarget.name === 'private') {
+    return eTarget.checked;
+  } else {
+    return eTarget.value;
+  }
+}
+
 function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  function getValue(arg: any) {
-    if (arg.name === 'file' || arg.name === 'thumbnail') {
-      return arg.files[0];
-    }
-    if (arg.name === 'private') {
-      return arg.checked;
-    } else {
-      return arg.value;
-    }
-  }
 
   async function handleChange({ target }: any) {
     const changeValue = await getValue(target);
@@ -49,6 +51,8 @@ function Publish() {
 
   return (
     <div className={styles.PageContainer}>
+      {/* ============================================================================ */}
+      {/* TITLE BAR BEGINS!!!!!!! */}
       <div className={styles.TitleBarContainer}>
         <h1>Publish</h1>
         <div>
@@ -57,44 +61,57 @@ function Publish() {
       </div>
       <form onSubmit={handleSubmit}>
         <div className={styles.LowerContainer}>
+          {/* ============================================================================ */}
+          {/* LEFT SIDE BEGINS!!!!!!! */}
           <div className={classNames(styles.LeftColumn, styles.Column)}>
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%' }}>
-                <h4>1. Add File</h4>
-                <div>
+              <div className={styles.AddFileHeading}>
+                <h4 className={styles.InputHeading}>1. Add File*</h4>
+                <div className={styles.PrivateSettings}>
+                  <input className={styles.PrivateCheck} name="private" type="checkbox" id="Private" onChange={handleChange} />
                   <label htmlFor="Private">Make Private</label>
-                  <input name="private" type="checkbox" id="Private" onChange={handleChange} />
                 </div>
               </div>
-              <input name="file" type="file" style={{ height: '200px', width: '80%', backgroundColor: 'var(--grey2)' }} onChange={handleChange} />
+              <label className={styles.UploadZone}>
+                <input name="file" type="file" onChange={handleChange} />
+              </label>
             </div>
             <div>
-              <h4>2. Add Thumbnail Image - Cover Image</h4>
-              <input name="thumbnail" type="file" style={{ height: '200px', width: '80%', backgroundColor: 'var(--grey2)' }} onChange={handleChange} />
+              <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#32; &#40;Cover Image&#41;</h4>
+              <div className={styles.UploadZone}>
+                <input name="thumbnail" type="file" onChange={handleChange} />
+              </div>
             </div>
           </div>
+          {/* ============================================================================ */}
+          {/* RIGHT SIDE BEGINS!!!!!!! */}
           <div className={classNames(styles.RightColumn, styles.Column)}>
             <div>
-              <h4>3. Content Title</h4>
-              <input name="title" style={{ height: '30px', width: '200px' }} onChange={handleChange} />
+              <div className={styles.TitleContainer}>
+                <h4 className={styles.InputHeading}>3. Content Title*</h4>
+                <div className={styles.MaxChar}>Max 50 Characters</div>
+              </div>
+              <input name="title" className={styles.TitleInput} style={{ height: '30px', width: '100%' }} onChange={handleChange} />
             </div>
             <div>
-              <h4>4. Content Description</h4>
-              <input name="description" type="textarea" style={{ height: '60px', width: '200px' }} onChange={handleChange} />
+              <h4 className={styles.InputHeading}>4. Content Description</h4>
+              <textarea name="description" style={{ height: '60px', width: '100%' }} onChange={handleChange} />
             </div>
             <div>
-              <h4>5. Select Type</h4>
-              <select name="type" style={{ height: '30px', width: '200px', marginBottom: '10px' }} onChange={handleChange}>
+              <h4 className={styles.InputHeading}>5. Select Type*</h4>
+              <select name="type" style={{ height: '30px', width: '100%', marginBottom: '10px' }} onChange={handleChange}>
                 <option value="Pay">Pay</option>
                 <option value="Free">Free</option>
               </select>
             </div>
             <div>
-              <input name="price" type="number" placeholder="Enter Price" style={{ height: '30px', width: '200px' }} onChange={handleChange}></input>
+              <input name="price" id="price" type="number" min="0" placeholder="Enter Price" style={{ height: '30px', width: '100%' }} onChange={handleChange}></input>
             </div>
           </div>
         </div>
-        <Button type="submit"> Upload </Button>
+        <Button type="submit" className={styles.Button}>
+          Upload
+        </Button>
       </form>
     </div>
   );

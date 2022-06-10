@@ -14,6 +14,43 @@
     display: flex;
     justify-content: center;
 
+    & .InputHeading {
+      color: var(--sea-blue);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    & .PrivateSettings {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      color: var(--grey11);
+
+      & .PrivateCheck {
+        margin: 0px;
+        padding: 0px;
+        height: 11px;
+      }
+    }
+
+    & .UploadZone {
+      height: 200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #edf9ff;
+      border: 1px solid var(--sea-blue);
+      border-radius: 4px;
+      cursor: pointer;
+
+      //Hides the original Add File button and Text
+      input[type='file'] {
+        display: none;
+      }
+    }
+
     & .Column {
       width: 50%;
       display: flex;
@@ -24,9 +61,31 @@
     & .LeftColumn {
       //   border: 2px solid blue;
       margin-right: 10px;
+
+      & .AddFileHeading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+      }
     }
     & .RightColumn {
       margin-left: 10px; //   border: 2px solid orange;
+
+      & .TitleContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        & .MaxChar {
+          font-size: 12px;
+          color: var(--grey11);
+        }
+      }
     }
+  }
+
+  & .Button {
+    align-items: center;
   }
 }
