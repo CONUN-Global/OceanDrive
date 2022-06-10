@@ -32,6 +32,7 @@ function getValue(eTarget: any) {
 
 function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
   async function handleChange({ target }: any) {
     const changeValue = await getValue(target);
@@ -112,7 +113,7 @@ function Publish() {
           </div>
         </div>
         <div className={styles.BtnContainer}>
-          <Button type="submit" className={styles.Button}>
+          <Button isDisabled={isBtnDisabled} type="submit" className={classNames({ [styles.Button]: !isBtnDisabled }, { [styles.disabled]: isBtnDisabled })}>
             Next
           </Button>
         </div>
