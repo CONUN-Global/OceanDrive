@@ -8,6 +8,14 @@
   & .TitleBarContainer {
     width: 100%;
     margin-bottom: 30px;
+
+    & .Heading {
+      color: var(--main-blue);
+    }
+
+    & .SubHeading {
+      color: var(--grey10);
+    }
   }
 
   & .LowerContainer {
@@ -18,6 +26,7 @@
       color: var(--sea-blue);
       font-size: 16px;
       font-weight: 700;
+      margin-bottom: 5px;
     }
 
     & .PrivateSettings {
@@ -30,11 +39,12 @@
         margin: 0px;
         padding: 0px;
         height: 11px;
+        cursor: pointer;
       }
     }
 
     & .UploadZone {
-      height: 200px;
+      height: 180px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -59,7 +69,6 @@
     }
 
     & .LeftColumn {
-      //   border: 2px solid blue;
       margin-right: 10px;
 
       & .AddFileHeading {
@@ -82,10 +91,73 @@
           color: var(--grey11);
         }
       }
+
+      & .DescriptionInput,
+      .TitleInput,
+      .PriceInput,
+      .PaymentTypeInput {
+        outline: none;
+        width: 100%;
+        background-color: var(--grey1);
+        border: 1px solid var(--grey1);
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      & .PaymentTypeInput {
+        padding-left: 8px;
+        height: 30px;
+        margin-bottom: 10px;
+
+        & .PaymentOption {
+          background-color: var(--grey1);
+          outline: none;
+          border: none;
+          padding: 10px;
+        }
+      }
+
+      & .TitleInput {
+        height: 30px;
+        padding-left: 8px;
+      }
+
+      & .DescriptionInput {
+        height: 130px;
+        padding: 8px;
+      }
+
+      & .PriceInput {
+        border-radius: 4px;
+        height: 30px;
+        padding-left: 8px;
+      }
+
+      & .DescriptionInput:focus,
+      .TitleInput:focus,
+      .PriceInput:focus {
+        outline: none;
+        border: 1px solid var(--sea-blue);
+      }
     }
   }
 
-  & .Button {
-    align-items: center;
+  & .BtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .Button {
+      background-color: var(--sea-blue);
+      border-radius: 4px;
+      margin-top: 40px;
+      align-items: center;
+      min-width: 200px;
+      min-height: 42px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }

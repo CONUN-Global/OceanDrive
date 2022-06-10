@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
@@ -54,8 +54,8 @@ function Publish() {
       {/* ============================================================================ */}
       {/* TITLE BAR BEGINS!!!!!!! */}
       <div className={styles.TitleBarContainer}>
-        <h1>Publish</h1>
-        <div>
+        <h1 className={styles.Heading}>Publish</h1>
+        <div className={styles.SubHeading}>
           Your published file will appear in the the public marketplace. <b>They are for sale.</b>
         </div>
       </div>
@@ -91,27 +91,31 @@ function Publish() {
                 <h4 className={styles.InputHeading}>3. Content Title*</h4>
                 <div className={styles.MaxChar}>Max 50 Characters</div>
               </div>
-              <input name="title" className={styles.TitleInput} style={{ height: '30px', width: '100%' }} onChange={handleChange} />
+              <input name="title" className={styles.TitleInput} onChange={handleChange} />
             </div>
             <div>
               <h4 className={styles.InputHeading}>4. Content Description</h4>
-              <textarea name="description" style={{ height: '60px', width: '100%' }} onChange={handleChange} />
+              <textarea className={styles.DescriptionInput} name="description" onChange={handleChange} />
             </div>
             <div>
               <h4 className={styles.InputHeading}>5. Select Type*</h4>
-              <select name="type" style={{ height: '30px', width: '100%', marginBottom: '10px' }} onChange={handleChange}>
-                <option value="Pay">Pay</option>
+              <select className={styles.PaymentTypeInput} name="type" onChange={handleChange}>
+                <option className={styles.PaymentOption} value="Pay">
+                  Pay
+                </option>
                 <option value="Free">Free</option>
               </select>
             </div>
             <div>
-              <input name="price" id="price" type="number" min="0" placeholder="Enter Price" style={{ height: '30px', width: '100%' }} onChange={handleChange}></input>
+              <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price" onChange={handleChange}></input>
             </div>
           </div>
         </div>
-        <Button type="submit" className={styles.Button}>
-          Upload
-        </Button>
+        <div className={styles.BtnContainer}>
+          <Button type="submit" className={styles.Button}>
+            Next
+          </Button>
+        </div>
       </form>
     </div>
   );
