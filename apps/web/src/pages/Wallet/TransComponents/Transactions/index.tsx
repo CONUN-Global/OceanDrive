@@ -19,7 +19,7 @@ const variants = {
 
 function Transactions() {
   return (
-    <motion.div transition={{ type: 'tween' }} initial={'hidden'} animate="visible" variants={variants} className={styles.Container}>
+    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.Container}>
       <table className={styles.Table}>
         <thead>
           <tr className={styles.TableRow}>

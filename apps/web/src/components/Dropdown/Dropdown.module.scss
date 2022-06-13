@@ -1,5 +1,7 @@
 .Dropdown {
-  width: 156px;
+  width: 128px;
+  //One more than backdrop
+  z-index: 101;
 
   & .SelectedItemContainer {
     align-items: center;

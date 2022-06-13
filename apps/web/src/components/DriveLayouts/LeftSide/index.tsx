@@ -9,7 +9,6 @@ import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logo
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
 import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
-import { motion } from 'framer-motion';
 
 import placeholderImg from '../../../assets/images/Avatar2.png';
 import Button from '../../Button';
@@ -18,7 +17,7 @@ import styles from './LeftSidebar.module.scss';
 
 import classNames from 'classnames';
 
-const LeftSidebar = ({ children }: { children?: ReactNode }) => {
+function LeftSide({ children }: { children?: ReactNode }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -52,7 +51,7 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
           </div>
         </div>
         <div>
-          <Button className={styles.UploadButton}>
+          <Button className={classNames(styles.UploadButton, { [styles.activeButton]: pathname.startsWith('/dropfile') })} onClick={() => navigate('/dropfile')}>
             <UploadIcon />
             <div className={styles.UploadText}>Drop File</div>
           </Button>
@@ -75,6 +74,6 @@ const LeftSidebar = ({ children }: { children?: ReactNode }) => {
       </div>
     </div>
   );
-};
+}
 
-export default LeftSidebar;
+export default LeftSide;

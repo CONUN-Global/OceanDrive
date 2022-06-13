@@ -1,49 +1,176 @@
-.DriveInfoContainer {
+.PageContainer {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
 
-  .MyDrivePlus {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 115px;
-    margin-bottom: 40px;
+  & .TitleBarContainer {
+    width: 100%;
+    margin-bottom: 30px;
 
-    .Title {
-      font-style: normal;
-      display: flex;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 26px;
-      font-size: 1.5rem;
+    & .Heading {
       color: var(--main-blue);
+    }
+
+    & .SubHeading {
+      color: var(--grey10);
     }
   }
 
-  .DriveItem {
+  & .LowerContainer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1rem;
-    color: var(--grey8);
-    padding: 10px 0;
+    justify-content: center;
+
+    & .InputHeading {
+      color: var(--sea-blue);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    & .PrivateSettings {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      color: var(--grey11);
+
+      & .PrivateCheck {
+        margin: 0px;
+        padding: 0px;
+        height: 11px;
+        cursor: pointer;
+      }
+    }
+
+    & .UploadZone {
+      height: 180px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #edf9ff;
+      border: 1px solid var(--sea-blue);
+      border-radius: 4px;
+      cursor: pointer;
+
+      //Hides the original Add File button and Text
+      input[type='file'] {
+        display: none;
+      }
+    }
+
+    & .Column {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    & .LeftColumn {
+      margin-right: 10px;
+
+      & .AddFileHeading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+      }
+    }
+    & .RightColumn {
+      margin-left: 10px; //   border: 2px solid orange;
+
+      & .TitleContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        & .MaxChar {
+          font-size: 12px;
+          color: var(--grey11);
+        }
+      }
+
+      & .DescriptionInput,
+      .TitleInput,
+      .PriceInput,
+      .PaymentTypeInput {
+        outline: none;
+        width: 100%;
+        background-color: var(--grey1);
+        border: 1px solid var(--grey1);
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      & .PaymentTypeInput {
+        padding-left: 8px;
+        height: 30px;
+        margin-bottom: 10px;
+
+        & .PaymentOption {
+          background-color: var(--grey1);
+          outline: none;
+          border: none;
+          padding: 10px;
+        }
+      }
+
+      & .TitleInput {
+        height: 30px;
+        padding-left: 8px;
+      }
+
+      & .DescriptionInput {
+        height: 130px;
+        padding: 8px;
+      }
+
+      & .PriceInput {
+        border-radius: 4px;
+        height: 30px;
+        padding-left: 8px;
+      }
+
+      & .PriceConversion {
+        color: var(--middle-blue-grey);
+        margin-left: 10px;
+      }
+
+      & .DescriptionInput:focus,
+      .TitleInput:focus,
+      .PriceInput:focus {
+        outline: none;
+        border: 1px solid var(--sea-blue);
+      }
+    }
   }
-}
 
-.PageContainer {
-  width: 100%;
-  padding: 200px 60px 0 60px;
+  & .BtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
-  .photosZero {
-    position: absolute;
-    bottom: 2%;
-    right: 4%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: right;
-    color: #989898;
+    & .Button {
+      background-color: var(--sea-blue);
+      border-radius: 4px;
+      margin-top: 40px;
+      align-items: center;
+      min-width: 200px;
+      min-height: 42px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    & .disabled {
+      background-color: var(--sea-blue);
+      border-radius: 4px;
+      margin-top: 40px;
+      align-items: center;
+      min-width: 200px;
+      min-height: 42px;
+    }
   }
 }

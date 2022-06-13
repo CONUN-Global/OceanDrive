@@ -9,9 +9,14 @@
   top: calc(var(--input_height) / 2);
   width: var(--input_width);
   height: var(--input_height);
-  background-color: #f7f7f7;
+  background-color: var(--grey1);
   border-radius: 50px;
   display: flex;
+  border: 1px solid var(--grey1);
+
+  &:focus-within {
+    border: 1px solid var(--grey5);
+  }
 
   & .SVGContainer {
     display: flex;
@@ -28,11 +33,10 @@
   & .Input {
     width: var(--input_width);
     height: calc(var(--input_height) - 5px);
-    background-color: #f7f7f7;
+    background-color: var(--grey1);
     border: none;
     border-radius: 0 50px 50px 0;
     color: var(--black);
-
     height: 100%;
 
     &::placeholder {

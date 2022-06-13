@@ -3,27 +3,33 @@ import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
-import Storage from '../pages/Publish/Publish';
+import DropFile from '../pages/DropFile';
 import Profile from 'src/pages/Profile';
+import Host from 'src/pages/Host';
+import DriveLayout from 'src/components/DriveLayouts';
+import Publish from '../pages/Publish';
 
 export const authorizedRoutes = [
   {
-    path: '',
+    path: '/',
+    element: <DriveLayout />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <SplashScreen path="/publish" />,
       },
+      { path: 'profile', element: <Profile /> },
       { path: 'wallet', element: <Wallet /> },
-      { path: 'publish', element: <Storage /> },
+      { path: 'publish', element: <Publish /> },
+      { path: 'host', element: <Host /> },
+      { path: 'dropfile', element: <DropFile /> },
       {
         path: 'marketplace',
         children: [
-          { path: '', element: <MarketPlace /> },
+          { index: true, element: <MarketPlace /> },
           { path: ':collection/:id', element: <SingleItem /> },
         ],
       },
-      { path: 'profile', element: <Profile /> },
     ],
   },
 ];
