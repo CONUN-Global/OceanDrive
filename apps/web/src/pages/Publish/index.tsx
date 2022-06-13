@@ -1,7 +1,10 @@
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
+
+//Cycoin market rate will go here.
+const cycoinRate = 487;
 
 const initialState = {
   private: false,
@@ -32,7 +35,8 @@ function getValue(eTarget: any) {
 
 function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+  const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
+  const [isPriceDisabled, setIsPriceDisabled] = useState<boolean>(false);
 
   async function handleChange({ target }: any) {
     const changeValue = await getValue(target);
@@ -43,6 +47,16 @@ function Publish() {
     };
     dispatch(action);
   }
+
+  useEffect(() => {
+    setIsBtnDisabled(true);
+    if (state.title.length > 0 && state.file.size > 0) setIsBtnDisabled(false);
+    if (state.type === 'Pay' && state.price < 1) {
+      setIsBtnDisabled(true);
+    }
+    // if (state.type === 'Free') setIsPriceDisabled(true);
+    // if (state.type === 'Pay') setIsPriceDisabled(true);
+  }, [state]);
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -78,7 +92,7 @@ function Publish() {
               </label>
             </div>
             <div>
-              <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#32; &#40;Cover Image&#41;</h4>
+              <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
                 <input name="thumbnail" type="file" onChange={handleChange} />
               </div>
@@ -92,7 +106,7 @@ function Publish() {
                 <h4 className={styles.InputHeading}>3. Content Title*</h4>
                 <div className={styles.MaxChar}>Max 50 Characters</div>
               </div>
-              <input name="title" className={styles.TitleInput} onChange={handleChange} />
+              <input name="title" className={styles.TitleInput} maxLength={50} onChange={handleChange} />
             </div>
             <div>
               <h4 className={styles.InputHeading}>4. Content Description</h4>
@@ -107,9 +121,12 @@ function Publish() {
                 <option value="Free">Free</option>
               </select>
             </div>
-            <div>
-              <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price" onChange={handleChange}></input>
-            </div>
+            {state.type === 'Pay' && (
+              <div>
+                <input name="price" disabled={false} className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price" onChange={handleChange} value={state.price} />
+                <div className={styles.PriceConversion}> = {state.price * cycoinRate} Cycon Coin</div>
+              </div>
+            )}
           </div>
         </div>
         <div className={styles.BtnContainer}>

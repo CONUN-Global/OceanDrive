@@ -40,7 +40,7 @@
 
   // Top
   .TooltipTip.Top {
-    top: calc(var(--tooltip-margin) * -1);
+    top: calc(var(--tooltip-margin) * -0.05);
   }
 
   .TooltipTip.Top::before {
