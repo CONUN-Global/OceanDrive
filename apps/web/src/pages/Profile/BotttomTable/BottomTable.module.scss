@@ -44,7 +44,6 @@
   }
 
   .IconSt {
-    // border: 2px solid blue;
     width: 30%;
   }
 }
@@ -246,11 +245,11 @@
         padding-right: 25px;
         cursor: pointer;
         transition: all 0.05s ease-in-out;
-
-        &:hover {
-          transform: scale(1.2);
-        }
       }
+    }
+
+    .PausedTd {
+      background: #f0fdff;
     }
 
     .P {
