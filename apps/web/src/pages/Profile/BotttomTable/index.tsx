@@ -7,6 +7,7 @@ import { ReactComponent as CyconIcon } from '../../../assets/icons/boxed-cycon-i
 import { ReactComponent as TickIcon } from '../../../assets/icons/tick-icon.svg';
 import { ReactComponent as DownloadedIcon } from '../../../assets/icons/downloaded-icon.svg';
 import { ReactComponent as PauseIcon } from '../../../assets/icons/pause-icon.svg';
+import { ReactComponent as PlayIcon } from '../../../assets/icons/play-icon.svg';
 
 import { data } from './DemoData';
 import { queData } from './DemoData';
@@ -18,7 +19,6 @@ interface PropWord {
 }
 
 const BottomTable = ({ clicked }: PropWord) => {
-  const [pausePlay, setPausePlay] = useState('pause');
   const queExist = queData !== null && queData.length > 0 && clicked === 'downloads';
 
   return (
@@ -43,8 +43,9 @@ const BottomTable = ({ clicked }: PropWord) => {
                 <tbody>
                   {queData.length > 0 &&
                     queData.map((val: any, key: any) => {
+                      const [icon, setIcon] = useState(val.copy);
                       return (
-                        <tr key={key} className={styles.TableRow2}>
+                        <tr key={key} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>
                           {/* here will be generated icon */}
                           <td className={styles.FirstTd}>
                             <GenearatedIcon />
@@ -59,14 +60,25 @@ const BottomTable = ({ clicked }: PropWord) => {
                               <div className={styles.ColoredBack} style={{ width: val.txHash }}></div>
                             </div>
                           </td>
-                          <td key={key}
-                            className={styles.IconSt}
-                            onClick={(e: any) => {
-                              console.log(e.target.key);
-                              setPausePlay('play');
-                            }}
-                          >
-                            {pausePlay === 'pause' && <PauseIcon />}
+                          <td className={styles.IconSt}>
+                            {icon === 'pause-icon' && (
+                              <PauseIcon
+                                width={20}
+                                height={20}
+                                onClick={() => {
+                                  setIcon('play-icon');
+                                }}
+                              />
+                            )}
+                            {icon === 'play-icon' && (
+                              <PlayIcon
+                                width={20}
+                                height={20}
+                                onClick={() => {
+                                  setIcon('pause-icon');
+                                }}
+                              />
+                            )}
                           </td>
                         </tr>
                       );
