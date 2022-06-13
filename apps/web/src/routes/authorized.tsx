@@ -9,6 +9,7 @@ import Host from 'src/pages/Host';
 import DriveLayout from 'src/components/DriveLayouts';
 import Publish from '../pages/Publish';
 import { Navigate } from 'react-router-dom';
+import Settings from '../pages/Settings';
 
 export const authorizedRoutes = [
   {
@@ -24,6 +25,7 @@ export const authorizedRoutes = [
       { path: 'publish', element: <Publish /> },
       { path: 'host', element: <Host /> },
       { path: 'dropfile', element: <DropFile /> },
+      { path: 'settings', element: <Settings /> },
       {
         path: 'marketplace',
         children: [

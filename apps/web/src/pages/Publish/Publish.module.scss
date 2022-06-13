@@ -1,3 +1,7 @@
+:root {
+  --input-padding: 8px;
+}
+
 .PageContainer {
   height: 100%;
   width: 100%;
@@ -57,7 +61,7 @@
 
       //Hides the original Add File button and Text
       input[type='file'] {
-        display: none;
+        // display: none;
       }
     }
 
@@ -79,7 +83,7 @@
       }
     }
     & .RightColumn {
-      margin-left: 10px; //   border: 2px solid orange;
+      margin-left: 10px;
 
       & .TitleContainer {
         display: flex;
@@ -101,11 +105,11 @@
         background-color: var(--grey1);
         border: 1px solid var(--grey1);
         border-radius: 4px;
-        font-size: 12px;
+        font-size: 14px;
       }
 
       & .PaymentTypeInput {
-        padding-left: 8px;
+        padding-left: calc(var(--input-padding) / 2);
         height: 30px;
         margin-bottom: 10px;
 
@@ -119,28 +123,41 @@
 
       & .TitleInput {
         height: 30px;
-        padding-left: 8px;
+        padding-left: var(--input-padding);
+        font-family: inherit;
+        font-size: inherit;
       }
 
       & .DescriptionInput {
-        height: 130px;
-        padding: 8px;
+        padding-left: var(--input-padding);
+        padding-top: calc(var(--input-padding) / 2);
+        font-family: inherit;
+        font-size: inherit;
       }
 
-      & .PriceInput {
+      & .PriceInputContainer {
+        background-color: var(--grey1);
+        padding-left: var(--input-padding);
+        display: flex;
+        align-items: center;
         border-radius: 4px;
-        height: 30px;
-        padding-left: 8px;
+        border: 1px solid var(--grey1);
+
+        & .PriceInput {
+          border-radius: 4px;
+          height: 30px;
+          padding-left: var(--input-padding);
+        }
       }
 
       & .PriceConversion {
         color: var(--middle-blue-grey);
-        margin-left: 10px;
+        margin-left: var(--input-padding);
       }
 
       & .DescriptionInput:focus,
       .TitleInput:focus,
-      .PriceInput:focus {
+      .PriceInputContainer:focus-within {
         outline: none;
         border: 1px solid var(--sea-blue);
       }

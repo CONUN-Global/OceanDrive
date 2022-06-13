@@ -19,7 +19,6 @@ const focusedStyle = {
 };
 
 const acceptStyle = {
-  // borderColor: '#2196f3',
   borderColor: '#00e676',
 };
 
