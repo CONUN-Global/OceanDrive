@@ -133,6 +133,11 @@
         padding-left: 8px;
       }
 
+      & .PriceConversion {
+        color: var(--middle-blue-grey);
+        margin-left: 10px;
+      }
+
       & .DescriptionInput:focus,
       .TitleInput:focus,
       .PriceInput:focus {
@@ -166,9 +171,6 @@
       align-items: center;
       min-width: 200px;
       min-height: 42px;
-      &:hover {
-        // opacity: initial;
-      }
     }
   }
 }
