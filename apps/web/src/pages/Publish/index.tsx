@@ -6,17 +6,58 @@ import Button from 'src/components/Button';
 //Cycoin market rate will go here.
 const cycoinRate = 487;
 
-const initialState = {
+interface UploadFile {
+  lastModified: number;
+  lastModifiedDate: object;
+  name: string;
+  path: string;
+  size: number;
+  type: string;
+  webkitRelativePath: string;
+}
+
+interface IState {
+  private: boolean;
+  file: UploadFile;
+  thumbnail: UploadFile;
+  title: string;
+  description: string;
+  type: string;
+  price: number;
+}
+
+interface IAction {
+  input: string;
+  value: string;
+}
+
+const initialState: IState = {
   private: false,
-  file: '',
-  thumbnail: '',
+  file: {
+    lastModified: 0,
+    lastModifiedDate: {},
+    name: '',
+    path: '',
+    size: 0,
+    type: '',
+    webkitRelativePath: '',
+  },
+  thumbnail: {
+    lastModified: 0,
+    lastModifiedDate: {},
+    name: '',
+    path: '',
+    size: 0,
+    type: '',
+    webkitRelativePath: '',
+  },
   title: '',
   description: '',
   type: 'Pay',
-  price: '',
+  price: 0,
 };
 
-function reducer(state: any, action: any) {
+function reducer(state: IState, action: IAction) {
   return { ...state, [action.input]: action.value };
 }
 
@@ -36,7 +77,6 @@ function getValue(eTarget: any) {
 function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
-  const [isPriceDisabled, setIsPriceDisabled] = useState<boolean>(false);
 
   async function handleChange({ target }: any) {
     const changeValue = await getValue(target);
@@ -51,14 +91,10 @@ function Publish() {
   useEffect(() => {
     setIsBtnDisabled(true);
     if (state.title.length > 0 && state.file.size > 0) setIsBtnDisabled(false);
-    if (state.type === 'Pay' && state.price < 1) {
-      setIsBtnDisabled(true);
-    }
-    // if (state.type === 'Free') setIsPriceDisabled(true);
-    // if (state.type === 'Pay') setIsPriceDisabled(true);
+    if (state.type === 'Pay' && state.price < 1) setIsBtnDisabled(true);
   }, [state]);
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
     console.log(state);
@@ -110,7 +146,7 @@ function Publish() {
             </div>
             <div>
               <h4 className={styles.InputHeading}>4. Content Description</h4>
-              <textarea className={styles.DescriptionInput} name="description" onChange={handleChange} />
+              <textarea className={styles.DescriptionInput} name="description" onChange={handleChange} rows={5} />
             </div>
             <div>
               <h4 className={styles.InputHeading}>5. Select Type*</h4>
@@ -123,8 +159,12 @@ function Publish() {
             </div>
             {state.type === 'Pay' && (
               <div>
-                <input name="price" disabled={false} className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price" onChange={handleChange} value={state.price} />
-                <div className={styles.PriceConversion}> = {state.price * cycoinRate} Cycon Coin</div>
+                <span className={styles.PriceInputContainer}>
+                  $<input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price (USD)" onChange={handleChange} value={state.price} />
+                </span>
+                <div className={styles.PriceConversion}>
+                  ${state.price ? state.price : 1} USD = {state.price ? state.price * cycoinRate : cycoinRate} Cycon Coin
+                </div>
               </div>
             )}
           </div>

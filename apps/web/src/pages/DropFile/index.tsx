@@ -32,6 +32,7 @@ const DropFile = () => {
   );
 
   const onDrop = useCallback((acceptedFiles: any[]) => {
+    console.log(acceptedFiles);
     acceptedFiles.map((file: any) => {
       const reader = new FileReader();
 
