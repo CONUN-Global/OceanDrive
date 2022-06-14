@@ -14,15 +14,15 @@ const seedData = {
 
 function copyText() {
   navigator.clipboard.writeText(seedData.walletAddress);
-  toast.info('Text copied to clipboard', {
-    position: 'bottom-center',
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+  // toast.info('Text copied to clipboard', {
+  //   position: 'bottom-center',
+  //   autoClose: 2000,
+  //   hideProgressBar: false,
+  //   closeOnClick: true,
+  //   pauseOnHover: true,
+  //   draggable: true,
+  //   progress: undefined,
+  // });
 }
 
 const variants = {
