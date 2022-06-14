@@ -4,6 +4,7 @@ import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
 import { UploadFile } from 'src/types';
 import DragAndDrop from 'src/components/DragAndDrop';
+import FilesUploading from './FilesUploading';
 
 //Cycoin market rate will go here.
 const cycoinRate = 487;
@@ -25,8 +26,8 @@ interface IAction {
 
 const initialState: IState = {
   private: false,
-  file: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '' }],
-  thumbnail: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '' }],
+  file: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '', name: '' }],
+  thumbnail: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '', name: '' }],
   title: '',
   description: '',
   type: 'Pay',
@@ -119,9 +120,7 @@ function Publish() {
                   <label htmlFor="Private">Make Private</label>
                 </div>
               </div>
-              <div className={styles.UploadZone}>
-                <DragAndDrop data={files} setData={setFiles}></DragAndDrop>
-              </div>
+              <div className={styles.UploadZone}>{files.length === 0 ? <DragAndDrop data={files} setData={setFiles}></DragAndDrop> : <FilesUploading data={files} setData={setFiles} />}</div>
             </div>
             <div>
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>

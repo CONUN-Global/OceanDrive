@@ -4,6 +4,7 @@ import TitleAndSearch from '../../components/TitleAndSearch';
 import { useMutation } from 'react-query';
 import { toast, ToastContainer } from 'react-toastify';
 import DragAndDrop from 'src/components/DragAndDrop';
+import { UploadFile } from 'src/types';
 
 import styles from './DropFile.module.scss';
 import cuid from 'cuid';
@@ -50,6 +51,7 @@ const DropFile = () => {
     });
   };
   const [uploads, setUploads] = useState([]);
+  const [uploads, setUploads] = useState<UploadFile[]>([]);
 
   return (
     <div className={styles.PageContainer}>
