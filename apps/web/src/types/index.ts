@@ -13,4 +13,5 @@ export type UploadFile = {
   path: string;
   src: string;
   id: string;
+  name: string;
 };

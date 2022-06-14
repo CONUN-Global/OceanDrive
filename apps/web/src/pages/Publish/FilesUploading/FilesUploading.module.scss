@@ -1,0 +1,23 @@
+.Container {
+  cursor: default;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  & .ResetBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+  }
+}

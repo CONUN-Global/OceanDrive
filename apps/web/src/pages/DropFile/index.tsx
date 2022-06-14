@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import TitleAndSearch from '../../components/TitleAndSearch';
 import DragAndDrop from 'src/components/DragAndDrop';
+import { UploadFile } from 'src/types';
 
 import styles from './DropFile.module.scss';
 
 const DropFile = () => {
-  const [uploads, setUploads] = useState([]);
+  const [uploads, setUploads] = useState<UploadFile[]>([]);
 
   return (
     <div className={styles.PageContainer}>
