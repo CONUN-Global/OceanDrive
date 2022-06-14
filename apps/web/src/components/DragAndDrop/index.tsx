@@ -1,8 +1,10 @@
 import cuid from 'cuid';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
 import Button from 'src/components/Button';
+import { UploadFile } from 'src/types';
+
 import styles from './DragAndDrop.module.scss';
 
 const { api } = window;
@@ -10,7 +12,6 @@ const { api } = window;
 const baseStyle = {
   borderWidth: 1.6,
   borderRadius: 10,
-  borderColor: '#5f93f1',
   backgroundColor: '#EDF9FF',
   outline: 'none',
   transition: 'border .24s ease-in-out',
@@ -28,9 +29,12 @@ const rejectStyle = {
   backgroundColor: '#ffd8d8',
 };
 
-function DragAndDrop({ children }: any) {
-  const [images, setImages] = useState<any[]>([]);
+interface IProps {
+  data: UploadFile[];
+  setData: (arg: UploadFile[] | any) => void;
+}
 
+function DragAndDrop({ data, setData }: IProps) {
   //UNUSED UNTIL WE MAKE API REQUEST
   const { mutateAsync: uploadFile } = useMutation(
     (file: any) =>
@@ -55,7 +59,7 @@ function DragAndDrop({ children }: any) {
       const reader = new FileReader();
 
       reader.onload = function (e: any) {
-        setImages(prevState => [...prevState, { type: file.type, size: file.size, path: file.path, name: file.name, id: cuid(), src: e.target.result, filePath: e.target.result }]);
+        setData((prevState: UploadFile[]) => [...prevState, { type: file.type, size: file.size, path: file.path, name: file.name, id: cuid(), src: e.target.result, filePath: e.target.result }]);
       };
       reader.readAsDataURL(file);
 
@@ -81,11 +85,11 @@ function DragAndDrop({ children }: any) {
     [isFocused, isDragAccept, isDragReject],
   );
 
-  const handleSubmit = () => {
-    images.forEach(image => {
-      uploadFile(image);
-    });
-  };
+  //   const handleSubmit = () => {
+  //     data.forEach(image => {
+  //       uploadFile(image);
+  //     });
+  //   };
 
   return (
     <>
@@ -102,9 +106,9 @@ function DragAndDrop({ children }: any) {
           <Button type="button" onClick={open}>
             Browse
           </Button>
-          {children}
+
           <div className={styles.DroppedImgContainer}>
-            {images.map((image: any) => {
+            {data.map((image: any) => {
               return (
                 <div key={image.id}>
                   <div>{image.name}</div>
