@@ -1,23 +1,19 @@
 import React, { useCallback, useState } from 'react';
-import cuid from 'cuid';
-import TitleAndSearch from '../../components/TitleAndSearch';
-import DropZone from '../../components/DropZone/DropZone';
-import styles from './DropFile.module.scss';
-import { useMutation } from 'react-query';
-import Button from '../../components/Button';
-import { toast, ToastContainer } from 'react-toastify';
 
-interface EventInterface {
-  target: any;
-}
-const { api } = window;
+import TitleAndSearch from '../../components/TitleAndSearch';
+import { useMutation } from 'react-query';
+import { toast, ToastContainer } from 'react-toastify';
+import DragAndDrop from 'src/components/DragAndDrop';
+
+import styles from './DropFile.module.scss';
+import cuid from 'cuid';
 
 const DropFile = () => {
   const [images, setImages] = useState<any[]>([]);
 
   const { mutateAsync: uploadFile } = useMutation(
     (file: any) =>
-      api.uploadThumb({
+      window.api.uploadThumb({
         ...file,
         filePath: file?.path,
         fileName: file?.name,
@@ -37,7 +33,7 @@ const DropFile = () => {
     acceptedFiles.map((file: any) => {
       const reader = new FileReader();
 
-      reader.onloadend = function (e: EventInterface) {
+      reader.onloadend = function (e: any) {
         setImages(prevState => [...prevState, { ...file, id: cuid(), src: e.target.result, filePath: e.target.result, result: reader.result }]);
       };
 
@@ -53,24 +49,18 @@ const DropFile = () => {
       uploadFile(image);
     });
   };
+  const [uploads, setUploads] = useState([]);
 
   return (
     <div className={styles.PageContainer}>
       <ToastContainer />
       <TitleAndSearch>My Drive</TitleAndSearch>
-      <Button onClick={handleSubmit}>Upload Files</Button>
-      <DropZone onDrop={onDrop} accept={'image/*'} />
-      <div className={styles.DroppedImgContainer}>
-        {images.map((image: any) => {
-          console.log(image);
-          return (
-            <div key={image.id}>
-              <img src={image.src} alt="nft-art-pic" style={{ width: '200px', height: '150px' }} />
-            </div>
-          );
-        })}
+      <div className={styles.PageContent}>
+        <div className={styles.DropZoneContainer}>
+          <DragAndDrop data={uploads} setData={setUploads}></DragAndDrop>
+        </div>
+        <div className={styles.photosZero}>0 Photos - 0 MB</div>
       </div>
-      <div className={styles.photosZero}>0 Photos - 0 MB</div>
     </div>
   );
 };

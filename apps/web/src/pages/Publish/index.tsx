@@ -2,24 +2,16 @@ import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
+import { UploadFile } from 'src/types';
+import DragAndDrop from 'src/components/DragAndDrop';
 
 //Cycoin market rate will go here.
 const cycoinRate = 487;
 
-interface UploadFile {
-  lastModified: number;
-  lastModifiedDate: object;
-  name: string;
-  path: string;
-  size: number;
-  type: string;
-  webkitRelativePath: string;
-}
-
 interface IState {
   private: boolean;
-  file: UploadFile;
-  thumbnail: UploadFile;
+  file: UploadFile[];
+  thumbnail: UploadFile[];
   title: string;
   description: string;
   type: string;
@@ -28,29 +20,13 @@ interface IState {
 
 interface IAction {
   input: string;
-  value: string;
+  value: string | any[];
 }
 
 const initialState: IState = {
   private: false,
-  file: {
-    lastModified: 0,
-    lastModifiedDate: {},
-    name: '',
-    path: '',
-    size: 0,
-    type: '',
-    webkitRelativePath: '',
-  },
-  thumbnail: {
-    lastModified: 0,
-    lastModifiedDate: {},
-    name: '',
-    path: '',
-    size: 0,
-    type: '',
-    webkitRelativePath: '',
-  },
+  file: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '' }],
+  thumbnail: [{ filePath: '', type: '', size: 0, path: '', src: '', id: '' }],
   title: '',
   description: '',
   type: 'Pay',
@@ -61,12 +37,8 @@ function reducer(state: IState, action: IAction) {
   return { ...state, [action.input]: action.value };
 }
 
-//Gets the value of the input that was changed
-//depends on the type of input method (checkbox vs file vs text input)
+//Gets the value -- depends on the target
 function getValue(eTarget: any) {
-  if (eTarget.name === 'file' || eTarget.name === 'thumbnail') {
-    return eTarget.files[0];
-  }
   if (eTarget.name === 'private') {
     return eTarget.checked;
   } else {
@@ -78,22 +50,46 @@ function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
 
-  async function handleChange({ target }: any) {
-    const changeValue = await getValue(target);
+  // Files to upload
+  const [files, setFiles] = useState<UploadFile[]>([]);
+  const [thumbnail, setThumbnail] = useState<UploadFile[]>([]);
+
+  //Handle Input change
+  async function handleChange(event: any) {
+    const changeValue = await getValue(event.target);
 
     const action = {
-      input: target.name,
+      input: event.target.name,
       value: changeValue,
     };
     dispatch(action);
   }
 
+  // Listening for File or Thumbnail changes
+  useEffect(() => {
+    const action = {
+      input: 'thumbnail',
+      value: [...thumbnail],
+    };
+    dispatch(action);
+  }, [thumbnail]);
+
+  useEffect(() => {
+    const action = {
+      input: 'file',
+      value: [...files],
+    };
+    dispatch(action);
+  }, [files]);
+
+  //Disabling Upload button for file uploads
   useEffect(() => {
     setIsBtnDisabled(true);
-    if (state.title.length > 0 && state.file.size > 0) setIsBtnDisabled(false);
+    if (state.title.length > 0 && state.file.length > 0) setIsBtnDisabled(false);
     if (state.type === 'Pay' && state.price < 1) setIsBtnDisabled(true);
   }, [state]);
 
+  // Handling Upload click
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -123,14 +119,14 @@ function Publish() {
                   <label htmlFor="Private">Make Private</label>
                 </div>
               </div>
-              <label className={styles.UploadZone}>
-                <input name="file" type="file" onChange={handleChange} />
-              </label>
+              <div className={styles.UploadZone}>
+                <DragAndDrop data={files} setData={setFiles}></DragAndDrop>
+              </div>
             </div>
             <div>
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
-                <input name="thumbnail" type="file" onChange={handleChange} />
+                <DragAndDrop data={thumbnail} setData={setThumbnail}></DragAndDrop>
               </div>
             </div>
           </div>
