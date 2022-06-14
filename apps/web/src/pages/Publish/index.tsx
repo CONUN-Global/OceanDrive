@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
+import DragAndDrop from 'src/components/DragAndDrop';
 
 //Cycoin market rate will go here.
 const cycoinRate = 487;
@@ -124,13 +125,15 @@ function Publish() {
                 </div>
               </div>
               <label className={styles.UploadZone}>
-                <input name="file" type="file" onChange={handleChange} />
+                {/* <input name="file" type="file" onChange={handleChange} /> */}
+                <DragAndDrop></DragAndDrop>
               </label>
             </div>
             <div>
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
-                <input name="thumbnail" type="file" onChange={handleChange} />
+                {/* <input name="thumbnail" type="file" onChange={handleChange} /> */}
+                <DragAndDrop></DragAndDrop>
               </div>
             </div>
           </div>
@@ -152,7 +155,7 @@ function Publish() {
               <h4 className={styles.InputHeading}>5. Select Type*</h4>
               <select className={styles.PaymentTypeInput} name="type" onChange={handleChange}>
                 <option className={styles.PaymentOption} value="Pay">
-                  Pay
+                  Paid
                 </option>
                 <option value="Free">Free</option>
               </select>
@@ -171,7 +174,7 @@ function Publish() {
         </div>
         <div className={styles.BtnContainer}>
           <Button isDisabled={isBtnDisabled} type="submit" className={classNames({ [styles.Button]: !isBtnDisabled }, { [styles.disabled]: isBtnDisabled })}>
-            Next
+            Upload
           </Button>
         </div>
       </form>
