@@ -8,6 +8,7 @@ import { ReactComponent as TickIcon } from '../../../assets/icons/tick-icon.svg'
 import { ReactComponent as DownloadedIcon } from '../../../assets/icons/downloaded-icon.svg';
 import { ReactComponent as PauseIcon } from '../../../assets/icons/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../../assets/icons/play-icon.svg';
+import { ReactComponent as GeneratedPersonalIcon } from '../../../assets/icons/generated-personal-icon.svg';
 
 import { data } from './DemoData';
 import { queData } from './DemoData';
@@ -98,15 +99,21 @@ const BottomTable = ({ clicked }: PropWord) => {
             <thead>
               <tr className={styles.TableRow}>
                 <th></th>
-                <th>Content Name</th>
+                <th>{clicked === 'published' ? 'Content Name' : 'File Name'}</th>
                 <th>File Size</th>
-                <th className={clicked === 'downloads' ? styles.HideTh : ''}>{clicked === 'published' && 'Amount'}</th>
+                <th className={clicked === 'downloads' || clicked === 'personal' ? styles.HideTh : ''}>{clicked === 'published' && 'Amount'}</th>
                 <th>Date</th>
                 <th>TX Hash</th>
                 {clicked === 'published' && <th></th>}
                 {clicked === 'downloads' && (
                   <th>
                     <DownloadedIcon className={styles.DownloadedIconStyle} />
+                  </th>
+                )}
+                {clicked === 'personal' && <th></th>}
+                {clicked === 'personal' && (
+                  <th>
+                    <img src={require('../../../assets/images/DownloadActivityIcon.png')} className={styles.DownloadActivityIcon} />
                   </th>
                 )}
               </tr>
@@ -133,9 +140,10 @@ const BottomTable = ({ clicked }: PropWord) => {
                       <td>{val.date}</td>
                       <td>{val.txHash}</td>
                       <td>
-                        {clicked === 'published' && <CopyIcon />}
+                        {clicked === 'published' || (clicked === 'personal' && <CopyIcon />)}
                         {clicked === 'downloads' && <TickIcon />}
                       </td>
+                      {clicked === 'personal' && <td><GeneratedPersonalIcon /></td>}
                     </tr>
                   );
                 })}

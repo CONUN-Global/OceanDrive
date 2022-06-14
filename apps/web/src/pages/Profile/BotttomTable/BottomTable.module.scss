@@ -139,7 +139,7 @@
         padding-left: 25px;
       }
       & :nth-child(6) {
-        width: 20%;
+        width: 15%;
         text-align: left;
         padding-left: 35px;
         border-top-right-radius: 5px;
@@ -147,10 +147,20 @@
       & :nth-child(7) {
         padding-right: 25px;
       }
+      & :nth-child(8) {
+        text-align: left;
+      }
       .DownloadedIconStyle {
         width: 100%;
         height: 18px;
         padding-right: 10px;
+      }
+      .DownloadActivityIcon {
+        width: 22px;
+        height: 19px;
+        // border: 1px solid green;
+        margin-left: -5px;
+        
       }
     }
 
@@ -243,8 +253,15 @@
 
       & :nth-child(7) {
         padding-right: 25px;
-        cursor: pointer;
+        // cursor: pointer;
         transition: all 0.05s ease-in-out;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+      & :nth-child(8) {
+        text-align: left;
       }
     }
 
