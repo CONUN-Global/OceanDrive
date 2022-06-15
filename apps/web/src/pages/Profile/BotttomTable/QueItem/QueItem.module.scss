@@ -1,0 +1,147 @@
+.SecondTd {
+  text-transform: uppercase;
+}
+
+.ProgressBarContainer {
+  // border: 2px solid green;
+
+  .ProgressBar {
+    width: 142px;
+    height: 23px;
+    background: #f2f6f4;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // text
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #188658;
+    text-shadow: 0px 0px 2px rgba(23, 64, 37, 0.1);
+
+    .ColoredBack {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #dcf3dd;
+      z-index: -1;
+    }
+  }
+}
+
+.IconSt {
+  width: 30%;
+}
+
+.HideTh {
+  width: 35px;
+}
+
+.TableRow2 {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #e7e7e7;
+  background-color: #ffffff;
+
+  .FirstTd {
+    padding-left: 5px;
+  }
+
+  & :nth-child(2) {
+    text-align: left;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 104.9%;
+    color: #5f93f1;
+  }
+  & :nth-child(3) {
+    text-align: left;
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #64c2d1;
+  }
+  & :nth-child(4) {
+    text-align: left;
+
+    .AmountContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      width: 122px;
+      height: 29px;
+      background: #ffecde;
+      border-radius: 4px;
+      padding-right: 10px;
+
+      .Cycon {
+        width: 18.14px;
+        height: 18.14px;
+      }
+      .CyconDescDiv {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 23px;
+        letter-spacing: 0.03em;
+        color: #f37123;
+      }
+    }
+  }
+
+  & :nth-child(5) {
+    text-align: left;
+    padding-left: 25px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    color: #888888;
+  }
+  & :nth-child(6) {
+    text-align: left;
+    padding-left: 35px;
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 104.9%;
+    letter-spacing: 0.005em;
+    color: #48afe8;
+  }
+
+  & :nth-child(7) {
+    padding-right: 25px;
+    // cursor: pointer;
+    transition: all 0.05s ease-in-out;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+  & :nth-child(8) {
+    text-align: left;
+  }
+}
+
+.PausedTd {
+  background: #f0fdff;
+}

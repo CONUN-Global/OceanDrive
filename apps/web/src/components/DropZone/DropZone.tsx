@@ -65,3 +65,19 @@ function Dropzone({ onDrop, accept }: any) {
   );
 }
 export default Dropzone;
+
+// dropzone functionality, putting it here as a later usage reference, so please don't remove it
+// const onDrop = useCallback((acceptedFiles: any[]) => {
+//   acceptedFiles.map((file: any) => {
+//     const reader = new FileReader();
+
+//     reader.onload = function (e: EventInterface) {
+//       setImages(prevState => [...prevState, { ...file, id: cuid(), src: e.target.result, filePath: e.target.result }]);
+//     };
+//     reader.readAsDataURL(file);
+
+//     return file;
+//   });
+// }, []);
+
+{/* <DropZone onDrop={onDrop} accept={'image/*'} />; */}

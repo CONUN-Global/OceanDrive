@@ -48,6 +48,10 @@
   }
 }
 
+.TableBodyScroll {
+  overflow-y: auto;
+}
+
 .TopTable {
   height: 90%;
   width: 100%;
@@ -88,7 +92,6 @@
   .Table {
     width: 100%;
     min-width: 500px;
-    overflow: auto;
     border-collapse: collapse;
     border-radius: 5px;
     background: #efefef;
@@ -100,6 +103,13 @@
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       border-collapse: collapse;
+      // position: fixed;
+
+      th {
+        background: #efefef;
+        position: sticky;
+        top: 0;
+      }
 
       th {
         font-style: normal;
@@ -160,7 +170,6 @@
         height: 19px;
         // border: 1px solid green;
         margin-left: -5px;
-        
       }
     }
 
