@@ -10,6 +10,7 @@ const seedData = { balance: 598.0 };
 
 const Profile = () => {
   const [clicked, setClicked] = useState('published');
+  const [showGrid, setShowGrid] = useState(false);
 
   return (
     <div className={styles.Container}>
@@ -38,14 +39,20 @@ const Profile = () => {
             </div>
 
             <div className={styles.BoxedIcon}>
-              <BoxedIcon />
+              <BoxedIcon
+                onClick={() => {
+                  if (clicked === 'published') {
+                    setShowGrid(!showGrid);
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Table */}
-      <BottomTable clicked={clicked} />
+      <BottomTable clicked={clicked} showGrid={showGrid} />
     </div>
   );
 };
