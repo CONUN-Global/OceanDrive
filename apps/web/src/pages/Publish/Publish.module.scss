@@ -1,3 +1,5 @@
+@import '../../styles/fonts';
+
 :root {
   --input-padding: 8px;
 }
@@ -59,9 +61,23 @@
       border-radius: 4px;
       cursor: pointer;
 
-      //Hides the original Add File button and Text
-      input[type='file'] {
-        display: none;
+      & .FileDropText {
+        @include fontBodyXL;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--main-blue);
+      }
+
+      & .FileDropBtn {
+        margin-top: 10px;
+      }
+
+      & .ThumbDropText {
+        @include fontBodyXL;
+        font-weight: 500;
+        min-width: 200px;
+        color: var(--main-blue);
       }
     }
 

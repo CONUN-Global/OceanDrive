@@ -3,8 +3,10 @@ import classNames from 'classnames';
 import styles from './Publish.module.scss';
 import Button from 'src/components/Button';
 import { UploadFile } from 'src/types';
+import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDrop.svg';
 import DragAndDrop from 'src/components/DragAndDrop';
 import FilesUploading from './FilesUploading';
+import ThumbUpload from './ThumbUpload';
 
 //Cycoin market rate will go here.
 const cycoinRate = 487;
@@ -120,12 +122,30 @@ function Publish() {
                   <label htmlFor="Private">Make Private</label>
                 </div>
               </div>
-              <div className={styles.UploadZone}>{files.length === 0 ? <DragAndDrop data={files} setData={setFiles}></DragAndDrop> : <FilesUploading data={files} setData={setFiles} />}</div>
+              <div className={styles.UploadZone}>
+                {files.length === 0 ? (
+                  <DragAndDrop data={files} setData={setFiles}>
+                    <div className={styles.FileDropText}>
+                      Drag and Drop <br /> or
+                    </div>
+                    <Button className={styles.FileDropBtn}>Browse</Button>
+                  </DragAndDrop>
+                ) : (
+                  <FilesUploading data={files} setData={setFiles} />
+                )}
+              </div>
             </div>
             <div>
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
-                <DragAndDrop data={thumbnail} setData={setThumbnail}></DragAndDrop>
+                {thumbnail.length === 0 ? (
+                  <DragAndDrop data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
+                    <ThumbnailDrop />
+                    <div className={styles.ThumbDropText}>Upload image under 5mb</div>
+                  </DragAndDrop>
+                ) : (
+                  <ThumbUpload data={thumbnail} setData={setThumbnail} />
+                )}
               </div>
             </div>
           </div>

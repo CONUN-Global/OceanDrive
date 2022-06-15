@@ -1,8 +1,8 @@
 import cuid from 'cuid';
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
 import { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
-import Button from 'src/components/Button';
 import { UploadFile } from 'src/types';
 
 import styles from './DragAndDrop.module.scss';
@@ -32,9 +32,14 @@ const rejectStyle = {
 interface IProps {
   data: UploadFile[];
   setData: (arg: UploadFile[] | any) => void;
+  maxFiles?: number;
+  maxSize?: number | undefined;
+  children?: React.ReactNode;
 }
 
-function DragAndDrop({ data, setData }: IProps) {
+function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, children }: IProps) {
+  const [errors, setErrors] = useState<string>('');
+
   //UNUSED UNTIL WE MAKE API REQUEST
   const { mutateAsync: uploadFile } = useMutation(
     (file: any) =>
@@ -53,7 +58,27 @@ function DragAndDrop({ data, setData }: IProps) {
     },
   );
 
-  const onDrop = useCallback((acceptedFiles: any[]) => {
+  const onDrop = useCallback((acceptedFiles: any[], rejectedFiles: any[]) => {
+    rejectedFiles?.forEach(file => {
+      file.errors.forEach((err: any) => {
+        switch (err.code) {
+          case 'file-too-large':
+            console.log(err.code);
+            setErrors('File too large. Please select a smaller file.');
+            break;
+          case 'file-invalid-type':
+            console.log(err.code);
+            setErrors('This is an invalid file type. Please select a JPEG or PNG.');
+            break;
+          case 'too-many-files':
+            console.log(err.code);
+            setErrors('You have selected too many files. Please use only a single photo for the thumbnail.');
+            break;
+          default:
+            setErrors('Something went wrong, please try again.');
+        }
+      });
+    });
     ///To display  images
     acceptedFiles.map((file: any) => {
       const reader = new FileReader();
@@ -73,6 +98,8 @@ function DragAndDrop({ data, setData }: IProps) {
     },
     onDrop,
     noClick: true,
+    maxSize: maxSize,
+    maxFiles: maxFiles,
   });
 
   const style = useMemo(
@@ -95,29 +122,15 @@ function DragAndDrop({ data, setData }: IProps) {
     <>
       <div {...getRootProps({ className: styles.Container, style })}>
         <input {...getInputProps()} />
-        <div className={styles.ContentContainer}>
+        <p onClick={open} className={styles.ContentContainer}>
           {isDragActive ? (
-            <p className="dropzone-content">Release to drop the files here</p>
-          ) : (
-            <p className={styles.Text}>
-              Drag and drop <br /> or
+            <p className={styles.DragContainer}>
+              <UploadIcon />
             </p>
+          ) : (
+            <p>{children}</p>
           )}
-          <Button type="button" onClick={open}>
-            Browse
-          </Button>
-
-          <div className={styles.DroppedImgContainer}>
-            {data.map((image: any) => {
-              return (
-                <div key={image.id}>
-                  <div>{image.name}</div>
-                  {/* <img src={image.src} alt="nft-art-pic" style={{ width: '200px', height: '150px' }} /> */}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        </p>
       </div>
     </>
   );
