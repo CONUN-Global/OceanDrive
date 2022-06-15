@@ -1,35 +1,60 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import MainBackground from '../../components/DriveLayouts/Background';
-import LeftSidebar from '../../components/DriveLayouts/LeftSide';
-import SidebarContent from '../../components/DriveLayouts/LeftSide/SidebarContentLayout';
-import RightSideLayer from '../../components/DriveLayouts/RightSide';
+
 
 import styles from './Profile.module.scss';
 import WalletCard from 'src/components/BalanceCards/WalletCard';
 import BalanceCard from 'src/components/BalanceCards/BalanceCard';
+import BottomTable from './BotttomTable';
 
-const seedData = { balance: 598.0 };
 
-const profileUrl = require('../../assets/images/Profile.png');
-const profileUrl2 = require('../../assets/icons/heart-icon.svg');
+const Profile = () => {
+  const [clicked, setClicked] = useState('published');
+  const [showGrid, setShowGrid] = useState(false);
 
 const Profile = () => {
   return (
     <div className={styles.Container}>
-      <div className={styles.TopContainer}>
-        <h4 className={styles.Title}>MY BALANCE</h4>
-        <div className={styles.Balance}>
-          <div className={styles.TopItems}>
-            <h3 className={styles.CoinType}>CYCON COIN</h3>
-            <h3 className={styles.Total}>{seedData.balance.toFixed(2)} CYC</h3>
-          </div>
-          <div className={styles.BottomItems}>
-            <button className={styles.BuyButton}>Buy</button>
-            <div className={styles.BuyInfo}>(Goes to Bithumb)</div>
+      {/* TOP */}
+      <div className={styles.BalanceCards}>
+        <WalletCard />
+        <BalanceCard />
+      </div>
+
+      {/* BottomBox */}
+      <div className={styles.BottomBoxContainer}>
+        <div className={styles.BottomBox}>
+          <div className={styles.DescriptionTitle}>My Files</div>
+
+          <div className={styles.DescriptionBox}>
+            <div className={styles.DescriptionWords}>
+              <div onClick={() => setClicked('published')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'published' })}>
+                Published (20)
+              </div>
+              <div onClick={() => setClicked('downloads')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'downloads' })}>
+                Downloads (20)
+              </div>
+              <div onClick={() => setClicked('personal')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'personal' })}>
+                Personal (20)
+              </div>
+            </div>
+
+            <div className={styles.BoxedIcon}>
+              <BoxedIcon
+                onClick={() => {
+                  if (clicked === 'published') {
+                    setShowGrid(!showGrid);
+                  }
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Bottom Table */}
+      <BottomTable clicked={clicked} showGrid={showGrid} />
+
     </div>
   );
 };
