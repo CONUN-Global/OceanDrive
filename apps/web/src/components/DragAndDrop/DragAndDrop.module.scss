@@ -9,7 +9,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: default;
+  cursor: pointer;
+
+  & .DragContainer {
+    height: 100%;
+    width: 100%;
+
+    & svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
 
   &:focus {
     outline: none;
@@ -20,6 +30,7 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
+    cursor: pointer;
 
     & .Text {
       font-size: 22px;

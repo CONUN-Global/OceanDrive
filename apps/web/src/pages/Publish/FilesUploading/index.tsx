@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { UploadFile } from 'src/types';
 
 import styles from './FilesUploading.module.scss';
@@ -8,22 +8,33 @@ interface IProps {
   setData: (arg: UploadFile[] | any) => void;
 }
 
+function ListItem({ file, deleteItem }: any) {
+  return (
+    <li key={file.id} className={styles.ListItem}>
+      {file.name}
+      <button className={styles.ListBtn} onClick={() => deleteItem(file.id)}>
+        X
+      </button>
+    </li>
+  );
+}
+
 function FilesUploading({ data, setData }: IProps) {
-  ///////Filter out this item from the Data array and setData with reduced data
-  function deleteItem(id: string) {
-    console.log(id);
+  function deleteItem(itemId: string) {
+    setData((prev: UploadFile[]) => prev.filter((item: any) => item.id !== itemId));
   }
 
   return (
     <div className={styles.Container}>
-      <button className={styles.ResetBtn} onClick={() => setData([])}>
-        X
-      </button>
-      <div>
+      <nav className={styles.TopBar}>
+        <p>Attached Files</p>
+        <button className={styles.ResetBtn} onClick={() => setData([])}>
+          X
+        </button>
+      </nav>
+      <div className={styles.ListContainer}>
         {data.map((file: UploadFile) => (
-          <li key={file.id}>
-            {file.name} <button onClick={() => deleteItem(file.id)}>X</button>
-          </li>
+          <ListItem key={file.id} file={file} deleteItem={deleteItem} />
         ))}
       </div>
     </div>
