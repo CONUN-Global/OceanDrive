@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import QueItem from './QueItem';
 
 import { ReactComponent as GenearatedIcon } from '../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/boxed-copy-icon.svg';
 import { ReactComponent as CyconIcon } from '../../../assets/icons/boxed-cycon-icon.svg';
 import { ReactComponent as TickIcon } from '../../../assets/icons/tick-icon.svg';
 import { ReactComponent as DownloadedIcon } from '../../../assets/icons/downloaded-icon.svg';
-import { ReactComponent as PauseIcon } from '../../../assets/icons/pause-icon.svg';
-import { ReactComponent as PlayIcon } from '../../../assets/icons/play-icon.svg';
 import { ReactComponent as GeneratedPersonalIcon } from '../../../assets/icons/generated-personal-icon.svg';
 
 import { data } from './DemoData';
 import { queData } from './DemoData';
 
 import styles from './BottomTable.module.scss';
+import { toast, ToastContainer } from 'react-toastify';
 
 interface PropWord {
   clicked: string;
@@ -41,50 +41,7 @@ const BottomTable = ({ clicked }: PropWord) => {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-                  {queData.length > 0 &&
-                    queData.map((val: any, key: any) => {
-                      const [icon, setIcon] = useState(val.copy);
-                      return (
-                        <tr key={key} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>
-                          {/* here will be generated icon */}
-                          <td className={styles.FirstTd}>
-                            <GenearatedIcon />
-                          </td>
-                          <td className={styles.SecondTd}>{val.contentName}</td>
-                          <td>{val.fileSize}</td>
-                          <td className={styles.HideTh}></td>
-                          <td>{val.date}</td>
-                          <td className={styles.ProgressBarContainer}>
-                            <div className={styles.ProgressBar}>
-                              {val.txHash}
-                              <div className={styles.ColoredBack} style={{ width: val.txHash }}></div>
-                            </div>
-                          </td>
-                          <td className={styles.IconSt}>
-                            {icon === 'pause-icon' && (
-                              <PauseIcon
-                                width={20}
-                                height={20}
-                                onClick={() => {
-                                  setIcon('play-icon');
-                                }}
-                              />
-                            )}
-                            {icon === 'play-icon' && (
-                              <PlayIcon
-                                width={20}
-                                height={20}
-                                onClick={() => {
-                                  setIcon('pause-icon');
-                                }}
-                              />
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
+                <tbody>{queData.length > 0 && queData.map((val: any, key: any) => <QueItem val={val} key={key} keyVal={key} />)}</tbody>
               </table>
             </div>
           </div>
@@ -118,9 +75,22 @@ const BottomTable = ({ clicked }: PropWord) => {
                 )}
               </tr>
             </thead>
-            <tbody>
+            <tbody className={styles.TableBodyScroll}>
               {data.length > 0 &&
                 data.map((val: any, key: any) => {
+                  function copyText() {
+                    navigator.clipboard.writeText(val.txHash);
+                    toast.info('Text copied to clipboard', {
+                      position: 'top-center',
+                      autoClose: 600,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    });
+                  }
+
                   return (
                     <tr key={key} className={styles.TableRow2}>
                       {/* here will be generated icon */}
@@ -140,10 +110,21 @@ const BottomTable = ({ clicked }: PropWord) => {
                       <td>{val.date}</td>
                       <td>{val.txHash}</td>
                       <td>
-                        {clicked === 'published' || (clicked === 'personal' && <CopyIcon />)}
+                        {(clicked === 'published' || clicked === 'personal') && (
+                          <CopyIcon
+                            onClick={() => {
+                              copyText();
+                            }}
+                          />
+                        )}
                         {clicked === 'downloads' && <TickIcon />}
+                        <ToastContainer className={styles.ToastPosition} />
                       </td>
-                      {clicked === 'personal' && <td><GeneratedPersonalIcon /></td>}
+                      {clicked === 'personal' && (
+                        <td>
+                          <GeneratedPersonalIcon />
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
