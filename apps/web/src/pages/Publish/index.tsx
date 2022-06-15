@@ -9,7 +9,7 @@ import FilesUploading from './FilesUploading';
 import ThumbUpload from './ThumbUpload';
 
 //Cycoin market rate will go here.
-const cycoinRate = 487;
+const USDRate = 0.033;
 
 interface IState {
   private: boolean;
@@ -175,10 +175,11 @@ function Publish() {
             {state.type === 'Pay' && (
               <div>
                 <span className={styles.PriceInputContainer}>
-                  $<input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price (USD)" onChange={handleChange} value={state.price} />
+                  Cycon Coin
+                  <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price (USD)" onChange={handleChange} value={state.price} />
                 </span>
                 <div className={styles.PriceConversion}>
-                  ${state.price ? state.price : 1} USD = {state.price ? state.price * cycoinRate : cycoinRate} Cycon Coin
+                  {state.price ? state.price : 1} Cycon Coin = ${state.price ? state.price * USDRate : USDRate} USD
                 </div>
               </div>
             )}

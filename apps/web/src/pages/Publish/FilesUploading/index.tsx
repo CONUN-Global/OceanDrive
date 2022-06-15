@@ -8,13 +8,15 @@ interface IProps {
   setData: (arg: UploadFile[] | any) => void;
 }
 
-function ListItem({ file, deleteItem }: any) {
+function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
   return (
     <li key={file.id} className={styles.ListItem}>
       {file.name}
-      <button className={styles.ListBtn} onClick={() => deleteItem(file.id)}>
-        X
-      </button>
+      {showBtn && (
+        <button className={styles.ListBtn} onClick={() => deleteItem(file.id)}>
+          X
+        </button>
+      )}
     </li>
   );
 }
@@ -34,7 +36,7 @@ function FilesUploading({ data, setData }: IProps) {
       </nav>
       <div className={styles.ListContainer}>
         {data.map((file: UploadFile) => (
-          <ListItem key={file.id} file={file} deleteItem={deleteItem} />
+          <ListItem key={file.id} file={file} deleteItem={deleteItem} showBtn={data.length > 1} />
         ))}
       </div>
     </div>
