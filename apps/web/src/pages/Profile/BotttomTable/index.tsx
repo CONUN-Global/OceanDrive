@@ -24,7 +24,7 @@ interface PropWord {
 
 const BottomTable = ({ clicked, showGrid }: PropWord) => {
   const queExist = queData !== null && queData.length > 0 && clicked === 'downloads';
-  const gridBool = showGrid && clicked === 'published'
+  const gridBool = showGrid && clicked === 'published';
 
   return (
     <>
@@ -58,7 +58,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
         <div className={classNames(styles.BottomTable, styles.BottomTableConditionalStyle)}>
           <div className={styles.GridContainer}>
             {data.map((profileData, idx) => (
-              <CollectionCard profileData={profileData} page='profile' key={idx} />
+              <CollectionCard profileData={profileData} page="profile" key={idx} />
             ))}
           </div>
         </div>
@@ -112,12 +112,15 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>{val.contentName}</td>
                         <td>{val.fileSize}</td>
                         <td className={clicked === 'downloads' ? styles.HideTh : ''}>
-                          {clicked === 'published' && (
-                            <div className={styles.AmountContainer}>
-                              <CyconIcon className={styles.Cycon} fill="#f37123" />
-                              <div className={styles.CyconDescDiv}>{val.amount}</div>
-                            </div>
-                          )}
+                          {clicked === 'published' &&
+                            (val.amount === 'FREE' ? (
+                              <div className={classNames(styles.AmountContainer, styles.AmountFreeContainer)}>{val.amount}</div>
+                            ) : (
+                              <div className={styles.AmountContainer}>
+                                <CyconIcon className={styles.Cycon} fill="#f37123" />
+                                <div className={styles.CyconDescDiv}>{val.amount}</div>
+                              </div>
+                            ))}
                         </td>
                         <td>{val.date}</td>
                         <td>{val.txHash}</td>

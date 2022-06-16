@@ -1,0 +1,33 @@
+.ShowCopied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 12px;
+  height: 12px;
+
+  .CopiedText {
+    top: -22px;
+    position: absolute;
+    background-color: #333;
+    color: #ffffff;
+    padding: 3px 4px;
+    border-radius: 5px;
+  }
+
+  .CopiedText::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+
+  .CopyIcon {
+    position: relative;
+  }
+}

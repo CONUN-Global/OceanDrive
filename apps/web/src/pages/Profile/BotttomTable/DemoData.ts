@@ -1,10 +1,10 @@
 export const data = [
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
+  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: 'FREE', txHash: '0x7UY0...9488', copy: 'copy' },
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
+  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: 'FREE', txHash: '0x7UY0...9488', copy: 'copy' },
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
-  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
-  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
-  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
+  { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: 'FREE', txHash: '0x7UY0...9488', copy: 'copy' },
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
   { contentName: 'Script_scandinavia_2 person.txt', fileSize: '1MB', date: '04.23.2022 10:00 pm', amount: '0.435CYC', txHash: '0x7UY0...9488', copy: 'copy' },
