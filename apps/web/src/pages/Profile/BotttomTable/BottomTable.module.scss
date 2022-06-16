@@ -249,6 +249,21 @@
             color: #f37123;
           }
         }
+
+        .AmountFreeContainer {
+          width: 62px;
+          background: #d9faff;
+          padding-right: 0;
+
+          //text
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 23px;
+          text-align: center;
+          letter-spacing: 0.03em;
+          color: #64c2d1;
+        }
       }
 
       & :nth-child(5) {

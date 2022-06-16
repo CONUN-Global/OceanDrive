@@ -38,6 +38,40 @@
       .Address {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        // .ShowCopied {
+        //   display: flex;
+        //   flex-direction: column;
+        //   justify-content: center;
+        //   align-items: center;
+        //   gap: 3px;
+
+        //   .CopiedText {
+        //     top: -22px;
+        //     position: absolute;
+        //     background-color: #333;
+        //     color: #ffffff;
+        //     padding: 3px 4px;
+        //     border-radius: 5px;
+        //   }
+
+        //   .CopiedText::after {
+        //     content: '';
+        //     position: absolute;
+        //     top: 100%;
+        //     left: 50%;
+        //     margin-left: -5px;
+        //     border-width: 5px;
+        //     border-style: solid;
+        //     border-color: #333 transparent transparent transparent;
+        //   }
+
+        //   .CopyIcon {
+        //     position: absolute;
+        //   }
+        // }
 
         .AddressName {
           font-family: 'Roboto';
@@ -49,9 +83,10 @@
         }
 
         .CopyIcon {
-          width: 11.95px;
+          width: 12px;
           height: 12px;
           cursor: pointer;
+          margin-bottom: 2px;
         }
       }
     }

@@ -2,8 +2,10 @@ import classNames from 'classnames';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ETH from '../../../../assets/icons/ETH_Logo.svg';
+import { ReactComponent as CyconIcon } from '../../../../assets/icons/boxed-cycon-icon.svg';
 import Card from '../../../../components/Card';
 import { SeedDataType } from '../../seedDataType';
+
 import styles from './MarketplaceCard.module.scss';
 
 interface ICollectionCard {
@@ -14,7 +16,7 @@ interface ICollectionCard {
 
 const uri = (id: number) => require(`/src/assets/images/NFTTiles/NFT_Tiles-${id}.jpg`);
 
-function CollectionCard({ page, profileData, DataItem}: ICollectionCard) {
+function CollectionCard({ page, profileData, DataItem }: ICollectionCard) {
   const navigate = useNavigate();
 
   if (page === 'market-place' && DataItem !== undefined) {
@@ -57,19 +59,23 @@ function CollectionCard({ page, profileData, DataItem}: ICollectionCard) {
   return (
     <div className={styles.CardContainer}>
       <Card variant="primary" border={true}>
-        <div className={styles.TopItems}>
-          <img className={styles.Image} alt="NFT IMAGE" />
+        <div className={classNames(styles.TopItems, styles.PTopItems)}>
+          <img src={require('../../../../assets/images/Avatar2.png')} className={styles.Image} alt="NFT IMAGE" />
           <div className={styles.TextContainer}>
-            <div className={styles.Title}>title</div>
+            <div className={styles.Title}>{profileData.contentName}</div>
           </div>
         </div>
 
         <div className={classNames(styles.BottomItems, styles.PBottomItems)}>
           <div className={styles.PriceItems}>
-            <div className={styles.Price}>
-              <img alt="ETH" />
-              price ETH
-            </div>
+            {profileData.amount === 'FREE' ? (
+              <div className={classNames(styles.AmountContainer, styles.AmountFreeContainer)}>{profileData.amount}</div>
+            ) : (
+              <div className={styles.AmountContainer}>
+                <CyconIcon className={styles.Cycon} fill="#f37123" />
+                <div className={styles.CyconDescDiv}>{profileData.amount}</div>
+              </div>
+            )}
           </div>
         </div>
       </Card>
