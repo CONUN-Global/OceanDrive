@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './UploadingPopup.module.scss';
-import { UploadFile } from '../../../types';
+import { UploadFile } from '../../types';
 
 function ListItem({ file }: { file: UploadFile }) {
   return <li className={styles.ListItem}>{file.path}</li>;
