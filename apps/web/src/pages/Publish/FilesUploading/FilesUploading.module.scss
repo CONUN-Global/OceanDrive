@@ -33,8 +33,9 @@
   }
 
   & .ListContainer {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 10px;
+    height: 100%;
   }
 }
 
