@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 
   & .DragContainer {
     height: 100%;
@@ -29,13 +28,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 50%;
+    height: 50%;
     cursor: pointer;
-
-    & .Text {
-      font-size: 22px;
-      color: var(--main-blue);
-    }
 
     button {
       margin-top: 20px;

@@ -60,7 +60,7 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
 
   const onDrop = useCallback((acceptedFiles: any[], rejectedFiles: any[]) => {
     rejectedFiles?.forEach(file => {
-      file.errors.forEach((err: any) => {
+      file?.errors.forEach((err: any) => {
         switch (err.code) {
           case 'file-too-large':
             console.log(err.code);
@@ -81,6 +81,7 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
     });
     ///To display  images
     acceptedFiles.map((file: any) => {
+      console.log(file.type);
       const reader = new FileReader();
 
       reader.onload = function (e: any) {
@@ -94,7 +95,11 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
 
   const { getRootProps, isFocused, isDragAccept, isDragReject, getInputProps, open, isDragActive } = useDropzone({
     accept: {
-      'image/*': [],
+      // MIME Type + [file extensions to accept]
+      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+      'image/*': ['.jpeg', '.png'],
+      'application/zip': ['.zip'],
+      'text/html': ['.html', '.htm'],
     },
     onDrop,
     noClick: true,
@@ -114,7 +119,7 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
 
   //   const handleSubmit = () => {
   //     data.forEach(image => {
-  //       uploadFile(image);
+  //       uploadFile(image);d
   //     });
   //   };
 
@@ -122,15 +127,15 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
     <>
       <div {...getRootProps({ className: styles.Container, style })}>
         <input {...getInputProps()} />
-        <p onClick={open} className={styles.ContentContainer}>
+        <div onClick={open} className={styles.ContentContainer}>
           {isDragActive ? (
-            <p className={styles.DragContainer}>
+            <div className={styles.DragContainer}>
               <UploadIcon />
-            </p>
+            </div>
           ) : (
-            <p>{children}</p>
+            <div>{children}</div>
           )}
-        </p>
+        </div>
       </div>
     </>
   );

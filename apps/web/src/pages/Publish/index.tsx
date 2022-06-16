@@ -7,9 +7,10 @@ import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDro
 import DragAndDrop from 'src/components/DragAndDrop';
 import FilesUploading from './FilesUploading';
 import ThumbUpload from './ThumbUpload';
+import UploadingPopup from './UploadingPopup';
 
-//Cycoin market rate will go here.
-const USDRate = 0.033;
+//Current USD vs Cycoin rate will go here.
+const USDRate = 2.23;
 
 interface IState {
   private: boolean;
@@ -56,6 +57,7 @@ function Publish() {
   // Files to upload
   const [files, setFiles] = useState<UploadFile[]>([]);
   const [thumbnail, setThumbnail] = useState<UploadFile[]>([]);
+  const [isPopupShowing, setIsPopupShowing] = useState(false);
 
   //Handle Input change
   async function handleChange(event: any) {
@@ -95,7 +97,7 @@ function Publish() {
   // Handling Upload click
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    setIsPopupShowing(true);
     console.log(state);
   }
 
@@ -104,7 +106,7 @@ function Publish() {
       {/* ============================================================================ */}
       {/* TITLE BAR BEGINS!!!!!!! */}
       <div className={styles.TitleBarContainer}>
-        <h1 className={styles.Heading}>Publish</h1>
+        <h1 className={styles.Heading}>Upload New Content</h1>
         <div className={styles.SubHeading}>
           Your published file will appear in the the public marketplace. <b>They are for sale.</b>
         </div>
@@ -128,7 +130,9 @@ function Publish() {
                     <div className={styles.FileDropText}>
                       Drag and Drop <br /> or
                     </div>
-                    <Button className={styles.FileDropBtn}>Browse</Button>
+                    <Button type="button" className={styles.FileDropBtn}>
+                      Browse
+                    </Button>
                   </DragAndDrop>
                 ) : (
                   <FilesUploading data={files} setData={setFiles} />
@@ -175,11 +179,11 @@ function Publish() {
             {state.type === 'Pay' && (
               <div>
                 <span className={styles.PriceInputContainer}>
-                  Cycon Coin
+                  <div className={styles.CyconCoin}>Cycon Coin</div>
                   <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price (USD)" onChange={handleChange} value={state.price} />
                 </span>
                 <div className={styles.PriceConversion}>
-                  {state.price ? state.price : 1} Cycon Coin = ${state.price ? state.price * USDRate : USDRate} USD
+                  {state.price ? state.price : 1} Cycon Coin = ${state.price ? (state.price * USDRate).toFixed(2) : USDRate} USD
                 </div>
               </div>
             )}
@@ -190,6 +194,7 @@ function Publish() {
             Upload
           </Button>
         </div>
+        {isPopupShowing && <UploadingPopup items={state.file} setIsPopupShowing={setIsPopupShowing} />}
       </form>
     </div>
   );

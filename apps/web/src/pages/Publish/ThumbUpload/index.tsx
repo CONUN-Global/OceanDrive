@@ -4,7 +4,7 @@ import styles from './ThumbUpload.module.scss';
 
 interface IProps {
   data: UploadFile[];
-  setData: (arg: UploadFile[] | any) => void;
+  setData: (arg: UploadFile[]) => void;
 }
 
 function ThumbUpload({ data, setData }: IProps) {
