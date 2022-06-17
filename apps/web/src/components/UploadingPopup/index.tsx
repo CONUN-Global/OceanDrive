@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from './UploadingPopup.module.scss';
+
 import { UploadFile } from '../../types';
+import styles from './UploadingPopup.module.scss';
 
 function ListItem({ file }: { file: UploadFile }) {
   return <li className={styles.ListItem}>{file.path}</li>;
 }
 
-function UploadingPopup({ items, setIsPopupShowing }: { items: UploadFile[]; setIsPopupShowing: any }) {
+function UploadingPopup({ items, setIsPopupShowing }: { items: UploadFile[]; setIsPopupShowing: (value: boolean | ((prevVar: boolean) => boolean)) => void }) {
   return (
     <div className={styles.PageContainer}>
       <div className={styles.TopBar}>
