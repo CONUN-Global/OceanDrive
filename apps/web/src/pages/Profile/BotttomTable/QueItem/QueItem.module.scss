@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: -25px;
 
     // text
     font-style: normal;
@@ -69,7 +70,6 @@
   }
   & :nth-child(3) {
     text-align: left;
-    font-family: 'Source Sans 3';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -119,7 +119,6 @@
   & :nth-child(6) {
     text-align: left;
     padding-left: 35px;
-    font-family: 'Source Sans 3';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -129,8 +128,7 @@
   }
 
   & :nth-child(7) {
-    padding-right: 25px;
-    // cursor: pointer;
+    padding-right: 0;
     transition: all 0.05s ease-in-out;
 
     svg {

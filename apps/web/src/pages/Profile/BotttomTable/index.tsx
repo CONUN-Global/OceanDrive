@@ -16,6 +16,7 @@ import Data from '../../Marketplace/seedData.json';
 import styles from './BottomTable.module.scss';
 import { toast, ToastContainer } from 'react-toastify';
 import CollectionCard from 'src/pages/Marketplace/MarketplaceGrid/MarketplaceCard';
+import ClickableTooltip from 'src/components/ClickableTooltip';
 
 interface PropWord {
   clicked: string;
@@ -93,15 +94,6 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                   data.map((val: any, key: any) => {
                     function copyText() {
                       navigator.clipboard.writeText(val.txHash);
-                      toast.info('Text copied to clipboard', {
-                        position: 'top-center',
-                        autoClose: 600,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                      });
                     }
 
                     return (
@@ -126,11 +118,10 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>{val.txHash}</td>
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
-                            <CopyIcon
-                              onClick={() => {
-                                copyText();
-                              }}
-                            />
+                            <ClickableTooltip copyText={val.txHash}>
+                              <CopyIcon
+                              />
+                            </ClickableTooltip>
                           )}
                           {clicked === 'downloads' && <TickIcon />}
                           <ToastContainer className={styles.ToastPosition} />
