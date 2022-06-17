@@ -118,7 +118,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>{val.txHash}</td>
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
-                            <ClickableTooltip copyText={val.txHash}>
+                            <ClickableTooltip place='publish-table' copyText={val.txHash}>
                               <CopyIcon
                               />
                             </ClickableTooltip>

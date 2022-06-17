@@ -8,12 +8,17 @@
   height: 12px;
 
   .CopiedText {
-    top: -20px;
+    top: -22px;
     position: absolute;
     background-color: #333;
     color: #ffffff;
     padding: 3px 4px;
     border-radius: 5px;
+    z-index: 15;
+  }
+
+  .PlacePos {
+    top: -12px;
   }
 
   .CopiedText::after {
