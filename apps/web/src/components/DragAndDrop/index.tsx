@@ -5,6 +5,9 @@ import { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
 import { UploadFile } from 'src/types';
 
+import { ERRORS } from './constants';
+const { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR } = ERRORS;
+
 import styles from './DragAndDrop.module.scss';
 
 const { api } = window;
@@ -51,8 +54,6 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
       }),
     {
       onSuccess: (e: any) => {
-        console.log(e);
-
         if (e?.success) alert('File uploaded successful');
       },
     },
@@ -62,26 +63,25 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
     rejectedFiles?.forEach(file => {
       file?.errors.forEach((err: any) => {
         switch (err.code) {
-          case 'file-too-large':
+          case SIZE_ERR.CODE:
             console.log(err.code);
-            setErrors('File too large. Please select a smaller file.');
+            setErrors(SIZE_ERR.MSG);
             break;
-          case 'file-invalid-type':
+          case INVALID_ERR.CODE:
             console.log(err.code);
-            setErrors('This is an invalid file type. Please select a JPEG or PNG.');
+            setErrors(INVALID_ERR.MSG);
             break;
-          case 'too-many-files':
+          case COUNT_ERR.CODE:
             console.log(err.code);
-            setErrors('You have selected too many files. Please use only a single photo for the thumbnail.');
+            setErrors(COUNT_ERR.MSG);
             break;
           default:
-            setErrors('Something went wrong, please try again.');
+            setErrors(DEFAULT_ERR.MSG);
         }
       });
     });
     ///To display  images
     acceptedFiles.map((file: any) => {
-      console.log(file.type);
       const reader = new FileReader();
 
       reader.onload = function (e: any) {
@@ -116,12 +116,6 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
     }),
     [isFocused, isDragAccept, isDragReject],
   );
-
-  //   const handleSubmit = () => {
-  //     data.forEach(image => {
-  //       uploadFile(image);d
-  //     });
-  //   };
 
   return (
     <>
