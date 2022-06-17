@@ -25,7 +25,6 @@ export const authorizedRoutes = [
       { path: 'publish', element: <Publish /> },
       { path: 'host', element: <Host /> },
       { path: 'dropfile', element: <DropFile /> },
-      { path: 'settings', element: <Settings /> },
       {
         path: 'marketplace',
         children: [
@@ -38,5 +37,9 @@ export const authorizedRoutes = [
   {
     path: '*',
     element: <Navigate to="/marketplace" replace />,
+  },
+  {
+    path: 'settings',
+    element: <Settings />,
   },
 ];

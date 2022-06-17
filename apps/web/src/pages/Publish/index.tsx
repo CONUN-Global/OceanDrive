@@ -7,7 +7,7 @@ import FilesUploading from './FilesUploading';
 import ThumbUpload from './ThumbUpload';
 import UploadingPopup from '../../components/UploadingPopup';
 
-import { UploadFile } from 'src/types';
+import { UploadFile } from '../../types';
 import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDrop.svg';
 import styles from './Publish.module.scss';
 
@@ -100,13 +100,10 @@ function Publish() {
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsPopupShowing(true);
-    console.log(state);
   }
 
   return (
     <div className={styles.PageContainer}>
-      {/* ============================================================================ */}
-      {/* TITLE BAR BEGINS!!!!!!! */}
       <div className={styles.TitleBarContainer}>
         <h1 className={styles.Heading}>Upload New Content</h1>
         <div className={styles.SubHeading}>
