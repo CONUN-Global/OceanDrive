@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactTooltip from 'react-tooltip';
 import ClickableTooltip from 'src/components/ClickableTooltip';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/copy-icon.svg';
 
@@ -26,17 +25,9 @@ const WalletCard = () => {
           <div className={styles.Wallet}>my wallet</div>
           <div className={styles.Address}>
             <div className={styles.AddressName}>0x398543592...792085485846</div>
-            <ClickableTooltip />
-            {/* <div className={styles.ShowCopied}>
-              {showCopied && <div className={styles.CopiedText}>copied</div>}
-              <CopyIcon
-                fill="#ffffff"
-                className={styles.CopyIcon}
-                onClick={() => {
-                  copyToClipboard();
-                }}
-              />
-            </div> */}
+            <ClickableTooltip copyText={'0x398543592...792085485846'}>
+              <CopyIcon fill="#ffffff" />
+            </ClickableTooltip>
           </div>
         </div>
       </div>
