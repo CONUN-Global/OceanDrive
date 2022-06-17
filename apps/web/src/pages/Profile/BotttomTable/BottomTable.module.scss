@@ -115,12 +115,12 @@
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       border-collapse: collapse;
-      // position: fixed;
 
       th {
         background: #efefef;
         position: sticky;
         top: 0;
+        z-index: 10;
       }
 
       th {
