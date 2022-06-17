@@ -1,13 +1,15 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
-import styles from './Publish.module.scss';
+
 import Button from 'src/components/Button';
-import { UploadFile } from 'src/types';
-import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDrop.svg';
 import DragAndDrop from 'src/components/DragAndDrop';
 import FilesUploading from './FilesUploading';
 import ThumbUpload from './ThumbUpload';
 import UploadingPopup from '../../components/UploadingPopup';
+
+import { UploadFile } from 'src/types';
+import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDrop.svg';
+import styles from './Publish.module.scss';
 
 //Current USD vs Cycoin rate will go here.
 const USDRate = 2.23;
