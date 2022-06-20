@@ -1,0 +1,39 @@
+.Container {
+  width: 662px;
+  height: 439px;
+  background-color: var(--background);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & .XBtn {
+    position: absolute;
+    right: 60px;
+    top: 35px;
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & .ContentContainer {
+    width: 500px;
+    height: 279px;
+    display: flex;
+    flex-direction: column;
+
+    & .Title {
+      color: var(--teal);
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    & .ChildrenContainer {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
