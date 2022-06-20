@@ -37,9 +37,10 @@ interface IProps {
   maxSize?: number | undefined;
   imgOnly?: boolean;
   children?: React.ReactNode;
+  accept?: any;
 }
 
-function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
+function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
   const [errors, setErrors] = useState<string>('');
 
   //UNUSED UNTIL WE MAKE API REQUEST
@@ -94,7 +95,7 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, imgOnly
 
   const { getRootProps, isFocused, isDragAccept, isDragReject, getInputProps, open, isDragActive } = useDropzone({
     //Type of files accepted can be changed in the constants file
-    accept: imgOnly ? THUMBNAIL_FILE_TYPES : UPLOAD_FILE_TYPES,
+    accept,
     onDrop,
     noClick: true,
     maxSize: maxSize,
