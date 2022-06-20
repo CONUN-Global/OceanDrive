@@ -4,9 +4,7 @@ import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
 import { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
 import { UploadFile } from 'src/types';
-
-import { ERRORS } from './constants';
-const { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR } = ERRORS;
+import { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR, THUMBNAIL_FILE_TYPES, UPLOAD_FILE_TYPES } from './constants';
 
 import styles from './DragAndDrop.module.scss';
 
@@ -37,10 +35,11 @@ interface IProps {
   setData: (arg: UploadFile[] | any) => void;
   maxFiles?: number;
   maxSize?: number | undefined;
+  imgOnly?: boolean;
   children?: React.ReactNode;
 }
 
-function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, children }: IProps) {
+function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
   const [errors, setErrors] = useState<string>('');
 
   //UNUSED UNTIL WE MAKE API REQUEST
@@ -94,13 +93,8 @@ function DragAndDrop({ data, setData, maxFiles = 0, maxSize = undefined, childre
   }, []);
 
   const { getRootProps, isFocused, isDragAccept, isDragReject, getInputProps, open, isDragActive } = useDropzone({
-    accept: {
-      // MIME Type + [file extensions to accept]
-      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
-      'image/*': ['.jpeg', '.png'],
-      'application/zip': ['.zip'],
-      'text/html': ['.html', '.htm'],
-    },
+    //Type of files accepted can be changed in the constants file
+    accept: imgOnly ? THUMBNAIL_FILE_TYPES : UPLOAD_FILE_TYPES,
     onDrop,
     noClick: true,
     maxSize: maxSize,
