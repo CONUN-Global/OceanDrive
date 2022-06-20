@@ -56,6 +56,17 @@ function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
 
+  //dflkd
+  // const UPLOAD_FILE_TYPES = {
+  //   'image/*': ['.jpeg', '.png'],
+  //   'application/zip': ['.zip'],
+  //   'text/html': ['.html', '.htm'],
+  // };
+  const UPLOAD_FILE_TYPES = "'image/*', 'application/zip', 'text/html',";
+  const THUMBNAIL_FILE_TYPES = {
+    'image/*': ['.jpeg', '.png'],
+  };
+
   // Files to upload
   const [files, setFiles] = useState<UploadFile[]>([]);
   const [thumbnail, setThumbnail] = useState<UploadFile[]>([]);
@@ -125,7 +136,7 @@ function Publish() {
               </div>
               <div className={styles.UploadZone}>
                 {files.length === 0 ? (
-                  <DragAndDrop data={files} setData={setFiles}>
+                  <DragAndDrop accept={'image/*'} data={files} setData={setFiles}>
                     <div className={styles.FileDropText}>
                       Drag and Drop <br /> or
                     </div>
@@ -142,7 +153,7 @@ function Publish() {
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
                 {thumbnail.length === 0 ? (
-                  <DragAndDrop imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
+                  <DragAndDrop accept={''} imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
                     <ThumbnailDrop />
                     <div className={styles.ThumbDropText}>Upload image under 5mb</div>
                   </DragAndDrop>
