@@ -10,6 +10,7 @@ import UploadingPopup from '../../components/UploadingPopup';
 import { UploadFile } from '../../types';
 import { ReactComponent as ThumbnailDrop } from '../../assets/icons/ThumbnailDrop.svg';
 import styles from './Publish.module.scss';
+import Dropzone from 'src/components/DropZone/DropZone';
 
 //Current USD vs Cycoin rate will go here.
 const USDRate = 2.23;
