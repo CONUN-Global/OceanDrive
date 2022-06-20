@@ -142,7 +142,7 @@ function Publish() {
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
                 {thumbnail.length === 0 ? (
-                  <DragAndDrop data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
+                  <DragAndDrop imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
                     <ThumbnailDrop />
                     <div className={styles.ThumbDropText}>Upload image under 5mb</div>
                   </DragAndDrop>
