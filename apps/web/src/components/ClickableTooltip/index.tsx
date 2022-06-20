@@ -6,7 +6,7 @@ import styles from './ClickableTooltip.module.scss';
 
 interface ClickableProps {
   copyText: string;
-  children?: any;
+  children: React.ReactNode;
   place?: string;
 }
 

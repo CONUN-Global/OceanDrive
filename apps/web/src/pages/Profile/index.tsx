@@ -9,7 +9,7 @@ import BottomTable from './BotttomTable';
 
 
 const Profile = () => {
-  const [clicked, setClicked] = useState('published');
+  const [clicked, setClicked] = useState<'published' | 'downloads' | 'personal'>('published');
   const [showGrid, setShowGrid] = useState(false);
 
 const Profile = () => {
