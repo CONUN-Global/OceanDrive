@@ -69,7 +69,7 @@ const DropFile = () => {
             <div className={styles.Uploads}>Unimited Size Uploads</div>
           </div>
         </DragAndDrop>
-      </div> */}
+      </div>
     </div>
   );
 };
