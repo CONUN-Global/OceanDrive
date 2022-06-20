@@ -13,15 +13,3 @@ export const INVALID_ERR = {
 export const DEFAULT_ERR = {
   MSG: 'Something went wrong, please try again.',
 };
-
-// MIME Type + [file extensions to accept]
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
-
-export const UPLOAD_FILE_TYPES = {
-  'image/*': ['.jpeg', '.png'],
-  'application/zip': ['.zip'],
-  'text/html': ['.html', '.htm'],
-};
-export const THUMBNAIL_FILE_TYPES = {
-  'image/*': ['.jpeg', '.png'],
-};
