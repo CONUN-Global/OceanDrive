@@ -1,10 +1,10 @@
 import cuid from 'cuid';
 import React, { useCallback, useMemo, useState } from 'react';
 import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
-import { useDropzone } from 'react-dropzone';
+import Dropzone, { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
 import { UploadFile } from 'src/types';
-import { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR, THUMBNAIL_FILE_TYPES, UPLOAD_FILE_TYPES } from './constants';
+import { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR } from './constants';
 
 import styles from './DragAndDrop.module.scss';
 
@@ -94,7 +94,6 @@ function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined,
   }, []);
 
   const { getRootProps, isFocused, isDragAccept, isDragReject, getInputProps, open, isDragActive } = useDropzone({
-    //Type of files accepted can be changed in the constants file
     accept,
     onDrop,
     noClick: true,

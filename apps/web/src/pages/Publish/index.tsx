@@ -14,6 +14,9 @@ import styles from './Publish.module.scss';
 //Current USD vs Cycoin rate will go here.
 const USDRate = 2.23;
 
+const UPLOAD_FILE_TYPES = "'image/*', 'application/zip', 'text/html',";
+const THUMBNAIL_FILE_TYPES = 'image/*';
+
 interface IState {
   private: boolean;
   file: UploadFile[];
@@ -55,17 +58,6 @@ function getValue(eTarget: any) {
 function Publish() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
-
-  //dflkd
-  // const UPLOAD_FILE_TYPES = {
-  //   'image/*': ['.jpeg', '.png'],
-  //   'application/zip': ['.zip'],
-  //   'text/html': ['.html', '.htm'],
-  // };
-  const UPLOAD_FILE_TYPES = "'image/*', 'application/zip', 'text/html',";
-  const THUMBNAIL_FILE_TYPES = {
-    'image/*': ['.jpeg', '.png'],
-  };
 
   // Files to upload
   const [files, setFiles] = useState<UploadFile[]>([]);
@@ -136,7 +128,7 @@ function Publish() {
               </div>
               <div className={styles.UploadZone}>
                 {files.length === 0 ? (
-                  <DragAndDrop accept={'image/*'} data={files} setData={setFiles}>
+                  <DragAndDrop accept={UPLOAD_FILE_TYPES} data={files} setData={setFiles}>
                     <div className={styles.FileDropText}>
                       Drag and Drop <br /> or
                     </div>
@@ -153,7 +145,7 @@ function Publish() {
               <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
               <div className={styles.UploadZone}>
                 {thumbnail.length === 0 ? (
-                  <DragAndDrop accept={''} imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
+                  <DragAndDrop accept={THUMBNAIL_FILE_TYPES} imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
                     <ThumbnailDrop />
                     <div className={styles.ThumbDropText}>Upload image under 5mb</div>
                   </DragAndDrop>
