@@ -9,6 +9,7 @@ import { ReactComponent as InputErrorIcon } from '../../assets/icons/input-error
 
 import styles from './Lock.module.scss';
 import { check } from 'prettier';
+import Input from 'src/components/Input/Input';
 
 const demoPassword = ['cool', 'eh', 'yeah', 'i', 'think', 'so'];
 
@@ -16,10 +17,9 @@ const Lock = () => {
   const navigate = useNavigate();
   const [inputVal, setInputVal] = useState<string>('');
   const [error, setError] = useState(false);
-  const [eyeCondition, setEyeCondition] = useState('closed');
 
-  const onChange = (e: any) => {
-    setInputVal(e.target.value);
+  const onChange = (ev: any) => {
+    setInputVal(ev.target.value);
     setTimeout(() => {
       if (inputVal.length === 0) {
         setError(false);
@@ -36,6 +36,13 @@ const Lock = () => {
     }
   };
 
+  const errorClick = () => {
+    setError(false);
+    setInputVal('');
+  };
+
+  const placeholderPhrase = 'Enter your Password or Seed Phrase';
+
   return (
     <div className={styles.PageContainer}>
       <div className={styles.Container}>
@@ -46,52 +53,7 @@ const Lock = () => {
 
           <div className={styles.WalletPhrase}>Enter your Ocean Drive password or wallet seed phrase to unlock Ocean Drive</div>
 
-          <div className={styles.InputPhrase}>
-            <input
-              className={classNames(styles.Input, { [styles.InputValColor]: inputVal.length > 0, [styles.ErrorColor]: error && inputVal })}
-              value={inputVal}
-              onChange={e => onChange(e)}
-              type={eyeCondition === 'closed' || inputVal.length === 0 ? 'password' : 'text'}
-              placeholder="Enter your Password or Seed Phrase"
-            />
-            <div className={styles.EyeBall}>
-              {error && inputVal.length !== 0 && (
-                <InputErrorIcon
-                  onClick={() => {
-                    setError(false);
-                    setInputVal('');
-                  }}
-                  className={styles.EyeIcon}
-                />
-              )}
-              {!error && eyeCondition === 'closed' && inputVal.length !== 0 && (
-                <ClosedEyeBall
-                  className={styles.EyeIcon}
-                  onClick={() => {
-                    if (inputVal.length > 0) setEyeCondition('open');
-                  }}
-                />
-              )}
-              {inputVal.length === 0 && (
-                <ClosedEyeBall
-                  className={styles.EyeIcon}
-                  onClick={() => {
-                    if (inputVal.length > 0) setEyeCondition('open');
-                  }}
-                />
-              )}
-              {!error && eyeCondition === 'open' && (
-                <OpenEyeBall
-                  className={styles.EyeIcon}
-                  onClick={() => {
-                    if (inputVal.length > 0) setEyeCondition('closed');
-                  }}
-                />
-              )}
-            </div>
-          </div>
-
-          {error && inputVal.length > 0 && <div className={styles.Error}>Provided password is incorrect.</div>}
+          <Input error={error} inputVal={inputVal} onChange={onChange} errorClick={errorClick} placeholder={placeholderPhrase} />
 
           <Button className={classNames(styles.Button, { [styles.ActivatedBtn]: inputVal.length > 0 })} onClick={checkValidity}>
             Unlock
