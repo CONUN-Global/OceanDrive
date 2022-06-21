@@ -67,7 +67,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
               <div className={styles.SVGBox}>
                 <LogoutIcon />
               </div>
-              <div className={styles.Text}>Logout</div>
+              <div className={styles.Text} onClick={() => navigate('/lock')}>Lock</div>
             </div>
           </div>
         </div>
