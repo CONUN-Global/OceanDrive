@@ -1,29 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'src/components/Button';
 import SettingsCard from '../SettingsCard';
 import { useNavigate } from 'react-router-dom';
 import styles from './ChangePass.module.scss';
+import Input from 'src/components/Input';
+import useValidate from 'src/hooks/useValidateNewPassword';
+
+// Store users current password
+const userPassword = '123';
+
+interface IErrorMessages {
+  current: string;
+  newError: string;
+  confirmError: string;
+}
+
+const initialErrors = { current: '', newError: '', confirmError: '' };
 
 function ChangePass() {
+  // Input state (x3)
+  const [currentPass, setCurrentPass] = useState<string>('');
+  const [newPass, setNewPass] = useState<string>('');
+  const [confirmPass, setConfirmPass] = useState<string>('');
+
+  // Error message object
+  const [errorMessages, setErrorMessages] = useState<IErrorMessages>(initialErrors);
+
+  // Show error (styling & messages)
+  const [error, setError] = useState(false);
+
+  function handleSubmit(e: any) {
+    e.preventDefault();
+    setError(false);
+
+    const validatedErrors = useValidate(errorMessages, userPassword, currentPass, newPass, confirmPass);
+    console.log(validatedErrors);
+    if (validatedErrors.current !== '' || validatedErrors.confirmError !== '' || validatedErrors.newError !== '') {
+      setErrorMessages(validatedErrors);
+      setError(true);
+      return;
+    }
+
+    console.log('Everything is good');
+  }
+
   const navigate = useNavigate();
+
+  // console.log('Error Messages: ', errorMessages);
   return (
-    <SettingsCard title="Change Password">
-      <div className={styles.Container}>
+    <SettingsCard title="Change Password" isLarge={true}>
+      <form className={styles.Container} onSubmit={handleSubmit}>
         <div className={styles.InputsContainer}>
-          <input placeholder="Enter your current password" type="password" name="" id="" />
-          <input placeholder="Enter a new password" type="password" name="" id="" />
-          <input placeholder="Confirm your new password" type="password" name="" id="" />
+          <Input placeholder="Enter your current password" setInputValue={setCurrentPass} inputValue={currentPass} error={error} setError={setError} errMessage={errorMessages.current} />
+          <Input placeholder="Enter a new password" setInputValue={setNewPass} inputValue={newPass} error={error} setError={setError} errMessage={errorMessages.newError} />
+          <Input placeholder="Confirm your new password" setInputValue={setConfirmPass} inputValue={confirmPass} error={error} setError={setError} errMessage={errorMessages.confirmError} />
         </div>
 
         <div className={styles.BtnContainer}>
           <Button variant="secondary" className={styles.CancelButton} onClick={() => navigate(-1)}>
             Cancel
           </Button>
-          <Button variant="secondary" className={styles.Button}>
+          <Button type="submit" variant="secondary" className={styles.Button}>
             Change
           </Button>
         </div>
-      </div>
+        {/* <button onClick={() => setError(s => !s)}>Error Toggle</button> */}
+      </form>
     </SettingsCard>
   );
 }

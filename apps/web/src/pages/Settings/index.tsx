@@ -5,7 +5,6 @@ import Key from './Key';
 import Password from './Password';
 import Seed from './Seed';
 import styles from './Settings.module.scss';
-import SettingsCard from './SettingsCard';
 
 function Settings() {
   const [currentPage, setCurrentPage] = useState<'Initial' | 'Seed' | 'ChangePass' | 'Key'>('Initial');
