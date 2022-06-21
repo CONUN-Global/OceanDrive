@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from 'src/components/Button';
 import SettingsCard from '../SettingsCard';
+import { useNavigate } from 'react-router-dom';
 import styles from './ChangePass.module.scss';
 
 function ChangePass() {
+  const navigate = useNavigate();
   return (
     <SettingsCard title="Change Password">
       <div className={styles.Container}>
@@ -14,7 +16,7 @@ function ChangePass() {
         </div>
 
         <div className={styles.BtnContainer}>
-          <Button variant="secondary" className={styles.CancelButton}>
+          <Button variant="secondary" className={styles.CancelButton} onClick={() => navigate(-1)}>
             Cancel
           </Button>
           <Button variant="secondary" className={styles.Button}>
