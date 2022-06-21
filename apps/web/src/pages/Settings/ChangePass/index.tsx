@@ -15,8 +15,6 @@ interface IErrorMessages {
   confirmError: string;
 }
 
-const initialErrors = { current: '', newError: '', confirmError: '' };
-
 function ChangePass() {
   // Input state (x3)
   const [currentPass, setCurrentPass] = useState<string>('');
@@ -24,14 +22,13 @@ function ChangePass() {
   const [confirmPass, setConfirmPass] = useState<string>('');
 
   // Error message object
-  const [errorMessages, setErrorMessages] = useState<IErrorMessages>(initialErrors);
+  const [errorMessages, setErrorMessages] = useState<IErrorMessages>({ current: '', newError: '', confirmError: '' });
 
   // Show error (styling & messages)
   const [error, setError] = useState(false);
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    setError(false);
 
     const validatedErrors = useValidate(errorMessages, userPassword, currentPass, newPass, confirmPass);
     console.log(validatedErrors);
@@ -40,13 +37,12 @@ function ChangePass() {
       setError(true);
       return;
     }
-
+    setError(false);
     console.log('Everything is good');
   }
 
   const navigate = useNavigate();
 
-  // console.log('Error Messages: ', errorMessages);
   return (
     <SettingsCard title="Change Password" isLarge={true}>
       <form className={styles.Container} onSubmit={handleSubmit}>
@@ -64,7 +60,6 @@ function ChangePass() {
             Change
           </Button>
         </div>
-        {/* <button onClick={() => setError(s => !s)}>Error Toggle</button> */}
       </form>
     </SettingsCard>
   );
