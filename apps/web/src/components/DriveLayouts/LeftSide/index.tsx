@@ -21,8 +21,6 @@ function LeftSide({ children }: { children?: ReactNode }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const avatarBorder = pathname === '/profile' ? '2.5px solid #5f93f1' : 'none';
-
   const linkContent = [
     { title: 'marketplace', icon: <MarketIcon /> },
     { title: 'wallet', icon: <WalletIcon /> },
@@ -34,7 +32,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
     <div className={styles.leftSideBar}>
       <div className={styles.ContentContainer}>
         <div className={styles.UpperContainer}>
-          <img style={{ border: avatarBorder }} onClick={() => navigate('/profile')} src={placeholderImg} className={styles.Avatar} />
+          <img onClick={() => navigate('/profile')} src={placeholderImg} className={classNames(styles.Avatar, { [styles.AvatarBorder]: pathname === '/profile' })} />
           <div className={styles.LinksContainer} style={{ position: 'relative' }}>
             {linkContent.map((linkItem, index) => {
               return (
@@ -51,7 +49,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
           </div>
         </div>
         <div>
-          <Button className={styles.UploadButton}>
+          <Button className={classNames(styles.UploadButton, { [styles.activeButton]: pathname.startsWith('/dropfile') })} onClick={() => navigate('/dropfile')}>
             <UploadIcon />
             <div className={styles.UploadText}>Drop File</div>
           </Button>

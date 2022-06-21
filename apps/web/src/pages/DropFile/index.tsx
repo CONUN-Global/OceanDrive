@@ -2,8 +2,7 @@ import React, { useCallback, useState } from 'react';
 import cuid from 'cuid';
 import TitleAndSearch from '../../components/TitleAndSearch';
 import DropZone from '../../components/DropZone/DropZone';
-import styles from './Publish.module.scss';
-import DriveLayout from 'src/components/DriveLayouts';
+import styles from './DropFile.module.scss';
 import { useMutation } from 'react-query';
 import Button from 'src/components/Button';
 
@@ -12,7 +11,7 @@ interface EventInterface {
 }
 const { api } = window;
 
-const Publish = () => {
+const DropFile = () => {
   const [images, setImages] = useState<any[]>([]);
 
   const { mutateAsync: uploadFile } = useMutation(
@@ -70,4 +69,4 @@ const Publish = () => {
   );
 };
 
-export default Publish;
+export default DropFile;

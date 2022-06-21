@@ -32,6 +32,7 @@ function Transactions() {
         <tbody>
           {data.length > 0 &&
             data.map((val: any, key: any) => {
+              
               let statusColor;
               if (val.status === 'PENDING') statusColor = '#80A0D4';
               if (val.status === 'SUCCESS') statusColor = '#30D07A';
@@ -40,7 +41,7 @@ function Transactions() {
                 <tr key={key} className={styles.TableRow2}>
                   <td>{val.transactionId}</td>
                   <td style={{ color: statusColor }}>{val.status}</td>
-                  <td>{val.date}</td>
+                  <td>{val.date}</td> 
                   <td>{val.amount}</td>
                 </tr>
               );
