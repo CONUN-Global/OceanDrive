@@ -1,12 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import styles from './SettingsCard.module.scss';
 
-function SettingsCard({ children, title }: { children: React.ReactNode; title: string }) {
+function SettingsCard({ children, title, isLarge = false }: { children: React.ReactNode; title: string; isLarge?: boolean }) {
   const navigate = useNavigate();
   return (
-    <div className={styles.Container}>
+    <div className={classNames(styles.Container, { [styles.LgContainer]: isLarge })}>
       <button className={styles.XBtn} onClick={() => navigate(-1)}>
         <Close />
       </button>

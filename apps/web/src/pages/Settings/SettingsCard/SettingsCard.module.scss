@@ -37,3 +37,14 @@
     }
   }
 }
+
+// If the container is large type // (Change password page) //
+.LgContainer {
+  height: 574px;
+  & .ContentContainer {
+    height: 410px;
+    & .Title {
+      padding-bottom: 45px;
+    }
+  }
+}
