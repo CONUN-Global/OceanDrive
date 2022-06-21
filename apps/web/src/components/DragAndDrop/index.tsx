@@ -64,15 +64,12 @@ function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined,
       file?.errors.forEach((err: any) => {
         switch (err.code) {
           case SIZE_ERR.CODE:
-            console.log(err.code);
             setErrors(SIZE_ERR.MSG);
             break;
           case INVALID_ERR.CODE:
-            console.log(err.code);
             setErrors(INVALID_ERR.MSG);
             break;
           case COUNT_ERR.CODE:
-            console.log(err.code);
             setErrors(COUNT_ERR.MSG);
             break;
           default:
