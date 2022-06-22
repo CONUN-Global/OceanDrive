@@ -1,14 +1,12 @@
 import React from 'react';
-
-import { motion } from 'framer-motion';
-
 import styles from './Transactions.module.scss';
+import splitKey from 'src/helpers/splitKey';
 
 const data = [
-  { transactionId: '0x7UY0...9488', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
-  { transactionId: '0x7UY0...9488', status: 'FAILURE', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x7e930b0d8e6690d1472bf5b782e88e5823e57b3a98d7b6cc3474c0edbeb0b2ff', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x52bce9d5f5380da3a86f2d06151930dce0733c1c70a61f3ebe7813b9853a274b', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0xf36625bf41a4916fdaebc837d9c824d8d184c93b4a043ae29dca52a9f3b29a72', status: 'SUCCESS', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
+  { transactionId: '0x83c52a1e8a3228c1b85c7c7e79d39d4276ac86814826a379007797330402667c', status: 'FAILURE', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },
 ];
 
 const variants = {
@@ -38,7 +36,7 @@ function Transactions() {
               if (val.status === 'FAILURE') statusColor = '#D12221';
               return (
                 <tr key={key} className={styles.TableRow2}>
-                  <td>{val.transactionId}</td>
+                  <td>{splitKey(val.transactionId)}</td>
                   <td style={{ color: statusColor }}>{val.status}</td>
                   <td>{val.date}</td>
                   <td>{val.amount}</td>

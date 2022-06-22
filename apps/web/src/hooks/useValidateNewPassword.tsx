@@ -22,8 +22,6 @@ function useValidate(errs: IErrorMessages, userPassword: string, currentPass: st
   // New passwords must not be over 50
   if (newPass.length > 50 || confirmPass.length > 50) {
     errs = { ...errs, confirmError: 'Enter a password that is maximum 50 characters.', newError: 'Enter a password that is maximum 50 characters.' };
-  } else {
-    errs = { ...errs, newError: '', confirmError: '' };
   }
 
   // New password and Confirm password don't match

@@ -1,3 +1,5 @@
+@import '../../../styles/scrollbars';
+
 .PageContainer {
   width: 100%;
   height: 100%;
@@ -13,22 +15,6 @@
     height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
     overflow-y: auto;
 
-    //Custom scrollbar
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: var(--grey2);
-      border-radius: 100px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--grey8);
-      border-radius: 100px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-      box-shadow: inset 0 0 100px var(--grey9);
-    }
+    @include scrollbar;
   }
 }
