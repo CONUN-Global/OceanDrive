@@ -1,5 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { UploadFile } from 'src/types';
+import { ReactComponent as Close } from '../../../assets/icons/close.svg';
+import { ReactComponent as Garbage } from '../../../assets/icons/GarbageCan.svg';
+import { ReactComponent as Image } from '../../../assets/icons/Upload_File_Types/image.svg';
+import { ReactComponent as Text } from '../../../assets/icons/Upload_File_Types/text.svg';
 
 import styles from './FilesUploading.module.scss';
 
@@ -9,12 +13,30 @@ interface IProps {
 }
 
 function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
+  let Icon;
+  switch (file.type.split('/')[0]) {
+    case 'image':
+      Icon = <Image />;
+      break;
+    case 'application':
+      Icon = <Image />;
+      break;
+    case 'text':
+      Icon = <Text />;
+      break;
+    default:
+      Icon = <Image />;
+  }
+
   return (
     <li key={file.id} className={styles.ListItem}>
-      {file.name}
+      <div className={styles.IconAndText}>
+        {Icon}
+        <div className={styles.FileName}>{file.name}</div>
+      </div>
       {showBtn && (
         <button className={styles.ListBtn} onClick={() => deleteItem(file.id)}>
-          X
+          <Garbage className={styles.Icon} />
         </button>
       )}
     </li>
@@ -29,14 +51,15 @@ function FilesUploading({ data, setData }: IProps) {
   return (
     <div className={styles.Container}>
       <nav className={styles.TopBar}>
-        <p>Attached Files</p>
-        <button className={styles.ResetBtn} onClick={() => setData([])}>
-          X
+        <p className={styles.TitleText}>Attached Files</p>
+        <button className={styles.XBtnContainer} onClick={() => setData([])}>
+          <Close className={styles.XBtn} />
         </button>
       </nav>
       <div className={styles.ListContainer}>
         {data.map((file: UploadFile) => (
-          <ListItem key={file.id} file={file} deleteItem={deleteItem} showBtn={data.length > 1} />
+          /////////// CHANGE BACK TO showBtn={data.length > 1}
+          <ListItem key={file.id} file={file} deleteItem={deleteItem} showBtn={data.length > 0} />
         ))}
       </div>
     </div>
