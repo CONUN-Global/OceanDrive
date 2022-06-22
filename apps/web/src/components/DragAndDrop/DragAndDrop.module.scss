@@ -1,0 +1,42 @@
+.Container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .DragContainer {
+    height: 100%;
+    width: 100%;
+
+    & svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  & .ContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+
+    button {
+      margin-top: 20px;
+      border-radius: 10px;
+      min-width: 100px;
+    }
+  }
+}

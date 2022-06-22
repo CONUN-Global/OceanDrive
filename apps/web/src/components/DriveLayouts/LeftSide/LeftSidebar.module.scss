@@ -115,9 +115,8 @@
         letter-spacing: 0.02em;
         color: var(--main-blue);
       }
-      & svg {
-        margin-right: 7px;
-        fill: var(--main-blue);
+      svg {
+        margin: 0 7px 3px 0;
       }
     }
     .activeButton {

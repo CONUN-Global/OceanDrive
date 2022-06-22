@@ -1,0 +1,59 @@
+:root {
+  --list-item-height: 45px;
+}
+
+.PageContainer {
+  width: 350px;
+  border: 1px solid var(--main-blue);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 3px;
+  right: 20px;
+  max-height: 300px;
+  background-color: white;
+
+  & .TopBar {
+    border-radius: 4px 4px 0px 0px;
+    width: 100%;
+    height: var(--list-item-height);
+    background-color: var(--main-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+
+    & .CloseBtn {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  & .List {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 5px;
+
+    & .ListItem {
+      display: flex;
+      align-items: center;
+      height: var(--list-item-height);
+      width: 100%;
+      list-style-type: none;
+      background-color: white;
+      color: var(--main-blue);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 0 25px;
+      &:last-of-type {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}

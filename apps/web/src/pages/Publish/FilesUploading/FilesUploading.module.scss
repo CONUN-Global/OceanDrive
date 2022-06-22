@@ -1,0 +1,58 @@
+.Container {
+  cursor: default;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & .TopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey4);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    min-height: 35px;
+
+    & .ResetBtn {
+      cursor: pointer;
+      position: absolute;
+      right: 5px;
+      top: 4px;
+      padding: 5px;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+    }
+  }
+
+  & .ListContainer {
+    overflow-y: auto;
+    padding-bottom: 10px;
+    height: 100%;
+  }
+}
+
+.ListItem {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding: 0px 50px;
+  margin-top: 5px;
+
+  & .ListBtn {
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+}

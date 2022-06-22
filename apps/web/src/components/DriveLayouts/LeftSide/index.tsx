@@ -55,7 +55,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
           </Button>
 
           <div className={styles.UtilityButtons}>
-            <div className={styles.Link}>
+            <div onClick={() => navigate('/settings')} className={styles.Link}>
               <div className={styles.SVGBox}>
                 <SettingsIcon />
               </div>
