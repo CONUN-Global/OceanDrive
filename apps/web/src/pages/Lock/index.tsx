@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ReactComponent as ConunIcon } from '../../assets/icons/Conun-Icon.svg';
 import Button from 'src/components/Button';
 
 import styles from './Lock.module.scss';
 import Input from 'src/components/Input';
 
-const demoPassword = ['cool', 'eh', 'yeah', 'i', 'think', 'so'];
+const demoPassword = ['123'];
 
 const Lock = () => {
   const navigate = useNavigate();
@@ -31,13 +32,16 @@ const Lock = () => {
       <div className={styles.Container}>
         <div className={styles.ContentContainer}>
           <div className={styles.TitleContainer}>
-            <div className={styles.Title}>Settings</div>
+            <ConunIcon className={styles.Icon} />
+            <div className={styles.Title}>OCEANDRIVE</div>
           </div>
-          <div className={styles.WalletPhrase}>Enter your Ocean Drive password or wallet seed phrase to unlock Ocean Drive</div>
-          <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} placeholder={placeholderPhrase} />
-          <Button className={classNames(styles.Button, { [styles.ActivatedBtn]: inputValue.length > 0 })} onClick={checkValidity}>
-            Unlock
-          </Button>
+          <div className={styles.Instructions}>Enter your Ocean Drive password or wallet seed phrase to unlock Ocean Drive</div>
+          <div className={styles.InputAndBtn}>
+            <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} placeholder={placeholderPhrase} />
+            <Button className={classNames(styles.Button, { [styles.ActivatedBtn]: inputValue.length > 0 })} onClick={checkValidity}>
+              Unlock
+            </Button>
+          </div>
         </div>
       </div>
     </div>

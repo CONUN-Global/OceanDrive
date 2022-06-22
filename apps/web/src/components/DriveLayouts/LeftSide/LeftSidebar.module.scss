@@ -5,11 +5,9 @@
   left: 0;
   top: 0;
   height: 100%;
-
   display: flex;
   justify-content: center;
-  min-height: 500px;
-  overflow: auto;
+  min-height: 650px;
 
   .ContentContainer {
     padding: 10vh 0;
@@ -160,11 +158,5 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 750px) {
-  .leftSideBar {
-    display: none;
   }
 }

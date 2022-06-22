@@ -14,7 +14,7 @@ function CollectionGrid({ Data }: ICollectionGrid) {
       <TitleAndSearch>MarketPlace</TitleAndSearch>
       <div className={styles.GridContainer}>
         {Data.map(DataItem => (
-          <CollectionCard page='market-place' key={DataItem.id} DataItem={DataItem} />
+          <CollectionCard page="market-place" key={DataItem.id} DataItem={DataItem} />
         ))}
       </div>
     </div>

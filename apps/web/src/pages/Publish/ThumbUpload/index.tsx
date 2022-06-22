@@ -1,5 +1,6 @@
 import React from 'react';
 import { UploadFile } from 'src/types';
+import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import styles from './ThumbUpload.module.scss';
 
 interface IProps {
@@ -10,8 +11,8 @@ interface IProps {
 function ThumbUpload({ data, setData }: IProps) {
   return (
     <div className={styles.Container}>
-      <button className={styles.XBtn} onClick={() => setData([])}>
-        X
+      <button className={styles.XBtnContainer} onClick={() => setData([])}>
+        <Close className={styles.XBtn} />
       </button>
       <img className={styles.Image} src={data[0].src} alt="nft-art-pic" />
     </div>

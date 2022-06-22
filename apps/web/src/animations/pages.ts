@@ -5,14 +5,14 @@ const PageIn = {
   opacity: 1,
   transition: {
     type: 'tween',
-    duration: 0.2,
+    duration: 0.05,
   },
 };
 const PageExit = {
   opacity: 0,
   transition: {
     type: 'tween',
-    duration: 0.2,
+    duration: 0.05,
   },
 };
 
