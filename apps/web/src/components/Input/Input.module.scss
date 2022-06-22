@@ -1,3 +1,5 @@
+@import '../../styles/fonts';
+
 .InputPhrase {
   display: flex;
   height: 44px;
@@ -13,14 +15,12 @@
     height: 100%;
     padding: 0px 20px;
     border: 1px solid #e7e7e7;
-
-    // text
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.02em;
-    color: #888888;
+    color: var(--grey10);
 
     &:focus {
       outline: 3px solid #dbf2ff;
@@ -54,8 +54,7 @@
   top: 272.1px;
 
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  @include fontBodyXS;
   line-height: 17px;
   letter-spacing: 0.02em;
   color: #d12221;

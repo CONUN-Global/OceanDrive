@@ -15,8 +15,11 @@ interface InputProps {
   placeholder?: string;
 }
 
-const Input = ({error, inputVal, onChange, errorClick, placeholder}: InputProps) => {
-  const [eyeCondition, setEyeCondition] = useState('closed');
+const conditions = { CLOSED: 'closed', OPEN: 'open', PASSWORD: 'password', TEXT: 'text' };
+
+const Input = ({ error, inputVal, onChange, errorClick, placeholder }: InputProps) => {
+  const { CLOSED, OPEN, PASSWORD, TEXT } = conditions;
+  const [eyeCondition, setEyeCondition] = useState(CLOSED);
 
   return (
     <>
@@ -25,21 +28,16 @@ const Input = ({error, inputVal, onChange, errorClick, placeholder}: InputProps)
           className={classNames(styles.Input, { [styles.InputValColor]: inputVal.length > 0, [styles.ErrorColor]: error && inputVal })}
           value={inputVal}
           onChange={e => onChange(e)}
-          type={eyeCondition === 'closed' || inputVal.length === 0 ? 'password' : 'text'}
+          type={eyeCondition === CLOSED || inputVal.length === 0 ? PASSWORD : TEXT}
           placeholder={placeholder}
         />
         <div className={styles.EyeBall}>
-          {error && inputVal.length !== 0 && (
-            <InputErrorIcon
-              onClick={errorClick}
-              className={styles.EyeIcon}
-            />
-          )}
-          {!error && eyeCondition === 'closed' && inputVal.length !== 0 && (
+          {error && inputVal.length !== 0 && <InputErrorIcon onClick={errorClick} className={styles.EyeIcon} />}
+          {!error && eyeCondition === CLOSED && inputVal.length !== 0 && (
             <ClosedEyeBall
               className={styles.EyeIcon}
               onClick={() => {
-                if (inputVal.length > 0) setEyeCondition('open');
+                if (inputVal.length > 0) setEyeCondition(OPEN);
               }}
             />
           )}
@@ -47,15 +45,15 @@ const Input = ({error, inputVal, onChange, errorClick, placeholder}: InputProps)
             <ClosedEyeBall
               className={styles.EyeIcon}
               onClick={() => {
-                if (inputVal.length > 0) setEyeCondition('open');
+                if (inputVal.length > 0) setEyeCondition(OPEN);
               }}
             />
           )}
-          {!error && eyeCondition === 'open' && inputVal.length !== 0 && (
+          {!error && eyeCondition === OPEN && inputVal.length !== 0 && (
             <OpenEyeBall
               className={styles.EyeIcon}
               onClick={() => {
-                if (inputVal.length > 0) setEyeCondition('closed');
+                if (inputVal.length > 0) setEyeCondition(CLOSED);
               }}
             />
           )}
