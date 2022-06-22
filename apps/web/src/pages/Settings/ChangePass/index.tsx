@@ -24,21 +24,23 @@ function ChangePass() {
   // Error message object
   const [errorMessages, setErrorMessages] = useState<IErrorMessages>({ current: '', newError: '', confirmError: '' });
 
-  // Show error (styling & messages)
+  // Show error (Border styling & Error messages)
   const [error, setError] = useState(false);
 
   function handleSubmit(e: any) {
     e.preventDefault();
 
     const validatedErrors = useValidate(errorMessages, userPassword, currentPass, newPass, confirmPass);
-    console.log(validatedErrors);
+
     if (validatedErrors.current !== '' || validatedErrors.confirmError !== '' || validatedErrors.newError !== '') {
       setErrorMessages(validatedErrors);
       setError(true);
       return;
     }
+
+    /// Send new password to backend
     setError(false);
-    console.log('Everything is good');
+    navigate(-1);
   }
 
   const navigate = useNavigate();
