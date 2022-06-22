@@ -33,7 +33,7 @@ const variants = {
 
 function Receive() {
   return (
-    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.Container}>
+    <div className={styles.Container}>
       <div className={styles.InnerContainer}>
         <h3 className={styles.Title}>My Wallet Address</h3>
         <div className={styles.ImageContainer}>
@@ -46,7 +46,7 @@ function Receive() {
         </Tooltip>
       </div>
       <ToastContainer />
-    </motion.div>
+    </div>
   );
 }
 

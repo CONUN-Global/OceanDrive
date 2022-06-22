@@ -1,35 +1,23 @@
 import React, { useState } from 'react';
-
 import classNames from 'classnames';
+
 import Send from './TransComponents/Send';
 import Receive from './TransComponents/Receive';
 import Transactions from './TransComponents/Transactions';
 
+import BalanceCard from 'src/components/BalanceCards/BalanceCard';
 import styles from './Wallet.module.scss';
-
-const seedData = { balance: 598.0 };
 
 function Wallet() {
   const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Transactions');
   return (
     <>
       <div className={styles.Container}>
-        {/* TOP */}
         <div className={styles.Content}>
           <div className={styles.TopContainer}>
             <h4 className={styles.Title}>MY BALANCE</h4>
-            <div className={styles.Balance}>
-              <div className={styles.TopItems}>
-                <h3 className={styles.CoinType}>CYCON COIN</h3>
-                <h3 className={styles.Total}>{seedData.balance.toFixed(2)} CYC</h3>
-              </div>
-              <div className={styles.BottomItems}>
-                <button className={styles.BuyButton}>Buy</button>
-                <div className={styles.BuyInfo}>(Goes to Bithumb)</div>
-              </div>
-            </div>
+            <BalanceCard />
           </div>
-          {/* BOTTOM */}
           <div className={styles.BottomContainer}>
             <div className={styles.SelectTabContainer}>
               <div className={classNames(styles.Tab, { [styles.active]: currentTab === 'Transactions' })} onClick={() => setCurrentTab('Transactions')}>

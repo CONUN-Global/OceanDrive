@@ -7,7 +7,6 @@ import { PageProps } from '../../../animations/pages';
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
 import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
-import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 
 import styles from './RightSideLayer.module.scss';
 import Searchbar from '../../../components/Searchbar';
@@ -20,7 +19,6 @@ const IconArray = [
   { title: 'marketplace', icon: <MarketIcon /> },
   { title: 'wallet', icon: <WalletIcon /> },
   { title: 'publish', icon: <PublishIcon /> },
-  { title: 'host', icon: <HostIcon /> },
 ];
 
 function RightSide({ children }: IRightSide) {

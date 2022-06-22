@@ -4,7 +4,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ReactComponent as RectIcon } from '../../../assets/icons/rect.svg';
 import { ReactComponent as UploadIcon } from '../../../assets/icons/upload.svg';
 import { ReactComponent as SettingsIcon } from '../../../assets/icons/Sidebar/Settings.svg';
-import { ReactComponent as HostIcon } from '../../../assets/icons/Sidebar/Host.svg';
 import { ReactComponent as LogoutIcon } from '../../../assets/icons/Sidebar/Logout.svg';
 import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Market.svg';
 import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
@@ -28,7 +27,6 @@ function LeftSide({ children }: { children?: ReactNode }) {
     { title: 'marketplace', icon: <MarketIcon /> },
     { title: 'wallet', icon: <WalletIcon /> },
     { title: 'publish', icon: <PublishIcon /> },
-    { title: 'host', icon: <HostIcon /> },
   ];
 
   const handleLogout = () => dispatch(logout());
@@ -70,7 +68,9 @@ function LeftSide({ children }: { children?: ReactNode }) {
               <div className={styles.SVGBox}>
                 <LogoutIcon />
               </div>
-              <div className={styles.Text} onClick={() => navigate('/lock')}>Lock</div>
+              <div className={styles.Text} onClick={() => navigate('/lock')}>
+                Lock
+              </div>
             </div>
           </div>
         </div>

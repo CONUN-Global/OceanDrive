@@ -26,10 +26,9 @@ function Send() {
   };
 
   return (
-    <motion.div transition={{ type: 'tween' }} initial="hidden" animate="visible" variants={variants} className={styles.MotionContainer}>
+    <div className={styles.PageContainer}>
       {
         {
-          // SHOW FORM ON STEP 1 /// SHOW CONFIRM COMPONENT ON STEP 2
           1: (
             <form className={styles.Container} onSubmit={e => handleSubmit(e)}>
               <div className={styles.SizingContainer}>
@@ -72,7 +71,7 @@ function Send() {
           2: <Confirm />,
         }[currentStep]
       }
-    </motion.div>
+    </div>
   );
 }
 
