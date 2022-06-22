@@ -1,7 +1,7 @@
 .Container {
   width: calc(100% - 1px);
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 5px;
 
   .Table {
@@ -10,10 +10,10 @@
     overflow: auto;
     border-collapse: collapse;
     border-radius: 5px;
-    background: #efefef;
+    background: var(--grey2);
 
     .TableRow {
-      background: #efefef;
+      background: var(--grey2);
       width: 100%;
       height: 40px;
       border-top-left-radius: 5px;
@@ -27,7 +27,7 @@
         font-size: 16px;
         line-height: 104.9%;
         text-transform: capitalize;
-        color: #888888;
+        color: var(--grey10);
       }
 
       & :nth-child(1) {
@@ -57,14 +57,14 @@
       border-bottom: 1px solid black;
       border-width: 0px 1px 1px 1px;
       border-style: solid;
-      border-color: #e7e7e7;
-      background-color: #ffffff;
+      border-color: var(--grey4);
+      background-color: var(--white);
 
       & :nth-child(1) {
         text-align: left;
         padding-left: 25px;
         letter-spacing: 0.005em;
-        color: #686868;
+        color: var(--grey12);
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
@@ -87,7 +87,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 23px;
-        color: #a8a8a8;
+        color: var(--grey8);
       }
       & :nth-child(4) {
         text-align: right;
@@ -96,12 +96,12 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 23px;
-        color: #3a3a3a;
+        color: var(--black);
       }
     }
 
     .P {
-      background-color: #ffffff;
+      background-color: var(--white);
     }
   }
 
@@ -112,7 +112,7 @@
     width: 100%;
     flex-direction: column;
     height: 100%;
-    color: #a8a8a8;
+    color: var(--grey8);
     font-style: normal;
     font-weight: 500;
     font-size: 20px;

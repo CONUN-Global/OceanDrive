@@ -1,7 +1,7 @@
 @import '../../styles/_fonts.scss';
 
 .Card {
-  background-color: white;
+  background-color: var(--white);
   color: var(--sea-blue);
   padding: 36px 20px;
   margin-top: 30px;
@@ -17,7 +17,7 @@
     width: 80px;
     height: 80px;
     background-color: var(--sea-blue);
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: 5px;
   }
 
@@ -35,10 +35,10 @@
 
   &:hover {
     background-color: var(--sea-blue);
-    color: white;
+    color: var(--white);
     transform: scale(1.03);
     & .Desc {
-      color: white;
+      color: var(--white);
     }
   }
 }

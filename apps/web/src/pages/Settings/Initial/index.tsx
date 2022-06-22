@@ -5,28 +5,47 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Initial.module.scss';
 
 interface IPageProps {
-  setCurrentPage: (arg: number) => void;
+  setCurrentPage: (arg: 'Initial' | 'Seed' | 'Key' | 'ChangePass') => void;
+  setShowPassword: (arg: boolean) => void;
 }
 
-function Initial({ setCurrentPage }: IPageProps) {
+function Initial({ setCurrentPage, setShowPassword }: IPageProps) {
   const navigate = useNavigate();
   return (
     <div className={styles.Container}>
-      <button className={styles.XBtn} onClick={() => navigate(-1)}>
-        <Close />
+      <button className={styles.XBtnContainer} onClick={() => navigate(-1)}>
+        <Close className={styles.XBtn} />
       </button>
       <div className={styles.ContentContainer}>
         <div className={styles.TitleContainer}>
           <div className={styles.Title}>Settings</div>
         </div>
         <div className={styles.BtnContainer}>
-          <Button className={styles.Button} onClick={() => setCurrentPage(1)}>
+          <Button
+            className={styles.Button}
+            onClick={() => {
+              setCurrentPage('Seed');
+              setShowPassword(true);
+            }}
+          >
             View Seed Phrase
           </Button>
-          <Button className={styles.Button} onClick={() => setCurrentPage(2)}>
+          <Button
+            className={styles.Button}
+            onClick={() => {
+              setCurrentPage('ChangePass');
+              setShowPassword(true);
+            }}
+          >
             Change Password
           </Button>
-          <Button className={styles.Button} onClick={() => setCurrentPage(3)}>
+          <Button
+            className={styles.Button}
+            onClick={() => {
+              setCurrentPage('Key');
+              setShowPassword(true);
+            }}
+          >
             Export Private Key
           </Button>
         </div>

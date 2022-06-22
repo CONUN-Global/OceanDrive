@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
-import OnboardingCard from 'src/components/OnboardingCard';
+import ChangePass from './ChangePass';
 import Initial from './Initial';
+import Key from './Key';
+import Password from './Password';
+import Seed from './Seed';
 import styles from './Settings.module.scss';
 
 function Settings() {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState<'Initial' | 'Seed' | 'ChangePass' | 'Key'>('Initial');
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className={styles.PageContainer}>
-      <Initial setCurrentPage={setCurrentPage} />
+      {showPassword && <Password setShowPassword={setShowPassword} />}
+
+      {!showPassword &&
+        {
+          Initial: <Initial setCurrentPage={setCurrentPage} setShowPassword={setShowPassword} />,
+          Seed: <Seed />,
+          ChangePass: <ChangePass />,
+          Key: <Key />,
+        }[currentPage]}
     </div>
   );
 }

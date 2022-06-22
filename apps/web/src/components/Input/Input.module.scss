@@ -1,36 +1,35 @@
 @import '../../styles/fonts';
 
-.InputPhrase {
-  display: flex;
+.InputContainer {
   height: 44px;
+  width: 100%;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 70px;
-  width: 100%;
   position: relative;
 
   .Input {
-    background: #ffffff;
+    background: var(--white);
     width: 100%;
     height: 100%;
     padding: 0px 20px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid var(--grey4);
+
+    // text
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    @include fontBodyXL;
     letter-spacing: 0.02em;
     color: var(--grey10);
 
     &:focus {
       outline: 3px solid #dbf2ff;
       border: 1px solid #dbf2ff;
-      color: #3a3a3a;
+      color: var(--black);
     }
   }
 
   .InputValColor {
-    color: #3a3a3a;
+    color: var(--black);
   }
 
   .ErrorColor {
@@ -51,11 +50,8 @@
 
 .Error {
   position: absolute;
-  top: 272.1px;
-
-  font-style: normal;
+  top: 50px;
   @include fontBodyXS;
-  line-height: 17px;
   letter-spacing: 0.02em;
   color: #d12221;
 }

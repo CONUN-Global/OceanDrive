@@ -9,11 +9,11 @@
   min-width: 200px;
   font-style: normal;
   @include fontBodyXL;
-  background-color: white;
+  background-color: var(--white);
   color: var(--grey8);
   padding-left: 0.8%;
   padding: 5px 0.8% 5px 0.8%;
-  border: 1px solid #ececec;
+  border: 1px solid var(--grey3);
   border-radius: 5px;
 
   .UpCaret {
@@ -49,7 +49,7 @@
   min-width: 200px;
   font-style: normal;
   @include fontBodyXL;
-  background-color: white;
+  background-color: var(--white);
   color: var(--grey8);
   border: 1px solid var(--grey4);
   border-radius: 5px;

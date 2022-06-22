@@ -5,11 +5,13 @@
 }
 
 .PageContainer {
+  min-height: 600px;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 90px;
 
   & .TitleBarContainer {
     width: 100%;
@@ -60,7 +62,7 @@
       justify-content: center;
       background-color: #edf9ff;
       border: 1px solid var(--sea-blue);
-      border-radius: 4px;
+      border-radius: 3px;
       cursor: pointer;
 
       & .FileDropText {

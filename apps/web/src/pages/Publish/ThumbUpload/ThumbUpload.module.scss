@@ -6,7 +6,7 @@
   align-items: center;
   position: relative;
   cursor: default;
-  & .XBtn {
+  & .XBtnContainer {
     position: absolute;
     padding: 5px;
     border: none;
@@ -15,9 +15,21 @@
     top: 10px;
     font-size: 1.2rem;
     color: var(--grey8);
-    background-color: white;
+    background-color: inherit;
     border-radius: 4px;
     cursor: pointer;
+
+    & .XBtn {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      padding: 5px;
+      border: none;
+      outline: none;
+      right: 10px;
+      top: 10px;
+      fill: var(--sea-blue);
+    }
   }
 
   & .Image {

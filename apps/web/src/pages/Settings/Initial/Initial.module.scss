@@ -10,7 +10,7 @@
   box-shadow: 4px 4px 10px 0px rgba(95, 147, 241, 0.2);
   position: relative;
 
-  & .XBtn {
+  & .XBtnContainer {
     position: absolute;
     right: 60px;
     top: 35px;
@@ -19,6 +19,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    & .XBtn {
+      fill: var(--grey6);
+    }
   }
   & .ContentContainer {
     width: 270px;

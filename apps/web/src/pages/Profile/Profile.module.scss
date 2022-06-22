@@ -32,7 +32,7 @@
         line-height: 28px;
         display: flex;
         align-items: center;
-        color: #3a3a3a;
+        color: var(--black);
         text-transform: uppercase;
         margin-left: -2.25px;
       }
@@ -48,7 +48,7 @@
           gap: 20px;
 
           .DescriptionWord {
-            background: #f7f7f7;
+            background: var(--grey1);
             border: none;
             width: 159px;
             height: 42px;
@@ -60,7 +60,7 @@
 
             // text
             font-weight: 500;
-            color: #888888;
+            color: var(--grey10);
             font-size: 18px;
             line-height: 26px;
             text-transform: uppercase;
@@ -68,12 +68,10 @@
 
           .ClickedWord {
             background: #dbf2ff;
-            border: 1px solid #5f93f1;
-
-            // text
+            border: 1px solid var(--main-blue);
             font-style: normal;
             font-weight: 700;
-            color: #5f93f1;
+            color: var(--main-blue);
           }
         }
 

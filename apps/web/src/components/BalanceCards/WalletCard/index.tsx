@@ -4,7 +4,9 @@ import { ReactComponent as CopyIcon } from '../../../assets/icons/copy-icon.svg'
 
 import styles from './WalletCard.module.scss';
 
-const profileUrl = require('../../../assets/images/Profile.png');
+// const profileUrl = require('../../../assets/images/Profile.png');
+
+const profileUrl = '';
 
 const WalletCard = () => {
   const [showCopied, setShowCopied] = useState(false);
