@@ -83,4 +83,59 @@
       }
     }
   }
+
+  // styles for profile page
+  .PTopItems {
+    .Title {
+      // some design if needed
+    }
+  }
+
+  .PBottomItems {
+    justify-content: flex-end;
+
+    .PriceItems {
+      .AmountContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: 122px;
+        height: 29px;
+        background: #ffecde;
+        border-radius: 4px;
+        padding-right: 10px;
+
+        .Cycon {
+          width: 18.14px;
+          height: 18.14px;
+        }
+        .CyconDescDiv {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 23px;
+          letter-spacing: 0.03em;
+          color: #f37123;
+        }
+      }
+
+      .AmountFreeContainer {
+        width: 62px;
+        background: #d9faff;
+        padding-right: 0;
+
+        //text
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #64c2d1;
+      }
+    }
+  }
 }

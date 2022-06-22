@@ -29,7 +29,7 @@
     background-color: #ffffff;
     border-radius: 10px;
     padding-bottom: 1rem;
-    overflow: auto;
+    overflow: hidden;
 
     .TopBar {
       box-sizing: border-box;
@@ -71,7 +71,8 @@
       width: 100%;
       height: 100%;
       // PUSHES ALL PAGE CONTENT AWAY FROM TOP & LEFT !IMPORTANT!
-      padding: 200px 60px 0 60px;
+      // erasing top padding 200px cuz lots of pages doesn't need top padding except wallet so, applying padding only to that page
+      padding: 0 60px 0 60px;
     }
   }
 }
