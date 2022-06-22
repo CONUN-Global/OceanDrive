@@ -10,7 +10,7 @@
   bottom: 3px;
   right: 20px;
   max-height: 300px;
-  background-color: white;
+  background-color: var(--white);
 
   & .TopBar {
     border-radius: 4px 4px 0px 0px;
@@ -23,12 +23,12 @@
     padding: 0 25px;
     font-weight: 600;
     font-size: 14px;
-    color: white;
+    color: var(--white);
 
     & .CloseBtn {
       background-color: transparent;
       border: none;
-      color: white;
+      color: var(--white);
       font-weight: 700;
       cursor: pointer;
     }
@@ -46,7 +46,7 @@
       height: var(--list-item-height);
       width: 100%;
       list-style-type: none;
-      background-color: white;
+      background-color: var(--white);
       color: var(--main-blue);
       font-weight: 700;
       font-size: 14px;

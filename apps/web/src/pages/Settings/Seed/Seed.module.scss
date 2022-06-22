@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     height: 124px;
-    background-color: white;
+    background-color: var(--white);
     gap: 3px;
 
     & .SingleWord {
@@ -34,7 +34,7 @@
 
     & .CopyButton {
       border-radius: 20px;
-      background-color: white;
+      background-color: var(--white);
       color: var(--main-blue);
       border: 1px solid var(--main-blue);
     }

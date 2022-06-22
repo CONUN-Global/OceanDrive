@@ -15,7 +15,7 @@
     padding-right: 10px;
     height: 35px;
     color: var(--gray);
-    background-color: var(--foreground);
+    background-color: var(--white);
     border-radius: 2px;
 
     &:hover {
@@ -29,7 +29,7 @@
   & .ListContainer {
     visibility: visible;
     cursor: pointer;
-    background-color: var(--foreground);
+    background-color: var(--white);
 
     &.close {
       visibility: hidden;

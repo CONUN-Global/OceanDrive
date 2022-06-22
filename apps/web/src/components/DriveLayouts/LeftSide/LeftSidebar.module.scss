@@ -29,12 +29,10 @@
       height: 100px;
       border-radius: 100px;
       cursor: pointer;
-
-      
     }
 
     .AvatarBorder {
-      border: 5px solid #5f93f1;
+      border: 5px solid var(--main-blue);
     }
 
     & .LinksContainer {
@@ -103,7 +101,7 @@
       border-radius: 20px;
       height: 42px;
       width: 150px;
-      background: var(--foreground);
+      background: var(--white);
       border: 1px solid var(--main-blue);
       font-style: normal;
       font-weight: 700;

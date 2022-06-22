@@ -68,11 +68,11 @@
         font-size: 18px;
         line-height: 26px;
         letter-spacing: 0.02em;
-        color: #ffffff;
+        color: var(--white);
       }
 
       .ActivatedBtn {
-        background: #5f93f1;
+        background: var(--main-blue);
       }
     }
   }

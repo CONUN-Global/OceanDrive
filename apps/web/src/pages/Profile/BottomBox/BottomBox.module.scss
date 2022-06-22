@@ -14,7 +14,7 @@
     line-height: 28px;
     display: flex;
     align-items: center;
-    color: #3a3a3a;
+    color: var(--black);
     text-transform: uppercase;
     margin-left: -2.25px;
   }
@@ -50,12 +50,12 @@
 
       .ClickedWord {
         background: #dbf2ff;
-        border: 1px solid #5f93f1;
+        border: 1px solid var(--main-blue);
 
         // text
         font-style: normal;
         font-weight: 700;
-        color: #5f93f1;
+        color: var(--main-blue);
       }
     }
 

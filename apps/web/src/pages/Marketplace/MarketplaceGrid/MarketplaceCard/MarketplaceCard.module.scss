@@ -69,7 +69,7 @@
 
       & .Price {
         text-transform: uppercase;
-        color: #64c2d1;
+        color: var(--teal);
         font-weight: 700;
         font-size: 0.875rem;
         display: flex;
@@ -134,7 +134,7 @@
         line-height: 23px;
         text-align: center;
         letter-spacing: 0.03em;
-        color: #64c2d1;
+        color: var(--teal);
       }
     }
   }
