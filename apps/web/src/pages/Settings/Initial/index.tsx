@@ -13,8 +13,8 @@ function Initial({ setCurrentPage, setShowPassword }: IPageProps) {
   const navigate = useNavigate();
   return (
     <div className={styles.Container}>
-      <button className={styles.XBtn} onClick={() => navigate(-1)}>
-        <Close />
+      <button className={styles.XBtnContainer} onClick={() => navigate(-1)}>
+        <Close className={styles.XBtn} />
       </button>
       <div className={styles.ContentContainer}>
         <div className={styles.TitleContainer}>

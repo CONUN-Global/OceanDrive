@@ -19,7 +19,7 @@
     cursor: pointer;
 
     & .XBtn {
-      fill: #c7c7c7;
+      fill: var(--grey6);
     }
   }
 
@@ -42,7 +42,7 @@
   }
 }
 
-// If the container is large type // (Change password page) //
+// If the container is Large type // (see Change Password page) //
 .LgContainer {
   height: 574px;
   & .ContentContainer {
