@@ -70,8 +70,7 @@
     & .ChildrenContainer {
       width: 100%;
       height: 100%;
-      // PUSHES ALL PAGE CONTENT AWAY FROM TOP & LEFT !IMPORTANT!
-      // erasing top padding 200px cuz lots of pages doesn't need top padding except wallet so, applying padding only to that page
+      // PADDING FOR ALL CONTENT
       padding: 0 60px 0 60px;
     }
   }

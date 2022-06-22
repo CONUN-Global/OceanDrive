@@ -8,7 +8,7 @@
   align-items: center;
   position: relative;
 
-  & .XBtn {
+  & .XBtnContainer {
     position: absolute;
     right: 60px;
     top: 35px;
@@ -17,6 +17,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    & .XBtn {
+      fill: #c7c7c7;
+    }
   }
 
   & .ContentContainer {
