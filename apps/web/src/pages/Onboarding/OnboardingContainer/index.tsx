@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from 'src/redux/store';
+import { RootState } from '../../../redux/store';
 import { AOnboardingProps, BOnboardingProps } from '../../../animations/onboarding';
 import { ReactComponent as OceanIcon } from '../../../assets/icons/welcom_page_icon.svg';
 import Card from '../../../components/Card';

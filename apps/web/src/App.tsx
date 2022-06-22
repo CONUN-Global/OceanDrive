@@ -34,18 +34,18 @@ function App() {
   const routes = useRoutes(filteredRoutes);
 
   return (
-    <Layout>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools initialIsOpen={false} />
-            <AnimatePresence exitBeforeEnter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <AnimatePresence exitBeforeEnter>
+            <Layout>
               <div key={location.pathname}>{routes}</div>
-            </AnimatePresence>
-          </QueryClientProvider>
-        </PersistGate>
-      </Provider>
-    </Layout>
+            </Layout>
+          </AnimatePresence>
+        </QueryClientProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 

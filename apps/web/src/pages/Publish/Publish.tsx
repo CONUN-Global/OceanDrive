@@ -3,9 +3,7 @@ import cuid from 'cuid';
 import TitleAndSearch from '../../components/TitleAndSearch';
 import DropZone from '../../components/DropZone/DropZone';
 import styles from './Publish.module.scss';
-import DriveLayout from 'src/components/DriveLayouts';
 import { useMutation } from 'react-query';
-import Button from 'src/components/Button';
 
 interface EventInterface {
   target: any;

@@ -11,7 +11,6 @@ let mainWindow,
   tray = null;
 
 function createTray() {
-
   const icon = path.join(__dirname, './assets/icon.png');
   const trayicon = nativeImage.createFromPath(icon);
   tray = new Tray(trayicon.resize({ width: 16 }));
@@ -63,10 +62,13 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  // mainWindow.loadFile('index.html');
-  const LOAD_URL = isDevelopment()
-    ? 'http://localhost:3000'
-    : path.join(__dirname, './dist/index.html');
+
+  const htmlFilePath = `file://${path.join(
+    __dirname,
+    '../build/web/index.html'
+  )}`;
+
+  const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
   mainWindow.loadURL(LOAD_URL);
 
   // Open the DevTools.
