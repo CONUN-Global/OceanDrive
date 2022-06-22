@@ -16,6 +16,7 @@ interface IErrorMessages {
 }
 
 function ChangePass() {
+  const navigate = useNavigate();
   // Input state (x3)
   const [currentPass, setCurrentPass] = useState<string>('');
   const [newPass, setNewPass] = useState<string>('');
@@ -23,13 +24,11 @@ function ChangePass() {
 
   // Error message object
   const [errorMessages, setErrorMessages] = useState<IErrorMessages>({ current: '', newError: '', confirmError: '' });
-
   // Show error (Border styling & Error messages)
   const [error, setError] = useState(false);
 
   function handleSubmit(e: any) {
     e.preventDefault();
-
     const validatedErrors = useValidate(errorMessages, userPassword, currentPass, newPass, confirmPass);
 
     if (validatedErrors.current !== '' || validatedErrors.confirmError !== '' || validatedErrors.newError !== '') {
@@ -38,13 +37,9 @@ function ChangePass() {
       return;
     }
 
-    /// Send new password to backend
     setError(false);
     navigate(-1);
   }
-
-  const navigate = useNavigate();
-
   return (
     <SettingsCard title="Change Password" isLarge={true}>
       <form className={styles.Container} onSubmit={handleSubmit}>
