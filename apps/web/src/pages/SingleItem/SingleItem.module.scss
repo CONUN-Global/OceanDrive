@@ -206,7 +206,7 @@
           }
 
           & .ItemNumber {
-            color: #3a3a3a;
+            color: var(--black);
             font-size: 22px;
             font-weight: 700;
           }
@@ -267,7 +267,7 @@
             height: 100%;
             border: none;
             background-color: var(--main-blue);
-            color: white;
+            color: var(--white);
             border-radius: 5px;
             font-size: 24px;
             cursor: pointer;
@@ -289,7 +289,7 @@
 
         & .TagBtn {
           background-color: var(--sea-blue);
-          color: white;
+          color: var(--white);
           border: none;
           border-radius: 40px;
           cursor: pointer;

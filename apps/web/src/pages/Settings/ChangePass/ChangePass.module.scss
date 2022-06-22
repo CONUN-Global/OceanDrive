@@ -18,13 +18,13 @@
 
     & .CancelButton {
       border-radius: 20px;
-      background-color: white;
+      background-color: var(--white);
       border: 1px solid var(--main-blue);
       color: var(--main-blue);
       font-size: 16px;
     }
     & .Button {
-      color: white;
+      color: var(--white);
       border-radius: 20px;
       font-size: 16px;
     }

@@ -31,7 +31,7 @@
         font-size: 26px;
         line-height: 100.9%;
         text-transform: uppercase;
-        color: var(--foreground);
+        color: var(--white);
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
       }
 
@@ -44,7 +44,7 @@
           font-style: normal;
           @include fontBodyXXL;
           text-transform: uppercase;
-          color: var(--foreground);
+          color: var(--white);
           opacity: 0.6;
         }
 
@@ -59,14 +59,14 @@
 }
 
 .BalanceCard {
-  background: #48afe8;
+  background: var(--sea-blue);
 
   .Wallet2 {
     font-family: 'Roboto';
     font-style: normal;
     @include fontBodyXXL;
     text-transform: uppercase;
-    color: var(--foreground);
+    color: var(--white);
     opacity: 0.6;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
   }
@@ -76,7 +76,7 @@
     font-weight: 500;
     font-size: 26px;
     line-height: 30px;
-    color: var(--foreground);
+    color: var(--white);
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
   }
 
@@ -106,6 +106,6 @@
     line-height: 17px;
     text-align: center;
     letter-spacing: 0.02em;
-    color: var(--foreground);
+    color: var(--white);
   }
 }

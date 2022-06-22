@@ -27,7 +27,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: white;
+      background-color: var(--white);
 
       img {
         width: 150px;
@@ -41,7 +41,7 @@
       padding: 10px 20px;
       border-radius: 10px;
       cursor: pointer;
-      background-color: var(--foreground);
+      background-color: var(--white);
 
       & svg {
         height: 10px;
