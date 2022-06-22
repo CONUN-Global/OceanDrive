@@ -192,7 +192,7 @@ function Publish() {
             Next
           </Button>
         </div>
-        {isPopupShowing && <UploadingPopup items={state.file} setIsPopupShowing={setIsPopupShowing} />}
+        {!isPopupShowing && <UploadingPopup items={state.file} setIsPopupShowing={setIsPopupShowing} />}
       </form>
     </div>
   );

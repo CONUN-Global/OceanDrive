@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from 'src/components/Button';
 import useMessageTimer from 'src/hooks/useMessageTimer';
 import SettingsCard from '../SettingsCard';
+import splitKey from 'src/helpers/splitKey';
 
 import styles from './Key.module.scss';
 
