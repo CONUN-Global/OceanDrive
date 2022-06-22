@@ -116,8 +116,6 @@ function Publish() {
       </div>
       <form onSubmit={handleSubmit}>
         <div className={styles.LowerContainer}>
-          {/* ============================================================================ */}
-          {/* LEFT SIDE BEGINS!!!!!!! */}
           <div className={classNames(styles.LeftColumn, styles.Column)}>
             <div>
               <div className={styles.AddFileHeading}>
@@ -156,8 +154,6 @@ function Publish() {
               </div>
             </div>
           </div>
-          {/* ============================================================================ */}
-          {/* RIGHT SIDE BEGINS!!!!!!! */}
           <div className={classNames(styles.RightColumn, styles.Column)}>
             <div>
               <div className={styles.TitleContainer}>
