@@ -17,18 +17,30 @@
     width: 100%;
     position: sticky;
     top: 0;
-    min-height: 35px;
+    min-height: 45px;
 
-    & .ResetBtn {
+    & .TitleText {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--grey11);
+    }
+
+    & .XBtnContainer {
       cursor: pointer;
       position: absolute;
-      right: 5px;
-      top: 4px;
+      right: 8px;
+      top: 10px;
       padding: 5px;
       background-color: inherit;
       border: none;
       outline: none;
       border-radius: 10px;
+
+      & .XBtn {
+        width: 10px;
+        height: 10px;
+        fill: var(--grey11);
+      }
     }
   }
 
@@ -36,6 +48,19 @@
     overflow-y: auto;
     padding-bottom: 10px;
     height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--grey2);
+      border-radius: 100px;
+    }
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px var(--grey7);
+      border-radius: 100px;
+    }
   }
 }
 
@@ -45,14 +70,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
-  padding: 0px 50px;
-  margin-top: 5px;
+  min-height: 45px;
+  padding: 0px 30px;
+
+  & .IconAndText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  & .FileName {
+    color: var(--main-blue);
+    font-size: 14px;
+    font-weight: 600;
+  }
 
   & .ListBtn {
+    margin-top: 5px;
     border: none;
-    outline: none;
-    padding: 5px;
     cursor: pointer;
+    background-color: transparent;
   }
 }
