@@ -10,14 +10,6 @@ import styles from './DragAndDrop.module.scss';
 
 const { api } = window;
 
-const baseStyle = {
-  borderWidth: 1.6,
-  borderRadius: 10,
-  backgroundColor: '#EDF9FF',
-  outline: 'none',
-  transition: 'border .24s ease-in-out',
-};
-
 const focusedStyle = {
   backgroundColor: '#EDF9FF',
 };
@@ -38,9 +30,18 @@ interface IProps {
   imgOnly?: boolean;
   children?: React.ReactNode;
   accept?: any;
+  bgColor?: string;
 }
 
-function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
+function DragAndDrop({ bgColor, accept, data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
+  const baseStyle = {
+    borderWidth: 1.6,
+    borderRadius: 10,
+    backgroundColor: bgColor ? bgColor : '#EDF9FF',
+    outline: 'none',
+    transition: 'border .24s ease-in-out',
+  };
+
   const [errors, setErrors] = useState<string>('');
 
   //UNUSED UNTIL WE MAKE API REQUEST
@@ -110,7 +111,7 @@ function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined,
 
   return (
     <>
-      <div {...getRootProps({ className: styles.Container, style })}>
+      <div {...getRootProps({ style, className: styles.Container })}>
         <input {...getInputProps()} />
         <div onClick={open} className={styles.ContentContainer}>
           {isDragActive ? (

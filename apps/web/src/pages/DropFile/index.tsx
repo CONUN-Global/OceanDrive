@@ -12,9 +12,13 @@ const DropFile = () => {
 
   return (
     <div className={styles.PageContainer}>
-      <TitleAndSearch>My Drive</TitleAndSearch>
+      <div className={styles.WelcomeContainer}>
+        <div className={styles.Title}>Welcome!</div>
+        <div>This is your Ocean Drive Storage. All of your uploaded content will appear here. Drag and drop in a file or choose one from your computer to get started. </div>
+      </div>
+
       <div className={styles.DropZoneContainer}>
-        <DragAndDrop data={uploads} setData={setUploads}>
+        <DragAndDrop data={uploads} setData={setUploads} bgColor="#E9F1FF">
           <div className={styles.Container}>
             <div className={styles.FileDropText}>
               Drag and Drop <br /> or

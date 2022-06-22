@@ -6,6 +6,35 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  position: relative;
+
+  .WelcomeContainer {
+    position: absolute;
+    left: 0;
+    top: 11%;
+    height: 216px;
+    width: 552px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 52px 46px;
+    gap: 1px;
+    background: #e8f0ff;
+    /* Main Blue */
+    border: 3px solid #5f93f1;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    /* Main Blue */
+    color: #5f93f1;
+
+    .Title {
+      font-weight: 700;
+    }
+  }
 
   & .DropZoneContainer {
     border: 1px dashed var(--main-blue);
