@@ -24,7 +24,7 @@ interface IState {
   title: string;
   description: string;
   type: string;
-  price: number;
+  price: number | undefined;
 }
 
 interface IAction {
@@ -39,7 +39,7 @@ const initialState: IState = {
   title: '',
   description: '',
   type: 'Pay',
-  price: 0,
+  price: undefined,
 };
 
 function reducer(state: IState, action: IAction) {
@@ -96,7 +96,7 @@ function Publish() {
   useEffect(() => {
     setIsBtnDisabled(true);
     if (state.title.length > 0 && state.file.length > 0) setIsBtnDisabled(false);
-    if (state.type === 'Pay' && state.price < 1) setIsBtnDisabled(true);
+    if (state.type === 'Pay' && (state.price === undefined || state.price < 1)) setIsBtnDisabled(true);
   }, [state]);
 
   // Handling Upload click
@@ -110,7 +110,7 @@ function Publish() {
       <div className={styles.TitleBarContainer}>
         <h1 className={styles.Heading}>Upload New Content</h1>
         <div className={styles.SubHeading}>
-          Your published file will appear in the the public marketplace. <b>They are for sale.</b>
+          Your published file will appear in the public marketplace. <b>They are for sale.</b>
         </div>
       </div>
       <form onSubmit={handleSubmit}>
@@ -119,10 +119,10 @@ function Publish() {
             <div>
               <div className={styles.AddFileHeading}>
                 <h4 className={styles.InputHeading}>1. Add File*</h4>
-                <div className={styles.PrivateSettings}>
+                {/* <div className={styles.PrivateSettings}>
                   <input className={styles.PrivateCheck} name="private" type="checkbox" id="Private" onChange={handleChange} />
                   <label htmlFor="Private">Make Private</label>
-                </div>
+                </div> */}
               </div>
               <div className={styles.UploadZone}>
                 {files.length === 0 ? (
@@ -139,8 +139,11 @@ function Publish() {
                 )}
               </div>
             </div>
-            <div>
-              <h4 className={styles.InputHeading}>2. Add Thumbnail Image &#40;Cover Image&#41;</h4>
+            <div className={styles.ThumbnailImgContainer}>
+              <h4 className={styles.InputHeading}>
+                2. Add Thumbnail Image <div className={styles.NoneBold}> &#40;Cover Image&#41;</div>
+              </h4>
+
               <div className={styles.UploadZone}>
                 {thumbnail.length === 0 ? (
                   <DragAndDrop accept={THUMBNAIL_FILE_TYPES} imgOnly={true} data={thumbnail} setData={setThumbnail} maxSize={5242880} maxFiles={1}>
@@ -154,18 +157,18 @@ function Publish() {
             </div>
           </div>
           <div className={classNames(styles.RightColumn, styles.Column)}>
-            <div>
+            <div className={styles.InputContainer}>
               <div className={styles.TitleContainer}>
                 <h4 className={styles.InputHeading}>3. Content Title*</h4>
                 <div className={styles.MaxChar}>Max 50 Characters</div>
               </div>
               <input name="title" className={styles.TitleInput} maxLength={50} onChange={handleChange} />
             </div>
-            <div>
+            <div className={styles.InputContainer}>
               <h4 className={styles.InputHeading}>4. Content Description</h4>
               <textarea className={styles.DescriptionInput} name="description" onChange={handleChange} rows={5} />
             </div>
-            <div>
+            <div className={styles.InputContainer}>
               <h4 className={styles.InputHeading}>5. Select Type*</h4>
               <select className={styles.PaymentTypeInput} name="type" onChange={handleChange}>
                 <option className={styles.PaymentOption} value="Pay">
@@ -177,11 +180,11 @@ function Publish() {
             {state.type === 'Pay' && (
               <div>
                 <span className={styles.PriceInputContainer}>
-                  <div className={styles.CyconCoin}>Cycon Coin</div>
-                  <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter Price (USD)" onChange={handleChange} value={state.price} />
+                  <input name="price" className={styles.PriceInput} id="price" type="number" min="0" placeholder="Enter price (CYCON)" onChange={handleChange} value={state.price} />
                 </span>
+                {/* BELOW INPUT */}
                 <div className={styles.PriceConversion}>
-                  {state.price ? state.price : 1} Cycon Coin = ${state.price ? (state.price * USDRate).toFixed(2) : USDRate} USD
+                  {state.price ? state.price : 1} CYCON Coin = ${state.price ? (state.price * USDRate).toFixed(2) : USDRate} USD
                 </div>
               </div>
             )}

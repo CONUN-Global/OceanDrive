@@ -18,7 +18,7 @@ export const authorizedRoutes = [
     children: [
       {
         index: true,
-        element: <SplashScreen path="/publish" />,
+        element: <SplashScreen path="/marketplace" />,
       },
       { path: 'profile', element: <Profile /> },
       { path: 'wallet', element: <Wallet /> },
