@@ -12,7 +12,7 @@ const DropFile = () => {
 
   return (
     <div className={styles.PageContainer}>
-      {/* <TitleAndSearch>My Drive</TitleAndSearch>
+      <TitleAndSearch>My Drive</TitleAndSearch>
       <div className={styles.DropZoneContainer}>
         <DragAndDrop data={uploads} setData={setUploads}>
           <div className={styles.Container}>
@@ -25,7 +25,7 @@ const DropFile = () => {
             <div className={styles.Uploads}>Unimited Size Uploads</div>
           </div>
         </DragAndDrop>
-      </div> */}
+      </div>
     </div>
   );
 };
