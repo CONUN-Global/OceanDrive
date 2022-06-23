@@ -22,8 +22,8 @@
     color: var(--grey10);
 
     &:focus {
-      outline: 3px solid #dbf2ff;
-      border: 1px solid #dbf2ff;
+      outline: 3px solid var(--off-white);
+      border: 1px solid var(--off-white);
       color: var(--black);
     }
   }
