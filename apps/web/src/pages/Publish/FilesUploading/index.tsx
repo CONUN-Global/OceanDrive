@@ -4,6 +4,7 @@ import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import { ReactComponent as Garbage } from '../../../assets/icons/GarbageCan.svg';
 import { ReactComponent as Image } from '../../../assets/icons/Upload_File_Types/image.svg';
 import { ReactComponent as Text } from '../../../assets/icons/Upload_File_Types/text.svg';
+import { ReactComponent as File } from '../../../assets/icons/Upload_File_Types/file.svg';
 
 import styles from './FilesUploading.module.scss';
 
@@ -14,18 +15,20 @@ interface IProps {
 
 function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
   let Icon;
+  console.log(file.type);
+  console.log(file);
   switch (file.type.split('/')[0]) {
     case 'image':
       Icon = <Image />;
       break;
     case 'application':
-      Icon = <Image />;
+      Icon = <File />;
       break;
     case 'text':
       Icon = <Text />;
       break;
     default:
-      Icon = <Image />;
+      Icon = <File />;
   }
 
   return (
@@ -58,8 +61,7 @@ function FilesUploading({ data, setData }: IProps) {
       </nav>
       <div className={styles.ListContainer}>
         {data.map((file: UploadFile) => (
-          /////////// CHANGE BACK TO showBtn={data.length > 1}
-          <ListItem key={file.id} file={file} deleteItem={deleteItem} showBtn={data.length > 0} />
+          <ListItem key={file.id} file={file} deleteItem={deleteItem} showBtn={data.length > 1} />
         ))}
       </div>
     </div>
