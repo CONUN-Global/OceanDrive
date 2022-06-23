@@ -15,8 +15,6 @@ interface IProps {
 
 function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
   let Icon;
-  console.log(file.type);
-  console.log(file);
   switch (file.type.split('/')[0]) {
     case 'image':
       Icon = <Image />;
