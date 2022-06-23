@@ -1,3 +1,5 @@
+@import '../../styles/fonts';
+
 .PageContainer {
   width: 100vw;
   height: 100vh;
@@ -51,7 +53,6 @@
       }
 
       .Instructions {
-        font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
@@ -77,10 +78,7 @@
           align-items: center;
 
           // text
-          font-style: normal;
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 26px;
+          @include fontTitleS;
           letter-spacing: 0.02em;
           color: var(--white);
         }

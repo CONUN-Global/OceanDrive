@@ -22,7 +22,7 @@
 
       th {
         width: 25%;
-        font-style: normal;
+
         font-weight: 600;
         font-size: 16px;
         line-height: 104.9%;
@@ -65,7 +65,7 @@
         padding-left: 25px;
         letter-spacing: 0.005em;
         color: var(--grey12);
-        font-style: normal;
+
         font-weight: 600;
         font-size: 16px;
         line-height: 104.9%;
@@ -73,7 +73,7 @@
       & :nth-child(2) {
         text-align: left;
         padding-left: 25px;
-        font-style: normal;
+
         font-weight: 600;
         font-size: 16px;
         line-height: 104.9%;
@@ -83,7 +83,7 @@
       & :nth-child(3) {
         text-align: left;
         padding-left: 25px;
-        font-style: normal;
+
         font-weight: 400;
         font-size: 16px;
         line-height: 23px;
@@ -92,7 +92,7 @@
       & :nth-child(4) {
         text-align: right;
         padding-right: 25px;
-        font-style: normal;
+
         font-weight: 600;
         font-size: 16px;
         line-height: 23px;
@@ -113,7 +113,7 @@
     flex-direction: column;
     height: 100%;
     color: var(--grey8);
-    font-style: normal;
+
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;

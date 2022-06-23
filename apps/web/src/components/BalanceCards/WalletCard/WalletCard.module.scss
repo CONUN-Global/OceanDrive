@@ -26,7 +26,6 @@
       gap: 9px;
 
       .Wallet {
-        font-style: normal;
         font-weight: 600;
         font-size: 26px;
         line-height: 100.9%;
@@ -42,7 +41,6 @@
         position: relative;
 
         .AddressName {
-          font-style: normal;
           @include fontBodyXXL;
           text-transform: uppercase;
           color: var(--white);

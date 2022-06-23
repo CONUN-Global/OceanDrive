@@ -34,7 +34,6 @@ function Initial({ setCurrentPage, setShowPassword }: IPageProps) {
             className={styles.Button}
             onClick={() => {
               setCurrentPage('ChangePass');
-              setShowPassword(true);
             }}
           >
             Change Password

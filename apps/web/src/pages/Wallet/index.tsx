@@ -15,7 +15,6 @@ function Wallet() {
       <div className={styles.Container}>
         <div className={styles.Content}>
           <div className={styles.TopContainer}>
-            <h4 className={styles.Title}>MY BALANCE</h4>
             <BalanceCard />
           </div>
           <div className={styles.BottomContainer}>
