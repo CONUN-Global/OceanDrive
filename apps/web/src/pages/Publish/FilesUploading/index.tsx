@@ -2,10 +2,8 @@ import React from 'react';
 import { UploadFile } from 'src/types';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import { ReactComponent as Garbage } from '../../../assets/icons/GarbageCan.svg';
-import { ReactComponent as Image } from '../../../assets/icons/Upload_File_Types/image.svg';
-import { ReactComponent as Text } from '../../../assets/icons/Upload_File_Types/text.svg';
-import { ReactComponent as File } from '../../../assets/icons/Upload_File_Types/file.svg';
 
+import getFileIcon from 'src/helpers/getFileIcon';
 import styles from './FilesUploading.module.scss';
 
 interface IProps {
@@ -14,20 +12,7 @@ interface IProps {
 }
 
 function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
-  let Icon;
-  switch (file.type.split('/')[0]) {
-    case 'image':
-      Icon = <Image />;
-      break;
-    case 'application':
-      Icon = <File />;
-      break;
-    case 'text':
-      Icon = <Text />;
-      break;
-    default:
-      Icon = <File />;
-  }
+  const Icon = getFileIcon(file.type);
 
   return (
     <li key={file.id} className={styles.ListItem}>
