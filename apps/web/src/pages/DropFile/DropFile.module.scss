@@ -4,8 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 17.4px;
   width: 100%;
   height: 100%;
+  gap: 90px;
   position: relative;
 
   .WelcomeContainer {
@@ -13,7 +15,7 @@
     left: 0;
     top: 11%;
     height: 216px;
-    width: 552px;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -67,6 +69,256 @@
         font-size: 12px;
         color: var(--grey11);
       }
+    }
+  }
+
+  .BottomTable {
+    min-height: 50%;
+    max-height: 65%;
+    width: 100%;
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;
+    overflow: auto;
+    overflow-x: hidden;
+
+    .GridContainer {
+      display: grid;
+      padding: 15px;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
+    }
+  }
+
+  .BottomTableConditionalStyle {
+    border: none;
+  }
+
+  .TableContainer {
+    width: calc(100% - 1px);
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    .Table {
+      width: 100%;
+      min-width: 500px;
+      border-collapse: collapse;
+      border-radius: 5px;
+      background: var(--grey2);
+
+      .TableRow {
+        background: var(--grey2);
+        width: 100%;
+        height: 40px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-collapse: collapse;
+
+        th {
+          background: var(--grey2);
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+
+        th {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 104.9%;
+          text-transform: capitalize;
+          color: var(--black);
+        }
+
+        & :nth-child(1) {
+          width: 5%;
+          padding-left: 5px;
+        }
+
+        & :nth-child(2) {
+          text-align: left;
+          width: 30%;
+          border-top-left-radius: 5px;
+        }
+        & :nth-child(3) {
+          width: 10%;
+          text-align: left;
+        }
+
+        & :nth-child(4) {
+          width: 15%;
+          text-align: left;
+        }
+        .HideTh {
+          width: 35px;
+        }
+
+        & :nth-child(5) {
+          width: 21%;
+          text-align: left;
+          padding-left: 25px;
+        }
+        & :nth-child(6) {
+          width: 15%;
+          text-align: left;
+          padding-left: 35px;
+          border-top-right-radius: 5px;
+        }
+        & :nth-child(7) {
+          padding-right: 25px;
+        }
+        & :nth-child(8) {
+          text-align: left;
+        }
+        .DownloadedIconStyle {
+          width: 100%;
+          height: 18px;
+          padding-right: 10px;
+        }
+        .DownloadActivityIcon {
+          width: 22px;
+          height: 19px;
+          // border: 1px solid green;
+          margin-left: -5px;
+        }
+      }
+
+      .TopTableRowHeight {
+        height: 0;
+      }
+
+      .TableRow2 {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-width: 0px 1px 1px 1px;
+        border-style: solid;
+        border-color: var(--grey4);
+        background-color: var(--white);
+
+        .FirstTd {
+          padding-left: 5px;
+        }
+
+        & :nth-child(2) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          color: var(--main-blue);
+        }
+        & :nth-child(3) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 26px;
+          color: var(--teal);
+        }
+        & :nth-child(4) {
+          text-align: left;
+
+          .AmountContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            width: 122px;
+            height: 29px;
+            background: #ffecde;
+            border-radius: 4px;
+            padding-right: 10px;
+
+            .Cycon {
+              width: 18.14px;
+              height: 18.14px;
+            }
+            .CyconDescDiv {
+              font-style: normal;
+              font-weight: 700;
+              font-size: 15px;
+              line-height: 23px;
+              letter-spacing: 0.03em;
+              color: #f37123;
+            }
+          }
+
+          .AmountFreeContainer {
+            width: 62px;
+            background: #d9faff;
+            padding-right: 0;
+
+            //text
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 23px;
+            text-align: center;
+            letter-spacing: 0.03em;
+            color: var(--teal);
+          }
+        }
+
+        & :nth-child(5) {
+          text-align: left;
+          padding-left: 25px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 23px;
+          color: var(--grey10);
+        }
+        & :nth-child(6) {
+          text-align: left;
+          padding-left: 35px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          letter-spacing: 0.005em;
+          color: var(--sea-blue);
+        }
+
+        & :nth-child(7) {
+          padding-right: 25px;
+          transition: all 0.05s ease-in-out;
+          position: relative;
+
+          svg {
+            cursor: pointer;
+          }
+        }
+        & :nth-child(8) {
+          text-align: left;
+        }
+      }
+
+      .PausedTd {
+        background: #f0fdff;
+      }
+
+      .P {
+        background-color: var(--white);
+      }
+    }
+
+    .NoData {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      height: 100%;
+      color: var(--grey8);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
     }
   }
 }
