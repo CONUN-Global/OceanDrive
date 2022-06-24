@@ -1,0 +1,60 @@
+.ContentContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 40px;
+
+  & .UpperContent {
+    & .KeyContainer {
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--black);
+      padding: 0 20px;
+      background-color: var(--white);
+      word-break: break-all;
+    }
+
+    & .Warning {
+      margin-top: 18px;
+      margin-left: 2px;
+      color: var(--main-blue);
+      font-weight: 400;
+    }
+  }
+
+  & .BtnContainer {
+    display: flex;
+    gap: 15px;
+    align-self: flex-end;
+    position: relative;
+
+    & .Copied {
+      position: absolute;
+      top: 45px;
+      right: 146px;
+      color: var(--grey10);
+    }
+
+    & .CopyButton {
+      background-color: var(--white);
+      border-radius: 20px;
+      color: var(--sea-blue);
+      min-width: 135px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: none;
+      border: 1px solid var(--sea-blue);
+    }
+    & .Button {
+      box-shadow: none;
+      border-radius: 20px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 16px;
+      min-width: 100px;
+    }
+  }
+}

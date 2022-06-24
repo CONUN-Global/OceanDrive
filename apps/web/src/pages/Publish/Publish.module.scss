@@ -5,11 +5,13 @@
 }
 
 .PageContainer {
+  min-height: 600px;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 90px;
 
   & .TitleBarContainer {
     width: 100%;
@@ -35,6 +37,13 @@
       font-weight: 700;
       line-height: normal;
       margin-bottom: 5px;
+
+      display: flex;
+
+      & .NoneBold {
+        font-weight: 500;
+        padding-left: 5px;
+      }
     }
 
     & .PrivateSettings {
@@ -52,7 +61,7 @@
     }
 
     & .UploadZone {
-      height: 180px;
+      height: 250px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -60,7 +69,7 @@
       justify-content: center;
       background-color: #edf9ff;
       border: 1px solid var(--sea-blue);
-      border-radius: 4px;
+      border-radius: 3px;
       cursor: pointer;
 
       & .FileDropText {
@@ -100,10 +109,17 @@
         align-items: baseline;
         width: 100%;
       }
+
+      & .ThumbnailImgContainer {
+        margin-top: 12px;
+      }
     }
     & .RightColumn {
       margin-left: 10px;
 
+      & .InputContainer {
+        margin-top: 16px;
+      }
       & .TitleContainer {
         display: flex;
         justify-content: space-between;
@@ -121,6 +137,7 @@
       .PaymentTypeInput {
         outline: none;
         width: 100%;
+        min-height: 50px;
         background-color: var(--grey1);
         border: 1px solid var(--grey1);
         border-radius: 4px;
@@ -152,6 +169,7 @@
         padding-top: calc(var(--input-padding) / 2);
         font-family: inherit;
         font-size: inherit;
+        min-height: 130px;
       }
 
       & .PriceInputContainer {
@@ -162,15 +180,16 @@
         border-radius: 4px;
         border: 1px solid var(--grey1);
 
-        & .CyconCoin {
-          width: 16%;
-        }
-
         & .PriceInput {
-          width: 84%;
           border-radius: 4px;
           height: 30px;
-          padding-left: var(--input-padding);
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
         }
       }
 
@@ -201,6 +220,7 @@
       align-items: center;
       min-width: 200px;
       min-height: 42px;
+      box-shadow: none;
 
       &:hover {
         opacity: 0.8;

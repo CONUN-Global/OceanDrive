@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { UploadFile } from 'src/types';
+import { ReactComponent as Close } from '../../../assets/icons/close.svg';
+import { ReactComponent as Garbage } from '../../../assets/icons/GarbageCan.svg';
 
+import getFileIcon from 'src/helpers/getFileIcon';
 import styles from './FilesUploading.module.scss';
 
 interface IProps {
@@ -9,12 +12,17 @@ interface IProps {
 }
 
 function ListItem({ file, deleteItem, showBtn }: { file: UploadFile; deleteItem: (id: string) => void; showBtn: boolean }) {
+  const Icon = getFileIcon(file.type);
+
   return (
     <li key={file.id} className={styles.ListItem}>
-      {file.name}
+      <div className={styles.IconAndText}>
+        {Icon}
+        <div className={styles.FileName}>{file.name}</div>
+      </div>
       {showBtn && (
         <button className={styles.ListBtn} onClick={() => deleteItem(file.id)}>
-          X
+          <Garbage className={styles.Icon} />
         </button>
       )}
     </li>
@@ -29,9 +37,9 @@ function FilesUploading({ data, setData }: IProps) {
   return (
     <div className={styles.Container}>
       <nav className={styles.TopBar}>
-        <p>Attached Files</p>
-        <button className={styles.ResetBtn} onClick={() => setData([])}>
-          X
+        <p className={styles.TitleText}>Attached Files</p>
+        <button className={styles.XBtnContainer} onClick={() => setData([])}>
+          <Close className={styles.XBtn} />
         </button>
       </nav>
       <div className={styles.ListContainer}>

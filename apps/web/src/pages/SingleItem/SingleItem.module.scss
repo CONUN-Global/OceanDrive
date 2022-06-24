@@ -207,7 +207,7 @@
           }
 
           & .ItemNumber {
-            color: #3a3a3a;
+            color: var(--black);
             font-size: 22px;
             font-weight: 700;
           }
@@ -251,7 +251,7 @@
               }
             }
             & .USDPrice {
-              color: #a8a8a8;
+              color: var(--grey8);
               font-size: 12px;
               display: flex;
               justify-content: center;
@@ -268,7 +268,7 @@
             height: 100%;
             border: none;
             background-color: var(--main-blue);
-            color: white;
+            color: var(--white);
             border-radius: 5px;
             font-size: 24px;
             cursor: pointer;
@@ -290,7 +290,7 @@
 
         & .TagBtn {
           background-color: var(--sea-blue);
-          color: white;
+          color: var(--white);
           border: none;
           border-radius: 40px;
           cursor: pointer;

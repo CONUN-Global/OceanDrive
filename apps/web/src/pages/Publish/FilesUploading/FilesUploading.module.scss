@@ -1,9 +1,10 @@
+@import '../../../styles/scrollbar';
 .Container {
   cursor: default;
   height: 100%;
   width: 100%;
   border-radius: 5px;
-  background-color: white;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -13,22 +14,34 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: var(--grey4);
+    background-color: var(--grey1);
     width: 100%;
     position: sticky;
     top: 0;
-    min-height: 35px;
+    min-height: 45px;
 
-    & .ResetBtn {
+    & .TitleText {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--grey11);
+    }
+
+    & .XBtnContainer {
       cursor: pointer;
       position: absolute;
-      right: 5px;
-      top: 4px;
+      right: 8px;
+      top: 10px;
       padding: 5px;
       background-color: inherit;
       border: none;
       outline: none;
       border-radius: 10px;
+
+      & .XBtn {
+        width: 10px;
+        height: 10px;
+        fill: var(--grey11);
+      }
     }
   }
 
@@ -36,6 +49,7 @@
     overflow-y: auto;
     padding-bottom: 10px;
     height: 100%;
+    @include scrollbar;
   }
 }
 
@@ -45,14 +59,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
-  padding: 0px 50px;
-  margin-top: 5px;
+  min-height: 45px;
+  padding: 0px 30px;
+
+  & .IconAndText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  & .FileName {
+    color: var(--main-blue);
+    font-size: 14px;
+    font-weight: 600;
+  }
 
   & .ListBtn {
+    margin-top: 5px;
     border: none;
-    outline: none;
-    padding: 5px;
     cursor: pointer;
+    background-color: transparent;
   }
 }

@@ -1,0 +1,54 @@
+.Container {
+  width: 662px;
+  height: 439px;
+  background-color: var(--background);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & .XBtnContainer {
+    position: absolute;
+    right: 60px;
+    top: 35px;
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    & .XBtn {
+      fill: var(--grey6);
+    }
+  }
+
+  & .ContentContainer {
+    width: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+
+    & .Title {
+      color: var(--teal);
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    & .ChildrenContainer {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+// If the container is Large type // (see Change Password page) //
+.LgContainer {
+  height: 574px;
+  & .ContentContainer {
+    height: 410px;
+    & .Title {
+      padding-bottom: 45px;
+    }
+  }
+}

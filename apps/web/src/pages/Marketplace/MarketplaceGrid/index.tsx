@@ -11,10 +11,12 @@ interface ICollectionGrid {
 function CollectionGrid({ Data }: ICollectionGrid) {
   return (
     <div className={styles.PageContainer}>
-      <TitleAndSearch>MarketPlace</TitleAndSearch>
+      <div className={styles.TitleContainer}>
+        <TitleAndSearch>MarketPlace</TitleAndSearch>
+      </div>
       <div className={styles.GridContainer}>
         {Data.map(DataItem => (
-          <CollectionCard page='market-place' key={DataItem.id} DataItem={DataItem} />
+          <CollectionCard page="market-place" key={DataItem.id} DataItem={DataItem} />
         ))}
       </div>
     </div>

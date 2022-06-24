@@ -5,7 +5,7 @@
   cursor: pointer;
   padding: 3px 10px;
   color: var(--grey10);
-  background-color: var(--foreground);
+  background-color: var(--white);
   display: inline-block;
   margin-right: 10px;
   margin-top: 10px;
@@ -17,9 +17,9 @@
 
   &.clicked {
     background-color: var(--sea-blue);
-    color: white;
+    color: var(--white);
   }
   &.unClicked {
-    background-color: white;
+    background-color: var(--white);
   }
 }

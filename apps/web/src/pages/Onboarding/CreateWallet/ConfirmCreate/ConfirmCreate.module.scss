@@ -2,14 +2,14 @@
   & .HStack {
     margin-top: 85px;
     & .PrevButton {
-      background-color: var(--foreground);
+      background-color: var(--white);
       border: 1px solid var(--sea-blue);
       color: var(--sea-blue);
       padding: 10px 20px;
     }
     & .NextButton {
       background-color: var(--sea-blue);
-      color: var(--foreground);
+      color: var(--white);
       padding: 10px 20px;
     }
     & .Tags {

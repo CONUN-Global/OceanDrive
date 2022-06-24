@@ -6,7 +6,6 @@ import BottomTable from './BotttomTable';
 
 import { ReactComponent as BoxedIcon } from '../../assets/icons/boxed-icon.svg';
 import classNames from 'classnames';
-const seedData = { balance: 598.0 };
 
 const Profile = () => {
   const [clicked, setClicked] = useState<'published' | 'downloads' | 'personal'>('published');

@@ -18,7 +18,7 @@
     margin-right: -25px;
 
     // text
-    font-style: normal;
+
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
@@ -53,8 +53,8 @@
   border-bottom: 1px solid black;
   border-width: 0px 1px 1px 1px;
   border-style: solid;
-  border-color: #e7e7e7;
-  background-color: #ffffff;
+  border-color: var(--grey4);
+  background-color: var(--white);
 
   .FirstTd {
     padding-left: 5px;
@@ -62,19 +62,19 @@
 
   & :nth-child(2) {
     text-align: left;
-    font-style: normal;
+
     font-weight: 700;
     font-size: 16px;
     line-height: 104.9%;
-    color: #5f93f1;
+    color: var(--main-blue);
   }
   & :nth-child(3) {
     text-align: left;
-    font-style: normal;
+
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
-    color: #64c2d1;
+    color: var(--teal);
   }
   & :nth-child(4) {
     text-align: left;
@@ -97,7 +97,6 @@
         height: 18.14px;
       }
       .CyconDescDiv {
-        font-style: normal;
         font-weight: 700;
         font-size: 15px;
         line-height: 23px;
@@ -110,21 +109,21 @@
   & :nth-child(5) {
     text-align: left;
     padding-left: 25px;
-    font-style: normal;
+
     font-weight: 400;
     font-size: 16px;
     line-height: 23px;
-    color: #888888;
+    color: var(--grey10);
   }
   & :nth-child(6) {
     text-align: left;
     padding-left: 35px;
-    font-style: normal;
+
     font-weight: 700;
     font-size: 16px;
     line-height: 104.9%;
     letter-spacing: 0.005em;
-    color: #48afe8;
+    color: var(--sea-blue);
   }
 
   & :nth-child(7) {
