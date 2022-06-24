@@ -13,7 +13,11 @@
     "publish:mac": "npm run build && electron-builder --mac --publish always ",
     "publish:win": "npm run build && electron-builder --win --publish always",
     "build": "yarn clean && yarn build:base && cross-env PUBLIC_URL=./ yarn build:web && cross-env PUBLIC_URL=./ yarn build:web:post",
+<<<<<<< HEAD
     "build:web": "pushd \"./apps/web\" && yarn build && popd",
+=======
+    "build:web": "pushd \"./apps/web\" && cross-env yarn build && popd",
+>>>>>>> 6850140... build file configured
     "build:base": "yarn compile",
     "build:mac": "npm run build && electron-builder --mac ",
     "build:win": "npm run build && electron-builder --win ",
@@ -32,8 +36,15 @@
       "name": "Ocean Drive"
     },
     "files": [
+<<<<<<< HEAD
       "electron",
       "build"
+=======
+      "dist/**/*",
+      "package.json",
+      "./electron",
+      "./build"
+>>>>>>> 6850140... build file configured
     ],
     "directories": {
       "output": "./out"
@@ -67,9 +78,16 @@
       "target": [
         "nsis"
       ],
+<<<<<<< HEAD
       "legalTrademarks": "CONUN GLOBAL",
       "artifactName": "${productName}-Setup-${version}.${ext}",
       "certificateFile": "build/private/conun.io.certificate.pfx",
+=======
+      "icon": "./electron/assets/icon.png",
+      "legalTrademarks": "CONUN GLOBAL",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "certificateFile": "private/conun.io.certificate.pfx",
+>>>>>>> 6850140... build file configured
       "certificatePassword": "",
       "verifyUpdateCodeSignature": "false",
       "publisherName": "conun.io.certificate"
@@ -93,8 +111,12 @@
     }
   },
   "dependencies": {
+<<<<<<< HEAD
     "@conun-global/web3.storage": "1.1.4",
     "electron-serve": "^1.1.0"
+=======
+    "@conun-global/web3.storage": "1.1.4"
+>>>>>>> 6850140... build file configured
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.5.0",
@@ -102,8 +124,11 @@
     "@types/react-dom": "^18.0.4",
     "electron": "^17.0.0",
     "electron-builder": "^23.0.3",
+<<<<<<< HEAD
     "electron-rebuild": "^3.1.1",
     "nodemon": "^2.0.16",
+=======
+>>>>>>> 6850140... build file configured
     "parcel": "^2.5.0",
     "typescript": "^4.6.4"
   },

@@ -30,14 +30,14 @@ function createTray() {
         } else {
           mainWindow.restore();
         }
-      },
+      }
     },
     {
       label: 'Quit',
       click: () => {
         app.quit();
-      },
-    },
+      }
+    }
   ]);
 
   tray.on('click', () => {
@@ -69,8 +69,8 @@ function createWindow() {
     webPreferences: {
       webSecurity: false,
       nodeIntegration: true,
-      preload: path.resolve(__dirname, 'preload.js'),
-    },
+      preload: path.resolve(__dirname, 'preload.js')
+    }
   });
 
   // and load the index.html of the app.
@@ -83,7 +83,12 @@ function createWindow() {
   }
 =======
   // mainWindow.loadFile('index.html');
-  const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : path.join(__dirname, './dist/index.html');
+  const htmlFilePath = `file://${path.join(
+    __dirname,
+    '../build/web/index.html'
+  )}`;
+  const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
+
   mainWindow.loadURL(LOAD_URL);
 
   // Open the DevTools.
