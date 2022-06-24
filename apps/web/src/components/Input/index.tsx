@@ -69,7 +69,7 @@ function Input({ error, setError, inputValue, setInputValue, placeholder, errMes
           />
         )}
       </div>
-      {error && inputValue.length > 0 && <div className={styles.Error}>{errMessage}</div>}
+      {error && <div className={styles.Error}>{errMessage}</div>}
     </div>
   );
 }
