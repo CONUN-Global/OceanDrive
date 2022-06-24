@@ -26,6 +26,10 @@
       border: 1px solid var(--off-white);
       color: var(--black);
     }
+
+    &::placeholder {
+      color: var(--grey6);
+    }
   }
 
   .InputValColor {
@@ -44,6 +48,7 @@
     .EyeIcon {
       width: 20px;
       height: 15.81px;
+      fill: var(--sea-blue);
     }
   }
 }
