@@ -13,13 +13,10 @@ const Profile = () => {
 
   return (
     <div className={styles.Container}>
-      {/* TOP */}
       <div className={styles.BalanceCards}>
         <WalletCard />
         <BalanceCard />
       </div>
-
-      {/* BottomBox */}
       <div className={styles.BottomBoxContainer}>
         <div className={styles.BottomBox}>
           <div className={styles.DescriptionTitle}>My Files</div>

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
-import { ReactComponent as CopyIcon } from '../../assets/icons/copy-icon.svg';
+// import { ReactComponent as CopyIcon } from '../../assets/icons/copy-icon.svg';
 
 import styles from './ClickableTooltip.module.scss';
 
@@ -10,7 +10,7 @@ interface ClickableProps {
   place?: string;
 }
 
-const ClickableTooltip = ({place, copyText, children }: ClickableProps) => {
+const ClickableTooltip = ({ place, copyText, children }: ClickableProps) => {
   const [showCopied, setShowCopied] = useState(false);
 
   const copyToClipboard = () => {
@@ -20,7 +20,7 @@ const ClickableTooltip = ({place, copyText, children }: ClickableProps) => {
   };
   return (
     <div className={styles.ShowCopied}>
-      {showCopied && <div className={classNames(styles.CopiedText, {[styles.PlacePos]: place === 'publish-table'})}>copied</div>}
+      {showCopied && <div className={classNames(styles.CopiedText, { [styles.PlacePos]: place === 'publish-table' })}>Copied</div>}
       <div
         className={styles.CopyIconWrapper}
         onClick={() => {

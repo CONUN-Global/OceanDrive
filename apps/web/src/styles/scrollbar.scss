@@ -3,7 +3,6 @@
   &::-webkit-scrollbar {
     width: 5px;
   }
-
   &::-webkit-scrollbar-track {
     border-radius: 100px;
   }
@@ -13,6 +12,6 @@
     border-radius: 100px;
   }
   &::-webkit-scrollbar-thumb:hover {
-    box-shadow: inset 0 0 100px var(--grey9);
+    background-color: var(--grey8);
   }
 }

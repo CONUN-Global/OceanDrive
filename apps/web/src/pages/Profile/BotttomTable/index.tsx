@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import QueItem from './QueItem';
 
-import { ReactComponent as GenearatedIcon } from '../../../assets/icons/generated-icon-sample.svg';
+import { ReactComponent as GeneratedIcon } from '../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/boxed-copy-icon.svg';
 import { ReactComponent as CyconIcon } from '../../../assets/icons/boxed-cycon-icon.svg';
 import { ReactComponent as TickIcon } from '../../../assets/icons/tick-icon.svg';
@@ -13,10 +13,9 @@ import { data } from './DemoData';
 import { queData } from './DemoData';
 import Data from '../../Marketplace/seedData.json';
 
-import styles from './BottomTable.module.scss';
-import { toast, ToastContainer } from 'react-toastify';
 import CollectionCard from 'src/pages/Marketplace/MarketplaceGrid/MarketplaceCard';
 import ClickableTooltip from 'src/components/ClickableTooltip';
+import styles from './BottomTable.module.scss';
 
 interface PropWord {
   clicked: string;
@@ -46,7 +45,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>{queData.length > 0 && queData.map((val: any, key: any) => <QueItem val={val} key={key} keyVal={key} />)}</tbody>
+                <tbody>{queData.length > 0 && queData.map((val: any, key: number) => <QueItem val={val} key={key} keyVal={key} />)}</tbody>
               </table>
             </div>
           </div>
@@ -99,7 +98,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                     return (
                       <tr key={key} className={styles.TableRow2}>
                         <td className={styles.FirstTd}>
-                          <GenearatedIcon />
+                          <GeneratedIcon />
                         </td>
                         <td>{val.contentName}</td>
                         <td>{val.fileSize}</td>
@@ -118,13 +117,11 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>{val.txHash}</td>
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
-                            <ClickableTooltip place='publish-table' copyText={val.txHash}>
-                              <CopyIcon
-                              />
+                            <ClickableTooltip place="publish-table" copyText={val.txHash}>
+                              <CopyIcon />
                             </ClickableTooltip>
                           )}
                           {clicked === 'downloads' && <TickIcon />}
-                          <ToastContainer className={styles.ToastPosition} />
                         </td>
                         {clicked === 'personal' && (
                           <td>

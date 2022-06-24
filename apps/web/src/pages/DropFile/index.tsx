@@ -6,9 +6,11 @@ import { UploadFile } from 'src/types';
 
 import styles from './DropFile.module.scss';
 import Button from 'src/components/Button';
+import UploadingPopup from 'src/components/UploadingPopup';
 
 const DropFile = () => {
   const [uploads, setUploads] = useState<UploadFile[]>([]);
+  const [isPopupShowing, setIsPopupShowing] = useState(false);
 
   return (
     <div className={styles.PageContainer}>
@@ -26,6 +28,7 @@ const DropFile = () => {
           </div>
         </DragAndDrop>
       </div>
+      <UploadingPopup items={uploads} setIsPopupShowing={setIsPopupShowing} />
     </div>
   );
 };

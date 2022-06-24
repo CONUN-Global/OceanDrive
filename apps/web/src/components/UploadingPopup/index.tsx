@@ -4,7 +4,7 @@ import { UploadFile } from '../../types';
 import styles from './UploadingPopup.module.scss';
 
 function ListItem({ file }: { file: UploadFile }) {
-  return <li className={styles.ListItem}>{file.path}</li>;
+  return <li className={styles.ListItem}>{file.name}</li>;
 }
 
 function UploadingPopup({ items, setIsPopupShowing }: { items: UploadFile[]; setIsPopupShowing: (value: boolean | ((prevVar: boolean) => boolean)) => void }) {

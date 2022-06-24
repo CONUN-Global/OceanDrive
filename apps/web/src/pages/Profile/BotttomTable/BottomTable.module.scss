@@ -59,18 +59,16 @@
   border-radius: 5px;
   overflow: auto;
   overflow-x: hidden;
+  @include scrollbar;
 }
 
 .TableTitle {
   text-transform: uppercase;
-  height: 29px;
-
   font-weight: 700;
   font-size: 16px;
-  line-height: 23px;
   display: flex;
-  text-transform: uppercase;
   color: var(--main-blue);
+  padding: 1px 0 5px 5px;
 }
 
 .BottomTable {
@@ -81,6 +79,7 @@
   border-radius: 5px;
   overflow: auto;
   overflow-x: hidden;
+  @include scrollbar;
 
   .GridContainer {
     display: grid;
@@ -124,9 +123,8 @@
       }
 
       th {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 104.9%;
         text-transform: capitalize;
         color: var(--black);
       }

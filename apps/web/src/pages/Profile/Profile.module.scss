@@ -1,7 +1,7 @@
 @import '../../styles/fonts';
 
 .Container {
-  padding: 15% 60px 0px 60px;
+  padding-top: 15%;
   width: 100%;
   height: calc(100vh - 25px);
   overflow-y: hidden;
@@ -12,6 +12,11 @@
     border-radius: 4px;
     gap: 24px;
     margin-bottom: 76px;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      max-width: 50%;
+    }
   }
 
   .BottomBoxContainer {
@@ -33,7 +38,6 @@
         align-items: center;
         color: var(--black);
         text-transform: uppercase;
-        margin-left: -2.25px;
       }
 
       .DescriptionBox {
@@ -60,16 +64,15 @@
             // text
             font-weight: 500;
             color: var(--grey10);
-            font-size: 18px;
-            line-height: 26px;
+            font-size: 16px;
             text-transform: uppercase;
           }
 
           .ClickedWord {
+            // border: 1px solid red;
             background: var(--off-white);
-            border: 1px solid var(--main-blue);
+            // border: 1px solid var(--main-blue);
 
-            font-weight: 700;
             color: var(--main-blue);
           }
         }
