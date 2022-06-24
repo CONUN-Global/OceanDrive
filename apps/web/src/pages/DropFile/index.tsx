@@ -4,17 +4,20 @@ import TitleAndSearch from '../../components/TitleAndSearch';
 import DragAndDrop from 'src/components/DragAndDrop';
 import { UploadFile } from 'src/types';
 import Button from 'src/components/Button';
-import { data, queData } from '../Profile/BotttomTable/DemoData';
+import { data } from '../Profile/BotttomTable/DemoData';
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../assets/icons/boxed-copy-icon.svg';
 
 import styles from './DropFile.module.scss';
 import classNames from 'classnames';
 import ClickableTooltip from 'src/components/ClickableTooltip';
+import UploadingPopup from 'src/components/UploadingPopup';
 
 const DropFile = () => {
   const [uploads, setUploads] = useState<UploadFile[]>([]);
-  console.log(uploads);
+
+  const sampleItems = uploads.length;
+  console.log(sampleItems);
 
   const dataExist = data !== null && data.length > 0;
 
@@ -27,7 +30,7 @@ const DropFile = () => {
         </div>
       )}
 
-      <div className={styles.DropZoneContainer}>
+      <div className={classNames(styles.DropZoneContainer, { [styles.DataExistHeight]: dataExist })}>
         <DragAndDrop data={uploads} setData={setUploads} bgColor="#E9F1FF">
           <div className={styles.Container}>
             <div className={styles.FileDropText}>
@@ -50,7 +53,6 @@ const DropFile = () => {
                   <th></th>
                   <th>File Name</th>
                   <th>File Size</th>
-                  <th className={styles.HideTh}></th>
                   <th>Date</th>
                   <th>TX Hash</th>
                   <th></th>
@@ -59,18 +61,13 @@ const DropFile = () => {
               <tbody className={styles.TableBodyScroll}>
                 {data.length > 0 &&
                   data.map((val: any, key: any) => {
-                    function copyText() {
-                      navigator.clipboard.writeText(val.txHash);
-                    }
-
                     return (
                       <tr key={key} className={styles.TableRow2}>
-                        <td className={styles.FirstTd}>
+                        <td>
                           <GenearatedIcon />
                         </td>
                         <td>{val.contentName}</td>
                         <td>{val.fileSize}</td>
-                        <td className={styles.HideTh}></td>
                         <td>{val.date}</td>
                         <td>{val.txHash}</td>
                         <td>
@@ -83,8 +80,9 @@ const DropFile = () => {
                   })}
               </tbody>
             </table>
-            {data.length === 0 && <div className={styles.NoData}>NO DATA</div>}
           </div>
+
+          {uploads.length > 0 && <UploadingPopup page='drop-file' items={uploads} />}
         </div>
       )}
     </div>

@@ -12,6 +12,7 @@
 
   .WelcomeContainer {
     position: absolute;
+    box-sizing: border-box;
     left: 0;
     top: 11%;
     height: 216px;
@@ -19,6 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     padding: 52px 46px;
     gap: 1px;
     background: #e8f0ff;
@@ -72,6 +74,10 @@
     }
   }
 
+  .DataExistHeight {
+    height: 226px;
+  }
+
   .BottomTable {
     min-height: 50%;
     max-height: 65%;
@@ -80,6 +86,7 @@
     border-radius: 5px;
     overflow: auto;
     overflow-x: hidden;
+    position: relative;
 
     .GridContainer {
       display: grid;
@@ -88,10 +95,6 @@
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
     }
-  }
-
-  .BottomTableConditionalStyle {
-    border: none;
   }
 
   .TableContainer {
@@ -120,9 +123,6 @@
           position: sticky;
           top: 0;
           z-index: 10;
-        }
-
-        th {
           font-style: normal;
           font-weight: 600;
           font-size: 16px;
@@ -132,60 +132,32 @@
         }
 
         & :nth-child(1) {
-          width: 5%;
-          padding-left: 5px;
+          width: 7.41%;
         }
 
         & :nth-child(2) {
           text-align: left;
-          width: 30%;
+          width: 32%;
           border-top-left-radius: 5px;
         }
         & :nth-child(3) {
-          width: 10%;
+          width: 17.82%;
           text-align: left;
         }
 
         & :nth-child(4) {
-          width: 15%;
+          width: 24.24%;
           text-align: left;
         }
-        .HideTh {
-          width: 35px;
-        }
-
         & :nth-child(5) {
-          width: 21%;
+          width: 12.64%;
           text-align: left;
-          padding-left: 25px;
-        }
-        & :nth-child(6) {
-          width: 15%;
-          text-align: left;
-          padding-left: 35px;
           border-top-right-radius: 5px;
         }
-        & :nth-child(7) {
-          padding-right: 25px;
-        }
-        & :nth-child(8) {
+        & :nth-child(6) {
+          width: 5.4%;
           text-align: left;
         }
-        .DownloadedIconStyle {
-          width: 100%;
-          height: 18px;
-          padding-right: 10px;
-        }
-        .DownloadActivityIcon {
-          width: 22px;
-          height: 19px;
-          // border: 1px solid green;
-          margin-left: -5px;
-        }
-      }
-
-      .TopTableRowHeight {
-        height: 0;
       }
 
       .TableRow2 {
@@ -197,10 +169,6 @@
         border-style: solid;
         border-color: var(--grey4);
         background-color: var(--white);
-
-        .FirstTd {
-          padding-left: 5px;
-        }
 
         & :nth-child(2) {
           text-align: left;
@@ -218,64 +186,17 @@
           line-height: 26px;
           color: var(--teal);
         }
+
         & :nth-child(4) {
           text-align: left;
-
-          .AmountContainer {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-
-            width: 122px;
-            height: 29px;
-            background: #ffecde;
-            border-radius: 4px;
-            padding-right: 10px;
-
-            .Cycon {
-              width: 18.14px;
-              height: 18.14px;
-            }
-            .CyconDescDiv {
-              font-style: normal;
-              font-weight: 700;
-              font-size: 15px;
-              line-height: 23px;
-              letter-spacing: 0.03em;
-              color: #f37123;
-            }
-          }
-
-          .AmountFreeContainer {
-            width: 62px;
-            background: #d9faff;
-            padding-right: 0;
-
-            //text
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 23px;
-            text-align: center;
-            letter-spacing: 0.03em;
-            color: var(--teal);
-          }
-        }
-
-        & :nth-child(5) {
-          text-align: left;
-          padding-left: 25px;
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
           line-height: 23px;
           color: var(--grey10);
         }
-        & :nth-child(6) {
+        & :nth-child(5) {
           text-align: left;
-          padding-left: 35px;
           font-style: normal;
           font-weight: 700;
           font-size: 16px;
@@ -284,8 +205,7 @@
           color: var(--sea-blue);
         }
 
-        & :nth-child(7) {
-          padding-right: 25px;
+        & :nth-child(6) {
           transition: all 0.05s ease-in-out;
           position: relative;
 
@@ -293,32 +213,7 @@
             cursor: pointer;
           }
         }
-        & :nth-child(8) {
-          text-align: left;
-        }
       }
-
-      .PausedTd {
-        background: #f0fdff;
-      }
-
-      .P {
-        background-color: var(--white);
-      }
-    }
-
-    .NoData {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      flex-direction: column;
-      height: 100%;
-      color: var(--grey8);
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
     }
   }
 }
