@@ -4,11 +4,14 @@ const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron');
 const path = require('path');
 const { initIpfs } = require('./ipcMain/ipfs');
 const { isDevelopment } = require('./utils');
+const serve = require('electron-serve');
 
 require('./ipcMain/api');
 
 let mainWindow,
   tray = null;
+
+const loadURL = serve({ directory: 'build/web' });
 
 function createTray() {
   const icon = path.join(__dirname, './assets/icon.png');
@@ -64,13 +67,17 @@ function createWindow() {
 
   // and load the index.html of the app.
   // mainWindow.loadFile('index.html');
-  const htmlFilePath = `file://${path.join(
-    __dirname,
-    '../build/web/index.html'
-  )}`;
-  const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
+  // const htmlFilePath = `file://${path.join(
+  //   __dirname,
+  //   '../build/web/index.html'
+  // )}`;
+  // const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
 
-  mainWindow.loadURL(LOAD_URL);
+  if (isDevelopment()) {
+    mainWindow.loadURL('http://localhost:3000');
+  } else {
+    loadURL(mainWindow);
+  }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

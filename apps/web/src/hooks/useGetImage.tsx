@@ -8,9 +8,7 @@ function useGetImage(thumbHash: string) {
     async () => {
       const data = await api.getFilePreview(thumbHash);
 
-      const preview = new Blob([data?.data?.buffer]);
-
-      return URL.createObjectURL(preview);
+      return data?.preview;
     },
     {
       enabled: !!thumbHash,
