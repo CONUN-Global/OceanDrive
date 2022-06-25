@@ -56,6 +56,7 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
+      webSecurity: false,
       nodeIntegration: true,
       preload: path.resolve(__dirname, 'preload.js')
     }
@@ -70,9 +71,6 @@ function createWindow() {
   const LOAD_URL = isDevelopment() ? 'http://localhost:3000' : htmlFilePath;
 
   mainWindow.loadURL(LOAD_URL);
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

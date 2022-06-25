@@ -10,8 +10,10 @@
   "author": "CONUN GLOBAL <jamshid@conun.co.kr>",
   "main": "./electron/main.js",
   "scripts": {
+    "publish:mac": "npm run build && electron-builder --mac --publish always ",
+    "publish:win": "npm run build && electron-builder --win --publish always",
     "build": "yarn clean && yarn build:base && cross-env PUBLIC_URL=./ yarn build:web && cross-env PUBLIC_URL=./ yarn build:web:post",
-    "build:web": "pushd \"./apps/web\" && cross-env yarn build && popd",
+    "build:web": "pushd \"./apps/web\" && yarn build && popd",
     "build:base": "yarn compile",
     "build:mac": "npm run build && electron-builder --mac ",
     "build:win": "npm run build && electron-builder --win ",
@@ -25,11 +27,13 @@
     "clean": "shx rm -f *.tsbuildinfo && shx rm -rf dist && shx rm -rf build && mkdir build"
   },
   "build": {
+    "productName": "Ocean Drive",
+    "extraMetadata": {
+      "name": "Ocean Drive"
+    },
     "files": [
-      "dist/**/*",
-      "package.json",
-      "./electron",
-      "./build"
+      "electron",
+      "build"
     ],
     "directories": {
       "output": "./out"
@@ -39,7 +43,7 @@
       "provider": "github"
     },
     "protocols": {
-      "name": "ocean-drive",
+      "name": "Ocean Drive",
       "schemes": [
         "ocean-drive"
       ]
@@ -55,22 +59,17 @@
             "CFBundleURLName": "Ocean Drive"
           }
         ]
-      }
+      },
+      "gatekeeperAssess": false,
+      "hardenedRuntime": true
     },
     "win": {
       "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
+        "nsis"
       ],
-      "icon": "./electron/assets/icon.png",
       "legalTrademarks": "CONUN GLOBAL",
       "artifactName": "${productName}-Setup-${version}.${ext}",
-      "certificateFile": "private/conun.io.certificate.pfx",
+      "certificateFile": "build/private/conun.io.certificate.pfx",
       "certificatePassword": "",
       "verifyUpdateCodeSignature": "false",
       "publisherName": "conun.io.certificate"
