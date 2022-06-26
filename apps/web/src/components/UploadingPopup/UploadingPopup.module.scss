@@ -14,7 +14,7 @@
   max-height: 300px;
   border: 1px solid var(--main-blue);
   border-radius: 5px;
-  position: absolute;
+  position: fixed;
   bottom: 3px;
   right: 20px;
   background-color: var(--white);
@@ -84,5 +84,6 @@
 }
 
 .PageDropBottom {
-  bottom: 0;
+  bottom: 7.5vh;
+  right: 10vw;
 }
