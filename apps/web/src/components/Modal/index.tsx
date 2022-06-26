@@ -15,11 +15,13 @@ interface IModal {
   titleStyle?: any;
 }
 function Modal({ isModalOpen, children, title, titleStyle, desc, buttonText, handleConfirm, isButtonAvailable }: IModal) {
-  console.log('isButtonAvailable', isButtonAvailable);
   return (
     <Card className={classNames(styles.Modal, { [styles.closed]: !isModalOpen })}>
       <div className={styles.Text}>
-        <h6 className={styles.Title} style={titleStyle}> {title} </h6>
+        <h6 className={styles.Title} style={titleStyle}>
+          {' '}
+          {title}{' '}
+        </h6>
         {children}
         <p className={styles.Desc}>{desc}</p>
       </div>

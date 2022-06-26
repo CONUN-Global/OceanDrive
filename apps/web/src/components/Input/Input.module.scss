@@ -16,15 +16,18 @@
     border: 1px solid var(--grey4);
 
     // text
-    font-style: normal;
     @include fontBodyXL;
     letter-spacing: 0.02em;
     color: var(--grey10);
 
     &:focus {
-      outline: 3px solid #dbf2ff;
-      border: 1px solid #dbf2ff;
+      outline: 3px solid var(--off-white);
+      border: 1px solid var(--off-white);
       color: var(--black);
+    }
+
+    &::placeholder {
+      color: var(--grey6);
     }
   }
 
@@ -44,6 +47,7 @@
     .EyeIcon {
       width: 20px;
       height: 15.81px;
+      fill: var(--sea-blue);
     }
   }
 }

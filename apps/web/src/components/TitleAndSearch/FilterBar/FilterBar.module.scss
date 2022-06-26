@@ -7,7 +7,7 @@
   left: 4%;
   top: 37%;
   min-width: 200px;
-  font-style: normal;
+
   @include fontBodyXL;
   background-color: var(--white);
   color: var(--grey8);
@@ -47,7 +47,7 @@
   position: absolute;
   left: 60px;
   min-width: 200px;
-  font-style: normal;
+
   @include fontBodyXL;
   background-color: var(--white);
   color: var(--grey8);

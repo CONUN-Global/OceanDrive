@@ -1,3 +1,5 @@
+@import '../../styles/scrollbar';
+
 :root {
   --list-item-height: 45px;
 }
@@ -40,9 +42,11 @@
 
   & .List {
     max-height: 250px;
+    margin: 3px 8px 0px 0px;
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 5px;
+    @include scrollbar;
 
     & .ListItem {
       display: flex;

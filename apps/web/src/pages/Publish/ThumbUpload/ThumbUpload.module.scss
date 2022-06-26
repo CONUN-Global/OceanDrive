@@ -8,27 +8,19 @@
   cursor: default;
   & .XBtnContainer {
     position: absolute;
-    padding: 5px;
+    padding: 4px 6px;
     border: none;
     outline: none;
     right: 10px;
     top: 10px;
-    font-size: 1.2rem;
-    color: var(--grey8);
-    background-color: inherit;
-    border-radius: 4px;
+    background-color: var(--white);
+    border-radius: 5px;
     cursor: pointer;
 
     & .XBtn {
       width: 10px;
       height: 10px;
-      position: absolute;
-      padding: 5px;
-      border: none;
-      outline: none;
-      right: 10px;
-      top: 10px;
-      fill: var(--sea-blue);
+      fill: var(--main-blue);
     }
   }
 

@@ -1,16 +1,23 @@
+@import '../../../styles/scrollbar';
+
 .PageContainer {
   width: 100%;
   height: 100%;
-  padding: 200px 0px 0px 0px;
+  padding: 150px 0px 0px 0px;
   overflow: hidden;
 
+  .TitleContainer {
+    margin-left: 5px;
+  }
+
   .GridContainer {
-    z-index: 200;
+    z-index: 2;
     display: grid;
-    padding: 5px 10px;
+    padding: 5px 10px 50px 5px;
     gap: 1.2rem;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
     overflow-y: auto;
+    @include scrollbar;
   }
 }

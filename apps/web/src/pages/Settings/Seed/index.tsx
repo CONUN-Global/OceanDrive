@@ -15,7 +15,7 @@ function Seed() {
 
   function handleCopy() {
     if (wordArray) {
-      const string = wordArray.toString();
+      const string = wordArray.join(' ');
       navigator.clipboard.writeText(string);
       handleMessage();
     }
@@ -37,7 +37,7 @@ function Seed() {
           </Button>
           {showMessage && <div className={styles.Copied}>Copied!</div>}
           <Button className={styles.Button} onClick={() => navigate(-1)}>
-            Ok
+            OK
           </Button>
         </div>
       </div>

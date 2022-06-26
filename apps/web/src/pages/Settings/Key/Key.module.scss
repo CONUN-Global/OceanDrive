@@ -11,14 +11,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: var(--grey10);
+      color: var(--black);
       padding: 0 20px;
       background-color: var(--white);
       word-break: break-all;
     }
 
     & .Warning {
-      margin-top: 10px;
+      margin-top: 18px;
+      margin-left: 2px;
       color: var(--main-blue);
       font-weight: 400;
     }
@@ -40,7 +41,8 @@
     & .CopyButton {
       background-color: var(--white);
       border-radius: 20px;
-      color: var(--main-blue);
+      color: var(--sea-blue);
+      min-width: 135px;
       font-weight: 700;
       font-size: 16px;
       box-shadow: none;

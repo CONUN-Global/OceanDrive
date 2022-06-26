@@ -52,6 +52,12 @@
       font-size: 14px;
       font-weight: 600;
       box-shadow: none;
+
+      &:hover {
+        background-color: #c6ebff;
+        color: var(--sea-blue);
+        border: 1px solid var(--sea-blue);
+      }
     }
   }
 }

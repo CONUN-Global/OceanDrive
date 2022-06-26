@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;900&family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap');
+// 100 - 300 UNUSED
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap');
 
 :root {
   --background: #f3f7ff;
   --black: #3a3a3a;
   --white: #fff;
+  --off-white: #dbf2ff;
   --middle-blue-grey: #80a0d4;
   --main-blue: #5f93f1;
   --sea-blue: #48afe8;
   --teal: #64c2d1;
+
+  // UNUSED
   --main-gradient: linear-gradient(244.5deg, #48afe8 12.9%, #317eff 85.63%);
   --second-gradient: linear-gradient(244.5deg, #317eff 12.9%, #80a0d5 85.63%);
   --warning-bg-color: #fcfc93;
@@ -29,6 +33,8 @@
   --grey11: #787878;
   --grey12: #686868;
   --grey13: #585858;
+
+  // UNUSED
   --grey14: #474747;
   --grey15: #373737;
   --grey16: #262626;

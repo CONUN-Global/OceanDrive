@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react'; 
+import { PersistGate } from 'redux-persist/integration/react';
 import { useLocation, useRoutes } from 'react-router-dom';
 import persistStore from 'redux-persist/es/persistStore';
 

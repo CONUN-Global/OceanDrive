@@ -11,16 +11,8 @@
     height: 800px;
     display: flex;
     flex-direction: column;
-    & .TopContainer {
-      & .Title {
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        color: var(--black);
-        font-size: 18px;
-      }
-    }
+    justify-content: space-between;
 
-    //   BOTTOM
     & .BottomContainer {
       box-sizing: border-box;
       width: 100%;

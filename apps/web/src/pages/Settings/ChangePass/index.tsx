@@ -29,7 +29,7 @@ function ChangePass() {
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    const validatedErrors = useValidate(errorMessages, userPassword, currentPass, newPass, confirmPass);
+    const validatedErrors = useValidate(userPassword, currentPass, newPass, confirmPass);
 
     if (validatedErrors.current !== '' || validatedErrors.confirmError !== '' || validatedErrors.newError !== '') {
       setErrorMessages(validatedErrors);

@@ -30,7 +30,6 @@
         justify-content: space-between;
 
         .AddressName {
-          font-style: normal;
           @include fontBodyXXL;
           text-transform: uppercase;
           color: var(--white);
@@ -51,7 +50,6 @@
   background: var(--sea-blue);
 
   .Wallet2 {
-    font-style: normal;
     @include fontBodyXXL;
     text-transform: uppercase;
     color: var(--white);
@@ -60,7 +58,6 @@
   }
 
   .AddressName2 {
-    font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 30px;
@@ -88,7 +85,7 @@
     margin-top: -10px;
 
     // text
-    font-style: normal;
+
     font-weight: 600;
     font-size: 12px;
     line-height: 17px;
