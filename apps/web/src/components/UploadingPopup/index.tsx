@@ -26,7 +26,7 @@ function ListItem({ file }: { file: UploadFile }) {
         </div>
         <div>{name}</div>
       </div>
-      <div><SpinningIcon fill='green' /></div>
+      <div className={styles.SpinningContainer}><SpinningIcon className={styles.SpinningIcon} fill='green' /></div>
     </li>
   );
 }
