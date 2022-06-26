@@ -24,16 +24,14 @@
     padding: 52px 46px;
     gap: 1px;
     background: #e8f0ff;
-    /* Main Blue */
-    border: 3px solid #5f93f1;
+    border: 3px solid var(--main-blue);
     border-radius: 5px;
 
     font-style: normal;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 0.02em;
-    /* Main Blue */
-    color: #5f93f1;
+    color: var(--main-blue);
 
     .Title {
       font-weight: 700;

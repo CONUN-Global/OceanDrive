@@ -17,7 +17,6 @@ const DropFile = () => {
   const [uploads, setUploads] = useState<UploadFile[]>([]);
 
   const sampleItems = uploads.length;
-  console.log(sampleItems);
 
   const dataExist = data !== null && data.length > 0;
 
