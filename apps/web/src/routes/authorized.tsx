@@ -11,6 +11,7 @@ import Publish from '../pages/Publish';
 import { Navigate } from 'react-router-dom';
 import Settings from '../pages/Settings';
 import Lock from 'src/pages/Lock';
+import { Navigate } from 'react-router-dom';
 
 export const authorizedRoutes = [
   {
@@ -46,5 +47,9 @@ export const authorizedRoutes = [
   {
     path: 'lock',
     element: <Lock />,
+  },
+  {
+    path: '*',
+    element: <Navigate to="/marketplace" replace />,
   },
 ];
