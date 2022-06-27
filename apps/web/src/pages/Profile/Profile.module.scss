@@ -12,11 +12,6 @@
     border-radius: 4px;
     gap: 24px;
     margin-bottom: 76px;
-
-    @media (max-width: 1200px) {
-      flex-direction: column;
-      max-width: 50%;
-    }
   }
 
   .BottomBoxContainer {

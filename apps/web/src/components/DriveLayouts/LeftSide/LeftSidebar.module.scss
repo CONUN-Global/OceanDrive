@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   min-height: 650px;
+  // Change --leftbar-size in RightSideLayer to the same
+  width: var(--leftbar-size);
 
   .ContentContainer {
     padding: 10vh 0;
@@ -35,7 +37,7 @@
 
     & .LinksContainer {
       margin-top: 100px;
-      max-width: 240px;
+      max-width: var(--leftbar-size);
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -46,7 +48,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-width: 240px;
+        min-width: var(--leftbar-size);
 
         & .Link {
           align-self: flex-end;
@@ -101,7 +103,6 @@
       width: 150px;
       background: var(--white);
       border: 1px solid var(--main-blue);
-
       font-weight: 700;
       margin-bottom: 10px;
 
