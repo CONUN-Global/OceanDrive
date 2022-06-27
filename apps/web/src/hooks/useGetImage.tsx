@@ -4,11 +4,11 @@ const { api } = window;
 
 function useGetImage(thumbHash: string) {
   const { data, isLoading, error, refetch } = useQuery(
-    ['get-preview', thumbHash],
+    ['get-thumb', thumbHash],
     async () => {
-      const data = await api.getFilePreview(thumbHash);
+      const data = await api.getThumb(thumbHash);
 
-      return data?.preview;
+      return data?.data;
     },
     {
       enabled: !!thumbHash,

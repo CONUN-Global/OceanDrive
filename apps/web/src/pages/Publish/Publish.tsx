@@ -17,7 +17,7 @@ const Publish = () => {
 
   const { mutateAsync: uploadFile } = useMutation(
     (file: any) =>
-      api.uploadFile({
+      api.uploadThumb({
         ...file,
         filePath: file?.path,
         fileName: file?.name,
