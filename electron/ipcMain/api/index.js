@@ -20,7 +20,7 @@ ipcMain.handle('get-app-version', async () => {
 ipcMain.handle('upload-file', async (_, info) => {
   try {
     const { node } = await getIpfsNode();
-    const fileContent = Buffer.from(info, 'base64');
+    const fileContent = Buffer.from(info);
 
     const response = await node.add({
       content: fileContent
@@ -43,7 +43,6 @@ ipcMain.handle('upload-thumb', async (_, info) => {
   try {
     const { node } = await getIpfsNode();
     console.log(info);
-    const fileContent = Buffer.from(info.src, 'base64');
 
     const response = await node.add({
       content: info.src
@@ -54,7 +53,7 @@ ipcMain.handle('upload-thumb', async (_, info) => {
       success: true
     };
   } catch (error) {
-    console.log('upload-file', error, 'error');
+    console.log('upload-thumb', error, 'error');
     return {
       data: null,
       success: false
@@ -74,8 +73,7 @@ ipcMain.handle('get-thumb', async (_, hash) => {
     }
     return {
       success: true,
-      data: preview,
-      preview: data
+      data
     };
   } catch (error) {
     console.log('get-file-preview', error?.message, 'error');
