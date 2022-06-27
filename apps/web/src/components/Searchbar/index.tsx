@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Searchbar.module.scss';
-import { ReactComponent as SearchIcon } from 'src/assets/icons/search_icon.svg';
+import { ReactComponent as SearchIcon } from '../../assets/icons/search_icon.svg';
 
 function Searchbar() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -10,12 +10,14 @@ function Searchbar() {
   }
 
   return (
-    <div className={styles.Container}>
-      <div className={styles.SVGContainer}>
-        <SearchIcon />
+    <>
+      <div className={styles.Container}>
+        <div className={styles.SVGContainer}>
+          <SearchIcon />
+        </div>
+        <input value={searchTerm} className={styles.Input} type="text" placeholder="Search" onChange={handleChange} />
       </div>
-      <input value={searchTerm} className={styles.Input} type="text" placeholder="Search" onChange={handleChange} />
-    </div>
+    </>
   );
 }
 

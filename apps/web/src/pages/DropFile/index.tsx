@@ -2,9 +2,10 @@ import React, { useCallback, useState } from 'react';
 import cuid from 'cuid';
 import TitleAndSearch from '../../components/TitleAndSearch';
 import DropZone from '../../components/DropZone/DropZone';
-import styles from './DropFile.module.scss';
+import styles from './Publish.module.scss';
 import { useMutation } from 'react-query';
-import Button from 'src/components/Button';
+import Button from '../../components/Button';
+import { toast, ToastContainer } from 'react-toastify';
 
 interface EventInterface {
   target: any;
@@ -26,7 +27,7 @@ const DropFile = () => {
       onSuccess: (e: any) => {
         console.log(e);
 
-        if (e?.success) alert('File uploaded successful');
+        if (e?.success) toast.success('File uploaded successful');
       },
     },
   );
@@ -35,14 +36,16 @@ const DropFile = () => {
     acceptedFiles.map((file: any) => {
       const reader = new FileReader();
 
-      reader.onload = function (e: EventInterface) {
-        setImages(prevState => [...prevState, { ...file, id: cuid(), src: e.target.result, filePath: e.target.result }]);
+      reader.onloadend = function (e: EventInterface) {
+        setImages(prevState => [...prevState, { ...file, id: cuid(), src: e.target.result, filePath: e.target.result, result: reader.result }]);
       };
+
       reader.readAsDataURL(file);
 
       return file;
     });
   }, []);
+  console.log(images);
 
   const handleSubmit = () => {
     images.forEach(image => {
@@ -52,7 +55,9 @@ const DropFile = () => {
 
   return (
     <div className={styles.PageContainer}>
+      <ToastContainer />
       <TitleAndSearch>My Drive</TitleAndSearch>
+      <Button onClick={handleSubmit}>Upload Files</Button>
       <DropZone onDrop={onDrop} accept={'image/*'} />
       <div className={styles.DroppedImgContainer}>
         {images.map((image: any) => {

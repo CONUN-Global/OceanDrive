@@ -16,8 +16,11 @@ import Button from '../../Button';
 import styles from './LeftSidebar.module.scss';
 
 import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../redux/authSlice';
 
 function LeftSide({ children }: { children?: ReactNode }) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -27,6 +30,8 @@ function LeftSide({ children }: { children?: ReactNode }) {
     { title: 'publish', icon: <PublishIcon /> },
     { title: 'host', icon: <HostIcon /> },
   ];
+
+  const handleLogout = () => dispatch(logout());
 
   return (
     <div className={styles.leftSideBar}>
@@ -61,7 +66,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
               </div>
               <div className={styles.Text}>Settings</div>
             </div>
-            <div className={styles.Link}>
+            <div className={styles.Link} onClick={handleLogout}>
               <div className={styles.SVGBox}>
                 <LogoutIcon />
               </div>

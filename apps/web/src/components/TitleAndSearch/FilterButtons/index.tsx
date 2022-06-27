@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
-import Button from 'src/components/Button';
+import Button from '../../Button';
 import styles from './FilterButtons.module.scss';
 
 function FilterButtons() {

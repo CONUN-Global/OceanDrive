@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../../../../redux/authSlice';
 import type { RootState } from '../../../../redux/store';
 import OnboardingContainer from '../../OnboardingContainer';
 import Navigation from '../../../../components/Navigation';
@@ -25,6 +26,7 @@ const titleStyle = {
 };
 
 function ConfirmCreate() {
+  const dispatch = useDispatch();
   const [inputPhrases, setInputPhrases] = useState<string[]>([]);
   const [allPhraseArr, setAllPhraseArr] = useState<string[]>([]);
   const [answerPhrases, setAnswerPhrases] = useState<string[]>([]);
@@ -75,9 +77,7 @@ function ConfirmCreate() {
 
   const handleConfirm = () => {
     setIsModalOpen(false);
-    localStorage.setItem('userLoggedIn', JSON.stringify(true));
-    navigate('/storage', { replace: true });
-    window.location.reload();
+    dispatch(login());
   };
   return (
     <OnboardingContainer className={styles.Onboarding} title={CONFIRM_WALLET_TITLE} description={CONFIRM_WALLET_DESCR}>
@@ -87,7 +87,7 @@ function ConfirmCreate() {
           <Tag key={`${i}_${phrase}`} round={true} length={inputPhrases.length} name={phrase} addItem={addItem} removeItem={removeItem} />
         ))}
       </div>
-      <Navigation clickText='Confirm' isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
+      <Navigation clickText="Confirm" isButtonAvailable={isPhraseVerified} prev={() => navigate(-1)} next={handleNext} />
       {isModalOpen && (
         <>
           <Backdrop isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}></Backdrop>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setBackAnimation } from 'src/redux/onboardingSlice';
+import { setBackAnimation } from '../../redux/onboardingSlice';
 import Button from '../Button';
 import HStack from '../HStack';
 import styles from './Navigation.module.scss';
@@ -17,12 +17,11 @@ function Navigation({ prev, next, isButtonAvailable = true, clickText }: INaviga
   const prevFunc = () => {
     dispatch(setBackAnimation(true));
     prev();
-
-  }
+  };
   const nextFunc = () => {
     dispatch(setBackAnimation(false));
     next();
-  }
+  };
 
   return (
     <HStack className={styles.HStack}>
