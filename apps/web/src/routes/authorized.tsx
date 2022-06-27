@@ -2,11 +2,11 @@ import React from 'react';
 import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
-import SplashScreen from '../pages/SplashScreen';
 import Storage from '../pages/Publish/Publish';
 import Profile from '../pages/Profile';
 import Host from '../pages/Host';
 import DriveLayout from '../components/DriveLayouts';
+import { Navigate } from 'react-router-dom';
 
 export const authorizedRoutes = [
   {
@@ -14,8 +14,8 @@ export const authorizedRoutes = [
     element: <DriveLayout />,
     children: [
       {
-        index: true,
-        element: <SplashScreen path="/publish" />,
+        path: '',
+        element: <Navigate to="/publish" replace />,
       },
       { path: 'wallet', element: <Wallet /> },
       { path: 'publish', element: <Storage /> },
@@ -29,5 +29,9 @@ export const authorizedRoutes = [
       { path: 'profile', element: <Profile /> },
       { path: 'host', element: <Host /> },
     ],
+  },
+  {
+    path: '*',
+    element: <Navigate to="/publish" replace />,
   },
 ];
