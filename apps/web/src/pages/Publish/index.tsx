@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Publish.module.scss';
-import Button from 'src/components/Button';
+import Button from '../../components/Button';
 
 //Cycoin market rate will go here.
 const cycoinRate = 487;

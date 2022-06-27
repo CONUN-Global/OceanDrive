@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ClickableTooltip from 'src/components/ClickableTooltip';
+import ClickableTooltip from '../../../components/ClickableTooltip';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/copy-icon.svg';
 
 import styles from './WalletCard.module.scss';

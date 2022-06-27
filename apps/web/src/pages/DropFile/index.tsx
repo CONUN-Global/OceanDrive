@@ -2,10 +2,10 @@ import React, { useCallback, useState } from 'react';
 import cuid from 'cuid';
 import TitleAndSearch from '../../components/TitleAndSearch';
 import DropZone from '../../components/DropZone/DropZone';
-import styles from './Publish.module.scss';
+import styles from './DropFile.module.scss';
 import { useMutation } from 'react-query';
 import Button from '../../components/Button';
-import { toast, ToastContainer } from 'react-toastify';
+// import { toast, ToastContainer } from 'react-toastify';
 
 interface EventInterface {
   target: any;
@@ -27,12 +27,14 @@ const DropFile = () => {
       onSuccess: (e: any) => {
         console.log(e);
 
-        if (e?.success) toast.success('File uploaded successful');
+        // if (e?.success) toast.success('File uploaded successful');
       },
     },
   );
 
   const onDrop = useCallback((acceptedFiles: any[]) => {
+    console.log(acceptedFiles);
+    
     acceptedFiles.map((file: any) => {
       const reader = new FileReader();
 
@@ -55,7 +57,7 @@ const DropFile = () => {
 
   return (
     <div className={styles.PageContainer}>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <TitleAndSearch>My Drive</TitleAndSearch>
       <Button onClick={handleSubmit}>Upload Files</Button>
       <DropZone onDrop={onDrop} accept={'image/*'} />

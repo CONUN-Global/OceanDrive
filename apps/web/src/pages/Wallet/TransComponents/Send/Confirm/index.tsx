@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Button from '../../../../../components/Button';
 import styles from './Confirm.module.scss';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 
 import { ReactComponent as SendIcon } from '../../../../../assets/icons/send.svg';
 import Modal from '../../../../../components/Modal';
 import Backdrop from '../../../../../components/Backdrop';
-import { toast, ToastContainer } from 'react-toastify';
+// import { toast, ToastContainer } from 'react-toastify';
 import classNames from 'classnames';
 
 const seedData = {
@@ -22,13 +22,13 @@ function Confirm() {
   function handleSubmit(e: any) {
     e.preventDefault();
     // API CALL
-    toast.success('Sent!', {
-      position: 'bottom-center',
-      autoClose: 1000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      progress: undefined,
-    });
+    // toast.success('Sent!', {
+    //   position: 'bottom-center',
+    //   autoClose: 1000,
+    //   hideProgressBar: true,
+    //   closeOnClick: true,
+    //   progress: undefined,
+    // });
     setShowModal(true);
   }
 
@@ -68,7 +68,7 @@ function Confirm() {
           </Modal>
         </>
       )}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   );
 }

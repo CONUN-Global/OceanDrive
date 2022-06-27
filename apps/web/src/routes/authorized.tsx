@@ -2,10 +2,11 @@ import React from 'react';
 import Wallet from '../pages/Wallet';
 import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
-import Storage from '../pages/Publish/Publish';
+import Storage from '../pages/Publish';
 import Profile from '../pages/Profile';
 import Host from '../pages/Host';
 import DriveLayout from '../components/DriveLayouts';
+import DropFile from '../pages/DropFile';
 import { Navigate } from 'react-router-dom';
 
 export const authorizedRoutes = [
@@ -19,7 +20,7 @@ export const authorizedRoutes = [
       },
       { path: 'profile', element: <Profile /> },
       { path: 'wallet', element: <Wallet /> },
-      { path: 'publish', element: <Publish /> },
+      { path: 'publish', element: <Storage /> },
       { path: 'host', element: <Host /> },
       { path: 'dropfile', element: <DropFile /> },
       {

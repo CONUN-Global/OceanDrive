@@ -14,9 +14,9 @@ import { queData } from './DemoData';
 import Data from '../../Marketplace/seedData.json';
 
 import styles from './BottomTable.module.scss';
-import { toast, ToastContainer } from 'react-toastify';
-import CollectionCard from 'src/pages/Marketplace/MarketplaceGrid/MarketplaceCard';
-import ClickableTooltip from 'src/components/ClickableTooltip';
+// import { toast, ToastContainer } from 'react-toastify';
+import CollectionCard from '../../../pages/Marketplace/MarketplaceGrid/MarketplaceCard';
+import ClickableTooltip from '../../../components/ClickableTooltip';
 
 interface PropWord {
   clicked: string;
@@ -124,7 +124,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                             </ClickableTooltip>
                           )}
                           {clicked === 'downloads' && <TickIcon />}
-                          <ToastContainer className={styles.ToastPosition} />
+                          {/* <ToastContainer className={styles.ToastPosition} /> */}
                         </td>
                         {clicked === 'personal' && (
                           <td>

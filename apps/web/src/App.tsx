@@ -24,9 +24,9 @@ function App() {
     <Layout>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <AnimatePresence exitBeforeEnter>
+        {/* <AnimatePresence exitBeforeEnter> */}
           <div key={location.pathname}>{routes}</div>
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </QueryClientProvider>
     </Layout>
   );
