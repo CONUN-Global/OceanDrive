@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import TitleAndSearch from '../../components/TitleAndSearch';
+import TitleAndSearch from '../../components/Title';
 import DragAndDrop from 'src/components/DragAndDrop';
 import { UploadFile } from 'src/types';
 

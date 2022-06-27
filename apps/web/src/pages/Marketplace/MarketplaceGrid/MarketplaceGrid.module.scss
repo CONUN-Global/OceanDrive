@@ -8,6 +8,11 @@
 
   .TitleContainer {
     margin-left: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   .GridContainer {

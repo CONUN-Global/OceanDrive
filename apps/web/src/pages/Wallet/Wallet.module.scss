@@ -1,16 +1,18 @@
+@import '../../styles/scrollbar.scss';
+
 .Container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 80px);
   box-sizing: border-box;
-  padding-top: 100px;
+  padding-top: 120px;
 
   .Content {
-    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
 
     & .BottomContainer {
       box-sizing: border-box;
@@ -18,12 +20,10 @@
 
       & .SelectTabContainer {
         display: flex;
-        padding-top: 3%;
 
         & .Tab {
           text-transform: uppercase;
           margin: 20px 20px;
-          padding-bottom: 10px;
           font-size: 18px;
           font-weight: 700;
           cursor: pointer;
@@ -49,6 +49,7 @@
         border-radius: 5px;
         background-color: var(--grey1);
         overflow-x: hidden;
+        @include scrollbar;
       }
     }
   }

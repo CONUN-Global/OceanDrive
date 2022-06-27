@@ -43,13 +43,13 @@
 
         .DescriptionWords {
           display: flex;
-          gap: 20px;
+          gap: 15px;
 
           .DescriptionWord {
             background: var(--grey1);
             border: none;
-            width: 159px;
-            height: 42px;
+            width: 150px;
+            height: 35px;
             border-radius: 4px;
             display: flex;
             justify-content: center;
@@ -59,15 +59,12 @@
             // text
             font-weight: 500;
             color: var(--grey10);
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
           }
 
           .ClickedWord {
-            // border: 1px solid red;
             background: var(--off-white);
-            // border: 1px solid var(--main-blue);
-
             color: var(--main-blue);
           }
         }
@@ -75,6 +72,7 @@
         .BoxedIcon {
           height: 100%;
           display: flex;
+
           justify-content: center;
           align-items: flex-end;
 

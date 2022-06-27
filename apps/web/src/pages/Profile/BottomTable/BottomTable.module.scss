@@ -177,7 +177,6 @@
       .DownloadActivityIcon {
         width: 22px;
         height: 19px;
-        // border: 1px solid green;
         margin-left: -5px;
       }
     }
@@ -202,18 +201,15 @@
 
       & :nth-child(2) {
         text-align: left;
-
-        font-weight: 700;
+        font-weight: 500;
         font-size: 16px;
         line-height: 104.9%;
         color: var(--main-blue);
       }
       & :nth-child(3) {
         text-align: left;
-
         font-weight: 400;
         font-size: 18px;
-        line-height: 26px;
         color: var(--teal);
       }
       & :nth-child(4) {
@@ -227,20 +223,16 @@
           gap: 5px;
 
           width: 122px;
-          height: 29px;
+          height: 30px;
           background: #ffecde;
           border-radius: 4px;
-          padding-right: 10px;
 
           .Cycon {
             width: 18.14px;
             height: 18.14px;
           }
           .CyconDescDiv {
-            font-weight: 700;
-            font-size: 15px;
-            line-height: 23px;
-            letter-spacing: 0.03em;
+            font-size: 14px;
             color: #f37123;
           }
         }
@@ -249,14 +241,11 @@
           width: 62px;
           background: #d9faff;
           padding-right: 0;
-
-          //text
-
-          font-weight: 700;
+          font-weight: 500;
+          width: 122px;
+          height: 30px;
           font-size: 16px;
-          line-height: 23px;
           text-align: center;
-          letter-spacing: 0.03em;
           color: var(--teal);
         }
       }
@@ -267,17 +256,13 @@
 
         font-weight: 400;
         font-size: 16px;
-        line-height: 23px;
         color: var(--grey10);
       }
       & :nth-child(6) {
         text-align: left;
         padding-left: 35px;
-
-        font-weight: 700;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 104.9%;
-        letter-spacing: 0.005em;
         color: var(--sea-blue);
       }
 
@@ -288,6 +273,7 @@
 
         svg {
           cursor: pointer;
+          height: 15px;
         }
       }
       & :nth-child(8) {

@@ -1,18 +1,21 @@
-import React from 'react';
-import TitleAndSearch from '../../../components/TitleAndSearch';
+import React, { useState } from 'react';
+import Title from '../../../components/Title';
 import { SeedDataType } from '../../Marketplace/seedDataType';
 import CollectionCard from './MarketplaceCard';
 import styles from './MarketplaceGrid.module.scss';
+import FilterButtons from './FilterButtons';
 
 interface ICollectionGrid {
   Data: SeedDataType[];
 }
 
 function CollectionGrid({ Data }: ICollectionGrid) {
+  const [currentData, setCurrentData] = useState(Data);
   return (
     <div className={styles.PageContainer}>
       <div className={styles.TitleContainer}>
-        <TitleAndSearch>MarketPlace</TitleAndSearch>
+        <Title>MarketPlace</Title>
+        <FilterButtons data={currentData} setData={setCurrentData} />
       </div>
       <div className={styles.GridContainer}>
         {Data.map(DataItem => (

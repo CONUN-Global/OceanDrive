@@ -100,7 +100,7 @@
     .UploadButton {
       border-radius: 20px;
       height: 42px;
-      width: 150px;
+      width: calc(var(--leftbar-size) * 0.75);
       background: var(--white);
       border: 1px solid var(--main-blue);
       font-weight: 700;

@@ -1,18 +1,22 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import Button from 'src/components/Button';
+import { SeedDataType } from '../../seedDataType';
 import styles from './FilterButtons.module.scss';
 
-function FilterButtons() {
+function FilterButtons({ data, setData }: { data: SeedDataType[]; setData: any }) {
   const buttonLabels = ['Sold', 'Purchased', 'Favorites'] as const;
 
   type Label = typeof buttonLabels[number];
 
-  const [activeTab, setActiveTab] = useState<Label | undefined>(undefined);
+  const [activeTab, setActiveTab] = useState<Label>('Sold');
 
   function handleClick(e: any) {
+    // data.filter();
     setActiveTab(e.target.innerText);
   }
+
+  // console.log('Date from btns', data);
 
   return (
     <div className={styles.BtnContainer}>

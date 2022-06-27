@@ -4,9 +4,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 10px;
-  min-height: 100px;
-  max-height: 200px;
 
   & .Title {
     box-sizing: border-box;
@@ -15,7 +12,6 @@
     display: flex;
     align-self: flex-start;
     color: var(--grey8);
-    padding-bottom: 50px;
   }
   & .SearchAndSort {
     width: 100%;

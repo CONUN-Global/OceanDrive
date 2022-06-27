@@ -195,7 +195,6 @@ function Publish() {
             Upload
           </Button>
         </div>
-        {!isPopupShowing && <UploadingPopup items={state.file} setIsPopupShowing={setIsPopupShowing} />}
       </form>
     </div>
   );
