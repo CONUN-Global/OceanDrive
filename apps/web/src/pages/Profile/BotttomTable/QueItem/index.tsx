@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { nameShortener } from 'src/utils';
 import { ReactComponent as GenearatedIcon } from '../../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as PauseIcon } from '../../../../assets/icons/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../../../assets/icons/play-icon.svg';
@@ -9,16 +10,7 @@ import styles from './QueItem.module.scss';
 const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
   const [icon, setIcon] = useState(val.copy);
 
-  let name;
-  const len = val.contentName.length;
-  if (len > 26) {
-    const arr = val.contentName.split('');
-    arr.splice(15, len - 23, '.', '.', '.');
-    const longName = arr.join('');
-    name = longName;
-  } else {
-    name = val.contentName;
-  }
+  const name = nameShortener(val.contentName, 26);
 
   return (
     <tr key={keyVal} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>

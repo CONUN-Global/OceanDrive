@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
+import { nameShortener } from 'src/utils';
 
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as SpinningIcon } from '../../assets/icons/spinning-icon.svg';
@@ -8,16 +9,7 @@ import { UploadFile } from '../../types';
 import styles from './UploadingPopup.module.scss';
 
 function ListItem({ file }: { file: UploadFile }) {
-  let name;
-  const len = file.name.length;
-  if (len > 31) {
-    const arr = file.name.split('');
-    arr.splice(15, len - 28, '.', '.', '.');
-    const longName = arr.join('');
-    name = longName;
-  } else {
-    name = file.name;
-  }
+  const name = nameShortener(file.name, 31);
   return (
     <li className={styles.ListItem}>
       <div className={styles.NameIconContainer}>
