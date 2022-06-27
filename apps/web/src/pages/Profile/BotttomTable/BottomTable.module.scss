@@ -1,4 +1,5 @@
 @import '../../../styles/scrollbar';
+@import '../../../styles/scrollbar.scss';
 
 .TopTableContainer {
   height: 25%;
@@ -50,6 +51,7 @@
 
 .TableBodyScroll {
   overflow-y: auto;
+  @include scrollbar;
 }
 
 .TopTable {
@@ -58,6 +60,7 @@
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   overflow: auto;
+  @include scrollbar;
   overflow-x: hidden;
 }
 
@@ -80,6 +83,7 @@
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   overflow: auto;
+  @include scrollbar;
   overflow-x: hidden;
 
   .GridContainer {
