@@ -1,7 +1,7 @@
 @import '../../styles/fonts';
 
 .Container {
-  padding: 15% 60px 0px 60px;
+  padding: 10% 10px 0px 10px;
   width: 100%;
   height: calc(100vh - 25px);
   overflow-y: hidden;
@@ -11,7 +11,7 @@
     display: flex;
     border-radius: 4px;
     gap: 24px;
-    margin-bottom: 76px;
+    margin-bottom: 46px;
   }
 
   .BottomBoxContainer {
@@ -56,6 +56,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            user-select: none;
 
             // text
             font-weight: 500;

@@ -78,7 +78,7 @@
 
 .BottomTable {
   min-height: 50%;
-  max-height: 65%;
+  max-height: 62%;
   width: 100%;
   border: 1px solid var(--main-blue);
   border-radius: 5px;
@@ -208,7 +208,7 @@
 
       & :nth-child(2) {
         text-align: left;
-
+        user-select: none;
         font-weight: 700;
         font-size: 16px;
         line-height: 104.9%;
@@ -291,6 +291,7 @@
         padding-right: 25px;
         transition: all 0.05s ease-in-out;
         position: relative;
+        padding-left: 5px;
 
         svg {
           cursor: pointer;
@@ -327,5 +328,5 @@
 
 .BottomWhenQueExist {
   min-height: 20%;
-  max-height: 33%;
+  max-height: 28%;
 }

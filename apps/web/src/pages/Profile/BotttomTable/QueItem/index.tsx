@@ -1,20 +1,32 @@
 import classNames from 'classnames';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { ReactComponent as GenearatedIcon } from '../../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as PauseIcon } from '../../../../assets/icons/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../../../assets/icons/play-icon.svg';
 
 import styles from './QueItem.module.scss';
 
-const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
+const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
   const [icon, setIcon] = useState(val.copy);
+
+  let name;
+  const len = val.contentName.length;
+  if (len > 26) {
+    const arr = val.contentName.split('');
+    arr.splice(15, len - 23, '.', '.', '.');
+    const longName = arr.join('');
+    name = longName;
+  } else {
+    name = val.contentName;
+  }
+
   return (
     <tr key={keyVal} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>
       {/* here will be generated icon */}
       <td className={styles.FirstTd}>
         <GenearatedIcon />
       </td>
-      <td className={styles.SecondTd}>{val.contentName}</td>
+      <td className={styles.SecondTd}>{name}</td>
       <td>{val.fileSize}</td>
       <td className={styles.HideTh}></td>
       <td>{val.date}</td>
@@ -46,6 +58,6 @@ const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
       </td>
     </tr>
   );
-}
+};
 
-export default QueItem
+export default QueItem;

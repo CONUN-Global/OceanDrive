@@ -92,8 +92,16 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
               <tbody className={styles.TableBodyScroll}>
                 {data.length > 0 &&
                   data.map((val: any, key: any) => {
-                    function copyText() {
-                      navigator.clipboard.writeText(val.txHash);
+
+                    let name;
+                    const len = val.contentName.length;
+                    if (len > 26) {
+                      const arr = val.contentName.split('');
+                      arr.splice(15, len - 23, '.', '.', '.');
+                      const longName = arr.join('');
+                      name = longName;
+                    } else {
+                      name = val.contentName;
                     }
 
                     return (
@@ -101,7 +109,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td className={styles.FirstTd}>
                           <GenearatedIcon />
                         </td>
-                        <td>{val.contentName}</td>
+                        <td>{name}</td>
                         <td>{val.fileSize}</td>
                         <td className={clicked === 'downloads' ? styles.HideTh : ''}>
                           {clicked === 'published' &&

@@ -1,4 +1,5 @@
 @import '../../styles/fonts';
+@import '../../styles/scrollbar.scss';
 .PageContainer {
   display: flex;
   flex-direction: column;
@@ -7,7 +8,7 @@
   padding-top: 17.4px;
   width: 100%;
   height: 100%;
-  gap: 90px;
+  gap: 50px;
   position: relative;
 
   .WelcomeContainer {
@@ -73,7 +74,8 @@
   }
 
   .DataExistHeight {
-    height: 226px;
+    height: 216px;
+    margin-top: 70px;
   }
 
   .BottomTable {
@@ -83,6 +85,7 @@
     border: 1px solid var(--main-blue);
     border-radius: 5px;
     overflow: auto;
+    @include scrollbar;
     overflow-x: hidden;
     position: relative;
 
@@ -206,6 +209,7 @@
         & :nth-child(6) {
           transition: all 0.05s ease-in-out;
           position: relative;
+          padding-left: 5px;
 
           svg {
             cursor: pointer;
