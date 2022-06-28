@@ -5,9 +5,9 @@ const ErrMsg = {
   match: "Provided passwords don't match.",
 };
 
-let errs = { current: '', newError: '', confirmError: '' };
-
 function useValidate(userPassword: string, currentPass: string, newPass: string, confirmPass: string) {
+  let errs = { current: '', newError: '', confirmError: '' };
+
   if (currentPass !== userPassword) {
     errs = { ...errs, current: ErrMsg.incorrect };
   }

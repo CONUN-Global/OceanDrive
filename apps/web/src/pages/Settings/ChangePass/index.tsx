@@ -29,6 +29,7 @@ function ChangePass() {
 
   function handleSubmit(e: any) {
     e.preventDefault();
+
     const validatedErrors = useValidate(userPassword, currentPass, newPass, confirmPass);
 
     if (validatedErrors.current !== '' || validatedErrors.confirmError !== '' || validatedErrors.newError !== '') {
@@ -40,6 +41,7 @@ function ChangePass() {
     setError(false);
     navigate(-1);
   }
+
   return (
     <SettingsCard title="Change Password" isLarge={true}>
       <form className={styles.Container} onSubmit={handleSubmit}>
