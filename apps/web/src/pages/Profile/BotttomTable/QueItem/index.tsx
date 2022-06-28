@@ -16,7 +16,7 @@ const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
     <tr key={keyVal} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>
       {/* here will be generated icon */}
       <td className={styles.FirstTd}>
-        <GenearatedIcon />
+        <GenearatedIcon width={12.64} height={15} />
       </td>
       <td className={styles.SecondTd}>{name}</td>
       <td>{val.fileSize}</td>
@@ -31,8 +31,8 @@ const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
       <td className={styles.IconSt}>
         {icon === 'pause-icon' && (
           <PauseIcon
-            width={20}
-            height={20}
+            width={19}
+            height={19}
             onClick={() => {
               setIcon('play-icon');
             }}
@@ -40,8 +40,9 @@ const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
         )}
         {icon === 'play-icon' && (
           <PlayIcon
-            width={20}
-            height={20}
+          fill='yellow'
+            width={19}
+            height={19}
             onClick={() => {
               setIcon('pause-icon');
             }}

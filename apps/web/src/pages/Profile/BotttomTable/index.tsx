@@ -92,7 +92,6 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
               <tbody className={styles.TableBodyScroll}>
                 {data.length > 0 &&
                   data.map((val: any, key: any) => {
-
                     let name;
                     const len = val.contentName.length;
                     if (len > 26) {
@@ -107,7 +106,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                     return (
                       <tr key={key} className={styles.TableRow2}>
                         <td className={styles.FirstTd}>
-                          <GenearatedIcon />
+                          <GenearatedIcon width={12.64} height={15} />
                         </td>
                         <td>{name}</td>
                         <td>{val.fileSize}</td>
@@ -117,7 +116,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                               <div className={classNames(styles.AmountContainer, styles.AmountFreeContainer)}>{val.amount}</div>
                             ) : (
                               <div className={styles.AmountContainer}>
-                                <CyconIcon className={styles.Cycon} fill="#f37123" />
+                                <CyconIcon width={10} height={10} className={styles.Cycon} fill="#f37123" />
                                 <div className={styles.CyconDescDiv}>{val.amount}</div>
                               </div>
                             ))}
@@ -126,17 +125,16 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>{val.txHash}</td>
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
-                            <ClickableTooltip place='publish-table' copyText={val.txHash}>
-                              <CopyIcon
-                              />
+                            <ClickableTooltip place="publish-table" copyText={val.txHash}>
+                              <CopyIcon width={11} height={11} />
                             </ClickableTooltip>
                           )}
-                          {clicked === 'downloads' && <TickIcon />}
+                          {clicked === 'downloads' && <TickIcon width={13} height={13} />}
                           <ToastContainer className={styles.ToastPosition} />
                         </td>
                         {clicked === 'personal' && (
                           <td>
-                            <GeneratedPersonalIcon />
+                            <GeneratedPersonalIcon width={13} height={13} />
                           </td>
                         )}
                       </tr>

@@ -39,7 +39,7 @@ const Profile = () => {
 
             {clicked === 'published' && (
               <div className={styles.BoxedIcon}>
-                <BoxedIcon onClick={() => setShowGrid(!showGrid)} />
+                <BoxedIcon width={18} height={18} onClick={() => setShowGrid(!showGrid)} />
               </div>
             )}
           </div>
