@@ -1,11 +1,43 @@
 @import '../../styles/fonts';
+@import '../../styles/scrollbar.scss';
 .PageContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 17.4px;
   width: 100%;
   height: 100%;
+  gap: 50px;
+  position: relative;
+
+  .WelcomeContainer {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 11%;
+    height: 216px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 52px 46px;
+    gap: 1px;
+    background: #e8f0ff;
+    border: 3px solid var(--main-blue);
+    border-radius: 5px;
+
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: var(--main-blue);
+
+    .Title {
+      font-weight: 700;
+    }
+  }
 
   & .DropZoneContainer {
     border: 1px dashed var(--main-blue);
@@ -37,6 +69,152 @@
         font-weight: 400;
         font-size: 12px;
         color: var(--grey11);
+      }
+    }
+  }
+
+  .DataExistHeight {
+    height: 216px;
+    margin-top: 70px;
+  }
+
+  .BottomTable {
+    min-height: 50%;
+    max-height: 65%;
+    width: 100%;
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;
+    overflow: auto;
+    @include scrollbar;
+    overflow-x: hidden;
+    position: relative;
+
+    .GridContainer {
+      display: grid;
+      padding: 15px;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
+    }
+  }
+
+  .TableContainer {
+    width: calc(100% - 1px);
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    .Table {
+      width: 100%;
+      min-width: 500px;
+      border-collapse: collapse;
+      border-radius: 5px;
+      background: var(--grey2);
+
+      .TableRow {
+        background: var(--grey2);
+        width: 100%;
+        height: 40px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-collapse: collapse;
+
+        th {
+          background: var(--grey2);
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 104.9%;
+          text-transform: capitalize;
+          color: var(--black);
+        }
+
+        & :nth-child(1) {
+          width: 7.41%;
+        }
+
+        & :nth-child(2) {
+          text-align: left;
+          width: 32%;
+          border-top-left-radius: 5px;
+        }
+        & :nth-child(3) {
+          width: 17.82%;
+          text-align: left;
+        }
+
+        & :nth-child(4) {
+          width: 24.24%;
+          text-align: left;
+        }
+        & :nth-child(5) {
+          width: 12.64%;
+          text-align: left;
+          border-top-right-radius: 5px;
+        }
+        & :nth-child(6) {
+          width: 5.4%;
+          text-align: left;
+        }
+      }
+
+      .TableRow2 {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-width: 0px 1px 1px 1px;
+        border-style: solid;
+        border-color: var(--grey4);
+        background-color: var(--white);
+
+        & :nth-child(2) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          color: var(--main-blue);
+        }
+        & :nth-child(3) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 26px;
+          color: var(--teal);
+        }
+
+        & :nth-child(4) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 23px;
+          color: var(--grey10);
+        }
+        & :nth-child(5) {
+          text-align: left;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 104.9%;
+          letter-spacing: 0.005em;
+          color: var(--sea-blue);
+        }
+
+        & :nth-child(6) {
+          transition: all 0.05s ease-in-out;
+          position: relative;
+          padding-left: 5px;
+
+          svg {
+            cursor: pointer;
+          }
+        }
       }
     }
   }

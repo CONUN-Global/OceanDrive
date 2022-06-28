@@ -1,7 +1,8 @@
 @import '../../../styles/scrollbar';
+@import '../../../styles/scrollbar.scss';
 
 .TopTableContainer {
-  height: 25%;
+  height: 28%;
   width: 100%;
   margin-bottom: 24px;
   margin-top: 23px;
@@ -50,6 +51,7 @@
 
 .TableBodyScroll {
   overflow-y: auto;
+  @include scrollbar;
 }
 
 .TopTable {
@@ -58,28 +60,30 @@
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   overflow: auto;
+  @include scrollbar;
   overflow-x: hidden;
 }
 
 .TableTitle {
   text-transform: uppercase;
-  height: 29px;
-
+  height: 16px;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 11px;
+  line-height: 16px;
   display: flex;
   text-transform: uppercase;
   color: var(--main-blue);
+  margin-bottom: 4px;
 }
 
 .BottomTable {
   min-height: 50%;
-  max-height: 65%;
+  max-height: 62%;
   width: 100%;
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   overflow: auto;
+  @include scrollbar;
   overflow-x: hidden;
 
   .GridContainer {
@@ -121,14 +125,12 @@
         position: sticky;
         top: 0;
         z-index: 10;
-      }
-
-      th {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 104.9%;
         text-transform: capitalize;
         color: var(--black);
+        letter-spacing: 0.005em;
       }
 
       & :nth-child(1) {
@@ -173,13 +175,11 @@
       }
       .DownloadedIconStyle {
         width: 100%;
-        height: 18px;
-        padding-right: 10px;
+        height: 13px;
       }
       .DownloadActivityIcon {
-        width: 22px;
-        height: 19px;
-        // border: 1px solid green;
+        width: 19px;
+        height: 16px;
         margin-left: -5px;
       }
     }
@@ -190,7 +190,7 @@
 
     .TableRow2 {
       width: 100%;
-      height: 60px;
+      height: 40px;
       text-align: center;
       border-bottom: 1px solid black;
       border-width: 0px 1px 1px 1px;
@@ -198,15 +198,17 @@
       border-color: var(--grey4);
       background-color: var(--white);
 
+      td {
+      }
+
       .FirstTd {
         padding-left: 5px;
       }
 
       & :nth-child(2) {
         text-align: left;
-
-        font-weight: 700;
-        font-size: 16px;
+        font-weight: 600;
+        font-size: 12px;
         line-height: 104.9%;
         color: var(--main-blue);
       }
@@ -214,7 +216,7 @@
         text-align: left;
 
         font-weight: 400;
-        font-size: 18px;
+        font-size: 12px;
         line-height: 26px;
         color: var(--teal);
       }
@@ -228,20 +230,19 @@
           justify-content: center;
           gap: 5px;
 
-          width: 122px;
-          height: 29px;
+          width: 72px;
+          height: 18px;
           background: #ffecde;
           border-radius: 4px;
-          padding-right: 10px;
 
           .Cycon {
-            width: 18.14px;
-            height: 18.14px;
+            width: 10px;
+            height: 10px;
           }
           .CyconDescDiv {
-            font-weight: 700;
-            font-size: 15px;
-            line-height: 23px;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 14px;
             letter-spacing: 0.03em;
             color: #f37123;
           }
@@ -254,8 +255,8 @@
 
           //text
 
-          font-weight: 700;
-          font-size: 16px;
+          font-weight: 600;
+          font-size: 11px;
           line-height: 23px;
           text-align: center;
           letter-spacing: 0.03em;
@@ -266,18 +267,16 @@
       & :nth-child(5) {
         text-align: left;
         padding-left: 25px;
-
         font-weight: 400;
-        font-size: 16px;
-        line-height: 23px;
+        font-size: 12px;
+        line-height: 17px;
         color: var(--grey10);
       }
       & :nth-child(6) {
         text-align: left;
         padding-left: 35px;
-
-        font-weight: 700;
-        font-size: 16px;
+        font-weight: 600;
+        font-size: 12px;
         line-height: 104.9%;
         letter-spacing: 0.005em;
         color: var(--sea-blue);
@@ -287,6 +286,7 @@
         padding-right: 25px;
         transition: all 0.05s ease-in-out;
         position: relative;
+        padding-left: 5px;
 
         svg {
           cursor: pointer;
@@ -322,6 +322,6 @@
 }
 
 .BottomWhenQueExist {
-  min-height: 20%;
-  max-height: 33%;
+  min-height: 28%;
+  max-height: 28%;
 }

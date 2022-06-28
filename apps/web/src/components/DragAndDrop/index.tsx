@@ -1,22 +1,15 @@
-import cuid from 'cuid';
 import React, { useCallback, useMemo, useState } from 'react';
-import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
 import Dropzone, { useDropzone } from 'react-dropzone';
 import { useMutation } from 'react-query';
+import cuid from 'cuid';
+import moment from 'moment';
+import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
 import { UploadFile } from 'src/types';
 import { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR } from './constants';
 
 import styles from './DragAndDrop.module.scss';
 
 const { api } = window;
-
-const baseStyle = {
-  borderWidth: 1.6,
-  borderRadius: 10,
-  backgroundColor: '#EDF9FF',
-  outline: 'none',
-  transition: 'border .24s ease-in-out',
-};
 
 const focusedStyle = {
   backgroundColor: '#EDF9FF',
@@ -38,9 +31,18 @@ interface IProps {
   imgOnly?: boolean;
   children?: React.ReactNode;
   accept?: any;
+  bgColor?: string;
 }
 
-function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
+function DragAndDrop({ bgColor, accept, data, setData, maxFiles = 0, maxSize = undefined, imgOnly = false, children }: IProps) {
+  const baseStyle = {
+    borderWidth: 1.6,
+    borderRadius: 10,
+    backgroundColor: bgColor ? bgColor : '#EDF9FF',
+    outline: 'none',
+    transition: 'border .24s ease-in-out',
+  };
+
   const [errors, setErrors] = useState<string>('');
 
   //UNUSED UNTIL WE MAKE API REQUEST
@@ -79,10 +81,14 @@ function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined,
     });
     ///To display  images
     acceptedFiles.map((file: any) => {
+      const fdate = moment(file.lastModifiedDate).format('MM.DD.YYYY hh:mm a');
       const reader = new FileReader();
 
       reader.onload = function (e: any) {
-        setData((prevState: UploadFile[]) => [...prevState, { type: file.type, size: file.size, path: file.path, name: file.name, id: cuid(), src: e.target.result, filePath: e.target.result }]);
+        setData((prevState: UploadFile[]) => [
+          ...prevState,
+          { name: file.name, size: file.size, date: fdate, type: file.type, path: file.path, id: cuid(), src: e.target.result, filePath: e.target.result },
+        ]);
       };
       reader.readAsDataURL(file);
 
@@ -110,7 +116,7 @@ function DragAndDrop({ accept, data, setData, maxFiles = 0, maxSize = undefined,
 
   return (
     <>
-      <div {...getRootProps({ className: styles.Container, style })}>
+      <div {...getRootProps({ style, className: styles.Container })}>
         <input {...getInputProps()} />
         <div onClick={open} className={styles.ContentContainer}>
           {isDragActive ? (

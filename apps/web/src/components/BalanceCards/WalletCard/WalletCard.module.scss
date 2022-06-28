@@ -1,8 +1,8 @@
 @import '../../../styles/fonts';
 
 .WalletCard {
-  height: 104px;
-  width: 372px;
+  height: 78px;
+  width: 296px;
   background: radial-gradient(81.07% 41.44% at 74.1% 69.96%, #48a8e8 0%, rgba(100, 194, 209, 0.8) 100%);
   border-radius: 4px;
   display: flex;
@@ -15,7 +15,12 @@
     padding: 20px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 17px;
+
+    .Img img {
+      width: 46px;
+      height: 46px;
+    }
 
     .Text {
       height: 100%;
@@ -23,11 +28,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 9px;
+      gap: 5px;
 
       .Wallet {
         font-weight: 600;
-        font-size: 26px;
+        font-size: 18px;
         line-height: 100.9%;
         text-transform: uppercase;
         color: var(--white);
@@ -36,12 +41,14 @@
 
       .Address {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         position: relative;
+        gap: 11px;
 
         .AddressName {
-          @include fontBodyXXL;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
           text-transform: uppercase;
           color: var(--white);
           opacity: 0.6;

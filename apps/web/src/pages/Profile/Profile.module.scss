@@ -1,7 +1,7 @@
 @import '../../styles/fonts';
 
 .Container {
-  padding: 15% 60px 0px 60px;
+  padding: 15% 10px 0px 10px;
   width: 100%;
   height: calc(100vh - 25px);
   overflow-y: hidden;
@@ -10,25 +10,25 @@
   .BalanceCards {
     display: flex;
     border-radius: 4px;
-    gap: 24px;
-    margin-bottom: 76px;
+    gap: 13px;
+    margin-bottom: 46px;
   }
 
   .BottomBoxContainer {
-    margin-bottom: 16px;
+    margin-bottom: 21px;
     width: calc(100% - 5px);
 
     .BottomBox {
       width: 100%;
-      height: 89px;
+      height: 61px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       .DescriptionTitle {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 28px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 23px;
         display: flex;
         align-items: center;
         color: var(--black);
@@ -44,24 +44,25 @@
 
         .DescriptionWords {
           display: flex;
-          gap: 20px;
+          gap: 9px;
 
           .DescriptionWord {
             background: var(--grey1);
             border: none;
-            width: 159px;
-            height: 42px;
+            width: 153px;
+            height: 28px;
             border-radius: 4px;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            user-select: none;
 
             // text
-            font-weight: 500;
+            font-weight: 400;
             color: var(--grey10);
-            font-size: 18px;
-            line-height: 26px;
+            font-size: 14px;
+            line-height: 150%;
             text-transform: uppercase;
           }
 

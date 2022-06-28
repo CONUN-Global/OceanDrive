@@ -26,7 +26,7 @@ const WalletCard = () => {
           <div className={styles.Address}>
             <div className={styles.AddressName}>0x398543592...792085485846</div>
             <ClickableTooltip copyText={'0x398543592...792085485846'}>
-              <CopyIcon fill="#ffffff" />
+              <CopyIcon width={12} height={12} fill="#ffffff" />
             </ClickableTooltip>
           </div>
         </div>
