@@ -19,15 +19,9 @@ const WalletCard = () => {
         <div className={styles.Text}>
           <div className={styles.Wallet}>my wallet</div>
           <div className={styles.Address}>
-<<<<<<< HEAD
             <div className={styles.AddressName}>{shortenedID}</div>
             <ClickableTooltip copyText={walletID}>
               <CopyIcon fill="#ffffff" />
-=======
-            <div className={styles.AddressName}>0x398543592...792085485846</div>
-            <ClickableTooltip copyText={'0x398543592...792085485846'}>
-              <CopyIcon width={12} height={12} fill="#ffffff" />
->>>>>>> master
             </ClickableTooltip>
           </div>
         </div>

@@ -67,22 +67,13 @@
 
 .TableTitle {
   text-transform: uppercase;
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-  font-weight: 700;
-  font-size: 16px;
-=======
   height: 16px;
   font-weight: 700;
   font-size: 11px;
   line-height: 16px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
   display: flex;
   color: var(--main-blue);
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-  padding: 1px 0 5px 5px;
-=======
   margin-bottom: 4px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
 }
 
 .BottomTable {
@@ -135,17 +126,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-      }
-
-      th {
-        font-weight: 500;
-        font-size: 16px;
-=======
         font-weight: 600;
-        font-size: 12px;
-        line-height: 104.9%;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
+        font-size: 14px;
         text-transform: capitalize;
         color: var(--black);
         letter-spacing: 0.005em;
@@ -196,13 +178,8 @@
         height: 13px;
       }
       .DownloadActivityIcon {
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-        width: 22px;
-        height: 19px;
-=======
         width: 19px;
         height: 16px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
         margin-left: -5px;
       }
     }
@@ -230,25 +207,16 @@
 
       & :nth-child(2) {
         text-align: left;
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-        font-weight: 500;
-        font-size: 16px;
-=======
         font-weight: 600;
-        font-size: 12px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
+        font-size: 14px;
         line-height: 104.9%;
         color: var(--main-blue);
       }
       & :nth-child(3) {
         text-align: left;
         font-weight: 400;
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-        font-size: 18px;
-=======
-        font-size: 12px;
+        font-size: 14px;
         line-height: 26px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
         color: var(--teal);
       }
       & :nth-child(4) {
@@ -261,25 +229,14 @@
           justify-content: center;
           gap: 5px;
 
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/BottomTable.module.scss
-          width: 122px;
-          height: 30px;
-=======
-          width: 72px;
-          height: 18px;
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/BottomTable.module.scss
+          width: 110px;
+          height: 28px;
           background: #ffecde;
           border-radius: 4px;
 
-          .Cycon {
-            width: 10px;
-            height: 10px;
-          }
           .CyconDescDiv {
-            font-weight: 600;
-            font-size: 10px;
-            line-height: 14px;
-            letter-spacing: 0.03em;
+            font-weight: 500;
+            font-size: 14px;
             color: #f37123;
           }
         }
@@ -289,9 +246,9 @@
           background: #d9faff;
           padding-right: 0;
           font-weight: 500;
-          width: 122px;
-          height: 30px;
-          font-size: 16px;
+          width: 110px;
+          height: 28px;
+          font-size: 14px;
           text-align: center;
           color: var(--teal);
         }
@@ -301,7 +258,7 @@
         text-align: left;
         padding-left: 25px;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 17px;
         color: var(--grey10);
       }
@@ -309,7 +266,7 @@
         text-align: left;
         padding-left: 35px;
         font-weight: 600;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 104.9%;
         letter-spacing: 0.005em;
         color: var(--sea-blue);

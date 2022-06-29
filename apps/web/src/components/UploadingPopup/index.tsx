@@ -9,9 +9,6 @@ import { UploadFile } from '../../types';
 import styles from './UploadingPopup.module.scss';
 
 function ListItem({ file }: { file: UploadFile }) {
-<<<<<<< HEAD
-  return <li className={styles.ListItem}>{file.name}</li>;
-=======
   const name = nameShortener(file.name, 31);
   return (
     <li className={styles.ListItem}>
@@ -21,10 +18,11 @@ function ListItem({ file }: { file: UploadFile }) {
         </div>
         <div>{name}</div>
       </div>
-      <div className={styles.SpinningContainer}><SpinningIcon className={styles.SpinningIcon} fill='green' /></div>
+      <div className={styles.SpinningContainer}>
+        <SpinningIcon className={styles.SpinningIcon} fill="green" />
+      </div>
     </li>
   );
->>>>>>> master
 }
 
 function UploadingPopup({ items, page }: { items: UploadFile[]; page: string }) {

@@ -16,8 +16,6 @@ function FilterButtons({ data, setData }: { data: SeedDataType[]; setData: any }
     setActiveTab(e.target.innerText);
   }
 
-  // console.log('Date from btns', data);
-
   return (
     <div className={styles.BtnContainer}>
       {buttonLabels.map((btn, index) => {

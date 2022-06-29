@@ -99,17 +99,15 @@
 
     .UploadButton {
       border-radius: 20px;
-      height: 42px;
-      width: calc(var(--leftbar-size) * 0.75);
+      height: calc(var(--leftbar-size) * 0.2);
+      width: calc(var(--leftbar-size) * 0.6);
       background: var(--white);
       border: 1px solid var(--main-blue);
-      font-weight: 700;
       margin-bottom: 10px;
 
       & .UploadText {
-        @include fontBodyXXL;
+        @include fontBodyXL;
         text-align: center;
-        letter-spacing: 0.02em;
         color: var(--main-blue);
       }
       svg {

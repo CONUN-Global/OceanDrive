@@ -4,7 +4,6 @@ import QueItem from './QueItem';
 
 import { ReactComponent as GeneratedIcon } from '../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/boxed-copy-icon.svg';
-import { ReactComponent as CyconIcon } from '../../../assets/icons/boxed-cycon-icon.svg';
 import { ReactComponent as TickIcon } from '../../../assets/icons/tick-icon.svg';
 import { ReactComponent as DownloadedIcon } from '../../../assets/icons/downloaded-icon.svg';
 import { ReactComponent as GeneratedPersonalIcon } from '../../../assets/icons/generated-personal-icon.svg';
@@ -105,11 +104,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                     return (
                       <tr key={key} className={styles.TableRow2}>
                         <td className={styles.FirstTd}>
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/index.tsx
-                          <GeneratedIcon />
-=======
-                          <GenearatedIcon width={12.64} height={15} />
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/index.tsx
+                          <GeneratedIcon width={12.64} height={15} />
                         </td>
                         <td>{name}</td>
                         <td>{val.fileSize}</td>
@@ -119,7 +114,6 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                               <div className={classNames(styles.AmountContainer, styles.AmountFreeContainer)}>{val.amount}</div>
                             ) : (
                               <div className={styles.AmountContainer}>
-                                <CyconIcon width={10} height={10} className={styles.Cycon} fill="#f37123" />
                                 <div className={styles.CyconDescDiv}>{val.amount}</div>
                               </div>
                             ))}
@@ -129,18 +123,10 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
                             <ClickableTooltip place="publish-table" copyText={val.txHash}>
-<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/index.tsx
-                              <CopyIcon />
-                            </ClickableTooltip>
-                          )}
-                          {clicked === 'downloads' && <TickIcon />}
-=======
                               <CopyIcon width={11} height={11} />
                             </ClickableTooltip>
                           )}
                           {clicked === 'downloads' && <TickIcon width={13} height={13} />}
-                          <ToastContainer className={styles.ToastPosition} />
->>>>>>> master:apps/web/src/pages/Profile/BotttomTable/index.tsx
                         </td>
                         {clicked === 'personal' && (
                           <td>

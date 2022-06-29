@@ -9,7 +9,8 @@ import BalanceCard from 'src/components/BalanceCards/BalanceCard';
 import styles from './Wallet.module.scss';
 
 function Wallet() {
-  const [currentTab, setCurrentTab] = useState<'Send' | 'Transactions' | 'Receive'>('Transactions');
+  const Tabs = ['Transactions', 'Send', 'Receive'] as const;
+  const [currentTab, setCurrentTab] = useState<typeof Tabs[number]>('Transactions');
   return (
     <>
       <div className={styles.Container}>
@@ -18,16 +19,13 @@ function Wallet() {
             <BalanceCard />
           </div>
           <div className={styles.BottomContainer}>
+            <h3 className={styles.Title}>MY ACTIVITY</h3>
             <div className={styles.SelectTabContainer}>
-              <div className={classNames(styles.Tab, { [styles.active]: currentTab === 'Transactions' })} onClick={() => setCurrentTab('Transactions')}>
-                Transactions
-              </div>
-              <div className={classNames(styles.Tab, { [styles.active]: currentTab === 'Send' })} onClick={() => setCurrentTab('Send')}>
-                Send
-              </div>
-              <div className={classNames(styles.Tab, { [styles.active]: currentTab === 'Receive' })} onClick={() => setCurrentTab('Receive')}>
-                Receive
-              </div>
+              {Tabs.map((tab, index) => (
+                <div key={index} onClick={() => setCurrentTab(tab)} className={classNames(styles.Tab, { [styles.active]: currentTab === tab })}>
+                  {tab}
+                </div>
+              ))}
             </div>
             <div className={styles.InfoContainer}>
               {

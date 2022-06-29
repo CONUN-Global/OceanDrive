@@ -1,11 +1,7 @@
 @import '../../styles/fonts';
 
 .Container {
-<<<<<<< HEAD
-  padding-top: 15%;
-=======
   padding: 15% 10px 0px 10px;
->>>>>>> master
   width: 100%;
   height: calc(100vh - 25px);
   overflow-y: hidden;
@@ -32,7 +28,6 @@
       .DescriptionTitle {
         font-weight: 600;
         font-size: 16px;
-        line-height: 23px;
         display: flex;
         align-items: center;
         color: var(--black);
@@ -52,7 +47,7 @@
           .DescriptionWord {
             background: var(--grey1);
             border: none;
-            width: 153px;
+            width: 128px;
             height: 28px;
             border-radius: 4px;
             display: flex;
@@ -60,12 +55,9 @@
             align-items: center;
             cursor: pointer;
             user-select: none;
-
-            // text
-            font-weight: 400;
+            font-weight: 500;
             color: var(--grey10);
             font-size: 14px;
-            line-height: 150%;
             text-transform: uppercase;
           }
 

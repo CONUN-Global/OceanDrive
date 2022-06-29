@@ -4,17 +4,13 @@ import TitleAndSearch from '../../components/Title';
 import DragAndDrop from 'src/components/DragAndDrop';
 import { UploadFile } from 'src/types';
 import Button from 'src/components/Button';
-import { data } from '../Profile/BotttomTable/DemoData';
+import { data } from '../Profile/BottomTable/DemoData';
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../assets/icons/boxed-copy-icon.svg';
 
 import styles from './DropFile.module.scss';
-<<<<<<< HEAD
-import Button from 'src/components/Button';
-=======
 import classNames from 'classnames';
 import ClickableTooltip from 'src/components/ClickableTooltip';
->>>>>>> master
 import UploadingPopup from 'src/components/UploadingPopup';
 
 const DropFile = () => {
@@ -47,9 +43,6 @@ const DropFile = () => {
           </div>
         </DragAndDrop>
       </div>
-<<<<<<< HEAD
-      <UploadingPopup items={uploads} setIsPopupShowing={setIsPopupShowing} />
-=======
 
       {dataExist && (
         <div className={classNames(styles.BottomTable)}>
@@ -89,10 +82,9 @@ const DropFile = () => {
             </table>
           </div>
 
-          {uploads.length > 0 && <UploadingPopup page='drop-file' items={uploads} />}
+          {uploads.length > 0 && <UploadingPopup page="drop-file" items={uploads} />}
         </div>
       )}
->>>>>>> master
     </div>
   );
 };
