@@ -101,7 +101,7 @@
         justify-content: center;
         gap: 5px;
 
-        width: 122px;
+        width: 120px;
         height: 29px;
         background: #ffecde;
         border-radius: 4px;
@@ -112,26 +112,19 @@
           height: 18.14px;
         }
         .CyconDescDiv {
-          font-weight: 700;
+          font-weight: 600;
           font-size: 15px;
-          line-height: 23px;
-          letter-spacing: 0.03em;
           color: #f37123;
         }
       }
 
       .AmountFreeContainer {
-        width: 62px;
         background: #d9faff;
         padding-right: 0;
-
-        //text
-
-        font-weight: 700;
+        width: 120px;
+        font-weight: 600;
         font-size: 16px;
-        line-height: 23px;
         text-align: center;
-        letter-spacing: 0.03em;
         color: var(--teal);
       }
     }

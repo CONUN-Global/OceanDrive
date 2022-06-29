@@ -52,13 +52,13 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
         </div>
       )}
 
-      {queExist && <div className={styles.TableTitle}>downloads history (111)</div>}
+      {queExist && <div className={styles.TableTitle}>Downloads History (111)</div>}
 
       {gridBool ? (
         <div className={classNames(styles.BottomTable, styles.BottomTableConditionalStyle)}>
           <div className={styles.GridContainer}>
-            {data.map((profileData, idx) => (
-              <CollectionCard profileData={profileData} page="profile" key={idx} />
+            {data.map((profileData, index) => (
+              <CollectionCard profileData={profileData} page="profile" key={index} />
             ))}
           </div>
         </div>
