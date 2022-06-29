@@ -5,7 +5,7 @@ import Send from './TransComponents/Send';
 import Receive from './TransComponents/Receive';
 import Transactions from './TransComponents/Transactions';
 
-import BalanceCard from 'src/components/BalanceCards/BalanceCard';
+import BalanceCard from '../../components/BalanceCards/BalanceCard';
 import styles from './Wallet.module.scss';
 
 function Wallet() {

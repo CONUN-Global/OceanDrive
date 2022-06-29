@@ -10,12 +10,14 @@
   "author": "CONUN GLOBAL <jamshid@conun.co.kr>",
   "main": "./electron/main.js",
   "scripts": {
+    "publish:mac": "npm run build && electron-builder --mac --publish always ",
+    "publish:win": "npm run build && electron-builder --win --publish always",
     "build": "yarn clean && yarn build:base && cross-env PUBLIC_URL=./ yarn build:web && cross-env PUBLIC_URL=./ yarn build:web:post",
-    "build:web": "pushd \"./apps/web\" && cross-env REACT_APP_ELECTRON=true yarn build && popd",
+    "build:web": "pushd \"./apps/web\" && yarn build && popd",
     "build:base": "yarn compile",
     "build:mac": "npm run build && electron-builder --mac ",
     "build:win": "npm run build && electron-builder --win ",
-    "build:web:post": "shx cp -Rf ./apps/web/build build/web",
+    "build:web:post": "shx cp -Rf ./apps/web/build build/web && shx cp -r ./private ./build",
     "wait": "wait-on http://localhost:3000",
     "start": "nodemon --watch build --exec \"yarn electron\"",
     "electron": "electron .",
@@ -25,9 +27,15 @@
     "clean": "shx rm -f *.tsbuildinfo && shx rm -rf dist && shx rm -rf build && mkdir build"
   },
   "build": {
+    "productName": "Ocean Drive",
+    "extraMetadata": {
+      "name": "Ocean Drive"
+    },
     "files": [
       "dist/**/*",
-      "package.json"
+      "package.json",
+      "./electron",
+      "./build"
     ],
     "directories": {
       "output": "./out"
@@ -37,7 +45,7 @@
       "provider": "github"
     },
     "protocols": {
-      "name": "ocean-drive",
+      "name": "Ocean Drive",
       "schemes": [
         "ocean-drive"
       ]
@@ -53,19 +61,17 @@
             "CFBundleURLName": "Ocean Drive"
           }
         ]
-      }
+      },
+      "gatekeeperAssess": false,
+      "hardenedRuntime": true
     },
     "win": {
       "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
+        "nsis"
       ],
-      "certificateFile": "private/conun.io.certificate.pfx",
+      "legalTrademarks": "CONUN GLOBAL",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "certificateFile": "build/private/conun.io.certificate.pfx",
       "certificatePassword": "",
       "verifyUpdateCodeSignature": "false",
       "publisherName": "conun.io.certificate"
@@ -83,31 +89,30 @@
     "nsis": {
       "oneClick": false,
       "allowElevation": true,
-      "allowToChangeInstallationDirectory": false,
+      "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "deleteAppDataOnUninstall": true
     }
   },
   "dependencies": {
-    "@conun-global/web3.storage": "2.1.3"
-    
+    "@conun-global/web3.storage": "1.1.4",
+    "electron-serve": "^1.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.5.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "electron": "^17.0.0",
-    "electron-rebuild": "^3.1.1",
-    "nodemon": "^2.0.16",
     "electron-builder": "^23.0.3",
+    "electron-rebuild": "^3.1.1",
     "nodemon": "^2.0.16",
     "parcel": "^2.5.0",
     "typescript": "^4.6.4"
   },
   "workspaces": {
     "packages": [
-      "apps/**/*",
-      "apps/*"
+      "apps/*",
+      "apps/**/*"
     ]
   },
   "greenkeeper": {

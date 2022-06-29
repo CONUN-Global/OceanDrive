@@ -5,7 +5,9 @@ let node;
 async function executeWeb3Storage() {
   try {
     const storage = new Web3Storage();
-    await storage.startUp();
+    await storage.startUp(null, [
+      '/ip4/54.180.86.210/tcp/4001/ipfs/12D3KooWEdS9HrfcoF8vZjEpfKEF3Hh3dbFyLrEUMXhUM3xoJrNt'
+    ]);
     return storage;
   } catch (error) {
     console.log('error: ', error);

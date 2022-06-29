@@ -4,12 +4,12 @@ import MarketPlace from '../pages/Marketplace';
 import SingleItem from '../pages/SingleItem';
 import SplashScreen from '../pages/SplashScreen';
 import DropFile from '../pages/DropFile';
-import Profile from 'src/pages/Profile';
-import Host from 'src/pages/Host';
-import DriveLayout from 'src/components/DriveLayouts';
+import Profile from '../pages/Profile';
+import Host from '../pages/Host';
+import DriveLayout from '../components/DriveLayouts';
 import Publish from '../pages/Publish';
 import Settings from '../pages/Settings';
-import Lock from 'src/pages/Lock';
+import Lock from '../pages/Lock';
 
 export const authorizedRoutes = [
   {

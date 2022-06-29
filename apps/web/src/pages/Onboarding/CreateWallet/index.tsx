@@ -10,7 +10,7 @@ import Button from '../../../components/Button';
 import Modal from '../../../components/Modal';
 import Navigation from '../../../components/Navigation';
 import TextBox from '../../../components/TextBox';
-import useMessageTimer from 'src/hooks/useMessageTimer';
+import useMessageTimer from '../../../hooks/useMessageTimer';
 import { CREATE_WALLET_DESCR1, CREATE_WALLET_DESCR2, CREATE_WALLET_TITLE } from '../const';
 
 import { ReactComponent as CopyIcon } from '../../../assets/icons/icon_copy.svg';

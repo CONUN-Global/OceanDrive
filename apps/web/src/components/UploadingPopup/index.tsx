@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { nameShortener } from 'src/utils';
+import { nameShortener } from '../../utils';
 
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as SpinningIcon } from '../../assets/icons/spinning-icon.svg';
@@ -18,7 +18,9 @@ function ListItem({ file }: { file: UploadFile }) {
         </div>
         <div>{name}</div>
       </div>
-      <div className={styles.SpinningContainer}><SpinningIcon className={styles.SpinningIcon} fill='green' /></div>
+      <div className={styles.SpinningContainer}>
+        <SpinningIcon className={styles.SpinningIcon} fill="green" />
+      </div>
     </li>
   );
 }

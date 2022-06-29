@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
-import { nameShortener } from 'src/utils';
+import { nameShortener } from '../../../../utils';
 import { ReactComponent as GenearatedIcon } from '../../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as PauseIcon } from '../../../../assets/icons/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../../../assets/icons/play-icon.svg';
@@ -40,7 +40,7 @@ const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
         )}
         {icon === 'play-icon' && (
           <PlayIcon
-          fill='yellow'
+            fill="yellow"
             width={19}
             height={19}
             onClick={() => {

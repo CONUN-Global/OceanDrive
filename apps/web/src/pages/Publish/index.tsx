@@ -1,8 +1,8 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import classNames from 'classnames';
 
-import Button from 'src/components/Button';
-import DragAndDrop from 'src/components/DragAndDrop';
+import Button from '../../components/Button';
+import DragAndDrop from '../../components/DragAndDrop';
 import FilesUploading from './FilesUploading';
 import ThumbUpload from './ThumbUpload';
 import UploadingPopup from '../../components/UploadingPopup';
@@ -195,7 +195,7 @@ function Publish() {
             Upload
           </Button>
         </div>
-        {isPopupShowing && <UploadingPopup page='publish' items={state.file} />}
+        {isPopupShowing && <UploadingPopup page="publish" items={state.file} />}
       </form>
     </div>
   );
