@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setBackAnimation } from 'src/redux/onboardingSlice';
+import { setBackAnimation } from '../../redux/onboardingSlice';
 
 import Button from '../../components/Button';
 import HStack from '../../components/HStack';

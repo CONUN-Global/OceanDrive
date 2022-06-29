@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Transactions.module.scss';
-import splitKey from 'src/helpers/splitKey';
+import splitKey from '../../../../helpers/splitKey';
 
 const data = [
   { transactionId: '0x7e930b0d8e6690d1472bf5b782e88e5823e57b3a98d7b6cc3474c0edbeb0b2ff', status: 'PENDING', date: '04.23.2022 5:43 pm', amount: '0.435CYC' },

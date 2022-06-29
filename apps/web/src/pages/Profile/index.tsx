@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Profile.module.scss';
-import WalletCard from 'src/components/BalanceCards/WalletCard';
-import BalanceCard from 'src/components/BalanceCards/BalanceCard';
+import WalletCard from '../../components/BalanceCards/WalletCard';
+import BalanceCard from '../../components/BalanceCards/BalanceCard';
 import BottomTable from './BotttomTable';
 
 import { ReactComponent as BoxedIcon } from '../../assets/icons/boxed-icon.svg';

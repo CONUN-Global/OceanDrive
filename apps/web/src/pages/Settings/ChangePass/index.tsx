@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Button from 'src/components/Button';
+import Button from '../../../components/Button';
 import SettingsCard from '../SettingsCard';
 import { useNavigate } from 'react-router-dom';
 import styles from './ChangePass.module.scss';
-import Input from 'src/components/Input';
-import useValidate from 'src/hooks/useValidateNewPassword';
+import Input from '../../../components/Input';
+import useValidate from '../../../hooks/useValidateNewPassword';
 
 // Store users current password
 const userPassword = '123';

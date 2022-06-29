@@ -1,9 +1,9 @@
 import React from 'react';
-import { UploadFile } from 'src/types';
+import { UploadFile } from '../../../types';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import { ReactComponent as Garbage } from '../../../assets/icons/GarbageCan.svg';
 
-import getFileIcon from 'src/helpers/getFileIcon';
+import getFileIcon from '../../../helpers/getFileIcon';
 import styles from './FilesUploading.module.scss';
 
 interface IProps {
