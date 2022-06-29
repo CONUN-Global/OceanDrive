@@ -11,6 +11,7 @@ import styles from './Wallet.module.scss';
 function Wallet() {
   const Tabs = ['Transactions', 'Send', 'Receive'] as const;
   const [currentTab, setCurrentTab] = useState<typeof Tabs[number]>('Transactions');
+
   return (
     <>
       <div className={styles.Container}>

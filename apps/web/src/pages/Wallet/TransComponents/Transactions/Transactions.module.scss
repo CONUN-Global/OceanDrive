@@ -29,7 +29,7 @@
         font-size: 16px;
         line-height: 104.9%;
         text-transform: capitalize;
-        color: var(--grey10);
+        color: var(--black);
       }
 
       & :nth-child(1) {
@@ -98,8 +98,8 @@
             color: #d12221;
           }
           &.Pending {
-            background-color: #cddcfc;
-            color: #3877ff;
+            background-color: #fff1bf;
+            color: #e6b302;
           }
         }
       }
