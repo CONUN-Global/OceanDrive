@@ -1,20 +1,24 @@
 import classNames from 'classnames';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { nameShortener } from 'src/utils';
 import { ReactComponent as GenearatedIcon } from '../../../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as PauseIcon } from '../../../../assets/icons/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../../../assets/icons/play-icon.svg';
 
 import styles from './QueItem.module.scss';
 
-const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
+const QueItem = ({ val, keyVal }: { val: any; keyVal: number }) => {
   const [icon, setIcon] = useState(val.copy);
+
+  const name = nameShortener(val.contentName, 26);
+
   return (
     <tr key={keyVal} className={classNames(styles.TableRow2, { [styles.PausedTd]: icon === 'play-icon' })}>
       {/* here will be generated icon */}
       <td className={styles.FirstTd}>
-        <GenearatedIcon />
+        <GenearatedIcon width={12.64} height={15} />
       </td>
-      <td className={styles.SecondTd}>{val.contentName}</td>
+      <td className={styles.SecondTd}>{name}</td>
       <td>{val.fileSize}</td>
       <td className={styles.HideTh}></td>
       <td>{val.date}</td>
@@ -27,8 +31,8 @@ const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
       <td className={styles.IconSt}>
         {icon === 'pause-icon' && (
           <PauseIcon
-            width={20}
-            height={20}
+            width={19}
+            height={19}
             onClick={() => {
               setIcon('play-icon');
             }}
@@ -36,8 +40,9 @@ const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
         )}
         {icon === 'play-icon' && (
           <PlayIcon
-            width={20}
-            height={20}
+          fill='yellow'
+            width={19}
+            height={19}
             onClick={() => {
               setIcon('pause-icon');
             }}
@@ -46,6 +51,6 @@ const QueItem = ({val, keyVal}: {val: any, keyVal: number}) => {
       </td>
     </tr>
   );
-}
+};
 
-export default QueItem
+export default QueItem;

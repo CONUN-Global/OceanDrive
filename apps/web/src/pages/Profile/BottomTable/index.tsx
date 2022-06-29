@@ -91,16 +91,27 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
               <tbody className={styles.TableBodyScroll}>
                 {data.length > 0 &&
                   data.map((val: any, key: any) => {
-                    function copyText() {
-                      navigator.clipboard.writeText(val.txHash);
+                    let name;
+                    const len = val.contentName.length;
+                    if (len > 26) {
+                      const arr = val.contentName.split('');
+                      arr.splice(15, len - 23, '.', '.', '.');
+                      const longName = arr.join('');
+                      name = longName;
+                    } else {
+                      name = val.contentName;
                     }
 
                     return (
                       <tr key={key} className={styles.TableRow2}>
                         <td className={styles.FirstTd}>
+<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/index.tsx
                           <GeneratedIcon />
+=======
+                          <GenearatedIcon width={12.64} height={15} />
+>>>>>>> master:apps/web/src/pages/Profile/BotttomTable/index.tsx
                         </td>
-                        <td>{val.contentName}</td>
+                        <td>{name}</td>
                         <td>{val.fileSize}</td>
                         <td className={clicked === 'downloads' ? styles.HideTh : ''}>
                           {clicked === 'published' &&
@@ -108,7 +119,7 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                               <div className={classNames(styles.AmountContainer, styles.AmountFreeContainer)}>{val.amount}</div>
                             ) : (
                               <div className={styles.AmountContainer}>
-                                <CyconIcon className={styles.Cycon} fill="#f37123" />
+                                <CyconIcon width={10} height={10} className={styles.Cycon} fill="#f37123" />
                                 <div className={styles.CyconDescDiv}>{val.amount}</div>
                               </div>
                             ))}
@@ -118,14 +129,22 @@ const BottomTable = ({ clicked, showGrid }: PropWord) => {
                         <td>
                           {(clicked === 'published' || clicked === 'personal') && (
                             <ClickableTooltip place="publish-table" copyText={val.txHash}>
+<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/index.tsx
                               <CopyIcon />
                             </ClickableTooltip>
                           )}
                           {clicked === 'downloads' && <TickIcon />}
+=======
+                              <CopyIcon width={11} height={11} />
+                            </ClickableTooltip>
+                          )}
+                          {clicked === 'downloads' && <TickIcon width={13} height={13} />}
+                          <ToastContainer className={styles.ToastPosition} />
+>>>>>>> master:apps/web/src/pages/Profile/BotttomTable/index.tsx
                         </td>
                         {clicked === 'personal' && (
                           <td>
-                            <GeneratedPersonalIcon />
+                            <GeneratedPersonalIcon width={13} height={13} />
                           </td>
                         )}
                       </tr>

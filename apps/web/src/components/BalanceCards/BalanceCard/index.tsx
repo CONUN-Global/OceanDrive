@@ -10,7 +10,7 @@ const BalanceCard = () => {
     <div className={classNames(styles.WalletCard, styles.BalanceCard)}>
       <div className={styles.CardItems}>
         <div className={styles.Img}>
-          <CyconIcon />
+          <CyconIcon width={46} height={46} />
         </div>
         <div className={styles.Text}>
           <div className={classNames(styles.Wallet2)}>cycon coin balance</div>

@@ -195,6 +195,7 @@ function Publish() {
             Upload
           </Button>
         </div>
+        {isPopupShowing && <UploadingPopup page="publish" items={state.file} />}
       </form>
     </div>
   );

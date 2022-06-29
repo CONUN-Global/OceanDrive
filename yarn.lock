@@ -1750,7 +1750,9 @@
     "@types/react-dom" "^18.0.3"
     "classnames" "^2.3.1"
     "cuid" "^2.1.8"
+    "date-fns" "^2.28.0"
     "framer-motion" "^6.3.3"
+    "moment" "^2.29.3"
     "random-words" "^1.1.2"
     "react" "^18.1.0"
     "react-dom" "^18.1.0"
@@ -10405,6 +10407,11 @@
   dependencies:
     "minimist" "^1.2.6"
 
+"moment@^2.29.3":
+  "integrity" "sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.3.tgz"
+  "version" "2.29.3"
+
 "mortice@^2.0.0", "mortice@^2.0.1":
   "integrity" "sha512-9gsXmjq+5LZmXDIoyC/crf2i/7CUwDGSBEwSEsr1i/WfKmJ6DVt38B5kg6BE/WF/1/yfGJYiB1Wyiu423iI3nQ=="
   "resolved" "https://registry.npmjs.org/mortice/-/mortice-2.0.1.tgz"
@@ -14900,7 +14907,7 @@
     "sax" ">=0.1.1"
 
 "xmlbuilder@^9.0.7":
-  "integrity" "sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0="
+  "integrity" "sha512-7YXTQc3P2l9+0rjaUbLwMKRhtmwg1M1eDf6nag7urC7pIPYLD9W/jmzQ4ptRSUbodw5S0jfoGTflLemQibSpeQ=="
   "resolved" "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-9.0.7.tgz"
   "version" "9.0.7"
 

@@ -1,27 +1,53 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
+import { nameShortener } from 'src/utils';
+
+import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
+import { ReactComponent as SpinningIcon } from '../../assets/icons/spinning-icon.svg';
 
 import { UploadFile } from '../../types';
 import styles from './UploadingPopup.module.scss';
 
 function ListItem({ file }: { file: UploadFile }) {
+<<<<<<< HEAD
   return <li className={styles.ListItem}>{file.name}</li>;
+=======
+  const name = nameShortener(file.name, 31);
+  return (
+    <li className={styles.ListItem}>
+      <div className={styles.NameIconContainer}>
+        <div>
+          <GenearatedIcon />
+        </div>
+        <div>{name}</div>
+      </div>
+      <div className={styles.SpinningContainer}><SpinningIcon className={styles.SpinningIcon} fill='green' /></div>
+    </li>
+  );
+>>>>>>> master
 }
 
-function UploadingPopup({ items, setIsPopupShowing }: { items: UploadFile[]; setIsPopupShowing: (value: boolean | ((prevVar: boolean) => boolean)) => void }) {
+function UploadingPopup({ items, page }: { items: UploadFile[]; page: string }) {
+  const [showNum, setShowNum] = useState(items.length);
+
+  useEffect(() => {
+    setShowNum(items.length);
+  }, [items.length]);
+
   return (
-    <div className={styles.PageContainer}>
-      <div className={styles.TopBar}>
-        <div>Uploading {items.length} Items</div>
-        <button className={styles.CloseBtn} onClick={() => setIsPopupShowing(false)}>
-          X
-        </button>
-      </div>
-      <div className={styles.List}>
-        {items.map((item: UploadFile, index: number) => (
-          <ListItem key={index} file={item} />
-        ))}
-      </div>
-    </div>
+    <>
+      {showNum > 0 && (
+        <div className={classNames(styles.PageContainer, { [styles.PageDropBottom]: page === 'drop-file' })}>
+          <div className={styles.TopBar}>
+            <div>Uploading {items.length} Items</div>
+            <button className={styles.CloseBtn} onClick={() => setShowNum(0)}>
+              X
+            </button>
+          </div>
+          <div className={styles.List}>{items.length > 0 && items.map((item: UploadFile, index: number) => <ListItem key={index} file={item} />)}</div>
+        </div>
+      )}
+    </>
   );
 }
 
