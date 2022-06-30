@@ -63,5 +63,5 @@
   position: absolute;
   top: 50px;
   @include fontBodyXS;
-  color: #d12221;
+  color: var(--warning);
 }

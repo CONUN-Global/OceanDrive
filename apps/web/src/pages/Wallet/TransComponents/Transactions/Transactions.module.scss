@@ -93,7 +93,7 @@
           }
           &.Failure {
             background-color: #ffcccc;
-            color: #d12221;
+            color: var(--warning);
           }
           &.Pending {
             background-color: #fff1bf;
