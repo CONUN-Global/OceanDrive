@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 50px;
 
   & .TitleBarContainer {
     width: 100%;
@@ -74,7 +74,6 @@
         @include fontBodyXL;
         font-weight: 500;
         text-align: center;
-        letter-spacing: 0.02em;
         color: var(--main-blue);
       }
 
@@ -85,7 +84,6 @@
 
       & .ThumbDropText {
         @include fontBodyXL;
-        font-weight: 500;
         min-width: 200px;
         color: var(--main-blue);
       }
@@ -116,7 +114,7 @@
       margin-left: 10px;
 
       & .InputContainer:not(:first-of-type) {
-        margin-top: 16px;
+        margin-top: 12px;
       }
       & .TitleContainer {
         display: flex;

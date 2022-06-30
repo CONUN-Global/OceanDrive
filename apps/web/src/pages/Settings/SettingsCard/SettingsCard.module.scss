@@ -30,7 +30,7 @@
     flex-direction: column;
 
     & .Title {
-      color: var(--teal);
+      color: var(--main-blue);
       font-size: 28px;
       font-weight: 600;
     }
@@ -46,9 +46,9 @@
 .LgContainer {
   height: 574px;
   & .ContentContainer {
-    height: 410px;
+    height: 440px;
     & .Title {
-      padding-bottom: 45px;
+      padding-bottom: 30px;
     }
   }
 }

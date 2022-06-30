@@ -34,42 +34,44 @@ function Input({ error, setError, inputValue, setInputValue, placeholder, errMes
   };
 
   return (
-    <div className={styles.InputContainer}>
-      <input
-        className={classNames(styles.Input, { [styles.InputValColor]: inputValue.length > 0, [styles.ErrorColor]: error && inputValue })}
-        value={inputValue}
-        onChange={e => handleChange(e)}
-        type={!isVisible || inputValue.length === 0 ? 'password' : 'text'}
-        placeholder={placeholder}
-      />
-      <div className={styles.EyeBall}>
-        {error && inputValue.length !== 0 && <InputErrorIcon onClick={clearInput} className={styles.EyeIcon} />}
-        {!error && !isVisible && inputValue.length !== 0 && (
-          <ClosedEyeBall
-            className={styles.EyeIcon}
-            onClick={() => {
-              if (inputValue.length > 0) setIsVisible(true);
-            }}
-          />
-        )}
-        {inputValue.length === 0 && (
-          <ClosedEyeBall
-            className={styles.EyeIcon}
-            onClick={() => {
-              if (inputValue.length > 0) setIsVisible(true);
-            }}
-          />
-        )}
-        {!error && isVisible && inputValue.length !== 0 && (
-          <OpenEyeBall
-            className={styles.EyeIcon}
-            onClick={() => {
-              if (inputValue.length > 0) setIsVisible(false);
-            }}
-          />
-        )}
+    <div className={styles.Container}>
+      <div className={styles.Label}>{placeholder}</div>
+      <div className={styles.InputContainer}>
+        <input
+          className={classNames(styles.Input, { [styles.InputValColor]: inputValue.length > 0, [styles.ErrorColor]: error && inputValue })}
+          value={inputValue}
+          onChange={e => handleChange(e)}
+          type={!isVisible || inputValue.length === 0 ? 'password' : 'text'}
+        />
+        <div className={styles.EyeBall}>
+          {error && inputValue.length !== 0 && <InputErrorIcon onClick={clearInput} className={styles.EyeIcon} />}
+          {!error && !isVisible && inputValue.length !== 0 && (
+            <ClosedEyeBall
+              className={styles.EyeIcon}
+              onClick={() => {
+                if (inputValue.length > 0) setIsVisible(true);
+              }}
+            />
+          )}
+          {inputValue.length === 0 && (
+            <ClosedEyeBall
+              className={styles.EyeIcon}
+              onClick={() => {
+                if (inputValue.length > 0) setIsVisible(true);
+              }}
+            />
+          )}
+          {!error && isVisible && inputValue.length !== 0 && (
+            <OpenEyeBall
+              className={styles.EyeIcon}
+              onClick={() => {
+                if (inputValue.length > 0) setIsVisible(false);
+              }}
+            />
+          )}
+        </div>
+        {error && <div className={styles.Error}>{errMessage}</div>}
       </div>
-      {error && <div className={styles.Error}>{errMessage}</div>}
     </div>
   );
 }

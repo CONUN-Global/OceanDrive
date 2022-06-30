@@ -19,7 +19,7 @@ const DropFile = () => {
 
   const sampleItems = uploads.length;
 
-  const dataExist = data !== null && data.length > 0;
+  const dataExist = data !== null && data?.length > 0;
 
   return (
     <div className={styles.PageContainer}>

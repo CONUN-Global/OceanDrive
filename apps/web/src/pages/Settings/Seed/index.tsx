@@ -7,7 +7,7 @@ import useMessageTimer from '../../../hooks/useMessageTimer';
 
 import styles from './Seed.module.scss';
 
-const wordArray = ['faith', 'good', 'person', 'honest', 'election', 'different', 'relationship', 'life', 'building'];
+const wordArray = ['faith', 'good', 'person', 'honest', 'election', 'different', 'relationship', 'life', 'building', 'relationship', 'life', 'building'];
 
 function Seed() {
   const navigate = useNavigate();

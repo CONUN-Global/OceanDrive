@@ -147,9 +147,9 @@
 
         & .SVGBox {
           margin-right: 10px;
-          height: 15px;
-          width: 15px;
-          padding-top: 2px;
+          height: 16px;
+          aspect-ratio: 1/1;
+          padding-top: 3px;
 
           & svg {
             fill: var(--grey9);
