@@ -1,5 +1,5 @@
 import React from 'react';
-import { UploadFile } from 'src/types';
+import { UploadFile } from '../../../types';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import styles from './ThumbUpload.module.scss';
 

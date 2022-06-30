@@ -1,7 +1,11 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+<<<<<<< HEAD:apps/web/src/pages/Marketplace/MarketplaceGrid/FilterButtons/index.tsx
 import Button from 'src/components/Button';
 import { SeedDataType } from '../../seedDataType';
+=======
+import Button from '../../Button';
+>>>>>>> master:apps/web/src/components/TitleAndSearch/FilterButtons/index.tsx
 import styles from './FilterButtons.module.scss';
 
 function FilterButtons({ data, setData }: { data: SeedDataType[]; setData: any }) {

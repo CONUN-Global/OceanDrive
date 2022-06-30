@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from 'src/components/Button';
+import Button from '../../../components/Button';
 import SettingsCard from '../SettingsCard';
 
 import { useNavigate } from 'react-router-dom';
-import useMessageTimer from 'src/hooks/useMessageTimer';
+import useMessageTimer from '../../../hooks/useMessageTimer';
 
 import styles from './Seed.module.scss';
 

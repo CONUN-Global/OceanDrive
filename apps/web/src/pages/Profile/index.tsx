@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import styles from './Profile.module.scss';
+<<<<<<< HEAD
 import WalletCard from 'src/components/BalanceCards/WalletCard';
 import BalanceCard from 'src/components/BalanceCards/BalanceCard';
 import BottomTable from './BottomTable';
+=======
+import WalletCard from '../../components/BalanceCards/WalletCard';
+import BalanceCard from '../../components/BalanceCards/BalanceCard';
+import BottomTable from './BotttomTable';
+>>>>>>> master
 
 import { ReactComponent as BoxedIcon } from '../../assets/icons/boxed-icon.svg';
 import classNames from 'classnames';

@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 
+<<<<<<< HEAD
 import TitleAndSearch from '../../components/Title';
 import DragAndDrop from 'src/components/DragAndDrop';
 import { UploadFile } from 'src/types';
 import Button from 'src/components/Button';
 import { data } from '../Profile/BottomTable/DemoData';
+=======
+import TitleAndSearch from '../../components/TitleAndSearch';
+import DragAndDrop from '../../components/DragAndDrop';
+import { UploadFile } from '../../types';
+import Button from '../../components/Button';
+import { data } from '../Profile/BotttomTable/DemoData';
+>>>>>>> master
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../assets/icons/boxed-copy-icon.svg';
 
 import styles from './DropFile.module.scss';
 import classNames from 'classnames';
-import ClickableTooltip from 'src/components/ClickableTooltip';
-import UploadingPopup from 'src/components/UploadingPopup';
+import ClickableTooltip from '../../components/ClickableTooltip';
+import UploadingPopup from '../../components/UploadingPopup';
 
 const DropFile = () => {
   const [uploads, setUploads] = useState<UploadFile[]>([]);

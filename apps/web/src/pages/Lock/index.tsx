@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as ConunIcon } from '../../assets/icons/Conun-Icon.svg';
-import Button from 'src/components/Button';
+import Button from '../../components/Button';
 
 import styles from './Lock.module.scss';
-import Input from 'src/components/Input';
+import Input from '../../components/Input';
 
 const demoPassword = ['123'];
 

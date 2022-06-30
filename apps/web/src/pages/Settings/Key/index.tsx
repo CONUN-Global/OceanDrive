@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from 'src/components/Button';
-import useMessageTimer from 'src/hooks/useMessageTimer';
+import Button from '../../../components/Button';
+import useMessageTimer from '../../../hooks/useMessageTimer';
 import SettingsCard from '../SettingsCard';
-import splitKey from 'src/helpers/splitKey';
+import splitKey from '../../../helpers/splitKey';
 
 import styles from './Key.module.scss';
 

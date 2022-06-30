@@ -7,16 +7,6 @@ import styles from './SingleItem.module.scss';
 
 function SingleItem() {
   const { collection, id } = useParams();
-  const [clicked, setClicked] = useState<string>('buying-history');
-
-  const headingStyle = (word: string) => {
-    if (clicked === word) {
-      return {
-        color: '#3A3A3A',
-      };
-    }
-  };
-
   return (
     <>
       <div className={styles.ContentContainer}>

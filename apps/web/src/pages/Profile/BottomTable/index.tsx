@@ -12,9 +12,16 @@ import { data } from './DemoData';
 import { queData } from './DemoData';
 import Data from '../../Marketplace/seedData.json';
 
+<<<<<<< HEAD:apps/web/src/pages/Profile/BottomTable/index.tsx
 import CollectionCard from 'src/pages/Marketplace/MarketplaceGrid/MarketplaceCard';
 import ClickableTooltip from 'src/components/ClickableTooltip';
 import styles from './BottomTable.module.scss';
+=======
+import styles from './BottomTable.module.scss';
+import { toast, ToastContainer } from 'react-toastify';
+import CollectionCard from '../../../pages/Marketplace/MarketplaceGrid/MarketplaceCard';
+import ClickableTooltip from '../../../components/ClickableTooltip';
+>>>>>>> master:apps/web/src/pages/Profile/BotttomTable/index.tsx
 
 interface PropWord {
   clicked: string;

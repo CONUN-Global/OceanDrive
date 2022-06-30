@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { nameShortener } from 'src/utils';
+import { nameShortener } from '../../utils';
 
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as SpinningIcon } from '../../assets/icons/spinning-icon.svg';

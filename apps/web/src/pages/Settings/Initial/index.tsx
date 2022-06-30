@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'src/components/Button';
+import Button from '../../../components/Button';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import { useNavigate } from 'react-router-dom';
 import styles from './Initial.module.scss';

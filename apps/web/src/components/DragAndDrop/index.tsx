@@ -4,7 +4,7 @@ import { useMutation } from 'react-query';
 import cuid from 'cuid';
 import moment from 'moment';
 import { ReactComponent as UploadIcon } from '../../assets/icons/upload.svg';
-import { UploadFile } from 'src/types';
+import { UploadFile } from '../../types';
 import { SIZE_ERR, COUNT_ERR, INVALID_ERR, DEFAULT_ERR } from './constants';
 
 import styles from './DragAndDrop.module.scss';
