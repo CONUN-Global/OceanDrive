@@ -31,7 +31,7 @@ function Password({ setShowPassword }: { setShowPassword: (arg: boolean) => void
       <form className={styles.PageContainer} onSubmit={handleSubmit}>
         <span className={styles.SubHeading}>{subHeading}</span>
         <div className={styles.InputContainer}>
-          <Input placeholder="Enter password" setInputValue={setInputValue} errMessage={errMessage} inputValue={inputValue} error={error} setError={setError} />
+          <Input setInputValue={setInputValue} errMessage={errMessage} inputValue={inputValue} error={error} setError={setError} />
         </div>
         <div className={styles.BtnContainer}>
           <Button variant="secondary" className={styles.Button}>

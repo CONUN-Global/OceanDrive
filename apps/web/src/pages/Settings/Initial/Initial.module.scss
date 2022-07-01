@@ -45,11 +45,14 @@
     & .Button {
       margin-bottom: 10px;
       width: 100%;
+      height: 40px;
       background-color: inherit;
       border: 1px solid var(--grey7);
       border-radius: 2px;
       color: var(--sea-blue);
+      font-size: 14px;
       font-weight: 600;
+      letter-spacing: 0.02em;
       box-shadow: none;
 
       &:hover {

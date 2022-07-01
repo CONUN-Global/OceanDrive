@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ClickableTooltip from '../../../components/ClickableTooltip';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/copy-icon.svg';
-import { ReactComponent as Avatar } from '../../../assets/images/AvatarPlaceholder.svg';
+import { ReactComponent as Avatar } from '../../../assets/images/Placeholder_Avatar.svg';
 import splitKey from 'src/helpers/splitKey';
 
 import styles from './WalletCard.module.scss';

@@ -46,9 +46,9 @@ function ChangePass() {
     <SettingsCard title="Change Password" isLarge={true}>
       <form className={styles.Container} onSubmit={handleSubmit}>
         <div className={styles.InputsContainer}>
-          <Input placeholder="Enter your current password" setInputValue={setCurrentPass} inputValue={currentPass} error={error} setError={setError} errMessage={errorMessages.current} />
-          <Input placeholder="Enter a new password" setInputValue={setNewPass} inputValue={newPass} error={error} setError={setError} errMessage={errorMessages.newError} />
-          <Input placeholder="Confirm your new password" setInputValue={setConfirmPass} inputValue={confirmPass} error={error} setError={setError} errMessage={errorMessages.confirmError} />
+          <Input label="Enter your current password" setInputValue={setCurrentPass} inputValue={currentPass} error={error} setError={setError} errMessage={errorMessages.current} />
+          <Input label="Enter a new password" setInputValue={setNewPass} inputValue={newPass} error={error} setError={setError} errMessage={errorMessages.newError} />
+          <Input label="Confirm your new password" setInputValue={setConfirmPass} inputValue={confirmPass} error={error} setError={setError} errMessage={errorMessages.confirmError} />
         </div>
 
         <div className={styles.BtnContainer}>

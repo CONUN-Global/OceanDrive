@@ -37,7 +37,7 @@ const Lock = () => {
           </div>
           <div className={styles.Instructions}>Enter your OceanDrive password or wallet seed phrase to unlock OceanDrive</div>
           <div className={styles.InputAndBtn}>
-            <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} placeholder={placeholderPhrase} />
+            <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} label={placeholderPhrase} />
             <Button className={classNames(styles.Button, { [styles.ActivatedBtn]: inputValue.length > 0 })} onClick={checkValidity}>
               Unlock
             </Button>
