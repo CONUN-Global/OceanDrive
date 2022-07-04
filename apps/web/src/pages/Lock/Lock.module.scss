@@ -17,24 +17,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 662px;
-    height: 452.1px;
+    width: 560px;
+    height: 430px;
     background-color: var(--background);
     border-radius: 10px;
     box-shadow: 4px 4px 10px 0px rgba(95, 147, 241, 0.2);
     position: relative;
 
     & .ContentContainer {
-      max-width: 500px;
-      height: 100%;
+      max-width: 400px;
+      max-height: 308px;
       display: flex;
       flex-direction: column;
-      padding: 80px 0px;
       position: relative;
 
       & .TitleContainer {
         width: 100%;
-        margin-bottom: 36.49px;
         display: flex;
         align-items: center;
         gap: 12px;
@@ -58,7 +56,8 @@
         display: flex;
         align-items: center;
         color: var(--grey10);
-        margin-bottom: 48px;
+        margin-top: 10px;
+        margin-bottom: 28px;
       }
 
       & .InputAndBtn {
@@ -66,7 +65,7 @@
         flex-direction: column;
 
         .Button {
-          margin-top: 60px;
+          margin-top: 50px;
           width: 100%;
           height: 40px;
           background: var(--grey3);

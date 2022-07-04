@@ -9,7 +9,7 @@ import SidebarContent from './LeftSide/SidebarContentLayout';
 import RightSideLayer from './RightSide';
 
 function DriveLayout() {
-  const SettingsShowing = useSelector(({ settingsReducer }: RootState) => settingsReducer.settingsModalIsOpen);
+  const isSettingsShowing = useSelector(({ settingsReducer }: RootState) => settingsReducer.settingsModalIsOpen);
 
   return (
     <Background>
@@ -19,7 +19,7 @@ function DriveLayout() {
       <RightSideLayer>
         <Outlet />
       </RightSideLayer>
-      {SettingsShowing ? <Settings /> : null}
+      {isSettingsShowing ? <Settings /> : null}
     </Background>
   );
 }
