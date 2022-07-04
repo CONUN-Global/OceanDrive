@@ -8,7 +8,7 @@ import Profile from '../pages/Profile';
 import Host from '../pages/Host';
 import DriveLayout from '../components/DriveLayouts';
 import Publish from '../pages/Publish';
-import Settings from '../pages/Settings';
+
 import Lock from '../pages/Lock';
 
 export const authorizedRoutes = [
@@ -33,10 +33,6 @@ export const authorizedRoutes = [
         ],
       },
     ],
-  },
-  {
-    path: 'settings',
-    element: <Settings />,
   },
   {
     path: 'lock',

@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from '../../../redux/settingsSlice';
 
 import { ReactComponent as RectIcon } from '../../../assets/icons/rect.svg';
 import { ReactComponent as UploadIcon } from '../../../assets/icons/upload.svg';
@@ -9,13 +11,10 @@ import { ReactComponent as MarketIcon } from '../../../assets/icons/Sidebar/Mark
 import { ReactComponent as PublishIcon } from '../../../assets/icons/Sidebar/Publish.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/icons/Sidebar/Wallet.svg';
 import { ReactComponent as Avatar } from '../../../assets/images/Placeholder_Avatar.svg';
-
-import placeholderImg from '../../../assets/images/Avatar2.png';
 import Button from '../../Button';
 
-import styles from './LeftSidebar.module.scss';
-
 import classNames from 'classnames';
+import styles from './LeftSidebar.module.scss';
 
 function LeftSide({ children }: { children?: ReactNode }) {
   const navigate = useNavigate();
@@ -26,6 +25,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
     { title: 'wallet', icon: <WalletIcon /> },
     { title: 'publish', icon: <PublishIcon /> },
   ];
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.leftSideBar}>
@@ -56,7 +56,7 @@ function LeftSide({ children }: { children?: ReactNode }) {
           </Button>
 
           <div className={styles.UtilityButtons}>
-            <div onClick={() => navigate('/settings')} className={styles.Link}>
+            <div onClick={() => dispatch(toggleSettings())} className={styles.Link}>
               <div className={styles.SVGBox}>
                 <SettingsIcon />
               </div>

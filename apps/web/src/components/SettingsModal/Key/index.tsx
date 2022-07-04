@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Button from '../../../components/Button';
+import React from 'react';
+import Button from '../../Button';
 import useMessageTimer from '../../../hooks/useMessageTimer';
 import SettingsCard from '../SettingsCard';
 import splitKey from '../../../helpers/splitKey';
 
 import styles from './Key.module.scss';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from 'src/redux/settingsSlice';
 
 const key = '0x83547098723504987342098734059873452987325987583947589734578349873549854798543';
 const warning = 'Never disclose this key. Anyone with your private keys can steal any assets held in your account.';
@@ -20,7 +21,7 @@ function Key() {
     }
   }
 
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <SettingsCard title="Export Private Key">
       <div className={styles.ContentContainer}>
@@ -37,7 +38,7 @@ function Key() {
             Copy PK
           </Button>
           {showMessage && <div className={styles.Copied}>Copied!</div>}
-          <Button variant="secondary" className={styles.Button} onClick={() => navigate(-1)}>
+          <Button variant="secondary" className={styles.Button} onClick={() => dispatch(toggleSettings())}>
             OK
           </Button>
         </div>

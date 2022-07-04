@@ -1,14 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
 import styles from './SettingsCard.module.scss';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from 'src/redux/settingsSlice';
 
 function SettingsCard({ children, title, isLarge = false }: { children: React.ReactNode; title: string; isLarge?: boolean }) {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
-    <div className={classNames(styles.Container, { [styles.LgContainer]: isLarge })}>
-      <button className={styles.XBtnContainer} onClick={() => navigate(-1)}>
+    <div onClick={e => e.stopPropagation()} className={classNames(styles.Container, { [styles.LgContainer]: isLarge })}>
+      <button className={styles.XBtnContainer} onClick={() => dispatch(toggleSettings())}>
         <Close className={styles.XBtn} />
       </button>
       <div className={styles.ContentContainer}>

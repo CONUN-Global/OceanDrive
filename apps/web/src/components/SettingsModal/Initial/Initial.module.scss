@@ -9,6 +9,7 @@
   border-radius: 10px;
   box-shadow: 4px 4px 10px 0px rgba(95, 147, 241, 0.2);
   position: relative;
+  z-index: 2;
 
   & .XBtnContainer {
     position: absolute;

@@ -1,8 +1,9 @@
 import React from 'react';
-import Button from '../../../components/Button';
+import Button from '../../Button';
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
-import { useNavigate } from 'react-router-dom';
 import styles from './Initial.module.scss';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from 'src/redux/settingsSlice';
 
 interface IPageProps {
   setCurrentPage: (arg: 'Initial' | 'Seed' | 'Key' | 'ChangePass') => void;
@@ -10,10 +11,10 @@ interface IPageProps {
 }
 
 function Initial({ setCurrentPage, setShowPassword }: IPageProps) {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
-    <div className={styles.Container}>
-      <button className={styles.XBtnContainer} onClick={() => navigate(-1)}>
+    <div className={styles.Container} onClick={e => e.stopPropagation()}>
+      <button className={styles.XBtnContainer} onClick={() => dispatch(toggleSettings())}>
         <Close className={styles.XBtn} />
       </button>
       <div className={styles.ContentContainer}>
@@ -30,12 +31,7 @@ function Initial({ setCurrentPage, setShowPassword }: IPageProps) {
           >
             View Seed Phrase
           </Button>
-          <Button
-            className={styles.Button}
-            onClick={() => {
-              setCurrentPage('ChangePass');
-            }}
-          >
+          <Button className={styles.Button} onClick={() => setCurrentPage('ChangePass')}>
             Change Password
           </Button>
           <Button

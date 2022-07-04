@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Button from '../../../components/Button';
+import Button from '../../Button';
 import SettingsCard from '../SettingsCard';
-import { useNavigate } from 'react-router-dom';
 import styles from './ChangePass.module.scss';
-import Input from '../../../components/Input';
+import Input from '../../Input';
 import useValidate from '../../../hooks/useValidateNewPassword';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from 'src/redux/settingsSlice';
 
 // Store users current password
 const userPassword = '123';
@@ -16,7 +17,7 @@ interface IErrorMessages {
 }
 
 function ChangePass() {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   // Input state (x3)
   const [currentPass, setCurrentPass] = useState<string>('');
   const [newPass, setNewPass] = useState<string>('');
@@ -39,7 +40,7 @@ function ChangePass() {
     }
 
     setError(false);
-    navigate(-1);
+    dispatch(toggleSettings());
   }
 
   return (
@@ -52,7 +53,7 @@ function ChangePass() {
         </div>
 
         <div className={styles.BtnContainer}>
-          <Button variant="secondary" className={styles.CancelButton} onClick={() => navigate(-1)}>
+          <Button variant="secondary" className={styles.CancelButton} onClick={() => dispatch(toggleSettings())}>
             Cancel
           </Button>
           <Button type="submit" variant="secondary" className={styles.Button}>

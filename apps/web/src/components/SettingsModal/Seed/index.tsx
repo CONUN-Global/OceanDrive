@@ -1,16 +1,19 @@
 import React from 'react';
-import Button from '../../../components/Button';
+import Button from '../../Button';
 import SettingsCard from '../SettingsCard';
 
 import { useNavigate } from 'react-router-dom';
 import useMessageTimer from '../../../hooks/useMessageTimer';
 
 import styles from './Seed.module.scss';
+import { useDispatch } from 'react-redux';
+import { toggleSettings } from 'src/redux/settingsSlice';
 
 const wordArray = ['faith', 'good', 'person', 'honest', 'election', 'different', 'relationship', 'life', 'building', 'relationship', 'life', 'building'];
 
 function Seed() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { showMessage, handleMessage } = useMessageTimer(2000);
 
   function handleCopy() {
@@ -36,7 +39,7 @@ function Seed() {
             Copy Phrase
           </Button>
           {showMessage && <div className={styles.Copied}>Copied!</div>}
-          <Button className={styles.Button} onClick={() => navigate(-1)}>
+          <Button className={styles.Button} onClick={() => dispatch(toggleSettings())}>
             OK
           </Button>
         </div>

@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  padding-top: 90px;
 
   & .TitleBarContainer {
     width: 100%;
@@ -26,210 +26,212 @@
     }
   }
 
-  & .LowerContainer {
-    display: flex;
-    justify-content: center;
-
-    & .InputHeading {
-      color: var(--sea-blue);
-      @include fontBodyXXL;
-      font-weight: 700;
-      line-height: normal;
-      margin-bottom: 5px;
+  & .Form {
+    height: 100%;
+    & .LowerContainer {
       display: flex;
-
-      & .NoneBold {
-        font-weight: 500;
-        padding-left: 5px;
-      }
-    }
-
-    & .PrivateSettings {
-      display: flex;
-      align-items: baseline;
-      gap: 2px;
-      color: var(--grey11);
-
-      & .PrivateCheck {
-        margin: 0px;
-        padding: 0px;
-        height: 11px;
-        cursor: pointer;
-      }
-    }
-
-    & .UploadZone {
-      height: 190px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      background-color: #edf9ff;
-      border: 1px solid var(--sea-blue);
-      border-radius: 3px;
-      cursor: pointer;
 
-      & .FileDropText {
-        @include fontBodyXL;
-        font-weight: 500;
-        text-align: center;
-        color: var(--main-blue);
-      }
-
-      & .FileDropBtn {
-        margin-top: 10px;
-        pointer-events: none;
-      }
-
-      & .ThumbDropText {
-        @include fontBodyXL;
-        min-width: 200px;
-        color: var(--main-blue);
-      }
-    }
-
-    & .Column {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    & .LeftColumn {
-      margin-right: 10px;
-
-      & .AddFileHeading {
+      & .InputHeading {
+        color: var(--sea-blue);
+        @include fontBodyXXL;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 5px;
         display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        width: 100%;
-      }
 
-      & .ThumbnailImgContainer {
-        margin-top: 12px;
-      }
-    }
-    & .RightColumn {
-      margin-left: 10px;
-
-      & .InputContainer:not(:first-of-type) {
-        margin-top: 12px;
-      }
-      & .TitleContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-
-        & .MaxChar {
-          @include fontBodyXS;
-          color: var(--grey11);
+        & .NoneBold {
+          font-weight: 500;
+          padding-left: 5px;
         }
       }
 
-      & .DescriptionInput,
-      .TitleInput,
-      .PriceInput,
-      .PaymentTypeInput {
-        outline: none;
-        width: 100%;
-        min-height: 50px;
-        background-color: var(--grey1);
-        border: 1px solid var(--grey1);
-        border-radius: 4px;
-        @include fontBodyXL;
-      }
+      & .PrivateSettings {
+        display: flex;
+        align-items: baseline;
+        gap: 2px;
+        color: var(--grey11);
 
-      & .PaymentTypeInput {
-        padding-left: calc(var(--input-padding) / 2);
-        height: 30px;
-        margin-bottom: 10px;
-
-        & .PaymentOption {
-          background-color: var(--grey1);
-          outline: none;
-          border: none;
-          padding: 10px;
+        & .PrivateCheck {
+          margin: 0px;
+          padding: 0px;
+          height: 11px;
+          cursor: pointer;
         }
       }
 
-      & .TitleInput {
-        height: 30px;
-        padding-left: var(--input-padding);
-        font-family: inherit;
-        font-size: inherit;
-      }
-
-      & .DescriptionInput {
-        padding-left: var(--input-padding);
-        padding-top: calc(var(--input-padding) / 2);
-        font-family: inherit;
-        font-size: inherit;
-        min-height: 130px;
-      }
-
-      & .PriceInputContainer {
-        background-color: var(--grey1);
-        padding-left: var(--input-padding);
+      & .UploadZone {
+        height: 190px;
+        width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        border-radius: 4px;
-        border: 1px solid var(--grey1);
+        justify-content: center;
+        background-color: #edf9ff;
+        border: 1px solid var(--sea-blue);
+        border-radius: 3px;
+        cursor: pointer;
 
-        & .PriceInput {
-          border-radius: 4px;
-          height: 30px;
+        & .FileDropText {
+          @include fontBodyXL;
+          font-weight: 500;
+          text-align: center;
+          color: var(--main-blue);
+        }
 
-          &::-webkit-inner-spin-button,
-          &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+        & .FileDropBtn {
+          margin-top: 10px;
+          pointer-events: none;
+        }
+
+        & .ThumbDropText {
+          @include fontBodyXL;
+          min-width: 200px;
+          color: var(--main-blue);
+        }
+      }
+
+      & .Column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      & .LeftColumn {
+        margin-right: 10px;
+
+        & .AddFileHeading {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          width: 100%;
+        }
+
+        & .ThumbnailImgContainer {
+          margin-top: 12px;
+        }
+      }
+      & .RightColumn {
+        margin-left: 10px;
+
+        & .InputContainer:not(:first-of-type) {
+          margin-top: 12px;
+        }
+        & .TitleContainer {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          & .MaxChar {
+            @include fontBodyXS;
+            color: var(--grey11);
           }
         }
-      }
 
-      & .PriceConversion {
-        color: var(--middle-blue-grey);
-        margin-left: var(--input-padding);
-        margin-top: var(--input-padding);
-      }
+        & .DescriptionInput,
+        .TitleInput,
+        .PriceInput,
+        .PaymentTypeInput {
+          outline: none;
+          width: 100%;
+          min-height: 50px;
+          background-color: var(--grey1);
+          border: 1px solid var(--grey1);
+          border-radius: 4px;
+          @include fontBodyXL;
+        }
 
-      & .DescriptionInput:focus,
-      .TitleInput:focus,
-      .PriceInputContainer:focus-within {
-        outline: none;
-        border: 1px solid var(--sea-blue);
+        & .PaymentTypeInput {
+          padding-left: calc(var(--input-padding) / 2);
+          height: 30px;
+          margin-bottom: 10px;
+
+          & .PaymentOption {
+            background-color: var(--grey1);
+            outline: none;
+            border: none;
+            padding: 10px;
+          }
+        }
+
+        & .TitleInput {
+          height: 30px;
+          padding-left: var(--input-padding);
+          font-family: inherit;
+          font-size: inherit;
+        }
+
+        & .DescriptionInput {
+          padding-left: var(--input-padding);
+          padding-top: calc(var(--input-padding) / 2);
+          font-family: inherit;
+          font-size: inherit;
+          min-height: 130px;
+        }
+
+        & .PriceInputContainer {
+          background-color: var(--grey1);
+          padding-left: var(--input-padding);
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+          border: 1px solid var(--grey1);
+
+          & .PriceInput {
+            border-radius: 4px;
+            height: 30px;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+            }
+          }
+        }
+
+        & .PriceConversion {
+          color: var(--middle-blue-grey);
+          margin-left: var(--input-padding);
+          margin-top: var(--input-padding);
+        }
+
+        & .DescriptionInput:focus,
+        .TitleInput:focus,
+        .PriceInputContainer:focus-within {
+          outline: none;
+          border: 1px solid var(--sea-blue);
+        }
       }
     }
-  }
-
-  & .BtnContainer {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 2px solid red;
-
-    & .Button {
-      background-color: var(--sea-blue);
-      border-radius: 4px;
+    //////
+    & .BtnContainer {
+      width: 100%;
+      margin-top: 3.2%;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      min-width: 200px;
-      min-height: 42px;
-      box-shadow: none;
 
-      &:hover {
-        opacity: 0.8;
+      & .Button {
+        background-color: var(--sea-blue);
+        border-radius: 4px;
+        align-items: center;
+        min-width: 200px;
+        min-height: 42px;
+        box-shadow: none;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
-    }
-    & .disabled {
-      background-color: var(--sea-blue);
-      border-radius: 4px;
-      align-items: center;
-      min-width: 200px;
-      min-height: 42px;
+      & .disabled {
+        background-color: var(--sea-blue);
+        border-radius: 4px;
+        align-items: center;
+        min-width: 200px;
+        min-height: 42px;
+      }
     }
   }
 }

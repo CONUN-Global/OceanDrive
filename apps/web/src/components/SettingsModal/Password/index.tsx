@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from '../../../components/Button';
-import Input from '../../../components/Input';
+import Button from '../../Button';
+import Input from '../../Input';
 
 import SettingsCard from '../SettingsCard';
 import styles from './Password.module.scss';
