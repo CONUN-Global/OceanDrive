@@ -13,10 +13,11 @@ interface InputProps {
   inputValue: string;
   setInputValue: (arg: string) => void;
   label?: string;
+  placeholder?: string;
   errMessage?: string;
 }
 
-function Input({ error, setError, inputValue, setInputValue, label, errMessage = 'Provided password is incorrect.' }: InputProps) {
+function Input({ error, setError, inputValue, setInputValue, label, placeholder = '', errMessage = 'Provided password is incorrect.' }: InputProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +41,7 @@ function Input({ error, setError, inputValue, setInputValue, label, errMessage =
         <input
           className={classNames(styles.Input, { [styles.InputValColor]: inputValue.length > 0, [styles.ErrorColor]: error && inputValue })}
           value={inputValue}
+          placeholder={placeholder}
           onChange={e => handleChange(e)}
           type={!isVisible || inputValue.length === 0 ? 'password' : 'text'}
         />
