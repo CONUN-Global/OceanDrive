@@ -5,10 +5,13 @@ import BalanceCard from '../../components/BalanceCards/BalanceCard';
 import BottomTable from './BottomTable';
 
 import { ReactComponent as BoxedIcon } from '../../assets/icons/boxed-icon.svg';
-import classNames from 'classnames';
+import TabButton from 'src/components/TabButton';
 
 const Profile = () => {
-  const [clicked, setClicked] = useState<'published' | 'downloads' | 'personal'>('published');
+  const Tabs = ['Published', 'Downloads', 'Personal'] as const;
+  type Label = typeof Tabs[number];
+
+  const [clicked, setClicked] = useState<Label>('Published');
   const [showGrid, setShowGrid] = useState(false);
 
   return (
@@ -23,18 +26,12 @@ const Profile = () => {
 
           <div className={styles.DescriptionBox}>
             <div className={styles.DescriptionWords}>
-              <div onClick={() => setClicked('published')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'published' })}>
-                Published (20)
-              </div>
-              <div onClick={() => setClicked('downloads')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'downloads' })}>
-                Downloads (20)
-              </div>
-              <div onClick={() => setClicked('personal')} className={classNames(styles.DescriptionWord, { [styles.ClickedWord]: clicked === 'personal' })}>
-                Personal (20)
-              </div>
+              {Tabs.map((tab, index) => (
+                <TabButton key={index} setCurrentTab={setClicked} currentTab={clicked} content={tab} />
+              ))}
             </div>
 
-            {clicked === 'published' && (
+            {clicked === 'Published' && (
               <div className={styles.BoxedIcon}>
                 <BoxedIcon width={18} height={18} onClick={() => setShowGrid(!showGrid)} />
               </div>
@@ -42,9 +39,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
-
       {/* Bottom Table */}
-      <BottomTable clicked={clicked} showGrid={showGrid} />
+      <BottomTable clicked={clicked.toLowerCase()} showGrid={showGrid} />
     </div>
   );
 };

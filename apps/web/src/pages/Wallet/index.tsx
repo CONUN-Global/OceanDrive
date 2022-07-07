@@ -7,40 +7,39 @@ import Transactions from './TransComponents/Transactions';
 
 import BalanceCard from '../../components/BalanceCards/BalanceCard';
 import styles from './Wallet.module.scss';
+import TabButton from 'src/components/TabButton';
 
 function Wallet() {
   const Tabs = ['Transactions', 'Send', 'Receive'] as const;
-  const [currentTab, setCurrentTab] = useState<typeof Tabs[number]>('Transactions');
+  type Label = typeof Tabs[number];
+
+  const [currentTab, setCurrentTab] = useState<Label>('Transactions');
 
   return (
-    <>
-      <div className={styles.Container}>
-        <div className={styles.Content}>
-          <div className={styles.TopContainer}>
-            <BalanceCard />
+    <div className={styles.Container}>
+      <div className={styles.Content}>
+        <div className={styles.TopContainer}>
+          <BalanceCard />
+        </div>
+        <div className={styles.BottomContainer}>
+          <h3 className={styles.Title}>MY ACTIVITY</h3>
+          <div className={styles.SelectTabContainer}>
+            {Tabs.map((tab, index) => (
+              <TabButton content={tab} setCurrentTab={setCurrentTab} currentTab={currentTab} key={index} />
+            ))}
           </div>
-          <div className={styles.BottomContainer}>
-            <h3 className={styles.Title}>MY ACTIVITY</h3>
-            <div className={styles.SelectTabContainer}>
-              {Tabs.map((tab, index) => (
-                <div key={index} onClick={() => setCurrentTab(tab)} className={classNames(styles.Tab, { [styles.active]: currentTab === tab })}>
-                  {tab}
-                </div>
-              ))}
-            </div>
-            <div className={styles.InfoContainer}>
+          <div className={styles.InfoContainer}>
+            {
               {
-                {
-                  Send: <Send />,
-                  Transactions: <Transactions />,
-                  Receive: <Receive />,
-                }[currentTab]
-              }
-            </div>
+                Send: <Send />,
+                Transactions: <Transactions />,
+                Receive: <Receive />,
+              }[currentTab]
+            }
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
