@@ -73,7 +73,7 @@
       gap: 5px;
       width: 122px;
       height: 29px;
-      background: #ffecde;
+      background: var(--cyc);
       border-radius: 4px;
       padding-right: 10px;
 
@@ -86,7 +86,7 @@
         font-size: 15px;
         line-height: 23px;
         letter-spacing: 0.03em;
-        color: #f37123;
+        color: var(--cyc-text);
       }
     }
   }

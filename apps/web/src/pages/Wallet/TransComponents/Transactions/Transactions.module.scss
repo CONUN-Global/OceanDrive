@@ -88,16 +88,16 @@
           padding: 5px 10px;
 
           &.Success {
-            background-color: #e1fbff;
-            color: #64c2d1;
+            background-color: var(--success);
+            color: var(--success-text);
           }
           &.Failure {
-            background-color: #ffcccc;
-            color: var(--warning);
+            background-color: var(--failure);
+            color: var(--failure-text);
           }
           &.Pending {
-            background-color: #fff1bf;
-            color: #e6b302;
+            background-color: var(--pending);
+            color: var(--pending-text);
           }
         }
       }
@@ -125,8 +125,8 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #ffecde;
-          color: #f37123;
+          background-color: var(--cyc);
+          color: var(--cyc-text);
           margin-right: 87px;
         }
       }

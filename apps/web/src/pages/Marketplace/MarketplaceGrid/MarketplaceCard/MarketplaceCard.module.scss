@@ -103,7 +103,7 @@
 
         width: 120px;
         height: 29px;
-        background: #ffecde;
+        background: var(--cyc);
         border-radius: 4px;
         padding-right: 10px;
 
@@ -114,12 +114,12 @@
         .CyconDescDiv {
           font-weight: 600;
           font-size: 15px;
-          color: #f37123;
+          color: var(--cyc-text);
         }
       }
 
       .AmountFreeContainer {
-        background: #d9faff;
+        background: var(--success);
         padding-right: 0;
         width: 120px;
         font-weight: 600;

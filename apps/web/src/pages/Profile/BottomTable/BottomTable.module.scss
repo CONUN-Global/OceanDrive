@@ -222,24 +222,24 @@
 
           width: 110px;
           height: 28px;
-          background: #ffecde;
+          background: var(--cyc);
           border-radius: 4px;
 
           .CyconDescDiv {
             font-weight: 500;
-            color: #f37123;
+            color: var(--cyc-text);
           }
         }
 
         .AmountFreeContainer {
           width: 62px;
-          background: #d9faff;
+          background: var(--success);
+          color: var(--success-text);
           padding-right: 0;
           font-weight: 500;
           width: 110px;
           height: 28px;
           text-align: center;
-          color: var(--teal);
         }
       }
 
