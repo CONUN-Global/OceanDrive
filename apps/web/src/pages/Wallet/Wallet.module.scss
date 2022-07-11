@@ -3,6 +3,7 @@
 .Container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: calc(100vh - 70px);
   box-sizing: border-box;
@@ -11,7 +12,7 @@
   .Content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
 
     & .BottomContainer {
