@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import TitleAndSearch from '../../components/TitleAndSearch';
+// import TitleAndSearch from '../../components/TitleAndSearch';
 import DragAndDrop from '../../components/DragAndDrop';
 import { UploadFile } from '../../types';
 import Button from '../../components/Button';
-import { data } from '../Profile/BotttomTable/DemoData';
+import { data } from '../Profile/BottomTable/DemoData';
 import { ReactComponent as GenearatedIcon } from '../../assets/icons/generated-icon-sample.svg';
 import { ReactComponent as CopyIcon } from '../../assets/icons/boxed-copy-icon.svg';
 
@@ -15,10 +15,11 @@ import UploadingPopup from '../../components/UploadingPopup';
 
 const DropFile = () => {
   const [uploads, setUploads] = useState<UploadFile[]>([]);
+  const [isPopupShowing, setIsPopupShowing] = useState(false);
 
   const sampleItems = uploads.length;
 
-  const dataExist = data !== null && data.length > 0;
+  const dataExist = data !== null && data?.length > 0;
 
   return (
     <div className={styles.PageContainer}>

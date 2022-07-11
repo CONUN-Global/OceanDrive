@@ -9,10 +9,10 @@
   width: 100%;
   height: 100%;
   gap: 50px;
-  position: relative;
+  // position: relative;
 
   .WelcomeContainer {
-    position: absolute;
+    // position: absolute;
     box-sizing: border-box;
     left: 0;
     top: 11%;
@@ -124,7 +124,6 @@
           position: sticky;
           top: 0;
           z-index: 10;
-          font-style: normal;
           font-weight: 600;
           font-size: 16px;
           line-height: 104.9%;
@@ -163,7 +162,7 @@
 
       .TableRow2 {
         width: 100%;
-        height: 60px;
+        height: 40px;
         text-align: center;
         border-bottom: 1px solid black;
         border-width: 0px 1px 1px 1px;
@@ -173,36 +172,22 @@
 
         & :nth-child(2) {
           text-align: left;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 104.9%;
+          font-weight: 600;
           color: var(--main-blue);
         }
         & :nth-child(3) {
           text-align: left;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 26px;
           color: var(--teal);
         }
 
         & :nth-child(4) {
           text-align: left;
-          font-style: normal;
           font-weight: 400;
-          font-size: 16px;
-          line-height: 23px;
           color: var(--grey10);
         }
         & :nth-child(5) {
           text-align: left;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 104.9%;
-          letter-spacing: 0.005em;
+          font-weight: 600;
           color: var(--sea-blue);
         }
 

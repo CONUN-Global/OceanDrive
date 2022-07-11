@@ -1,0 +1,66 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 390px;
+  height: 350px;
+  background-color: var(--background);
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 0px rgba(95, 147, 241, 0.2);
+  position: relative;
+  z-index: 2;
+
+  & .XBtnContainer {
+    position: absolute;
+    right: 60px;
+    top: 35px;
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    & .XBtn {
+      fill: var(--grey6);
+    }
+  }
+  & .ContentContainer {
+    width: 270px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 57px 0px;
+
+    & .TitleContainer {
+      width: 100%;
+
+      & .Title {
+        color: var(--main-blue);
+        font-size: 28px;
+        font-weight: 600;
+      }
+    }
+
+    & .Button {
+      margin-bottom: 10px;
+      width: 100%;
+      height: 40px;
+      background-color: inherit;
+      border: 1px solid var(--grey7);
+      border-radius: 2px;
+      color: var(--sea-blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: none;
+
+      &:hover {
+        background-color: #c6ebff;
+        color: var(--sea-blue);
+        border: 1px solid var(--sea-blue);
+      }
+    }
+  }
+}

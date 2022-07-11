@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   min-height: 650px;
+  // Change --leftbar-size in RightSideLayer to the same
+  width: var(--leftbar-size);
 
   .ContentContainer {
     padding: 10vh 0;
@@ -23,8 +25,8 @@
     }
 
     .Avatar {
-      width: 100px;
-      height: 100px;
+      height: 75px;
+      aspect-ratio: 1/1;
       border-radius: 100px;
       cursor: pointer;
     }
@@ -35,7 +37,7 @@
 
     & .LinksContainer {
       margin-top: 100px;
-      max-width: 240px;
+      max-width: var(--leftbar-size);
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -46,7 +48,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-width: 240px;
+        min-width: var(--leftbar-size);
 
         & .Link {
           align-self: flex-end;
@@ -97,18 +99,15 @@
 
     .UploadButton {
       border-radius: 20px;
-      height: 42px;
-      width: 150px;
+      height: calc(var(--leftbar-size) * 0.2);
+      width: calc(var(--leftbar-size) * 0.6);
       background: var(--white);
       border: 1px solid var(--main-blue);
-
-      font-weight: 700;
       margin-bottom: 10px;
 
       & .UploadText {
-        @include fontBodyXXL;
+        @include fontBodyXL;
         text-align: center;
-        letter-spacing: 0.02em;
         color: var(--main-blue);
       }
       svg {
@@ -148,9 +147,9 @@
 
         & .SVGBox {
           margin-right: 10px;
-          height: 15px;
-          width: 15px;
-          padding-top: 2px;
+          height: 16px;
+          aspect-ratio: 1/1;
+          padding-top: 3px;
 
           & svg {
             fill: var(--grey9);

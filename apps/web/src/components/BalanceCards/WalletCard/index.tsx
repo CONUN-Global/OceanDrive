@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
 import ClickableTooltip from '../../../components/ClickableTooltip';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/copy-icon.svg';
+import { ReactComponent as Avatar } from '../../../assets/images/Placeholder_Avatar.svg';
+import splitKey from 'src/helpers/splitKey';
 
 import styles from './WalletCard.module.scss';
-
-const profileUrl = require('../../../assets/images/Profile.png');
+const walletID = '34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo';
 
 const WalletCard = () => {
-  const [showCopied, setShowCopied] = useState(false);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText('0x398543592...792085485846');
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 1000);
-  };
+  const shortenedID = splitKey(walletID, 10, 5);
 
   return (
     <div className={styles.WalletCard}>
       <div className={styles.CardItems}>
-        <div className={styles.Img}>
-          <img src={profileUrl} alt="profile" />
+        <div className={styles.Avatar}>
+          <Avatar />
         </div>
         <div className={styles.Text}>
           <div className={styles.Wallet}>my wallet</div>
           <div className={styles.Address}>
-            <div className={styles.AddressName}>0x398543592...792085485846</div>
-            <ClickableTooltip copyText={'0x398543592...792085485846'}>
-              <CopyIcon width={12} height={12} fill="#ffffff" />
+            <div className={styles.AddressName}>{shortenedID}</div>
+            <ClickableTooltip copyText={walletID}>
+              <CopyIcon fill="#ffffff" />
             </ClickableTooltip>
           </div>
         </div>

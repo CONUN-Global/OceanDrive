@@ -31,6 +31,6 @@ const BottomBox = () => {
       </div>
     </div>
   );
-}
+};
 
-export default BottomBox
+export default BottomBox;

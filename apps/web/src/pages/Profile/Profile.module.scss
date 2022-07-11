@@ -28,12 +28,10 @@
       .DescriptionTitle {
         font-weight: 600;
         font-size: 16px;
-        line-height: 23px;
         display: flex;
         align-items: center;
         color: var(--black);
         text-transform: uppercase;
-        margin-left: -2.25px;
       }
 
       .DescriptionBox {
@@ -49,7 +47,7 @@
           .DescriptionWord {
             background: var(--grey1);
             border: none;
-            width: 153px;
+            width: 128px;
             height: 28px;
             border-radius: 4px;
             display: flex;
@@ -57,20 +55,13 @@
             align-items: center;
             cursor: pointer;
             user-select: none;
-
-            // text
-            font-weight: 400;
+            font-weight: 500;
             color: var(--grey10);
-            font-size: 14px;
-            line-height: 150%;
             text-transform: uppercase;
           }
 
           .ClickedWord {
             background: var(--off-white);
-            border: 1px solid var(--main-blue);
-
-            font-weight: 700;
             color: var(--main-blue);
           }
         }
@@ -78,6 +69,7 @@
         .BoxedIcon {
           height: 100%;
           display: flex;
+
           justify-content: center;
           align-items: flex-end;
 

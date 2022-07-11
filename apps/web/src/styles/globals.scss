@@ -1,7 +1,4 @@
-// 100 - 300 UNUSED
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&family=Teko:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap');
 :root {
   --background: #f3f7ff;
   --black: #3a3a3a;
@@ -11,14 +8,16 @@
   --main-blue: #5f93f1;
   --sea-blue: #48afe8;
   --teal: #64c2d1;
-  user-select: none;
 
-  // UNUSED
-  --main-gradient: linear-gradient(244.5deg, #48afe8 12.9%, #317eff 85.63%);
-  --second-gradient: linear-gradient(244.5deg, #317eff 12.9%, #80a0d5 85.63%);
-  --warning-bg-color: #fcfc93;
-  --warning-text-color: #888826;
-  --box-shadow: 0 2px 10px 2px #ababab66;
+  // STATUS AND PRICE -- TABLE ITEMS
+  --success: #e1fbff;
+  --success-text: #64c2d1;
+  --pending: #fff1bf;
+  --pending-text: #e6b302;
+  --failure: #ffcccc;
+  --failure-text: #d12221;
+  --cyc: #ffecde;
+  --cyc-text: #f37123;
 
   // GREYS
   --grey1: #f7f7f7;
@@ -39,19 +38,19 @@
   --grey14: #474747;
   --grey15: #373737;
   --grey16: #262626;
+
+  //Scales the left sidebar and its components
+  --leftbar-size: 200px;
 }
 
 html,
 body {
   color: var(--font-color);
-  font-family: Barlow, Teko, sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   margin: 0;
   padding: 0;
   font-size: 14px;
-
-  @media only screen and (max-width: 1240px) {
-    font-size: 12px;
-  }
+  user-select: none;
 }
 
 a {

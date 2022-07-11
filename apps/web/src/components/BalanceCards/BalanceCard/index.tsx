@@ -16,9 +16,9 @@ const BalanceCard = () => {
           <div className={classNames(styles.Wallet2)}>cycon coin balance</div>
           <div className={styles.Address}>
             <div className={styles.AddressName2}>598.00 CYC</div>
-            <div className={classNames(styles.CopyIcon2)}>Buy</div>
           </div>
         </div>
+        <div className={classNames(styles.CopyIcon2)}>Buy</div>
       </div>
     </div>
   );

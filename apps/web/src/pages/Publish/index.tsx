@@ -113,7 +113,7 @@ function Publish() {
           Your published file will appear in the public marketplace. <b>They are for sale.</b>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.Form}>
         <div className={styles.LowerContainer}>
           <div className={classNames(styles.LeftColumn, styles.Column)}>
             <div>

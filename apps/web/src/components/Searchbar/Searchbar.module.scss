@@ -1,17 +1,14 @@
 :root {
-  --input_height: 43px;
-  --input_width: 374px;
+  --input_height: 32px;
+  --input_width: 191px;
 }
 
 .Container {
-  position: absolute;
-  right: 210px;
-  top: calc(var(--input_height) / 2);
-  width: var(--input_width);
   height: var(--input_height);
   border-radius: 50px;
   display: flex;
-  border: 1px solid var(--grey3);
+  background-color: var(--grey1);
+  border: 1px solid transparent;
 
   &:focus-within {
     border: 1px solid var(--grey5);
@@ -36,10 +33,12 @@
     border-radius: 0 50px 50px 0;
     color: var(--black);
     height: 100%;
+    background-color: var(--grey1);
 
     &::placeholder {
-      color: var(--black);
+      color: var(--sea-blue);
       padding-left: 1px;
+      font-weight: 400;
     }
     &:focus {
       border: none;

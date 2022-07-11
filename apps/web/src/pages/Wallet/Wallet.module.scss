@@ -1,42 +1,49 @@
+@import '../../styles/scrollbar.scss';
+
 .Container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 36px);
-  min-height: 900px;
+  height: calc(100vh - 70px);
   box-sizing: border-box;
-  padding-top: 150px;
+  padding-top: 120px;
 
   .Content {
-    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
 
     & .BottomContainer {
       box-sizing: border-box;
       width: 100%;
 
+      & .Title {
+        color: var(--grey7);
+        font-size: 16px;
+      }
+
       & .SelectTabContainer {
         display: flex;
-        padding-top: 3%;
+        margin: 15px 0 20px 0;
+        gap: 12px;
 
         & .Tab {
           text-transform: uppercase;
-          margin: 20px 20px;
-          padding-bottom: 10px;
-          font-size: 18px;
-          font-weight: 700;
+          font-weight: 500;
+          min-width: 150px;
+          min-height: 30px;
+          text-align: center;
+          border-radius: 4px;
           cursor: pointer;
           color: var(--grey7);
+          background-color: var(--grey1);
+          padding: 5px 17px;
 
           &.active {
-            color: var(--black);
+            color: var(--main-blue);
+            background-color: var(--off-white);
           }
-        }
-
-        & .Tab:first-of-type {
-          margin-left: 5px;
         }
       }
 
@@ -50,6 +57,7 @@
         border-radius: 5px;
         background-color: var(--grey1);
         overflow-x: hidden;
+        @include scrollbar;
       }
     }
   }

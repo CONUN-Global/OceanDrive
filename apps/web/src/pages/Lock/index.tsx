@@ -36,12 +36,12 @@ const Lock = () => {
             <div className={styles.Title}>OCEANDRIVE</div>
           </div>
           <div className={styles.Instructions}>Enter your OceanDrive password or wallet seed phrase to unlock OceanDrive</div>
-          <div className={styles.InputAndBtn}>
-            <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} placeholder={placeholderPhrase} />
+          <form className={styles.InputAndBtn} onSubmit={e => e.preventDefault()}>
+            <Input error={error} setError={setError} inputValue={inputValue} setInputValue={setInputValue} label={placeholderPhrase} />
             <Button className={classNames(styles.Button, { [styles.ActivatedBtn]: inputValue.length > 0 })} onClick={checkValidity}>
               Unlock
             </Button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

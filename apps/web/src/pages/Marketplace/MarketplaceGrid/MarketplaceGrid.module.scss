@@ -8,6 +8,11 @@
 
   .TitleContainer {
     margin-left: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   .GridContainer {
@@ -15,7 +20,7 @@
     display: grid;
     padding: 5px 10px 50px 5px;
     gap: 1.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     height: 85%; // please don't make it over 85%, if we give more height it is overlapping and not showing last row pictures fully
     overflow-y: auto;
     @include scrollbar;
